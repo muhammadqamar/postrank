@@ -10,7 +10,7 @@ type InputProps = {
   onChange: ChangeEventHandler<HTMLInputElement>;
   onBlur: FocusEventHandler<HTMLInputElement>;
   values: string[];
-  errors: string[];
+  errors: string | number;
   touched: boolean;
 };
 

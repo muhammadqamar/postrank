@@ -39,13 +39,13 @@ body {
 /*paragraphs*/
 
 .p-small {
-  @apply text-[12px] leading-[16px] font-normal tracking-[-0.48px];
+  @apply text-[12px] leading-[16px] font-normal tracking-[-0.2px];
 }
 
 .p-medium {
-  @apply text-[14px] leading-[18px] font-normal tracking-[-0.48px];
+  @apply text-[14px] leading-[18px] font-normal tracking-[-0.2px];
 }
 
 .p-large {
-  @apply text-[16px] leading-[24px] font-normal tracking-[-0.48px];
+  @apply text-[16px] leading-[24px] font-normal tracking-[-0.2px];
 }
