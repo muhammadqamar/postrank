@@ -1,8 +1,7 @@
-/* eslint-disable prettier/prettier */
 import React from "react";
-// eslint-disable-next-line import/no-extraneous-dependencies
+
 import { Routes, Route } from "react-router-dom";
-import Home from "../components/Home/home";
+import Home from "../pages/Home/home";
 import Layout from "../components/Layout";
 
 const AppRouter = () => {

@@ -1,27 +1,60 @@
-/* eslint-disable prettier/prettier */
-import React from "react";
-import EyeIcon from "../../assets/images/Icons/eye.svg";
+import React, { ChangeEventHandler, FocusEventHandler } from "react";
 
-const Index = () => {
+type InputProps = {
+  label: string;
+  type: string;
+  name: string;
+  placeholder: string;
+  className: string;
+  icon: string;
+  onChange: ChangeEventHandler<HTMLInputElement>;
+  onBlur: FocusEventHandler<HTMLInputElement>;
+  values: string[];
+  errors: string[];
+  touched: boolean;
+};
+
+const Index: React.FC<InputProps> = ({
+  label = "",
+  type = "",
+  name = "",
+  placeholder = "",
+  className = "",
+  icon = "",
+  onChange = void (() => {}),
+  onBlur = void (() => {}),
+  values = "",
+  errors = "",
+  touched = "",
+}) => {
   return (
     <div className="relative">
-      <label className="block text-xs font-normal text-gray-700 mb-1">
-        Email
-      </label>
+      {label ? (
+        <label className="block text-xs font-normal text-gray-700 mb-1">
+          {label}
+        </label>
+      ) : (
+        ""
+      )}
       <div className="relative flex items-center">
         <input
-          type="email"
-          name="email"
-          placeholder=" "
-          className="max-w-xs w-full border border-solid rounded-[7px] focus-visible:outline-1 focus-visible:outline focus-visible:outline-blue-500 py-[10px] px-3 pr-9" // Added pr-10 for padding on the right to accommodate the icon
+          type={type}
+          name={name}
+          placeholder={placeholder}
+          onChange={onChange}
+          onBlur={onBlur}
+          value={values}
+          className={`w-full border border-solid rounded-[7px] focus-visible:outline-1 focus-visible:outline focus-visible:outline-blue-500 py-[10px] px-3 pr-9 ${className} `}
           style={{
-            backgroundImage: `url(${EyeIcon})`,
+            backgroundImage: `url(${icon})`,
             backgroundRepeat: "no-repeat",
             backgroundPosition: "right 12px center",
             backgroundSize: "20px 20px",
-          }} // Adjust backgroundPosition and backgroundSize as needed
+          }}
         />
       </div>
+
+      {errors && <p className="">{errors && touched && errors}</p>}
     </div>
   );
 };

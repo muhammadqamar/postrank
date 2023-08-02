@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import React from "react";
 
 import InternalPortalRoutes from "./Routers/app2";
