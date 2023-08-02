@@ -66,10 +66,11 @@ const colors = {
   white_200: "#F1F1F1",
   white_300: "#E8E8E8",
   purple_300: "#8B54FF",
+
   gray_300: "#ABABAB",
   gray_400: "#464646",
   gray_500: "#E6E6E6",
-  gray_600: "#D5D5D5",
+  gray_600: "#6C6C6C",
 };
 
 module.exports = {
@@ -77,6 +78,19 @@ module.exports = {
   theme: {
     colors: {
       ...colors,
+    },
+    screens: {
+      xsm: "320px",
+      sm: "640px",
+      // @media (min-width: 640px) { ... }
+      md: "768px",
+      // @media (min-width: 768px) { ... }
+      lg: "1024px",
+      // @media (min-width: 1024px) { ... }
+      xl: "	1280px",
+      // @media (min-width: 1280px) { ... }
+      "2xl": "1536px",
+      // @media (min-width: 1536px) { ... }f
     },
     extend: {},
   },
