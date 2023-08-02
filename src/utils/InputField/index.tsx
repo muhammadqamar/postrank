@@ -1,31 +1,31 @@
 import React, { ChangeEventHandler, FocusEventHandler } from "react";
 
 type InputProps = {
-  label: string;
-  type: string;
-  name: string;
-  placeholder: string;
-  className: string;
-  icon: string;
-  onChange: ChangeEventHandler<HTMLInputElement>;
-  onBlur: FocusEventHandler<HTMLInputElement>;
-  values: string[];
-  errors: string | number;
-  touched: boolean;
+  label: string | undefined;
+  type: string | undefined;
+  name: string | undefined;
+  placeholder: string | undefined;
+  className: string | undefined;
+  icon: string | undefined;
+  onChange: ChangeEventHandler<HTMLInputElement> | undefined;
+  onBlur: FocusEventHandler<HTMLInputElement> | undefined;
+  value: string | undefined;
+  error: string[] | string | undefined;
+  touch: boolean | undefined;
 };
 
 const Index: React.FC<InputProps> = ({
-  label = "",
-  type = "",
-  name = "",
-  placeholder = "",
-  className = "",
-  icon = "",
-  onChange = void (() => {}),
-  onBlur = void (() => {}),
-  values = "",
-  errors = "",
-  touched = "",
+  label,
+  type,
+  name,
+  placeholder,
+  className,
+  icon,
+  onChange,
+  onBlur,
+  value,
+  error,
+  touch,
 }) => {
   return (
     <div className="relative">
@@ -43,7 +43,7 @@ const Index: React.FC<InputProps> = ({
           placeholder={placeholder}
           onChange={onChange}
           onBlur={onBlur}
-          value={values}
+          value={value}
           className={`w-full border border-solid rounded-[7px] focus-visible:outline-1 focus-visible:outline focus-visible:outline-blue-500 py-[10px] px-3 pr-9 ${className} `}
           style={{
             backgroundImage: `url(${icon})`,
@@ -54,7 +54,7 @@ const Index: React.FC<InputProps> = ({
         />
       </div>
 
-      {errors && <p className="">{errors && touched && errors}</p>}
+      <p className="">{error && touch && error}</p>
     </div>
   );
 };

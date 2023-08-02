@@ -4,6 +4,14 @@ import InputField from "../../../utils/InputField/index";
 
 import EyeIcon from "../../../assets/images/Icons/eye.svg";
 
+interface FormValues {
+  email: string;
+}
+
+interface FormErrors {
+  email?: string;
+}
+
 const LoginForm = () => {
   return (
     <div className="bg-white h-screen flex items-center justify-center">
@@ -11,8 +19,8 @@ const LoginForm = () => {
         <h6 className="text-2xl font-bold mb-4">Login to your account</h6>
         <Formik
           initialValues={{ email: "", password: "" }}
-          validate={(values) => {
-            const errors = {};
+          validate={(values: FormValues) => {
+            const errors: FormErrors = {};
             if (!values.email) {
               errors.email = "Required";
             } else if (
@@ -47,18 +55,13 @@ const LoginForm = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.email}
-                errors={errors.email}
+                error={errors?.email}
                 touch={touched.email}
                 icon={EyeIcon}
+                placeholder={""}
+                className={""}
               />
-              <input
-                type="password"
-                name="password"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.password}
-              />
-              {errors.password && touched.password && errors.password}
+
               <button type="submit" disabled={isSubmitting}>
                 Submit
               </button>
