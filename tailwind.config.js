@@ -75,11 +75,20 @@ const colors = {
 };
 
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
+  ],
   theme: {
     colors: {
       ...colors,
     },
+
+    boxShadow: {
+      lgShadow:
+        "0px 3.154672384262085px 10.321866989135742px 0px rgba(0, 0, 0, 0.06), 0px 7.581116199493408px 24.804880142211914px 0px rgba(0, 0, 0, 0.09), 0px 14.274569511413574px 46.705387115478516px 0px rgba(0, 0, 0, 0.12), 0px 25.46339225769043px 83.3144302368164px 0px rgba(0, 0, 0, 0.14), 0px 47.6264762878418px 155.8304901123047px 0px rgba(0, 0, 0, 0.17), 0px 114px 373px 0px rgba(0, 0, 0, 0.23)",
+    },
+
     screens: {
       xsm: "320px",
       sm: "640px",
@@ -95,5 +104,5 @@ module.exports = {
     },
     extend: {},
   },
-  plugins: [],
+  plugins: [require("flowbite/plugin")],
 };

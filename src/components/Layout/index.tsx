@@ -1,14 +1,54 @@
-import React from "react";
+import { useState } from "react";
 
+import Select from "../../utils/Select";
+
+// icons
 import SearchIcon from "../../assets/images/Icons/search.svg";
+import SettingIcon from "../../assets/images/Icons/settings.svg";
+import ProjectIcon from "../../assets/images/Icons/Category.svg";
+import LogoutIcon from "../../assets/images/Icons/Logout.svg";
+import CitizenRemote from "../../assets/images/dropdownIcon/Citizen-Remote.svg";
+import Whale from "../../assets/images/dropdownIcon/WhaleINC.svg";
+import Tesla from "../../assets/images/dropdownIcon/Tesla.svg";
+import Apple from "../../assets/images/dropdownIcon/Apple.svg";
+import MasterCard from "../../assets/images/dropdownIcon/Mastercard.svg";
+
+const companies = [
+  {
+    name: "Citizen Remote",
+    avatar: CitizenRemote,
+  },
+  {
+    name: "WhaleINC",
+    avatar: Whale,
+  },
+  {
+    name: "Tesla",
+    avatar: Tesla,
+  },
+  {
+    name: "Apple",
+    avatar: Apple,
+  },
+  {
+    name: "MasterCard",
+    avatar: MasterCard,
+  },
+];
 
 const Index = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen((prevState) => !prevState);
+  };
   return (
     <div className="max-w-[1280px] mx-auto px-10 py-4 flex items-center justify-between">
       <div className="flex items-center gap-[25px]">
         <div className="">postrank.io</div>
-
-        <div className="w-[183px] h-10 bg-white rounded-full"></div>
+        <div className="">
+          <Select data={companies} />
+        </div>
       </div>
 
       <div className="flex items-center gap-[25px]">
@@ -26,8 +66,49 @@ const Index = () => {
           />
         </div>
 
-        <div className="w-12 h-12 rounded-full bg-primary-500"></div>
+        <div className="relative">
+          <button
+            id="dropdownUserAvatarButton"
+            data-dropdown-toggle="dropdownAvatar"
+            className="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-2 focus:ring-blue-500 "
+            type="button"
+            onClick={toggleDropdown}
+          >
+            <span className="sr-only">Open user menu</span>
+            <img
+              className="w-12 h-12 rounded-full"
+              src="/docs/images/people/profile-picture-3.jpg"
+              alt="user photo"
+            />
+          </button>
+          {isDropdownOpen && (
+            <div className="dropdown-menu">
+              <ul className="py-2" aria-labelledby="dropdownUserAvatarButton">
+                <li>
+                  <a href="#" className="dropdown-item">
+                    <img src={SettingIcon} alt="setting" />
+                    Settings
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="dropdown-item">
+                    <img src={ProjectIcon} alt="setting" />
+                    My projects
+                  </a>
+                </li>
+              </ul>
+              <div className="py-2">
+                <a href="#" className="dropdown-item">
+                  <img src={LogoutIcon} alt="setting" />
+                  Logout
+                </a>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
+
+      {/* test */}
     </div>
   );
 };
