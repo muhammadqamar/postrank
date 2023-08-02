@@ -6,9 +6,9 @@ import EyeIcon from "../../../assets/images/Icons/eye.svg";
 
 const LoginForm = () => {
   return (
-    <div className="bg-white h-screen flex items-center justify-center">
-      <div className="bg-white w-96 p-8 shadow-lg rounded-lg">
-        <h6 className="text-2xl font-bold mb-4">Login to your account</h6>
+    <div className="bg-white h-screen flex flex-col justify-between items-center pt-[132px] pb-16">
+      <div className="w-80">
+        <h6 className="h6 font-normal mb-[42px]">Login to your account</h6>
         <Formik
           initialValues={{ email: "", password: "" }}
           validate={(values) => {
@@ -49,22 +49,35 @@ const LoginForm = () => {
                 value={values.email}
                 errors={errors.email}
                 touch={touched.email}
-                icon={EyeIcon}
               />
-              <input
+              <InputField
+                label="Password"
                 type="password"
                 name="password"
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.password}
+                errors={errors.password}
+                touch={touched.password}
+                icon={EyeIcon}
               />
-              {errors.password && touched.password && errors.password}
+              <div className="flex justify-between">
+                <div className="">
+                  <input type="checkbox" />
+                </div>
+              </div>
               <button type="submit" disabled={isSubmitting}>
                 Submit
               </button>
             </form>
           )}
         </Formik>
+      </div>
+      <div className="flex gap-2">
+        <p className="p-small text-gray-900">Don’t have an account?</p>
+        <a className="p-small font-medium text-blue-500" href="#">
+          Create now
+        </a>
       </div>
     </div>
   );

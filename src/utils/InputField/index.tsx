@@ -44,7 +44,7 @@ const Index: React.FC<InputProps> = ({
           onChange={onChange}
           onBlur={onBlur}
           value={values}
-          className={`w-full border border-solid rounded-[7px] focus-visible:outline-1 focus-visible:outline focus-visible:outline-blue-500 py-[10px] px-3 pr-9 ${className} `}
+          className={`w-full bg-white border border-solid rounded-[7px] focus-visible:outline-1 focus-visible:outline focus-visible:outline-blue-500 py-[10px] px-3 pr-9 mb-5 ${className} `}
           style={{
             backgroundImage: `url(${icon})`,
             backgroundRepeat: "no-repeat",
