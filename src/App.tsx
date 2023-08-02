@@ -1,18 +1,9 @@
 import React from "react";
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { Routes, Route } from "react-router-dom";
-import Home from "./components/Home/home";
+
+import InternalPortalRoutes from "./Routers/app2";
+
 function App() {
-  return (
-    <div>
-      <h1>My App</h1>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        {/* <Route path="/about" element={<About />} />
-          <Route path="*" element={<NotFound />} /> */}
-      </Routes>
-    </div>
-  );
+  return <InternalPortalRoutes />;
 }
 
 export default App;
