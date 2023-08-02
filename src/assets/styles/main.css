@@ -29,3 +29,23 @@ body {
 .h4 {
   @apply text-[32px] leading-[42px] font-medium tracking-[-0.48px];
 }
+.h5 {
+  @apply text-[25px] leading-[32px] font-medium tracking-[-0.48px];
+}
+.h6 {
+  @apply text-[20px] leading-[28px] font-medium tracking-[-0.48px];
+}
+
+/*paragraphs*/
+
+.p-small {
+  @apply text-[12px] leading-[16px] font-normal tracking-[-0.48px];
+}
+
+.p-medium {
+  @apply text-[14px] leading-[18px] font-normal tracking-[-0.48px];
+}
+
+.p-large {
+  @apply text-[16px] leading-[24px] font-normal tracking-[-0.48px];
+}
