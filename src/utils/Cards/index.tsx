@@ -2,10 +2,8 @@
 import React from "react";
 
 import Button from "../button/index";
-import InputField from "../InputField/index";
 import BackgroundImage from "../../assets/images/png/image1.png";
 import Dot from "../../assets/images/png/Dot.png";
-
 import Trophy from "../../assets/images/Icons/trophy.svg";
 import Increase from "../../assets/images/Icons/Increase.svg";
 import Calendar from "../../assets/images/Icons/calendar.svg";
@@ -21,7 +19,7 @@ const Index = () => {
   };
   return (
     <>
-      <div className="!rounded-[20px] max-w-sm">
+      <div className="rounded-[20px] max-w-sm overflow-hidden">
         <div className="flex justify-end p-3" style={bgImgStyle}>
           <div className="flex gap-2">
             <div>
@@ -75,7 +73,6 @@ const Index = () => {
           </div>
         </div>
       </div>
-      <InputField />
     </>
   );
 };
