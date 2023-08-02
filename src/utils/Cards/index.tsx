@@ -54,7 +54,6 @@ const Index = () => {
               onClick={() => {
                 "Button Clicked";
               }}
-              Icon={<img src={Eye} alt="Eye" />}
             />
             <div className="flex gap-2 items-center">
               {/* eye */}
