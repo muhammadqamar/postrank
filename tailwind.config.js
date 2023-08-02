@@ -20,6 +20,7 @@ const colors = {
   black: "#000",
   white: "#fff",
   error: {
+    300: "#AB3B2A",
     400: "#E57373",
     500: "#F44336",
     600: "#D32F2F",
@@ -28,7 +29,7 @@ const colors = {
 
   gray: {
     100: "#F9F8F9",
-    200: "#E0DFE1",
+    200: "#D5D5D5",
     300: "#AFAEB2",
     400: "#7F7D83",
     500: "#4E4D51",

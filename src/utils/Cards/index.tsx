@@ -1,6 +1,6 @@
 import React from "react";
 
-import Button from "../button/index";
+import Button from "../Button/index";
 import BackgroundImage from "../../assets/images/png/image1.png";
 import Dot from "../../assets/images/png/Dot.png";
 import Trophy from "../../assets/images/Icons/trophy.svg";
@@ -54,7 +54,7 @@ const Index = () => {
               onClick={() => {
                 "Button Clicked";
               }}
-              Icon={<img src={Eye} alt="Eye" />}
+              type={undefined}
             />
             <div className="flex gap-2 items-center">
               {/* eye */}

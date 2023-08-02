@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik } from "formik";
 import InputField from "../../../utils/InputField/index";
 import Button from "../../../utils/Button/index";
@@ -15,10 +15,19 @@ interface FormErrors {
 }
 
 const LoginForm = () => {
+  const [password, setPassword] = useState("");
+
+  const handlePasswordChange = (e: {
+    target: { value: React.SetStateAction<string> };
+  }) => {
+    setPassword(e.target.value);
+  };
+
+  const maskPassword = password.replace(/./g, "*");
   return (
     <div className="bg-white h-screen flex flex-col justify-between items-center pt-[132px] pb-16">
       <div className="w-80">
-        <h6 className="h6 font-normal mb-[42px]">Login to your account</h6>
+        <h6 className="h6 font-normal mb-[42px]">Create an account</h6>
         <Formik
           initialValues={{ email: "", password: "" }}
           validate={(values: FormValues) => {
@@ -67,39 +76,30 @@ const LoginForm = () => {
                 label="Password"
                 type="password"
                 name="password"
-                onChange={handleChange}
+                onChange={handlePasswordChange}
                 onBlur={handleBlur}
-                value={values.password}
+                value={maskPassword}
                 error={errors?.password}
                 touch={touched.password}
                 icon={EyeIcon}
                 placeholder={""}
-                className={"mb-5"}
+                className={""}
               />
-              <div className="flex items-center justify-between mb-[42px]">
-                <label htmlFor="rememberMe" className="flex items-center">
-                  <input
-                    type="checkbox"
-                    name="rememberMe"
-                    className="mr-2 leading-tight cursor-pointer"
-                  />
-                  <span className="p-medium">Remember me</span>
-                </label>
-                <a href="#" className="text-blue-500 p-small">
-                  Reset Password
-                </a>
-              </div>
-              <Button
-                text="Login"
-                onClick={() => handleSubmit()}
-                className="w-full bg-blue-500 text-white flex justify-center mb-4"
-                type={undefined}
-              />
+              <p className="p-small text-gray-900 mb-5">
+                Password must be at least 8 characters and must contain at least
+                1 capital letter and 1 digit.
+              </p>
               <Button
                 text="Continue with Google"
                 onClick={() => handleSubmit()}
-                className="w-full p-large font-medium bg-white text-gray-900 flex gap-x-[40.4px] border-[2px] border-solid rounded-full"
+                className="w-full mb-4 p-large font-medium bg-white text-gray-900 flex gap-x-[40.4px] border-[2px] border-solid rounded-full"
                 icon={<img src={Google} alt="Google Icon" />}
+                type={undefined}
+              />
+              <Button
+                text="Continue with email"
+                onClick={() => handleSubmit()}
+                className="w-full bg-blue-500 text-white flex justify-center mb-4"
                 type={undefined}
               />
             </form>
@@ -107,9 +107,9 @@ const LoginForm = () => {
         </Formik>
       </div>
       <div className="flex gap-2">
-        <p className="p-small text-gray-900">Don’t have an account?</p>
+        <p className="p-small text-gray-900">Already a member?</p>
         <a className="p-small font-medium text-blue-500" href="#">
-          Create now
+          Login now
         </a>
       </div>
     </div>
