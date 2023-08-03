@@ -23,7 +23,7 @@ const Index = () => {
       <div className="rounded-[20px] max-w-sm overflow-hidden">
         <div className="flex justify-end p-3" style={bgImgStyle}>
           <div className="flex gap-2">
-            <div>
+            <div className="bg-white rounded-full p-[7px] h-fit">
               <TrophyIcon />
             </div>
             <div className="flex items-center gap-1 px-2 py-[7px] bg-white rounded-2xl h-8 cursor-pointer">
