@@ -11,6 +11,7 @@ const Index = () => {
         <p className="p-medium">
           Now you can go to your dashboard and start exploring!
         </p>
+        {/* <Button/> */}
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import { Formik } from "formik";
 import InputField from "../../../utils/InputField";
 import Button from "../../../utils/Button/index";
 
-import { EyeIcon, GoogleIcon } from "../../../icons";
+import { EyeIcon, GoogleIcon, WarningIcon } from "../../../icons";
 
 interface FormValues {
   email: string;
@@ -58,7 +58,7 @@ const LoginForm = () => {
                 value={values.email}
                 error={errors?.email}
                 touch={touched.email}
-                icon={""}
+                icon={<WarningIcon />}
                 placeholder={""}
                 className={"mb-5"}
               />

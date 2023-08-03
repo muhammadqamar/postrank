@@ -49,12 +49,9 @@ const Index: React.FC<InputProps> = ({
             error ? "border-error-300" : ""
           } py-[10px] px-3 pr-9`}
         />
-        {error && touch && (
-          <div
-            className="absolute top-0 right-0 h-full flex items-center pr-3 pointer-events-none"
-            // Adjust the styles for the icon container as needed
-          >
-            {icon}
+        {error && (
+          <div className="absolute top-0 right-0 h-full flex items-center pr-3 pointer-events-none z-10">
+            <span>{icon}</span>
           </div>
         )}
       </div>
