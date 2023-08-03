@@ -1,10 +1,9 @@
 import React from "react";
 import { Formik } from "formik";
-import InputField from "../../../utils/InputField/index";
+import InputField from "../../../utils/InputField";
 import Button from "../../../utils/Button/index";
 
-import EyeIcon from "../../../assets/images/Icons/eye.svg";
-import Google from "../../../assets/images/Icons/google.svg";
+import { EyeIcon, GoogleIcon } from "../../../icons";
 
 interface FormValues {
   email: string;
@@ -28,7 +27,7 @@ const LoginForm = () => {
             } else if (
               !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
             ) {
-              errors.email = "Invalid email address";
+              errors.email = "Email doesn’t exist";
             }
             return errors;
           }}
@@ -72,7 +71,7 @@ const LoginForm = () => {
                 value={values.password}
                 error={errors?.password}
                 touch={touched.password}
-                icon={EyeIcon}
+                icon={<EyeIcon />}
                 placeholder={""}
                 className={"mb-5"}
               />
@@ -99,7 +98,7 @@ const LoginForm = () => {
                 text="Continue with Google"
                 onClick={() => handleSubmit()}
                 className="w-full p-large font-medium bg-white text-gray-900 flex gap-x-[40.4px] border-[2px] border-solid rounded-full"
-                icon={<img src={Google} alt="Google Icon" />}
+                icon={<GoogleIcon />}
                 type={undefined}
               />
             </form>
