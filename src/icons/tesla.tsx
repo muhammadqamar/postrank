@@ -8,7 +8,7 @@ export const TeslaIcon = () => {
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
+      // xmlns:xlink="http://www.w3.org/1999/xlink"
     >
       <rect width="24" height="24" fill="url(#pattern0)" />
       <defs>

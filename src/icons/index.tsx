@@ -1,5 +1,5 @@
 import { EyeIcon } from "./eyeIcon";
-import { AddIcon } from "./add-icon";
+import { AddIcon } from "./addIcon";
 import { AddContactIcon } from "./addContact";
 import { AddPostIcon } from "./addPost";
 import { AppleIcon } from "./apple";
@@ -13,9 +13,9 @@ import { ExpandIcon } from "./expand";
 import { GoogleIcon } from "./google";
 import { GridIcon } from "./grid";
 import { IncreaseIcon } from "./increase";
-import { LoadingErrorIcon } from "./loadingErrorIcon";
+import { LoadingErrorIcon } from "./loadingError";
 import { LogoutIcon } from "./logout";
-import { MasterCardIcon } from "./masterCardIcon";
+import { MasterCardIcon } from "./masterCard";
 import { MinusIcon } from "./minus";
 import { NoResultIcon } from "./noResult";
 import { OpenNewIcon } from "./openNew";
@@ -28,7 +28,7 @@ import { TeslaIcon } from "./tesla";
 import { TrendingIcon } from "./trending";
 import { TrophyIcon } from "./trophy";
 import { WarningIcon } from "./warning";
-import { WhaleIcon } from "./whaleIcon";
+import { WhaleIcon } from "./whale";
 export {
   EyeIcon,
   AddIcon,
