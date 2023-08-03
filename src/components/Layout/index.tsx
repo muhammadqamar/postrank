@@ -65,7 +65,7 @@ const Index = () => {
           <input
             type="text"
             placeholder="Search..."
-            className="w-full py-[10px] pl-3 pr-9 bg-white rounded-full border-none outline-none h-auto p-medium text-gray_600 focus-visible:outline-1 focus-visible:outline focus-visible:outline-offset-1 focus-visible:outline-blue-500 "
+            className="search-input focused"
           />
           <div className="absolute top-[10px] right-3 cursor-pointer">
             <SearchIcon />
@@ -74,9 +74,9 @@ const Index = () => {
 
         <div className="">
           <Menu as="div" className="relative inline-block text-left">
-            <Menu.Button className="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-2 focus-visible:outline-1 focus-visible:outline focus-visible:outline-offset-1 focus-visible:outline-blue-500 ">
+            <Menu.Button className="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 ">
               <img
-                className="w-12 h-12 object-contain rounded-full "
+                className="w-12 h-12 object-contain rounded-full focused"
                 src={User}
                 alt="user photo"
               />

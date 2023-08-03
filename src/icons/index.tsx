@@ -30,7 +30,9 @@ import { TrophyIcon } from "./trophy";
 import { WarningIcon } from "./warning";
 import { Check } from "./check";
 import { WhaleIcon } from "./whale";
+import { CloseIcon } from "./close";
 export {
+  CloseIcon,
   Check,
   EyeIcon,
   AddIcon,
