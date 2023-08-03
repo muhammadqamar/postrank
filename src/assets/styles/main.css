@@ -57,3 +57,13 @@ body {
 .p-large {
   @apply text-[16px] leading-[24px] font-normal tracking-[-0.2px];
 }
+
+/* comman style */
+
+.focused {
+  @apply focus-visible:outline-1 focus-visible:outline focus-visible:outline-offset-1 focus-visible:outline-blue-500;
+}
+
+.search-input {
+  @apply w-full py-[10px] pl-3 pr-9 bg-white rounded-full border-none outline-none h-auto p-medium text-gray_600;
+}
