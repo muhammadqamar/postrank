@@ -1,5 +1,4 @@
 import React, { ChangeEventHandler, FocusEventHandler } from "react";
-import Warning from "../../assets/images/Icons/warning.svg";
 
 type InputProps = {
   label: string | undefined;
@@ -7,7 +6,7 @@ type InputProps = {
   name: string | undefined;
   placeholder: string | undefined;
   className: string | undefined;
-  icon: string | undefined;
+  icon: React.ReactNode;
   onChange: ChangeEventHandler<HTMLInputElement> | undefined;
   onBlur: FocusEventHandler<HTMLInputElement> | undefined;
   value: string | undefined;
@@ -46,23 +45,16 @@ const Index: React.FC<InputProps> = ({
           onChange={onChange}
           onBlur={onBlur}
           value={value}
-          className={`w-full p-medium !bg-white border border-solid border-gray-200 rounded-[7px] focus-visible:outline-1 focus-visible:outline focus-visible:outline-blue-500 ${
-            error ? "border-error-300" : "focus-visible:outline-blue-500"
+          className={`w-full p-medium !bg-white border border-solid border-gray-200 rounded-[7px] focus-visible:outline-1 focus-visible:outline ${
+            error ? "border-error-300" : ""
           } py-[10px] px-3 pr-9`}
-          style={{
-            backgroundImage: `url(${icon})`,
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "right 12px center",
-            backgroundSize: "20px 20px",
-            cursor: "pointer",
-          }}
         />
         {error && touch && (
           <div
             className="absolute top-0 right-0 h-full flex items-center pr-3 pointer-events-none"
             // Adjust the styles for the icon container as needed
           >
-            <img src={Warning} alt="Warning Icon" className="w-5 h-5" />
+            {icon}
           </div>
         )}
       </div>
