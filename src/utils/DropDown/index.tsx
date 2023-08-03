@@ -25,6 +25,10 @@ const Index = () => {
             <Menu.Item>
               <p className="dropdown-item border-none">My projects</p>
             </Menu.Item>
+
+            <Menu.Item>
+              <p className="dropdown-item border-none">My projects</p>
+            </Menu.Item>
             <Menu.Item>
               <div className="my-2 w-full " />
             </Menu.Item>
