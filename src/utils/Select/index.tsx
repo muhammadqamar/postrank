@@ -1,11 +1,10 @@
-import { Fragment, useState } from "react";
+import { useState } from "react";
 import { Listbox } from "@headlessui/react";
 
-import ExpandIcon from "../../assets/images/Icons/expand.svg";
-
-import AddIcon from "../../assets/images/Icons/add-icon.svg";
 import GridIcon from "../../assets/images/Icons/grid.svg";
 import CheckBlue from "../../assets/images/Icons/check-blue.svg";
+
+import { ExpandIcon } from "../../icons";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -19,11 +18,22 @@ interface arrayProps {
 type dropdownProps = {
   data: Array<arrayProps>;
   companiesDrop: boolean | undefined;
-  addIcon: boolean | undefined;
+  addIcon: React.ReactNode;
   addText: string;
+  leftIcon: React.ReactNode;
+  rightIcon: React.ReactNode;
+  leftText: string;
 };
 
-const Index = ({ data, companiesDrop, addIcon, addText }: dropdownProps) => {
+const Index = ({
+  data,
+  companiesDrop,
+  addIcon,
+  addText,
+  rightIcon,
+  leftIcon,
+  leftText,
+}: dropdownProps) => {
   const [selected, setSelected] = useState(data[1]);
   return (
     <div>
@@ -38,10 +48,27 @@ const Index = ({ data, companiesDrop, addIcon, addText }: dropdownProps) => {
           >
             {companiesDrop ? (
               <>
-                <div className="w-10 h-10 flex items-center  justify-center bg-blue-300 rounded-full ">
-                  <img src={GridIcon} alt="grid" />
+                {leftIcon && (
+                  <div className="w-10 h-10 flex items-center  justify-center bg-blue-300 rounded-full ">
+                    <img src={GridIcon} alt="grid" />
+                    {leftIcon}
+                  </div>
+                )}
+                <div className="flex items-center">
+                  {leftText && (
+                    <span className="block truncate p-large text-blue-700">
+                      {leftText}
+                    </span>
+                  )}
+                  <span
+                    className={`block truncate ${
+                      leftText ? "p-large text-blue-700" : "h4 text-black"
+                    }`}
+                  >
+                    {selected.name}
+                  </span>
                 </div>
-                <span className="block truncate h4">{selected.name}</span>
+                {rightIcon}
               </>
             ) : (
               <>
@@ -54,12 +81,8 @@ const Index = ({ data, companiesDrop, addIcon, addText }: dropdownProps) => {
                   <span className="ml-3 block truncate">{selected?.name}</span>
                 </span>
                 <span className="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
-                  <img
-                    src={ExpandIcon}
-                    alt="Expand Icon"
-                    className="w-auto h-auto"
-                  />
-                </span>{" "}
+                  <ExpandIcon />
+                </span>
               </>
             )}
           </Listbox.Button>
@@ -122,37 +145,35 @@ const Index = ({ data, companiesDrop, addIcon, addText }: dropdownProps) => {
                   )}
                 </Listbox.Option>
               ))}
-              {companiesDrop && (
-                <div className="w-full h-[1px] my-2 bg-gray-500" />
-              )}
-              <div
-                className={`text-black relative cursor-pointer select-none  ${
-                  companiesDrop
-                    ? "w-full py-[11px] px-[10px] "
-                    : "bg-white rounded-full w-fit  py-2 pl-2 pr-[10px] shadow-lgShadow "
-                }`}
-              >
-                <div
-                  className={`flex items-center ${
-                    companiesDrop ? "gap-[10px]" : "gap-2"
-                  }`}
-                >
-                  <img
-                    src={AddIcon}
-                    alt=""
-                    className="h-6 w-6 object-contain flex-shrink-0 rounded-full"
-                  />
-                  {addIcon}
-                  <span
-                    className={` block truncate p-medium ${
-                      companiesDrop ? "text-black" : "text-blue-500"
+              {addText && (
+                <>
+                  {addText && companiesDrop ? (
+                    <div className="w-full h-[1px] my-2 bg-gray-500" />
+                  ) : null}
+                  <div
+                    className={`text-black relative cursor-pointer select-none  ${
+                      companiesDrop
+                        ? "w-full py-[11px] px-[10px] "
+                        : "bg-white rounded-full w-fit  py-2 pl-2 pr-[10px] shadow-lgShadow "
                     }`}
                   >
-                    Add new project
-                    {addText}
-                  </span>
-                </div>
-              </div>
+                    <div
+                      className={`flex items-center ${
+                        companiesDrop ? "gap-[10px]" : "gap-2"
+                      }`}
+                    >
+                      {addIcon}
+                      <span
+                        className={` block truncate p-medium ${
+                          companiesDrop ? "text-black" : "text-blue-500"
+                        }`}
+                      >
+                        {addText}
+                      </span>
+                    </div>
+                  </div>
+                </>
+              )}
             </>
           </Listbox.Options>
         </div>

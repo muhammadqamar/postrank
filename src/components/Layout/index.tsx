@@ -12,6 +12,7 @@ import Whale from "../../assets/images/dropdownIcon/WhaleINC.svg";
 import Tesla from "../../assets/images/dropdownIcon/Tesla.svg";
 import Apple from "../../assets/images/dropdownIcon/Apple.svg";
 import MasterCard from "../../assets/images/dropdownIcon/Mastercard.svg";
+import { AddIcon } from "../../icons";
 
 const companies = [
   {
@@ -50,8 +51,11 @@ const Index = () => {
           <Select
             data={companies}
             companiesDrop={false}
-            addIcon={undefined}
-            addText={""}
+            addIcon={<AddIcon />}
+            addText={"Add new folder"}
+            leftIcon={undefined}
+            rightIcon={undefined}
+            leftText={""}
           />
         </div>
       </div>
