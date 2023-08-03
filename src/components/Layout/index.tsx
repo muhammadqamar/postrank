@@ -3,10 +3,12 @@ import { useState } from "react";
 import Select from "../../utils/Select";
 
 // icons
-import SearchIcon from "../../assets/images/Icons/search.svg";
-import SettingIcon from "../../assets/images/Icons/settings.svg";
-import ProjectIcon from "../../assets/images/Icons/Category.svg";
-import LogoutIcon from "../../assets/images/Icons/Logout.svg";
+import {
+  SearchIcon,
+  SettingsIcon,
+  CategoryIcon,
+  LogoutIcon,
+} from "../../icons";
 import CitizenRemote from "../../assets/images/dropdownIcon/Citizen-Remote.svg";
 import Whale from "../../assets/images/dropdownIcon/WhaleINC.svg";
 import Tesla from "../../assets/images/dropdownIcon/Tesla.svg";
@@ -58,7 +60,7 @@ const Index = () => {
             placeholder="Search..."
             className="w-[228px] py-[10px] pl-3 pr-9 bg-white rounded-full  border-none  h-auto p-medium text-gray_600 focus-visible:outline-1 focus-visible:outline focus-visible:outline-blue-500 "
             style={{
-              backgroundImage: `url(${SearchIcon})`,
+              backgroundImage: `url(${(<SearchIcon />)})`,
               backgroundRepeat: "no-repeat",
               backgroundPosition: "right 12px center",
               backgroundSize: "20px 20px",
@@ -86,20 +88,20 @@ const Index = () => {
               <ul className="py-2" aria-labelledby="dropdownUserAvatarButton">
                 <li>
                   <a href="#" className="dropdown-item">
-                    <img src={SettingIcon} alt="setting" />
+                    <SettingsIcon />
                     Settings
                   </a>
                 </li>
                 <li>
                   <a href="#" className="dropdown-item">
-                    <img src={ProjectIcon} alt="setting" />
+                    <CategoryIcon />
                     My projects
                   </a>
                 </li>
               </ul>
               <div className="py-2">
                 <a href="#" className="dropdown-item">
-                  <img src={LogoutIcon} alt="setting" />
+                  <LogoutIcon />
                   Logout
                 </a>
               </div>

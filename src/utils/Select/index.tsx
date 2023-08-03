@@ -1,9 +1,7 @@
 import { Fragment, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 
-import ExpandIcon from "../../assets/images/Icons/expand.svg";
-
-import AddIcon from "../../assets/images/Icons/add-icon.svg";
+import { ExpandIcon, AddIcon } from "../../icons";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -36,11 +34,7 @@ const Index = ({ data }: dropdownProps) => {
                   <span className="ml-3 block truncate">{selected?.name}</span>
                 </span>
                 <span className="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
-                  <img
-                    src={ExpandIcon}
-                    alt="Expand Icon"
-                    className="w-auto h-auto"
-                  />
+                  <ExpandIcon />
                 </span>
               </Listbox.Button>
 
@@ -93,11 +87,7 @@ const Index = ({ data }: dropdownProps) => {
                       className="text-black relative w-fit cursor-default select-none  bg-white rounded-full  py-2 pl-2 pr-[10px] shadow-lgShadow "
                     >
                       <div className="flex items-center">
-                        <img
-                          src={AddIcon}
-                          alt=""
-                          className="h-6 w-6 object-contain flex-shrink-0 rounded-full"
-                        />
+                        <AddIcon />
                         <span className="ml-3 block truncate p-medium text-blue-500">
                           Add new project
                         </span>

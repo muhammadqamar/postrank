@@ -3,11 +3,13 @@ import React from "react";
 import Button from "../Button/index";
 import BackgroundImage from "../../assets/images/png/image1.png";
 import Dot from "../../assets/images/png/Dot.png";
-import Trophy from "../../assets/images/Icons/trophy.svg";
-import Increase from "../../assets/images/Icons/Increase.svg";
-import Calendar from "../../assets/images/Icons/calendar.svg";
-import Eye from "../../assets/images/Icons/eye.svg";
-import Contact from "../../assets/images/Icons/contact.svg";
+import {
+  TrophyIcon,
+  IncreaseIcon,
+  CalendarIcon,
+  EyeIcon,
+  ContactIcon,
+} from "../../icons";
 
 const Index = () => {
   const bgImgStyle = {
@@ -22,17 +24,13 @@ const Index = () => {
         <div className="flex justify-end p-3" style={bgImgStyle}>
           <div className="flex gap-2">
             <div>
-              <img
-                src={Trophy}
-                alt="Trophy icon!"
-                className="p-[7px] bg-white rounded-[50%] cursor-pointer"
-              />
+              <TrophyIcon />
             </div>
             <div className="flex items-center gap-1 px-2 py-[7px] bg-white rounded-2xl h-8 cursor-pointer">
               <span className="flex">
                 <p className="text-gray-600">#</p>1
               </span>
-              <img src={Increase} alt="Increase icon" />
+              <IncreaseIcon />
             </div>
           </div>
         </div>
@@ -42,7 +40,7 @@ const Index = () => {
             66 Digital Nomad Visa Countries in 2023
           </h6>
           <div className="flex items-center gap-1 md:mb-14 xsm:mb-12">
-            <img src={Calendar} alt="Calendar icon" />
+            <CalendarIcon />
             <p className="text-gray-700 text-sm">12 May, 2023</p>
           </div>
           <div className="flex justify-between">
@@ -59,13 +57,13 @@ const Index = () => {
             <div className="flex gap-2 items-center">
               {/* eye */}
               <div className="flex gap-1 items-center">
-                <img src={Eye} alt="Eye icon" />
+                <EyeIcon />
                 <p className="text-sm">2,168</p>
               </div>
               <img src={Dot} alt="Dot Image!" />
               {/* Contact */}
               <div className="flex gap-1 items-center">
-                <img src={Contact} alt="Contact icon" />
+                <ContactIcon />
                 <p className="text-sm">1,352</p>
               </div>
             </div>
