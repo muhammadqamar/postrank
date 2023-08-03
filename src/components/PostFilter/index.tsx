@@ -1,7 +1,8 @@
 import React from "react";
 
 import Select from "../../utils/Select";
-import { AddIcon } from "../../icons";
+import Dropdown from "../../utils/DropDown";
+import { AddIcon, CalendarIcon, GridIcon, SortIcon } from "../../icons";
 
 const postData = [
   {
@@ -24,6 +25,39 @@ const postData = [
   },
 ];
 
+const sortData = [
+  {
+    name: "Ranking",
+  },
+  {
+    name: "Date",
+  },
+  {
+    name: "Views",
+  },
+  {
+    name: "Users",
+  },
+];
+
+const dateData = [
+  {
+    name: "Today",
+  },
+  {
+    name: "Yesterday",
+  },
+  {
+    name: "Last week",
+  },
+  {
+    name: "Last month",
+  },
+  {
+    name: "Last year",
+  },
+];
+
 const index = () => {
   return (
     <div className="w-full my-[42px] flex items-center justify-between">
@@ -31,19 +65,41 @@ const index = () => {
         <Select
           data={postData}
           companiesDrop={true}
-          addIcon={<AddIcon />}
+          addIcon={<AddIcon color={""} />}
           addText={"Add new folder"}
-          leftIcon={undefined}
+          leftIcon={<GridIcon />}
           rightIcon={undefined}
           leftText={""}
         />
       </div>
 
       <div className="flex items-center">
-        <div className="px-4 py-[10px]">Date: Today</div>
-        <div className="">Sort by: Ranking</div>
-        <div className=""></div>
-        EyeIcon
+        <div className="">
+          <Select
+            data={dateData}
+            companiesDrop={true}
+            addIcon={<CalendarIcon color="" />}
+            addText={"Custom date"}
+            leftIcon={""}
+            rightIcon={<CalendarIcon color="#274C9B" />}
+            leftText={"Date:"}
+          />
+        </div>
+        <div className="">
+          <Select
+            data={sortData}
+            companiesDrop={true}
+            addIcon={""}
+            addText={""}
+            leftIcon={""}
+            rightIcon={<SortIcon />}
+            leftText={"Sort by:"}
+          />
+        </div>
+
+        <div className="">
+          <Dropdown />
+        </div>
       </div>
     </div>
   );

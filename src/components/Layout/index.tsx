@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { Fragment } from "react";
+import { Menu, Transition } from "@headlessui/react";
 
 import Select from "../../utils/Select";
 
@@ -8,13 +9,15 @@ import {
   SettingsIcon,
   CategoryIcon,
   LogoutIcon,
+  AddIcon,
+  GridIcon,
 } from "../../icons";
 import CitizenRemote from "../../assets/images/dropdownIcon/Citizen-Remote.svg";
 import Whale from "../../assets/images/dropdownIcon/WhaleINC.svg";
 import Tesla from "../../assets/images/dropdownIcon/Tesla.svg";
 import Apple from "../../assets/images/dropdownIcon/Apple.svg";
 import MasterCard from "../../assets/images/dropdownIcon/Mastercard.svg";
-import { AddIcon } from "../../icons";
+import User from "../../assets/images/png/user.png";
 
 const companies = [
   {
@@ -40,11 +43,6 @@ const companies = [
 ];
 
 const Index = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-  const toggleDropdown = () => {
-    setIsDropdownOpen((prevState) => !prevState);
-  };
   return (
     <div className="max-w-[1280px] mx-auto px-10 py-4 flex items-center justify-between">
       <div className="flex items-center gap-[25px]">
@@ -53,9 +51,9 @@ const Index = () => {
           <Select
             data={companies}
             companiesDrop={false}
-            addIcon={<AddIcon />}
+            addIcon={<AddIcon color="#ffffff" />}
             addText={"Add new folder"}
-            leftIcon={undefined}
+            leftIcon={<GridIcon />}
             rightIcon={undefined}
             leftText={""}
           />
@@ -63,59 +61,61 @@ const Index = () => {
       </div>
 
       <div className="flex items-center gap-[25px]">
-        <div className=" ">
+        <div className="relative w-[228px] h-auto">
           <input
             type="text"
             placeholder="Search..."
-            className="w-[228px] py-[10px] pl-3 pr-9 bg-white rounded-full  border-none  h-auto p-medium text-gray_600 focus-visible:outline-1 focus-visible:outline focus-visible:outline-blue-500 "
-            style={{
-              backgroundImage: `url(${(<SearchIcon />)})`,
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "right 12px center",
-              backgroundSize: "20px 20px",
-            }}
+            className="w-full py-[10px] pl-3 pr-9 bg-white rounded-full border-none outline-none h-auto p-medium text-gray_600 focus-visible:outline-1 focus-visible:outline focus-visible:outline-offset-1 focus-visible:outline-blue-500 "
           />
+          <div className="absolute top-[10px] right-3 cursor-pointer">
+            <SearchIcon />
+          </div>
         </div>
 
-        <div className="relative">
-          <button
-            id="dropdownUserAvatarButton"
-            data-dropdown-toggle="dropdownAvatar"
-            className="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-2 focus:ring-blue-500 "
-            type="button"
-            onClick={toggleDropdown}
-          >
-            <span className="sr-only">Open user menu</span>
-            <img
-              className="w-12 h-12 rounded-full"
-              src="/docs/images/people/profile-picture-3.jpg"
-              alt="user photo"
-            />
-          </button>
-          {isDropdownOpen && (
-            <div className="dropdown-menu">
-              <ul className="py-2" aria-labelledby="dropdownUserAvatarButton">
-                <li>
-                  <a href="#" className="dropdown-item">
+        <div className="">
+          <Menu as="div" className="relative inline-block text-left">
+            <Menu.Button className="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-2 focus-visible:outline-1 focus-visible:outline focus-visible:outline-offset-1 focus-visible:outline-blue-500 ">
+              <img
+                className="w-12 h-12 object-contain rounded-full "
+                src={User}
+                alt="user photo"
+              />
+            </Menu.Button>
+
+            <Transition
+              as={Fragment}
+              enter="transition ease-out duration-100"
+              enterFrom="transform opacity-0 scale-95"
+              enterTo="transform opacity-100 scale-100"
+              leave="transition ease-in duration-75"
+              leaveFrom="transform opacity-100 scale-100"
+              leaveTo="transform opacity-0 scale-95"
+            >
+              <Menu.Items className="dropdown-menu">
+                <Menu.Item>
+                  <a href="#" className="dropdown-item border-none">
                     <SettingsIcon />
                     Settings
                   </a>
-                </li>
-                <li>
-                  <a href="#" className="dropdown-item">
+                </Menu.Item>
+                <Menu.Item>
+                  <a href="#" className="dropdown-item border-none">
                     <CategoryIcon />
                     My projects
                   </a>
-                </li>
-              </ul>
-              <div className="py-2">
-                <a href="#" className="dropdown-item">
-                  <LogoutIcon />
-                  Logout
-                </a>
-              </div>
-            </div>
-          )}
+                </Menu.Item>
+                <Menu.Item>
+                  <div className="my-2 w-full " />
+                </Menu.Item>
+                <Menu.Item>
+                  <a href="#" className="dropdown-item border-none">
+                    <LogoutIcon />
+                    Logout
+                  </a>
+                </Menu.Item>
+              </Menu.Items>
+            </Transition>
+          </Menu>
         </div>
       </div>
 

@@ -1,5 +1,5 @@
 import { EyeIcon } from "./eyeIcon";
-import { AddIcon } from "./add-icon";
+import { AddIcon } from "./addIcon";
 import { CalendarIcon } from "./calendar";
 import { CategoryIcon } from "./category";
 import { ContactIcon } from "./contact";
@@ -14,8 +14,10 @@ import { SortIcon } from "./sort";
 import { TagIcon } from "./tag";
 import { TrophyIcon } from "./trophy";
 import { WarningIcon } from "./warning";
+import { Check } from "./check";
 
 export {
+  Check,
   EyeIcon,
   AddIcon,
   CalendarIcon,

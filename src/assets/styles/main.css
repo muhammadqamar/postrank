@@ -24,7 +24,7 @@ body {
 
 /* dropdown style */
 .dropdown-menu {
-  @apply z-10 bg-white divide-y divide-gray-100 rounded-2xl  w-44  absolute top-14 right-0 overflow-hidden;
+  @apply z-10 bg-white divide-y divide-gray-100 rounded-2xl  w-44 py-2 absolute top-14 right-0 overflow-hidden;
 }
 .dropdown-item {
   @apply flex items-center  gap-[10px] px-[10px] py-[11px] hover:bg-gray-100 text-black text-[14px] leading-[18px] font-normal;

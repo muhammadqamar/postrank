@@ -1,10 +1,7 @@
 import { useState } from "react";
 import { Listbox } from "@headlessui/react";
 
-import GridIcon from "../../assets/images/Icons/grid.svg";
-import CheckBlue from "../../assets/images/Icons/check-blue.svg";
-
-import { ExpandIcon } from "../../icons";
+import { ExpandIcon, Check } from "../../icons";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -34,7 +31,7 @@ const Index = ({
   leftIcon,
   leftText,
 }: dropdownProps) => {
-  const [selected, setSelected] = useState(data[1]);
+  const [selected, setSelected] = useState(data[0]);
   return (
     <div>
       <Listbox value={selected} onChange={setSelected}>
@@ -42,7 +39,7 @@ const Index = ({
           <Listbox.Button
             className={
               companiesDrop
-                ? `flex items-center gap-2`
+                ? `flex items-center gap-2 py-[10px] px-4`
                 : `relative cursor-default w-[183px] h-10 bg-white rounded-full py-2  pl-2 pr-4 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 sm:text-sm sm:leading-6 `
             }
           >
@@ -50,11 +47,10 @@ const Index = ({
               <>
                 {leftIcon && (
                   <div className="w-10 h-10 flex items-center  justify-center bg-blue-300 rounded-full ">
-                    <img src={GridIcon} alt="grid" />
                     {leftIcon}
                   </div>
                 )}
-                <div className="flex items-center">
+                <div className="flex items-center gap-1">
                   {leftText && (
                     <span className="block truncate p-large text-blue-700">
                       {leftText}
@@ -116,11 +112,7 @@ const Index = ({
                         {companiesDrop ? (
                           selected ? (
                             <span className="">
-                              <img
-                                src={CheckBlue}
-                                alt="CheckBlue"
-                                className="w-auto h-auto"
-                              />
+                              <Check />
                             </span>
                           ) : (
                             <span className="w-[18px] h-[18px]" />
@@ -162,7 +154,15 @@ const Index = ({
                         companiesDrop ? "gap-[10px]" : "gap-2"
                       }`}
                     >
-                      {addIcon}
+                      <div
+                        className={
+                          !companiesDrop
+                            ? "w-6 h-6 rounded-full flex items-center justify-center bg-blue-500"
+                            : ""
+                        }
+                      >
+                        {addIcon}
+                      </div>
                       <span
                         className={` block truncate p-medium ${
                           companiesDrop ? "text-black" : "text-blue-500"

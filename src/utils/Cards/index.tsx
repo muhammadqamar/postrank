@@ -40,7 +40,7 @@ const Index = () => {
             66 Digital Nomad Visa Countries in 2023
           </h6>
           <div className="flex items-center gap-1 md:mb-14 xsm:mb-12">
-            <CalendarIcon />
+            <CalendarIcon color="" />
             <p className="text-gray-700 text-sm">12 May, 2023</p>
           </div>
           <div className="flex justify-between">
