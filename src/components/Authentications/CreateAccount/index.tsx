@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import { Formik } from "formik";
 import InputField from "../../../utils/InputField/index";
 import Button from "../../../utils/Button/index";
-
-import EyeIcon from "../../../assets/images/Icons/eye.svg";
-import Google from "../../../assets/images/Icons/google.svg";
+import { GoogleIcon, EyeIcon } from "../../../icons";
 
 interface FormValues {
   email: string;
@@ -81,7 +79,7 @@ const LoginForm = () => {
                 value={maskPassword}
                 error={errors?.password}
                 touch={touched.password}
-                icon={EyeIcon}
+                icon={<EyeIcon />}
                 placeholder={""}
                 className={""}
               />
@@ -93,7 +91,7 @@ const LoginForm = () => {
                 text="Continue with Google"
                 onClick={() => handleSubmit()}
                 className="w-full mb-4 p-large font-medium bg-white text-gray-900 flex gap-x-[40.4px] border-[2px] border-solid rounded-full"
-                icon={<img src={Google} alt="Google Icon" />}
+                icon={<GoogleIcon />}
                 type={undefined}
               />
               <Button
