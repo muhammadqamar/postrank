@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Listbox } from "@headlessui/react";
 
-import GridIcon from "../../assets/images/Icons/grid.svg";
+import { GridIcon } from "../../icons";
 import CheckBlue from "../../assets/images/Icons/check-blue.svg";
 
 import { ExpandIcon } from "../../icons";
@@ -50,7 +50,7 @@ const Index = ({
               <>
                 {leftIcon && (
                   <div className="w-10 h-10 flex items-center  justify-center bg-blue-300 rounded-full ">
-                    <img src={GridIcon} alt="grid" />
+                    <GridIcon />
                     {leftIcon}
                   </div>
                 )}

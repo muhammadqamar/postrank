@@ -1,9 +1,12 @@
 import { EyeIcon } from "./eyeIcon";
 import { AddIcon } from "./add-icon";
 import { AddContactIcon } from "./addContact";
+import { AddPostIcon } from "./addPost";
+import { AppleIcon } from "./apple";
 import { BackIcon } from "./back";
 import { CalendarIcon } from "./calendar";
 import { CategoryIcon } from "./category";
+import { CitizenRemoteIcon } from "./citizenRemote";
 import { ContactIcon } from "./contact";
 import { DecreaseIcon } from "./decrease";
 import { ExpandIcon } from "./expand";
@@ -12,6 +15,7 @@ import { GridIcon } from "./grid";
 import { IncreaseIcon } from "./increase";
 import { LoadingErrorIcon } from "./loadingErrorIcon";
 import { LogoutIcon } from "./logout";
+import { MasterCardIcon } from "./masterCardIcon";
 import { MinusIcon } from "./minus";
 import { NoResultIcon } from "./noResult";
 import { OpenNewIcon } from "./openNew";
@@ -20,17 +24,21 @@ import { SearchIcon } from "./search";
 import { SettingsIcon } from "./settings";
 import { SortIcon } from "./sort";
 import { TagIcon } from "./tag";
+import { TeslaIcon } from "./tesla";
 import { TrendingIcon } from "./trending";
 import { TrophyIcon } from "./trophy";
 import { WarningIcon } from "./warning";
-
+import { WhaleIcon } from "./whaleIcon";
 export {
   EyeIcon,
   AddIcon,
   AddContactIcon,
+  AddPostIcon,
+  AppleIcon,
   BackIcon,
   CalendarIcon,
   CategoryIcon,
+  CitizenRemoteIcon,
   ContactIcon,
   DecreaseIcon,
   ExpandIcon,
@@ -39,6 +47,7 @@ export {
   IncreaseIcon,
   LoadingErrorIcon,
   LogoutIcon,
+  MasterCardIcon,
   MinusIcon,
   NoResultIcon,
   OpenNewIcon,
@@ -47,7 +56,9 @@ export {
   SettingsIcon,
   SortIcon,
   TagIcon,
+  TeslaIcon,
   TrendingIcon,
   TrophyIcon,
   WarningIcon,
+  WhaleIcon,
 };
