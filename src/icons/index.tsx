@@ -19,6 +19,7 @@ import { MasterCardIcon } from "./masterCard";
 import { MinusIcon } from "./minus";
 import { NoResultIcon } from "./noResult";
 import { OpenNewIcon } from "./openNew";
+import { PostLoadedIcon } from "./postLoaded";
 import { SadFaceIcon } from "./sadFace";
 import { SearchIcon } from "./search";
 import { SettingsIcon } from "./settings";
@@ -53,6 +54,7 @@ export {
   MinusIcon,
   NoResultIcon,
   OpenNewIcon,
+  PostLoadedIcon,
   SadFaceIcon,
   SearchIcon,
   SettingsIcon,
