@@ -47,7 +47,12 @@ const Index = () => {
       <div className="flex items-center gap-[25px]">
         <div className="">postrank.io</div>
         <div className="">
-          <Select data={companies} />
+          <Select
+            data={companies}
+            companiesDrop={false}
+            addIcon={undefined}
+            addText={""}
+          />
         </div>
       </div>
 

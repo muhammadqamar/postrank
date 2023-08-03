@@ -1,7 +1,7 @@
 import React from "react";
 import { Formik } from "formik";
-import InputField from "../../../utils/InputField/index";
-import Button from "../../../utils/Button/index";
+import InputField from "../../../utils/InputField";
+import Button from "../../../utils/Button";
 
 interface FormValues {
   email: string;
