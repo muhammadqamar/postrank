@@ -6,11 +6,7 @@ import Layout from "../components/Layout";
 import Login from "../components/Authentications/Login";
 import ResetPassword from "../components/Authentications/ResetPassword/index";
 import CreateAccount from "../components/Authentications/CreateAccount/index";
-import ConfirmPassword from "../components/Authentications/ConfirmPassword";
-import PersonalInformation from "../components/Authentications/PersonalInformation";
-import CreateNewProject from "../components/Authentications/CreateNewProject";
-import ConnectProject from "../components/Authentications/ConnectProject";
-import Success from "../components/Authentications/Success";
+import PostDetails from "../components/Authentications/PostDetails";
 
 const AppRouter = () => {
   return (
@@ -18,14 +14,10 @@ const AppRouter = () => {
       <Layout />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Login" element={<Login />} />
-        <Route path="/ResetPassword" element={<ResetPassword />} />
-        <Route path="/CreateAccount" element={<CreateAccount />} />
-        <Route path="/ConfirmPassword" element={<ConfirmPassword />} />
-        <Route path="/PersonalInformation" element={<PersonalInformation />} />
-        <Route path="/CreateNewProject" element={<CreateNewProject />} />
-        <Route path="/ConnectProject" element={<ConnectProject />} />
-        <Route path="/Success" element={<Success />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/create-account" element={<CreateAccount />} />
+        <Route path="/post-details" element={<PostDetails />} />
       </Routes>
     </div>
   );

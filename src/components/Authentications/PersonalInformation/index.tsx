@@ -4,12 +4,18 @@ import InputField from "../../../utils/InputField";
 import Button from "../../../utils/Button/index";
 
 import User from "../../../assets/images/png/user.png";
+import { TextTag } from "../../../utils/Typography";
 
 const LoginForm = () => {
   return (
     <div className="bg-white h-screen flex flex-col justify-between items-center pt-[132px] pb-16">
       <div className="w-80">
-        <h6 className="h6 font-normal mb-[42px]">Login to your account</h6>
+        <TextTag
+          as="h6"
+          text={"Login to your account"}
+          className={"h6 font-normal mb-[42px]"}
+          color={""}
+        />
         <Formik
           initialValues={{
             firstName: "",
@@ -61,7 +67,12 @@ const LoginForm = () => {
               />
               <div className="flex justify-between items-center mb-[42px]">
                 <div className="flex items-center gap-[22px]">
-                  <p className="p-small text-gray-700">Avatar</p>
+                  <TextTag
+                    as="p"
+                    text={"Avatar"}
+                    className={"p-small"}
+                    color={"text-gray-700"}
+                  />
                   <img
                     src={User}
                     alt="User's Avatar!"
