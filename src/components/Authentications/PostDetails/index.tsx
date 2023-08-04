@@ -1,8 +1,8 @@
 import React from "react";
 
 import PostFilter from "../../../components/PostFilter";
-import PostError from "../../../utils/PostError";
-import Trading from "../../../utils/TradingError";
+import PostError from "../../../utils/Post";
+import Trading from "../../../utils/Trading";
 
 const Index = () => {
   return (
@@ -14,13 +14,14 @@ const Index = () => {
           className={""}
           trendNumbers={"1,352"}
           trendMarkup={"12.5%"}
-          // color={""}
+          trendLabelColor={"text-blue-200"}
         />
         <Trading
           trendLabel={"New users"}
           className={""}
           trendNumbers={"618"}
           trendMarkup={"12.5%"}
+          trendLabelColor={"text-white"}
         />
       </div>
       <div className="p-8">

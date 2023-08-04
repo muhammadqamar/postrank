@@ -5,15 +5,17 @@ import { TextTag } from "../Typography";
 interface IndexProps {
   className: string;
   trendLabel: string;
-  // trendLabelColor: string;
+  trendLabelColor: string;
+  trendNumbersColor: string;
   trendNumbers: string;
   trendMarkup: string;
 }
 const Index: React.FC<IndexProps> = ({
   className,
   trendLabel,
-  // trendLabelColor,
+  trendLabelColor,
   trendNumbers,
+  trendNumbersColor,
   trendMarkup,
 }) => {
   return (
@@ -25,7 +27,7 @@ const Index: React.FC<IndexProps> = ({
           as="p"
           text={trendLabel}
           className={"p-small"}
-          color={"text-blue-200"}
+          color={trendLabelColor}
         />
       </div>
       <div className="flex gap-4 items-center">
@@ -33,7 +35,7 @@ const Index: React.FC<IndexProps> = ({
           as="h4"
           text={trendNumbers}
           className={"h4 font-normal"}
-          color={"text-white"}
+          color={trendNumbersColor}
         />
         <div className="flex gap-1">
           <IncreaseIcon />
