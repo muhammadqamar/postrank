@@ -9,6 +9,7 @@ interface IndexProps {
   trendNumbersColor: string;
   trendNumbers: string;
   trendMarkup: string;
+  trendMarkupColor: string;
 }
 const Index: React.FC<IndexProps> = ({
   className,
@@ -17,6 +18,7 @@ const Index: React.FC<IndexProps> = ({
   trendNumbers,
   trendNumbersColor,
   trendMarkup,
+  trendMarkupColor,
 }) => {
   return (
     <div
@@ -34,7 +36,7 @@ const Index: React.FC<IndexProps> = ({
         <TextTag
           as="h4"
           text={trendNumbers}
-          className={"h4 font-normal"}
+          className={"h4 !font-bold"}
           color={trendNumbersColor}
         />
         <div className="flex gap-1">
@@ -43,7 +45,7 @@ const Index: React.FC<IndexProps> = ({
             as="p"
             text={trendMarkup}
             className={"p-small"}
-            color={"text-blue-200"}
+            color={trendMarkupColor}
           />
         </div>
       </div>

@@ -3,12 +3,18 @@ import { TextTag } from "../Typography";
 import { CloseIcon } from "../../icons";
 
 interface IndexProps {
+  listColor: string;
   className: string;
   onClick: MouseEventHandler<HTMLButtonElement>;
   postText: string;
 }
 
-const Index: React.FC<IndexProps> = ({ postText, onClick, className }) => {
+const Index: React.FC<IndexProps> = ({
+  listColor,
+  postText,
+  onClick,
+  className,
+}) => {
   return (
     <div
       className={`flex justify-between items-center p-4 bg-white rounded-[20px] ${className}`}
@@ -18,7 +24,7 @@ const Index: React.FC<IndexProps> = ({ postText, onClick, className }) => {
           as="span"
           text={""}
           className={"w-5 h-5 rounded-full"}
-          color={"bg-blue-500"}
+          color={listColor}
         />
         <TextTag text={postText} className={"h6"} color={""} />
       </div>
