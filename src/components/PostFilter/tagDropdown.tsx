@@ -1,7 +1,9 @@
 import { Menu, Transition } from "@headlessui/react";
 import { ChangeEventHandler, Fragment, MouseEventHandler } from "react";
-import { SearchIcon, TagIcon, AddContactIcon } from "../../icons";
+import { TagIcon, AddContactIcon } from "../../icons";
 import Button from "../../utils/Button";
+import { TextTag } from "../../utils/Typography";
+import SearchField from "../../utils/SearchField";
 
 type DropdownProps = {
   onclick: MouseEventHandler<HTMLButtonElement>;
@@ -15,7 +17,12 @@ const TagDrapdown = ({ onclick, onClear, onChange }: DropdownProps) => {
       <Menu as="div" className="relative inline-block text-left">
         <div>
           <Menu.Button className="w-fit py-[10px] px-4 flex items-center gap-2">
-            <p className="p-large text-blue-700">Tags</p>
+            <TextTag
+              as="p"
+              text="Tags"
+              color="text-blue-700"
+              className="p-large"
+            />
             <TagIcon />
           </Menu.Button>
         </div>
@@ -31,7 +38,12 @@ const TagDrapdown = ({ onclick, onClear, onChange }: DropdownProps) => {
           <Menu.Items className="dropdown-menu !w-[263px]">
             <div className="border-none px-4 w-full">
               <div className="w-full flex items-center justify-between py-[6px] mb-3">
-                <h6 className="p-larg !font-medium text-black">My tags</h6>
+                <TextTag
+                  as="h6"
+                  text="My tags"
+                  color="text-black"
+                  className="p-larg !font-medium"
+                />
                 <Button
                   text="Clear all"
                   type={"button"}
@@ -39,21 +51,23 @@ const TagDrapdown = ({ onclick, onClear, onChange }: DropdownProps) => {
                   className="!p-0 bg-white"
                 />
               </div>
-              <div className="relative w-full h-auto mb-4">
-                <input
-                  type="text"
-                  placeholder="Search tags"
+              <div className="mb-4">
+                <SearchField
+                  className="!border !border-solid !border-gray-300"
                   onChange={onChange}
-                  className="search-input focused  !border !border-solid !border-gray-300"
+                  placeholder={"Search..."}
+                  width={""}
                 />
-                <div className="absolute top-[10px] right-3 cursor-pointer">
-                  <SearchIcon />
-                </div>
               </div>
             </div>
 
             <Menu.Item>
-              <p className="dropdown-item border-none !pl-7">My projects</p>
+              <TextTag
+                as="p"
+                text="My projects"
+                color="text-black"
+                className="dropdown-item border-none !pl-7"
+              />
             </Menu.Item>
             <Menu.Item>
               <div className="my-2 w-full " />

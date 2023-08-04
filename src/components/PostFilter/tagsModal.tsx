@@ -1,7 +1,10 @@
-import React, { Fragment } from "react";
+import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import Button from "../../utils/Button";
-import { CloseIcon, SearchIcon } from "../../icons";
+import { CloseIcon } from "../../icons";
+import { TextTag } from "../../utils/Typography";
+import SearchField from "../../utils/SearchField";
+import DeleteModal from "../../utils/DeleteModal";
 
 type modalProps = {
   isOpen: boolean;
@@ -9,15 +12,11 @@ type modalProps = {
 };
 
 const TagsModal = ({ isOpen, setIsOpen }: modalProps) => {
+  const [isOpenDelete, setIsOpenDelete] = useState(false);
   return (
     <div>
-      {" "}
       <Transition appear show={isOpen} as={Fragment}>
-        <Dialog
-          as="div"
-          className="relative z-10"
-          onClose={() => setIsOpen(false)}
-        >
+        <Dialog as="div" className="relative z-10" onClose={() => {}}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -54,7 +53,13 @@ const TagsModal = ({ isOpen, setIsOpen }: modalProps) => {
                         className="!p-[10px] bg-blue-100"
                         icon={<CloseIcon color="#274C9B" />}
                       />
-                      <h5 className="h5 text-black">Manage tags</h5>
+
+                      <TextTag
+                        as="h5"
+                        text="Manage tags"
+                        color="text-black"
+                        className="h5"
+                      />
                     </div>
 
                     <Button
@@ -65,24 +70,27 @@ const TagsModal = ({ isOpen, setIsOpen }: modalProps) => {
                     />
                   </Dialog.Title>
                   <div className="my-8">
-                    <div className="relative w-full h-auto">
-                      <input
-                        type="text"
-                        placeholder="Search..."
-                        className="search-input focused "
-                      />
-                      <div className="absolute top-[10px] right-3 cursor-pointer">
-                        <SearchIcon />
-                      </div>
-                    </div>
+                    <SearchField
+                      className=""
+                      onChange={() => {}}
+                      placeholder={"Search..."}
+                      width={""}
+                    />
                   </div>
                   <div className="w-full h-auto rounded-2xl bg-white p-4 flex flex-col gap-4 items-start">
                     <div className="w-full flex items-center justify-between gap-4">
-                      <p className="p-large">Digital Nomad</p>
+                      <TextTag
+                        as="p"
+                        text="Digital Nomad"
+                        color="text-black"
+                        className="p-large"
+                      />
                       <Button
                         text=""
                         type={"button"}
-                        onClick={() => {}}
+                        onClick={() => {
+                          setIsOpenDelete(true);
+                        }}
                         className="!p-[10px] bg-white"
                         icon={<CloseIcon color="#274C9B" />}
                       />
@@ -96,6 +104,13 @@ const TagsModal = ({ isOpen, setIsOpen }: modalProps) => {
           </div>
         </Dialog>
       </Transition>
+
+      <DeleteModal
+        isOpenDelete={isOpenDelete}
+        setIsOpenDelete={setIsOpenDelete}
+        onDelete={() => {}}
+        tagName={"tag named"}
+      />
     </div>
   );
 };

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Listbox } from "@headlessui/react";
 
 import { ExpandIcon, Check } from "../../icons";
+import { TextTag } from "../Typography";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -52,33 +53,42 @@ const Index = ({
                 )}
                 <div className="flex items-center gap-1">
                   {leftText && (
-                    <span className="block truncate p-large text-blue-700">
-                      {leftText}
-                    </span>
+                    <TextTag
+                      as="span"
+                      text={leftText}
+                      color="text-blue-700"
+                      className="block truncate p-large"
+                    />
                   )}
-                  <span
+                  <TextTag
+                    as="h4"
+                    text={selected.name}
+                    color={leftText ? "text-blue-700" : "text-black"}
                     className={`block truncate ${
-                      leftText ? "p-large text-blue-700" : "h4 text-black"
+                      leftText ? "p-large " : "h4 "
                     }`}
-                  >
-                    {selected.name}
-                  </span>
+                  />
                 </div>
                 {rightIcon}
               </>
             ) : (
               <>
-                <span className="flex items-center">
+                <div className="flex items-center">
                   <img
                     src={selected?.avatar}
                     alt=""
                     className="h-6 w-6 object-contain flex-shrink-0 rounded-full"
                   />
-                  <span className="ml-3 block truncate">{selected?.name}</span>
-                </span>
-                <span className="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
+                  <TextTag
+                    as="p"
+                    text={selected?.name}
+                    color="text-black"
+                    className="ml-3 block truncate p-medium"
+                  />
+                </div>
+                <div className="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
                   <ExpandIcon />
-                </span>
+                </div>
               </>
             )}
           </Listbox.Button>
@@ -111,11 +121,11 @@ const Index = ({
                       <div className="flex items-center">
                         {companiesDrop ? (
                           selected ? (
-                            <span className="">
+                            <div>
                               <Check />
-                            </span>
+                            </div>
                           ) : (
-                            <span className="w-[18px] h-[18px]" />
+                            <div className="w-[18px] h-[18px]" />
                           )
                         ) : (
                           <img
@@ -124,14 +134,16 @@ const Index = ({
                             className="h-6 w-6 object-contain flex-shrink-0 rounded-full"
                           />
                         )}
-                        <span
+
+                        <TextTag
+                          as="p"
+                          text={item.name}
+                          color=""
                           className={classNames(
                             selected ? "font-semibold" : "font-normal",
                             "ml-3 block truncate p-medium ",
                           )}
-                        >
-                          {item.name}
-                        </span>
+                        />
                       </div>
                     </>
                   )}
@@ -163,13 +175,12 @@ const Index = ({
                       >
                         {addIcon}
                       </div>
-                      <span
-                        className={` block truncate p-medium ${
-                          companiesDrop ? "text-black" : "text-blue-500"
-                        }`}
-                      >
-                        {addText}
-                      </span>
+                      <TextTag
+                        as="p"
+                        text={addText}
+                        color={companiesDrop ? "text-black" : "text-blue-500"}
+                        className={` block truncate p-medium `}
+                      />
                     </div>
                   </div>
                 </>
