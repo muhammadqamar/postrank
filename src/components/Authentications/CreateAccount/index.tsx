@@ -3,6 +3,7 @@ import { Formik } from "formik";
 import InputField from "../../../utils/InputField/index";
 import Button from "../../../utils/Button/index";
 import { GoogleIcon, EyeIcon } from "../../../icons";
+import { TextTag } from "../../../utils/Typography";
 
 interface FormValues {
   email: string;
@@ -25,7 +26,12 @@ const LoginForm = () => {
   return (
     <div className="bg-white h-screen flex flex-col justify-between items-center pt-[132px] pb-16">
       <div className="w-80">
-        <h6 className="h6 font-normal mb-[42px]">Create an account</h6>
+        <TextTag
+          as="h6"
+          text={"Create an account"}
+          className={"h6 font-normal mb-[42px]"}
+          color={""}
+        />
         <Formik
           initialValues={{ email: "", password: "" }}
           validate={(values: FormValues) => {
@@ -83,10 +89,14 @@ const LoginForm = () => {
                 placeholder={""}
                 className={""}
               />
-              <p className="p-small text-gray-900 mb-5">
-                Password must be at least 8 characters and must contain at least
-                1 capital letter and 1 digit.
-              </p>
+              <TextTag
+                as="p"
+                text={
+                  "Password must be at least 8 characters and must contain at least 1 capital letter and 1 digit."
+                }
+                className={"p-small mb-5"}
+                color={""}
+              />
               <Button
                 text="Continue with Google"
                 onClick={() => handleSubmit()}
@@ -105,7 +115,12 @@ const LoginForm = () => {
         </Formik>
       </div>
       <div className="flex gap-2">
-        <p className="p-small text-gray-900">Already a member?</p>
+        <TextTag
+          as="p"
+          text={"Already a member?"}
+          className={"p-small"}
+          color={""}
+        />
         <a className="p-small font-medium text-blue-500" href="#">
           Login now
         </a>

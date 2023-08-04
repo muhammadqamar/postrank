@@ -2,12 +2,18 @@ import React from "react";
 import { Formik } from "formik";
 import InputField from "../../../utils/InputField";
 import Button from "../../../utils/Button/index";
+import { TextTag } from "../../../utils/Typography";
 
 const LoginForm = () => {
   return (
     <div className="bg-white h-screen flex flex-col justify-between items-center pt-[132px] pb-16">
       <div className="w-80">
-        <h6 className="h6 font-normal mb-[42px]">Create a new project</h6>
+        <TextTag
+          as="h6"
+          text={"Create a new project"}
+          className={"h6 font-normal mb-[42px]"}
+          color={""}
+        />
         <Formik
           initialValues={{
             projectName: "",
@@ -44,7 +50,12 @@ const LoginForm = () => {
                 className={"mb-5"}
               />
               <div className="flex items-center justify-between mb-[42px]">
-                <p className="p-small text-gray-700">Logo</p>
+                <TextTag
+                  as="p"
+                  text={"Logo"}
+                  className={"p-small "}
+                  color={"text-gray-700"}
+                />
                 <Button
                   text="Upload"
                   onClick={() => handleSubmit()}

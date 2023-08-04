@@ -9,5 +9,5 @@ type textProps = {
 
 export const TextTag = ({ text, className, color, as = "h4" }: textProps) => {
   const Tag = as;
-  return <Tag className={`${className} text-[${color}] `}>{text}</Tag>;
+  return <Tag className={`${className} ${color} `}>{text}</Tag>;
 };

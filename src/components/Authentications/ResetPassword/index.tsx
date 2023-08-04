@@ -2,6 +2,7 @@ import React from "react";
 import { Formik } from "formik";
 import InputField from "../../../utils/InputField";
 import Button from "../../../utils/Button";
+import { TextTag } from "../../../utils/Typography";
 
 interface FormValues {
   email: string;
@@ -15,7 +16,12 @@ const LoginForm = () => {
   return (
     <div className="bg-white h-screen flex flex-col justify-between items-center pt-[132px] pb-16">
       <div className="w-80">
-        <h6 className="h6 font-normal mb-[42px]">Reset password</h6>
+        <TextTag
+          as="h6"
+          text={"Reset password"}
+          className={"h6 font-normal mb-[42px]"}
+          color={""}
+        />
         <Formik
           initialValues={{ email: "", password: "" }}
           validate={(values: FormValues) => {
@@ -71,8 +77,13 @@ const LoginForm = () => {
         </Formik>
       </div>
       <div className="flex gap-2">
-        <p className="p-small text-gray-900">Already a member?</p>
-        <a className="p-small font-medium text-blue-500" href="#">
+        <TextTag
+          as="p"
+          text={"Already a member?"}
+          className={"p-small font-medium "}
+          color={"text-blue-500"}
+        />
+        <a className="p-small font-medium " href="#">
           Login now!
         </a>
       </div>

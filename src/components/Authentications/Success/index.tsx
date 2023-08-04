@@ -1,6 +1,6 @@
 import React from "react";
 
-import NoResult from "../../../utils/NoResult";
+import NoResult from "../../../utils/Error";
 import { PostLoadedIcon } from "../../../icons";
 import Card from "../../../utils/Cards";
 
@@ -9,7 +9,7 @@ const Index = () => {
     console.log("Success");
   };
   return (
-    <div className="bg-white pt-16 px-10 flex flex-col gap-16">
+    <div className=" py-16 px-10 flex flex-col gap-16">
       <NoResult
         icon={<PostLoadedIcon />}
         heading="Your posts has been loaded!"

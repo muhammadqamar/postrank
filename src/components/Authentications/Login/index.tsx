@@ -4,6 +4,7 @@ import InputField from "../../../utils/InputField";
 import Button from "../../../utils/Button/index";
 
 import { EyeIcon, GoogleIcon, WarningIcon } from "../../../icons";
+import { TextTag } from "../../../utils/Typography";
 
 interface FormValues {
   email: string;
@@ -17,7 +18,12 @@ const LoginForm = () => {
   return (
     <div className="bg-white h-screen flex flex-col justify-between items-center pt-[132px] pb-16">
       <div className="w-80">
-        <h6 className="h6 font-normal mb-[42px]">Login to your account</h6>
+        <TextTag
+          as="h6"
+          text={"Login to your account"}
+          className={"h6 font-normal mb-[42px]"}
+          color={""}
+        />
         <Formik
           initialValues={{ email: "", password: "" }}
           validate={(values: FormValues) => {
@@ -82,7 +88,12 @@ const LoginForm = () => {
                     name="rememberMe"
                     className="mr-2 leading-tight cursor-pointer"
                   />
-                  <span className="p-medium">Remember me</span>
+                  <TextTag
+                    as="span"
+                    text={"Remember me"}
+                    className={"p-medium"}
+                    color={""}
+                  />
                 </label>
                 <a href="#" className="text-blue-500 p-small">
                   Reset Password
@@ -106,7 +117,12 @@ const LoginForm = () => {
         </Formik>
       </div>
       <div className="flex gap-2">
-        <p className="p-small text-gray-900">Don’t have an account?</p>
+        <TextTag
+          as="p"
+          text={"Don’t have an account?"}
+          className={"p-small"}
+          color={""}
+        />
         <a className="p-small font-medium text-blue-500" href="#">
           Create now
         </a>
