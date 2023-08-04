@@ -1,3 +1,3 @@
-import { Heading } from "./heading";
+import { TextTag } from "./text";
 
-export { Heading };
+export { TextTag };
