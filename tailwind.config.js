@@ -68,7 +68,7 @@ const colors = {
   white_200: "#F1F1F1",
   white_300: "#E8E8E8",
   purple_300: "#8B54FF",
-
+  gray_100: "#F8F8F8",
   gray_300: "#ABABAB",
   gray_400: "#464646",
   gray_500: "#E6E6E6",

@@ -2,10 +2,10 @@ import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 
 import Select from "../../utils/Select";
+import SearchField from "../../utils/SearchField";
 
 // icons
 import {
-  SearchIcon,
   SettingsIcon,
   CategoryIcon,
   LogoutIcon,
@@ -18,6 +18,7 @@ import Tesla from "../../assets/images/dropdownIcon/Tesla.svg";
 import Apple from "../../assets/images/dropdownIcon/Apple.svg";
 import MasterCard from "../../assets/images/dropdownIcon/Mastercard.svg";
 import User from "../../assets/images/png/user.png";
+import { TextTag } from "../../utils/Typography";
 
 const companies = [
   {
@@ -46,7 +47,12 @@ const Index = () => {
   return (
     <div className="max-w-[1280px] mx-auto px-10 py-4 flex items-center justify-between">
       <div className="flex items-center gap-[25px]">
-        <div className="">postrank.io</div>
+        <TextTag
+          as="h6"
+          text="postrank.io"
+          color="text-black"
+          className="p-medium !font-semibold"
+        />
         <div className="">
           <Select
             data={companies}
@@ -61,16 +67,12 @@ const Index = () => {
       </div>
 
       <div className="flex items-center gap-[25px]">
-        <div className="relative w-[228px] h-auto">
-          <input
-            type="text"
-            placeholder="Search..."
-            className="search-input focused"
-          />
-          <div className="absolute top-[10px] right-3 cursor-pointer">
-            <SearchIcon />
-          </div>
-        </div>
+        <SearchField
+          className=""
+          onChange={() => {}}
+          placeholder={"Search..."}
+          width={""}
+        />
 
         <div className="">
           <Menu as="div" className="relative inline-block text-left">
