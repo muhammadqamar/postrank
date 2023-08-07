@@ -62,6 +62,8 @@ const Index = () => {
             leftIcon={<GridIcon />}
             rightIcon={undefined}
             leftText={""}
+            onClick={() => {}}
+            isDateM={false}
           />
         </div>
       </div>
