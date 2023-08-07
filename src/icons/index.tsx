@@ -20,6 +20,8 @@ import { MinusIcon } from "./minus";
 import { NoResultIcon } from "./noResult";
 import { OpenNewIcon } from "./openNew";
 import { PostLoadedIcon } from "./postLoaded";
+import { RightArrowIcon } from "./rightArrow";
+import { DownArrowIcon } from "./downArrow";
 import { SadFaceIcon } from "./sadFace";
 import { SearchIcon } from "./search";
 import { SettingsIcon } from "./settings";
@@ -57,6 +59,8 @@ export {
   NoResultIcon,
   OpenNewIcon,
   PostLoadedIcon,
+  RightArrowIcon,
+  DownArrowIcon,
   SadFaceIcon,
   SearchIcon,
   SettingsIcon,
