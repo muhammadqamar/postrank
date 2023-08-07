@@ -46,7 +46,7 @@ const Index: React.FC<InputProps> = ({
           onBlur={onBlur}
           value={value}
           className={`w-full p-medium !bg-white border border-solid border-gray-200 rounded-[7px] focus-visible:outline-1 focus-visible:outline ${
-            error ? "border-error-300" : ""
+            error ? "!border-error-300" : ""
           } py-[10px] px-3 pr-9`}
         />
         {error && (
