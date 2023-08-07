@@ -61,7 +61,7 @@ const dateData = [
 
 const index = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const [isDateM, setIsDateM] = useState<boolean>(false);
   return (
     <>
       <div className="w-full my-[42px] flex items-center justify-between">
@@ -74,6 +74,8 @@ const index = () => {
             leftIcon={<GridIcon />}
             rightIcon={undefined}
             leftText={""}
+            onClick={() => {}}
+            isDateM={false}
           />
         </div>
 
@@ -87,6 +89,8 @@ const index = () => {
               leftIcon={""}
               rightIcon={<CalendarIcon color="#274C9B" />}
               leftText={"Date:"}
+              onClick={() => setIsDateM(true)}
+              isDateM={isDateM}
             />
           </div>
           <div className="">
@@ -98,6 +102,8 @@ const index = () => {
               leftIcon={""}
               rightIcon={<SortIcon />}
               leftText={"Sort by:"}
+              onClick={() => {}}
+              isDateM={false}
             />
           </div>
 

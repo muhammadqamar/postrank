@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { MouseEventHandler, useState } from "react";
 import { Listbox } from "@headlessui/react";
-
+import Datepicker from "react-tailwindcss-datepicker";
 import { ExpandIcon, Check } from "../../icons";
 import { TextTag } from "../Typography";
+import Button from "../Button";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -13,6 +14,11 @@ interface arrayProps {
   name?: string;
 }
 
+type DateValueType = {
+  startDate: Date | null;
+  endDate: Date | null;
+};
+
 type dropdownProps = {
   data: Array<arrayProps>;
   companiesDrop: boolean | undefined;
@@ -21,6 +27,8 @@ type dropdownProps = {
   leftIcon: React.ReactNode;
   rightIcon: React.ReactNode;
   leftText: string;
+  onClick: MouseEventHandler<HTMLButtonElement>;
+  isDateM: boolean;
 };
 
 const Index = ({
@@ -31,8 +39,25 @@ const Index = ({
   rightIcon,
   leftIcon,
   leftText,
+  onClick,
+  isDateM,
 }: dropdownProps) => {
   const [selected, setSelected] = useState(data[0]);
+
+  const [value, setValue] = useState<DateValueType>({
+    startDate: null,
+    endDate: null,
+  });
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleValueChange = (newValue: any) => {
+    const newValueAsDateValueType: DateValueType = {
+      startDate: newValue?.startDate || null,
+      endDate: newValue?.endDate || null,
+    };
+    setValue(newValueAsDateValueType);
+  };
+
   return (
     <div>
       <Listbox value={selected} onChange={setSelected}>
@@ -96,96 +121,140 @@ const Index = ({
           <Listbox.Options
             className={`absolute z-10  min-h-56  rounded-2xl ${
               companiesDrop
-                ? "bg-white mt-2 w-[222px] py-2 overflow-hidden shadow-mdShadow"
+                ? `bg-white mt-2 ${
+                    isDateM ? "w-[312px]" : "w-[222px]"
+                  } py-2 overflow-hidden shadow-mdShadow`
                 : "bg-[transparent] w-full mt-5 text-base flex flex-col gap-5"
             }`}
           >
-            <>
-              {data.map((item, index: number) => (
-                <Listbox.Option
-                  key={index}
-                  className={({ active }) =>
-                    classNames(
-                      active ? "text-black" : "text-black",
-                      `relative  cursor-pointer select-none   ${
-                        companiesDrop
-                          ? "w-full py-[11px] px-[10px] hover:text-white hover:bg-blue-500"
-                          : "w-fit bg-white rounded-full  py-2 pl-2 pr-[10px] shadow-lgShadow"
-                      }`,
-                    )
-                  }
-                  value={item}
-                >
-                  {({ selected }) => (
-                    <>
-                      <div className="flex items-center">
-                        {companiesDrop ? (
-                          selected ? (
-                            <div>
-                              <Check />
-                            </div>
-                          ) : (
-                            <div className="w-[18px] h-[18px]" />
-                          )
-                        ) : (
-                          <img
-                            src={item.avatar}
-                            alt=""
-                            className="h-6 w-6 object-contain flex-shrink-0 rounded-full"
-                          />
-                        )}
-
-                        <TextTag
-                          as="p"
-                          text={item.name}
-                          color=""
-                          className={classNames(
-                            selected ? "font-semibold" : "font-normal",
-                            "ml-3 block truncate p-medium ",
-                          )}
-                        />
-                      </div>
-                    </>
-                  )}
-                </Listbox.Option>
-              ))}
-              {addText && (
-                <>
-                  {addText && companiesDrop ? (
-                    <div className="w-full h-[1px] my-2 bg-gray-500" />
-                  ) : null}
-                  <div
-                    className={`text-black relative cursor-pointer select-none  ${
-                      companiesDrop
-                        ? "w-full py-[11px] px-[10px] "
-                        : "bg-white rounded-full w-fit  py-2 pl-2 pr-[10px] shadow-lgShadow "
-                    }`}
+            {isDateM ? (
+              <div className="w-full p-5 hover:text-white hover:bg-white">
+                <Datepicker
+                  useRange={false}
+                  asSingle={true}
+                  value={value}
+                  onChange={handleValueChange}
+                />
+                <div className="w-full h-[1px] my-4 bg-gray_500" />
+                <div className="w-full flex items-center justify-between">
+                  <TextTag
+                    as="p"
+                    text="Selected:"
+                    color="text-[#909090]"
+                    className=" block truncate p-medium"
+                  />
+                  <TextTag
+                    as="p"
+                    text={value?.startDate?.toString()}
+                    color="text-black"
+                    className="block truncate p-medium !font-medium"
+                  />
+                </div>
+                <div className="w-full h-[1px] my-4 bg-gray_500" />
+                <div className="w-full flex items-center justify-between">
+                  <Button
+                    text="Cancel"
+                    type="button"
+                    onClick={() => {}}
+                    className="!w-fit !py-[10px] !px-4 bg-gray_100 text-gray-700 flex items-center justify-center"
+                  />
+                  <Button
+                    text="Apply date"
+                    type="button"
+                    onClick={() => {}}
+                    className="!w-fit !py-[10px] !px-4 !bg-[#2F67DD] text-white flex items-center justify-center"
+                  />
+                </div>
+              </div>
+            ) : (
+              <>
+                {data.map((item, index: number) => (
+                  <Listbox.Option
+                    key={index}
+                    className={({ active }) =>
+                      classNames(
+                        active ? "text-black" : "text-black",
+                        `relative  cursor-pointer select-none   ${
+                          companiesDrop
+                            ? "w-full py-[11px] px-[10px] hover:text-white hover:bg-blue-500"
+                            : "w-fit bg-white rounded-full  py-2 pl-2 pr-[10px] shadow-lgShadow"
+                        }`,
+                      )
+                    }
+                    value={item}
                   >
-                    <div
-                      className={`flex items-center ${
-                        companiesDrop ? "gap-[10px]" : "gap-2"
+                    {({ selected }) => (
+                      <>
+                        <div className="flex items-center">
+                          {companiesDrop ? (
+                            selected ? (
+                              <div>
+                                <Check />
+                              </div>
+                            ) : (
+                              <div className="w-[18px] h-[18px]" />
+                            )
+                          ) : (
+                            <img
+                              src={item.avatar}
+                              alt=""
+                              className="h-6 w-6 object-contain flex-shrink-0 rounded-full"
+                            />
+                          )}
+
+                          <TextTag
+                            as="p"
+                            text={item.name}
+                            color=""
+                            className={classNames(
+                              selected ? "font-semibold" : "font-normal",
+                              "ml-3 block truncate p-medium ",
+                            )}
+                          />
+                        </div>
+                      </>
+                    )}
+                  </Listbox.Option>
+                ))}
+                {addText && (
+                  <>
+                    {addText && companiesDrop ? (
+                      <div className="w-full h-[1px] my-2 bg-gray_500" />
+                    ) : null}
+                    <button
+                      className={`text-black relative cursor-pointer select-none border-none outline-none ${
+                        companiesDrop
+                          ? "w-full py-[11px] px-[10px] "
+                          : "bg-white rounded-full w-fit  py-2 pl-2 pr-[10px] shadow-lgShadow "
                       }`}
+                      onClick={onClick}
                     >
                       <div
-                        className={
-                          !companiesDrop
-                            ? "w-6 h-6 rounded-full flex items-center justify-center bg-blue-500"
-                            : ""
-                        }
+                        className={`flex items-center ${
+                          companiesDrop ? "gap-[10px]" : "gap-2"
+                        }`}
                       >
-                        {addIcon}
+                        <div
+                          className={
+                            !companiesDrop
+                              ? "w-6 h-6 rounded-full flex items-center justify-center bg-blue-500"
+                              : ""
+                          }
+                        >
+                          {addIcon}
+                        </div>
+                        <TextTag
+                          as="p"
+                          text={addText}
+                          color={companiesDrop ? "text-black" : "text-blue-500"}
+                          className={` block truncate p-medium `}
+                        />
                       </div>
-                      <TextTag
-                        as="p"
-                        text={addText}
-                        color={companiesDrop ? "text-black" : "text-blue-500"}
-                        className={` block truncate p-medium `}
-                      />
-                    </div>
-                  </div>
-                </>
-              )}
-            </>
+                    </button>
+                  </>
+                )}
+              </>
+            )}
           </Listbox.Options>
         </div>
       </Listbox>
