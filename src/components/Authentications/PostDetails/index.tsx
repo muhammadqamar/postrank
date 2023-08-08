@@ -63,6 +63,7 @@ const Index = () => {
               leftText={"Date:"}
               onClick={() => setIsDateM(true)}
               isDateM={isDateM}
+              simpleDropDown={false}
             />
           </div>
         </div>

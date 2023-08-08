@@ -76,6 +76,7 @@ const index = () => {
             leftText={""}
             onClick={() => {}}
             isDateM={false}
+            simpleDropDown={false}
           />
         </div>
 
@@ -91,6 +92,7 @@ const index = () => {
               leftText={"Date:"}
               onClick={() => setIsDateM(true)}
               isDateM={isDateM}
+              simpleDropDown={false}
             />
           </div>
           <div className="">
@@ -104,6 +106,7 @@ const index = () => {
               leftText={"Sort by:"}
               onClick={() => {}}
               isDateM={false}
+              simpleDropDown={false}
             />
           </div>
 

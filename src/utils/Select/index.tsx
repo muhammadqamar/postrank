@@ -29,6 +29,7 @@ type dropdownProps = {
   leftText: string;
   onClick: MouseEventHandler<HTMLButtonElement>;
   isDateM: boolean;
+  simpleDropDown: boolean;
 };
 
 const Index = ({
@@ -41,6 +42,7 @@ const Index = ({
   leftText,
   onClick,
   isDateM,
+  simpleDropDown,
 }: dropdownProps) => {
   const [selected, setSelected] = useState(data[0]);
 
@@ -66,7 +68,11 @@ const Index = ({
             className={
               companiesDrop
                 ? `flex items-center gap-2 py-[10px] px-4`
-                : `relative cursor-default w-[183px] h-10 bg-white rounded-full py-2  pl-2 pr-4 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 sm:text-sm sm:leading-6 `
+                : `relative cursor-default ${
+                    simpleDropDown
+                      ? "w-full py-[10px] px-3 rounded-[7px] border border-solid border-gray-200"
+                      : "w-[183px] shadow-sm py-2  pl-2 pr-4 rounded-full"
+                  } h-10 bg-white   text-left text-gray-900  ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 sm:text-sm sm:leading-6 `
             }
           >
             {companiesDrop ? (
@@ -99,11 +105,13 @@ const Index = ({
             ) : (
               <>
                 <div className="flex items-center">
-                  <img
-                    src={selected?.avatar}
-                    alt=""
-                    className="h-6 w-6 object-contain flex-shrink-0 rounded-full"
-                  />
+                  {!simpleDropDown && (
+                    <img
+                      src={selected?.avatar}
+                      alt=""
+                      className="h-6 w-6 object-contain flex-shrink-0 rounded-full"
+                    />
+                  )}
                   <TextTag
                     as="p"
                     text={selected?.name}
@@ -120,9 +128,13 @@ const Index = ({
 
           <Listbox.Options
             className={`absolute z-10  min-h-56  rounded-2xl ${
-              companiesDrop
+              companiesDrop || simpleDropDown
                 ? `bg-white mt-2 ${
-                    isDateM ? "w-[312px]" : "w-[222px]"
+                    isDateM
+                      ? "w-[312px]"
+                      : simpleDropDown
+                      ? "w-full"
+                      : "w-[222px]"
                   } py-2 overflow-hidden shadow-mdShadow`
                 : "bg-[transparent] w-full mt-5 text-base flex flex-col gap-5"
             }`}
@@ -175,7 +187,7 @@ const Index = ({
                       classNames(
                         active ? "text-black" : "text-black",
                         `relative  cursor-pointer select-none   ${
-                          companiesDrop
+                          companiesDrop || simpleDropDown
                             ? "w-full py-[11px] px-[10px] hover:text-white hover:bg-blue-500"
                             : "w-fit bg-white rounded-full  py-2 pl-2 pr-[10px] shadow-lgShadow"
                         }`,
@@ -186,7 +198,7 @@ const Index = ({
                     {({ selected }) => (
                       <>
                         <div className="flex items-center">
-                          {companiesDrop ? (
+                          {companiesDrop || simpleDropDown ? (
                             selected ? (
                               <div>
                                 <Check />

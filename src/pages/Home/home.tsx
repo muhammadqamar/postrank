@@ -211,6 +211,21 @@ const Home: React.FC = () => {
           <Card key={index} {...card} />
         ))}
       </div>
+
+      {/* <div className="mt-9">
+        <Select
+          data={dateData}
+          companiesDrop={false}
+          addIcon={""}
+          addText={""}
+          leftIcon={""}
+          rightIcon={""}
+          leftText={""}
+          onClick={() => {}}
+          isDateM={false}
+          simpleDropDown={true}
+        />
+      </div> */}
     </div>
   );
 };
