@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik } from "formik";
 import InputField from "../../../utils/InputField";
 import Button from "../../../utils/Button";
 import { TextTag } from "../../../utils/Typography";
+import ConfirmPassword from "./confirmPassword";
 
 interface FormValues {
   email: string;
@@ -13,6 +14,11 @@ interface FormErrors {
 }
 
 const LoginForm = () => {
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+  const handleResetPasswordClick = () => {
+    setShowConfirmPassword(true);
+  };
   return (
     <div className="bg-white h-screen flex flex-col justify-between items-center pt-[132px] pb-16">
       <div className="w-80">
@@ -68,10 +74,11 @@ const LoginForm = () => {
               />
               <Button
                 text="Reset password"
-                onClick={() => handleSubmit()}
+                onClick={handleResetPasswordClick}
                 className="w-full bg-blue-500 text-white flex justify-center mt-[42px]"
                 type={undefined}
               />
+              {showConfirmPassword && <ConfirmPassword />}
             </form>
           )}
         </Formik>
