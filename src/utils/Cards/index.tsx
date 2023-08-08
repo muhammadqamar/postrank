@@ -70,7 +70,7 @@ const Index: React.FC<IndexProps> = ({
         {/* text */}
         <div className="md:p-5 xsm:p-4 bg-white">
           <div className="flex justify-between">
-            <div>
+            <div className="max-w-[330px]">
               <TextTag
                 as="h6"
                 text={cardTitle}
