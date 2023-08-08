@@ -211,6 +211,21 @@ const Home: React.FC = () => {
           className={"sm:w-[384px]"}
         />
       </div>
+
+      {/* <div className="mt-9">
+        <Select
+          data={dateData}
+          companiesDrop={false}
+          addIcon={""}
+          addText={""}
+          leftIcon={""}
+          rightIcon={""}
+          leftText={""}
+          onClick={() => {}}
+          isDateM={false}
+          simpleDropDown={true}
+        />
+      </div> */}
     </div>
   );
 };

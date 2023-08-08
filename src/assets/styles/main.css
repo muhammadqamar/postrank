@@ -19,7 +19,8 @@ span {
 }
 
 body {
-  @apply bg-blue-200 text-black;
+  @apply text-black;
+  background-color: rgba(241, 246, 253, 1);
 }
 
 /* dropdown style */
