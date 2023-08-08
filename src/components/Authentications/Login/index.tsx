@@ -5,6 +5,7 @@ import Button from "../../../utils/Button/index";
 
 import { EyeIcon, GoogleIcon, WarningIcon } from "../../../icons";
 import { TextTag } from "../../../utils/Typography";
+import { Link } from "react-router-dom";
 
 interface FormValues {
   email: string;
@@ -95,9 +96,9 @@ const LoginForm = () => {
                     color={""}
                   />
                 </label>
-                <a href="/reset-password" className="text-blue-500 p-small">
+                <Link to="/reset-password" className="text-blue-500 p-small">
                   Reset Password
-                </a>
+                </Link>
               </div>
               <Button
                 text="Login"

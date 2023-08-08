@@ -38,7 +38,7 @@ const Home: React.FC = () => {
           dotImage3={<DotIcon />}
           quantity4={"1,352"}
           backgroundImage={BackgroundImage1}
-          className={""}
+          className={"sm:w-[384px]"}
         />
         <Card
           cardTitle={
@@ -60,7 +60,7 @@ const Home: React.FC = () => {
           dotImage3={<DotIcon />}
           quantity4={"1,352"}
           backgroundImage={BackgroundImage2}
-          className={""}
+          className={"sm:w-[384px]"}
         />
         <Card
           cardTitle={
@@ -82,7 +82,7 @@ const Home: React.FC = () => {
           dotImage3={<DotIcon />}
           quantity4={"1,352"}
           backgroundImage={BackgroundImage3}
-          className={""}
+          className={"sm:w-[384px]"}
         />
         <Card
           cardTitle={
@@ -104,7 +104,7 @@ const Home: React.FC = () => {
           dotImage3={<DotIcon />}
           quantity4={"1,352"}
           backgroundImage={BackgroundImage4}
-          className={""}
+          className={"sm:w-[384px]"}
         />
         <Card
           cardTitle={"Work Authorization for Remote Workers"}
@@ -124,7 +124,7 @@ const Home: React.FC = () => {
           dotImage3={<DotIcon />}
           quantity4={"1,352"}
           backgroundImage={BackgroundImage5}
-          className={""}
+          className={"sm:w-[384px]"}
         />
         <Card
           cardTitle={
@@ -146,7 +146,7 @@ const Home: React.FC = () => {
           dotImage3={<DotIcon />}
           quantity4={"1,352"}
           backgroundImage={BackgroundImage6}
-          className={""}
+          className={"sm:w-[384px]"}
         />
         <Card
           cardTitle={"Bosnia and Herzegovina Work n’ Sunshine Event Recap"}
@@ -166,7 +166,7 @@ const Home: React.FC = () => {
           dotImage3={<DotIcon />}
           quantity4={"1,352"}
           backgroundImage={BackgroundImage7}
-          className={""}
+          className={"sm:w-[384px]"}
         />
         <Card
           cardTitle={"Everything Gran Canaria Has to Offer Digital Nomads"}
@@ -186,7 +186,7 @@ const Home: React.FC = () => {
           dotImage3={<DotIcon />}
           quantity4={"1,352"}
           backgroundImage={BackgroundImage8}
-          className={""}
+          className={"sm:w-[384px]"}
         />
         <Card
           cardTitle={
@@ -208,7 +208,7 @@ const Home: React.FC = () => {
           dotImage3={<DotIcon />}
           quantity4={"1,352"}
           backgroundImage={BackgroundImage9}
-          className={""}
+          className={"sm:w-[384px]"}
         />
       </div>
     </div>

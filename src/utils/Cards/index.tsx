@@ -53,9 +53,7 @@ const Index: React.FC<IndexProps> = ({
   };
   return (
     <>
-      <div
-        className={`rounded-[20px] w-full sm:w-[384px] overflow-hidden ${className}`}
-      >
+      <div className={`rounded-[20px] w-full overflow-hidden ${className}`}>
         <div className="flex justify-end p-3" style={bgImgStyle}>
           <div className="flex gap-2">
             <div className="bg-white rounded-full p-[7px] h-fit">

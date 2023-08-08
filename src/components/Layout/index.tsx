@@ -19,6 +19,7 @@ import Apple from "../../assets/images/dropdownIcon/Apple.svg";
 import MasterCard from "../../assets/images/dropdownIcon/Mastercard.svg";
 import User from "../../assets/images/png/user.png";
 import { TextTag } from "../../utils/Typography";
+import { Link } from "react-router-dom";
 
 const companies = [
   {
@@ -114,10 +115,10 @@ const Index = () => {
                   <div className="my-2 w-full " />
                 </Menu.Item>
                 <Menu.Item>
-                  <a href="/Login" className="dropdown-item border-none">
+                  <Link to="/login" className="dropdown-item border-none">
                     <LogoutIcon />
                     Logout
-                  </a>
+                  </Link>
                 </Menu.Item>
               </Menu.Items>
             </Transition>
