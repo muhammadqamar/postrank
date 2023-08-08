@@ -95,7 +95,7 @@ const LoginForm = () => {
                     color={""}
                   />
                 </label>
-                <a href="#" className="text-blue-500 p-small">
+                <a href="/reset-password" className="text-blue-500 p-small">
                   Reset Password
                 </a>
               </div>

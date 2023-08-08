@@ -22,7 +22,7 @@ const Index: React.FC<IndexProps> = ({
 }) => {
   return (
     <div
-      className={`w-full bg-blue-500 p-4 rounded-2xl flex flex-col ${className}`}
+      className={`w-full bg-blue-500 p-4 rounded-2xl flex flex-col justify-center ${className}`}
     >
       <div>
         <TextTag

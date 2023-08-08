@@ -9,6 +9,7 @@ import { CategoryIcon } from "./category";
 import { CitizenRemoteIcon } from "./citizenRemote";
 import { ContactIcon } from "./contact";
 import { DecreaseIcon } from "./decrease";
+import { DotIcon } from "./dot";
 import { ExpandIcon } from "./expand";
 import { GoogleIcon } from "./google";
 import { GridIcon } from "./grid";
@@ -48,6 +49,7 @@ export {
   CitizenRemoteIcon,
   ContactIcon,
   DecreaseIcon,
+  DotIcon,
   ExpandIcon,
   GoogleIcon,
   GridIcon,

@@ -112,7 +112,7 @@ const Index = () => {
                   <div className="my-2 w-full " />
                 </Menu.Item>
                 <Menu.Item>
-                  <a href="#" className="dropdown-item border-none">
+                  <a href="/Login" className="dropdown-item border-none">
                     <LogoutIcon />
                     Logout
                   </a>

@@ -16,11 +16,71 @@ const Index = () => {
         text="Now you can go to your dashboard and start exploring!"
         buttonText="To dashboard"
         onClick={handleSubmit}
+        className={""}
+        textStyling={"mt-6"}
+        buttonStyling={""}
       />
       <div className="flex m-auto gap-6">
-        <Card />
-        <Card />
-        <Card />
+        <Card
+          cardTitle={""}
+          calendarIcon1={undefined}
+          date1={""}
+          eyeIcon1={undefined}
+          quantity1={""}
+          contactIcon1={undefined}
+          quantity2={""}
+          openNewIcon={undefined}
+          buttonText={""}
+          eyeIcon2={undefined}
+          quantity3={""}
+          contactIcon2={undefined}
+          dotImage1={undefined}
+          dotImage2={undefined}
+          dotImage3={undefined}
+          quantity4={""}
+          backgroundImage={undefined}
+          className={""}
+        />
+        <Card
+          cardTitle={""}
+          calendarIcon1={undefined}
+          date1={""}
+          eyeIcon1={undefined}
+          quantity1={""}
+          contactIcon1={undefined}
+          quantity2={""}
+          openNewIcon={undefined}
+          buttonText={""}
+          eyeIcon2={undefined}
+          quantity3={""}
+          contactIcon2={undefined}
+          dotImage1={undefined}
+          dotImage2={undefined}
+          dotImage3={undefined}
+          quantity4={""}
+          backgroundImage={undefined}
+          className={""}
+        />
+        <Card
+          cardTitle={""}
+          calendarIcon1={undefined}
+          date1={""}
+          eyeIcon1={undefined}
+          quantity1={""}
+          contactIcon1={undefined}
+          quantity2={""}
+          openNewIcon={undefined}
+          buttonText={""}
+          eyeIcon2={undefined}
+          quantity3={""}
+          contactIcon2={undefined}
+          dotImage1={undefined}
+          dotImage2={undefined}
+          dotImage3={undefined}
+          quantity4={""}
+          backgroundImage={undefined}
+          className={""}
+        />
       </div>
     </div>
   );
