@@ -53,7 +53,7 @@ const Index = () => {
           color="text-black"
           className="p-medium !font-semibold"
         />
-        <div className="">
+        <div className="md:block hidden">
           <Select
             data={companies}
             companiesDrop={false}
@@ -69,12 +69,14 @@ const Index = () => {
       </div>
 
       <div className="flex items-center gap-[25px]">
-        <SearchField
-          className=""
-          onChange={() => {}}
-          placeholder={"Search..."}
-          width={""}
-        />
+        <div className="md:flex hidden">
+          <SearchField
+            className=""
+            onChange={() => {}}
+            placeholder={"Search..."}
+            width={""}
+          />
+        </div>
 
         <div className="">
           <Menu as="div" className="relative inline-block text-left">

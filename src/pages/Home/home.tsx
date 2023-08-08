@@ -19,7 +19,7 @@ const Home: React.FC = () => {
   return (
     <div className="max-w-[1280px] mx-auto px-10 pb-16">
       <PostFilter />
-      <div className="w-full flex items-center flex-wrap justify-center gap-6">
+      <div className="w-full flex items-center flex-wrap  gap-6">
         <Card
           cardTitle={"66 Digital Nomad Visa Countries in 2023"}
           calendarIcon1={<CalendarIcon color={""} />}
@@ -38,7 +38,7 @@ const Home: React.FC = () => {
           dotImage3={<DotIcon />}
           quantity4={"1,352"}
           backgroundImage={BackgroundImage1}
-          className={"w-96"}
+          className={""}
         />
         <Card
           cardTitle={
@@ -60,7 +60,7 @@ const Home: React.FC = () => {
           dotImage3={<DotIcon />}
           quantity4={"1,352"}
           backgroundImage={BackgroundImage2}
-          className={"w-96"}
+          className={""}
         />
         <Card
           cardTitle={
@@ -82,7 +82,7 @@ const Home: React.FC = () => {
           dotImage3={<DotIcon />}
           quantity4={"1,352"}
           backgroundImage={BackgroundImage3}
-          className={"w-96"}
+          className={""}
         />
         <Card
           cardTitle={
@@ -104,7 +104,7 @@ const Home: React.FC = () => {
           dotImage3={<DotIcon />}
           quantity4={"1,352"}
           backgroundImage={BackgroundImage4}
-          className={"w-96"}
+          className={""}
         />
         <Card
           cardTitle={"Work Authorization for Remote Workers"}
@@ -124,7 +124,7 @@ const Home: React.FC = () => {
           dotImage3={<DotIcon />}
           quantity4={"1,352"}
           backgroundImage={BackgroundImage5}
-          className={"w-96"}
+          className={""}
         />
         <Card
           cardTitle={
@@ -146,7 +146,7 @@ const Home: React.FC = () => {
           dotImage3={<DotIcon />}
           quantity4={"1,352"}
           backgroundImage={BackgroundImage6}
-          className={"w-96"}
+          className={""}
         />
         <Card
           cardTitle={"Bosnia and Herzegovina Work n’ Sunshine Event Recap"}
@@ -166,7 +166,7 @@ const Home: React.FC = () => {
           dotImage3={<DotIcon />}
           quantity4={"1,352"}
           backgroundImage={BackgroundImage7}
-          className={"w-96"}
+          className={""}
         />
         <Card
           cardTitle={"Everything Gran Canaria Has to Offer Digital Nomads"}
@@ -186,11 +186,11 @@ const Home: React.FC = () => {
           dotImage3={<DotIcon />}
           quantity4={"1,352"}
           backgroundImage={BackgroundImage8}
-          className={"w-96"}
+          className={""}
         />
         <Card
           cardTitle={
-            "How Much Do Digital Nomads Make? – Digital Nomad Salaries in 2023 "
+            "How Much Do Digital Nomads Make? – Digital Nomad Salaries in 2023"
           }
           calendarIcon1={<CalendarIcon color={""} />}
           date1={"12 May, 2023"}
@@ -208,7 +208,7 @@ const Home: React.FC = () => {
           dotImage3={<DotIcon />}
           quantity4={"1,352"}
           backgroundImage={BackgroundImage9}
-          className={"w-96"}
+          className={""}
         />
       </div>
     </div>

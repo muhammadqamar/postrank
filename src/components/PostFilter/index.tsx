@@ -64,7 +64,7 @@ const index = () => {
   const [isDateM, setIsDateM] = useState<boolean>(false);
   return (
     <>
-      <div className="w-full my-[42px] flex items-center justify-between">
+      <div className="w-full my-[42px] flex items-center justify-between flex-wrap gap-5">
         <div className="">
           <Select
             data={postData}
@@ -79,7 +79,7 @@ const index = () => {
           />
         </div>
 
-        <div className="flex items-center">
+        <div className="flex items-center flex-wrap">
           <div className="">
             <Select
               data={dateData}
