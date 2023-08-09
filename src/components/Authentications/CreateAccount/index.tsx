@@ -79,7 +79,6 @@ const LoginForm = () => {
                 icon={""}
                 placeholder={""}
                 className={"mb-5"}
-                inputStyle={""}
               />
               <InputField
                 label="Password"
@@ -93,7 +92,6 @@ const LoginForm = () => {
                 icon={<EyeIcon />}
                 placeholder={""}
                 className={""}
-                inputStyle={""}
               />
               <TextTag
                 as="p"

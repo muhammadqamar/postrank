@@ -3,6 +3,7 @@ import Select from "../../../utils/Select";
 import Card from "../../../utils/Cards";
 import ComparePost from "../../../utils/Error";
 import Trading from "../../../utils/Trading";
+import Chart from "../../PostDetail/charts";
 import {
   AddPostIcon,
   BackIcon,
@@ -39,7 +40,7 @@ const Index = () => {
   const [isDateM, setIsDateM] = useState<boolean>(false);
   return (
     <div className="max-w-7xl m-auto">
-      <div className="bg-blue-200 px-10 py-16 ">
+      <div className="common-bg-color px-10 pb-16 ">
         <div className="flex justify-between flex-wrap sm:flex-nowrap items-center">
           <div className="flex gap-2 justify-between items-center py-6">
             <div className="rounded-full p-[10px] bg-blue-100">
@@ -100,7 +101,7 @@ const Index = () => {
               />
               {/* tag names */}
               <div className="flex flex-wrap gap-2">
-                <div className="flex gap-[6px] py-[7px] px-[10px] bg-blue-200 rounded-md w-fit">
+                <div className="flex gap-[6px] py-[7px] px-[10px] common-bg-color rounded-md w-fit">
                   <TextTag
                     as="p"
                     text={"Digital Nomad"}
@@ -111,7 +112,7 @@ const Index = () => {
                     <CloseIcon color={"#274C9B"} />
                   </button>
                 </div>
-                <div className="flex gap-[6px] py-[7px] px-[10px] bg-blue-200 rounded-md w-fit">
+                <div className="flex gap-[6px] py-[7px] px-[10px] common-bg-color rounded-md w-fit">
                   <TextTag
                     as="p"
                     text={"Visa"}
@@ -122,7 +123,7 @@ const Index = () => {
                     <CloseIcon color={"#274C9B"} />
                   </button>
                 </div>
-                <div className="flex gap-[6px] py-[7px] px-[10px] bg-blue-200 rounded-md w-fit">
+                <div className="flex gap-[6px] py-[7px] px-[10px] common-bg-color rounded-md w-fit">
                   <TextTag
                     as="p"
                     text={"Country"}
@@ -133,7 +134,7 @@ const Index = () => {
                     <CloseIcon color={"#274C9B"} />
                   </button>
                 </div>
-                <div className="flex gap-[6px] py-[7px] px-[10px] bg-blue-200 rounded-md w-fit">
+                <div className="flex gap-[6px] py-[7px] px-[10px] common-bg-color rounded-md w-fit">
                   <TextTag
                     as="p"
                     text={"List"}
@@ -144,7 +145,7 @@ const Index = () => {
                     <CloseIcon color={"#274C9B"} />
                   </button>
                 </div>
-                <div className="flex gap-[6px] py-[7px] px-[10px] bg-blue-200 rounded-md w-fit">
+                <div className="flex gap-[6px] py-[7px] px-[10px] common-bg-color rounded-md w-fit">
                   <TextTag
                     as="p"
                     text={"Popular"}
@@ -155,7 +156,7 @@ const Index = () => {
                     <CloseIcon color={"#274C9B"} />
                   </button>
                 </div>
-                <div className="flex gap-[6px] py-[7px] px-[10px] bg-blue-200 rounded-md w-fit">
+                <div className="flex gap-[6px] py-[7px] px-[10px] common-bg-color rounded-md w-fit">
                   <TextTag
                     as="p"
                     text={"Essentials"}
@@ -166,7 +167,7 @@ const Index = () => {
                     <CloseIcon color={"#274C9B"} />
                   </button>
                 </div>
-                <div className="flex gap-[6px] py-[7px] px-[10px] bg-blue-200 rounded-md w-fit">
+                <div className="flex gap-[6px] py-[7px] px-[10px] common-bg-color rounded-md w-fit">
                   <TextTag
                     as="p"
                     text={"Travel"}
@@ -177,7 +178,7 @@ const Index = () => {
                     <CloseIcon color={"#274C9B"} />
                   </button>
                 </div>
-                <div className="flex gap-[6px] py-[7px] px-[10px] bg-blue-200 rounded-md w-fit">
+                <div className="flex gap-[6px] py-[7px] px-[10px] common-bg-color rounded-md w-fit">
                   <TextTag
                     as="p"
                     text={"Explore"}
@@ -231,6 +232,7 @@ const Index = () => {
               color={"text-gray-600"}
             />
           </div>
+
           <div className="flex flex-wrap md:flex-nowrap justify-between gap-4">
             <Trading
               trendLabel={"Users"}
@@ -243,7 +245,7 @@ const Index = () => {
             />
             <Trading
               trendLabel={"New users"}
-              className={"!bg-blue-200"}
+              className={"common-bg-color"}
               trendNumbers={"618"}
               trendMarkup={"12.5%"}
               trendLabelColor={"text-gray-700"}
@@ -252,7 +254,7 @@ const Index = () => {
             />
             <Trading
               trendLabel={"Average engagement time"}
-              className={"!bg-blue-200"}
+              className={"common-bg-color"}
               trendNumbers={"3m 25s"}
               trendMarkup={"12.5%"}
               trendLabelColor={"text-gray-700"}
@@ -261,6 +263,7 @@ const Index = () => {
             />
           </div>
           {/* Graph */}
+          <Chart />
         </div>
         {/* Page view trends */}
         <div className="p-8 mb-6 bg-white rounded-[20px]">
@@ -290,7 +293,7 @@ const Index = () => {
             />
             <Trading
               trendLabel={"Unique pageviews"}
-              className={"!bg-blue-200"}
+              className={"common-bg-color"}
               trendNumbers={"1,213"}
               trendMarkup={"12.5%"}
               trendLabelColor={"text-gray-700"}
@@ -299,7 +302,7 @@ const Index = () => {
             />
             <Trading
               trendLabel={"Average time on page"}
-              className={"!bg-blue-200"}
+              className={"common-bg-color"}
               trendNumbers={"2m 47s"}
               trendMarkup={"12.5%"}
               trendLabelColor={"text-gray-700"}
@@ -308,6 +311,7 @@ const Index = () => {
             />
           </div>
           {/* Graph */}
+          <Chart />
         </div>
         {/* Queries */}
         <div className="p-8 mb-6 bg-white rounded-[20px]">
@@ -337,7 +341,7 @@ const Index = () => {
             />
             <Trading
               trendLabel={"Best keyword"}
-              className={"!bg-blue-200"}
+              className={"common-bg-color"}
               trendNumbers={"Keyword"}
               trendMarkup={"12.5%"}
               trendLabelColor={"text-gray-700"}
@@ -346,44 +350,44 @@ const Index = () => {
             />
           </div>
           {/* Table */}
-          <div className="rounded-2xl overflow-scroll">
+          <div className="!rounded-2xl overflow-hidden">
             <table className="w-full">
               {/* 1st row */}
               <tr className=" text-end ">
                 <th
                   scope="row"
-                  className="w-[50%] p-small text-gray-700 bg-blue-200 focus:bg-blue-100 p-3 !text-start border-r border-b border-blue-200"
+                  className="w-[50%] p-small text-gray-700 bg-blue-200 focus:bg-blue-100 p-3 !text-start border-r border-b common-bg-color"
                 >
                   Keyword
                 </th>
                 <th
                   scope="row"
-                  className=" p-small text-gray-700 bg-blue-200 focus:bg-blue-100 p-3 border-r border-b border-blue-200"
+                  className=" p-small text-gray-700 bg-blue-200 focus:bg-blue-100 p-3 border-r border-b common-bg-color"
                 >
                   Pos. 25 June
                 </th>
                 <th
                   scope="row"
-                  className=" p-small text-gray-700 bg-blue-200 focus:bg-blue-100 p-3 border-r border-b border-blue-200"
+                  className=" p-small text-gray-700 bg-blue-200 focus:bg-blue-100 p-3 border-r border-b common-bg-color"
                 >
                   Pos. 25 July
                 </th>
                 <th
                   scope="row"
-                  className=" p-small text-gray-700 bg-blue-200 focus:bg-blue-100 p-3 border-r border-b border-blue-200"
+                  className=" p-small text-gray-700 bg-blue-200 focus:bg-blue-100 p-3 border-r border-b common-bg-color"
                 >
                   Diff
                 </th>
                 <th
                   scope="row"
-                  className=" p-small text-gray-700 bg-blue-200 focus:bg-blue-100 p-3 border-r border-b border-blue-200"
+                  className=" p-small text-gray-700 bg-blue-200 focus:bg-blue-100 p-3 border-r border-b common-bg-color"
                 >
                   {" "}
                   Est. traffic
                 </th>
                 <th
                   scope="row"
-                  className=" p-small text-gray-700 bg-blue-200 focus:bg-blue-100 p-3 border-r border-b border-blue-200"
+                  className=" p-small text-gray-700 bg-blue-200 focus:bg-blue-100 p-3 border-b common-bg-color"
                 >
                   Vol.
                 </th>
@@ -392,7 +396,7 @@ const Index = () => {
               <tr className="text-end">
                 <td
                   scope="row"
-                  className="w-[50%] p-medium  focus:bg-blue-100  !text-start p-3 border-r border-b border-blue-200"
+                  className="w-[52.5%] p-medium  focus:bg-blue-100  !text-start p-3 border-r border-b border-blue-200"
                 >
                   Keyword
                 </td>
@@ -424,7 +428,7 @@ const Index = () => {
                 </th>
                 <th
                   scope="row"
-                  className=" p-medium focus:bg-blue-100 p-3 border-r border-b border-blue-200"
+                  className=" p-medium focus:bg-blue-100 p-3 border-b border-blue-200"
                 >
                   1,300
                 </th>
@@ -465,7 +469,7 @@ const Index = () => {
                 </th>
                 <th
                   scope="row"
-                  className=" p-medium focus:bg-blue-100 p-3 border-r border-b border-blue-200 "
+                  className=" p-medium focus:bg-blue-100 p-3 border-b border-blue-200 "
                 >
                   1,300
                 </th>
@@ -506,7 +510,7 @@ const Index = () => {
                 </th>
                 <th
                   scope="row"
-                  className=" p-medium focus:bg-blue-100 p-3 border-r border-b border-blue-200 "
+                  className=" p-medium focus:bg-blue-100 p-3 border-b border-blue-200 "
                 >
                   1,300
                 </th>
@@ -547,7 +551,7 @@ const Index = () => {
                 </th>
                 <th
                   scope="row"
-                  className=" p-medium focus:bg-blue-100 p-3 border-r border-b border-blue-200 "
+                  className=" p-medium focus:bg-blue-100 p-3 border-b border-blue-200 "
                 >
                   1,300
                 </th>
@@ -588,7 +592,7 @@ const Index = () => {
                 </th>
                 <th
                   scope="row"
-                  className=" p-medium focus:bg-blue-100 p-3 border-r border-b border-blue-200 "
+                  className=" p-medium focus:bg-blue-100 p-3 border-b border-blue-200 "
                 >
                   1,300
                 </th>
@@ -629,7 +633,7 @@ const Index = () => {
                 </th>
                 <th
                   scope="row"
-                  className=" p-medium focus:bg-blue-100 p-3 border-r border-blue-200 "
+                  className=" p-medium focus:bg-blue-100 p-3 border-blue-200 "
                 >
                   1,300
                 </th>

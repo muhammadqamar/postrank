@@ -68,7 +68,6 @@ const LoginForm = () => {
                 icon={""}
                 placeholder={""}
                 className={""}
-                inputStyle={""}
               />
 
               <Button

@@ -48,7 +48,6 @@ const CreateNewProject = () => {
                 icon={""}
                 placeholder={""}
                 className={"mb-5"}
-                inputStyle={""}
               />
               <div className="flex items-center justify-between mb-[42px]">
                 <TextTag
