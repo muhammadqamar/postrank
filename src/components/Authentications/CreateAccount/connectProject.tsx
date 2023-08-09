@@ -106,7 +106,6 @@ const ConnectProject = () => {
                   icon={""}
                   placeholder={""}
                   className={"mb-5"}
-                  inputStyle={""}
                 />
               </div>
               <div className="mb-5">

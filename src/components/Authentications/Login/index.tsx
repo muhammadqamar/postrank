@@ -9,10 +9,12 @@ import { Link } from "react-router-dom";
 
 interface FormValues {
   email: string;
+  password: string;
 }
 
 interface FormErrors {
   email?: string;
+  password?: string;
 }
 
 const LoginForm = () => {
@@ -36,6 +38,11 @@ const LoginForm = () => {
             ) {
               errors.email = "Email doesn’t exist";
             }
+
+            if (values.password !== "correctpassword") {
+              errors.password = "Wrong password";
+            }
+
             return errors;
           }}
           onSubmit={(values, { setSubmitting }) => {
@@ -68,7 +75,6 @@ const LoginForm = () => {
                 icon={<WarningIcon />}
                 placeholder={""}
                 className={"mb-5"}
-                inputStyle={""}
               />
               <InputField
                 label="Password"
@@ -80,9 +86,8 @@ const LoginForm = () => {
                 error={errors?.password}
                 touch={touched.password}
                 icon={<EyeIcon />}
-                placeholder={""}
-                className={"mb-5"}
-                inputStyle={""}
+                placeholder=""
+                className="mb-5"
               />
               <div className="flex items-center justify-between mb-[42px]">
                 <label htmlFor="rememberMe" className="flex items-center">

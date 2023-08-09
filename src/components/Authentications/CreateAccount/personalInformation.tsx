@@ -51,7 +51,6 @@ const PersonalInformation = () => {
                 icon={""}
                 placeholder={""}
                 className={"mb-5"}
-                inputStyle={""}
               />
               <InputField
                 label="Last name"
@@ -65,7 +64,6 @@ const PersonalInformation = () => {
                 icon={""}
                 placeholder={""}
                 className={"mb-5"}
-                inputStyle={""}
               />
               <div className="flex items-center justify-between mb-[42px]">
                 <div className="flex items-center gap-[22px]">

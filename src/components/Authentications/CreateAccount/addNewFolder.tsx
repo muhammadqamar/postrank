@@ -78,7 +78,6 @@ const AddNewFolder = () => {
                       value={undefined}
                       error={undefined}
                       touch={undefined}
-                      inputStyle={"border-gray-300"}
                     />
                     <div className="hidden">
                       <InputField
@@ -93,7 +92,6 @@ const AddNewFolder = () => {
                         icon={""}
                         placeholder={""}
                         className={"mb-5"}
-                        inputStyle={""}
                       />
                     </div>
                   </div>
@@ -131,7 +129,6 @@ const AddNewFolder = () => {
                     value={undefined}
                     error={undefined}
                     touch={undefined}
-                    inputStyle={"border-gray-300"}
                   />
                   <TextTag
                     as="label"
