@@ -14,10 +14,10 @@ const AppRouter = () => {
       <Layout />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/reset-password" element={<ResetPassword />} />
-        <Route path="/create-account" element={<CreateAccount />} />
-        <Route path="/post-details" element={<PostDetails />} />
+        <Route path="login" element={<Login />} />
+        <Route path="reset-password" element={<ResetPassword />} />
+        <Route path="create-account" element={<CreateAccount />} />
+        <Route path="post-details" element={<PostDetails />} />
       </Routes>
     </div>
   );

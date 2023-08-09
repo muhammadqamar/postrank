@@ -79,7 +79,6 @@ const index = () => {
             simpleDropDown={false}
           />
         </div>
-
         <div className="flex items-center flex-wrap">
           <div className="">
             <Select

@@ -4,7 +4,11 @@ import InputField from "../../../utils/InputField/index";
 import Button from "../../../utils/Button/index";
 import { GoogleIcon, EyeIcon } from "../../../icons";
 import { TextTag } from "../../../utils/Typography";
-
+import ConnectProject from "./connectProject";
+import AddNewFolder from "./addNewFolder";
+import Success from "./success";
+import PersonalInformation from "./personalInformation";
+import CreateNewProject from "./createNewProject";
 interface FormValues {
   email: string;
 }
@@ -24,7 +28,7 @@ const LoginForm = () => {
 
   const maskPassword = password.replace(/./g, "*");
   return (
-    <div className="bg-white h-screen flex flex-col justify-between items-center pt-[132px] pb-16">
+    <div className="bg-white min-h-screen flex flex-col justify-between items-center pt-[132px]">
       <div className="w-80">
         <TextTag
           as="h6"
@@ -75,6 +79,7 @@ const LoginForm = () => {
                 icon={""}
                 placeholder={""}
                 className={"mb-5"}
+                inputStyle={""}
               />
               <InputField
                 label="Password"
@@ -88,6 +93,7 @@ const LoginForm = () => {
                 icon={<EyeIcon />}
                 placeholder={""}
                 className={""}
+                inputStyle={""}
               />
               <TextTag
                 as="p"
@@ -125,6 +131,11 @@ const LoginForm = () => {
           Login now
         </a>
       </div>
+      <PersonalInformation />
+      <CreateNewProject />
+      <ConnectProject />
+      <AddNewFolder />
+      <Success />
     </div>
   );
 };

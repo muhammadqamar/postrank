@@ -20,9 +20,11 @@ span {
 
 body {
   @apply text-black;
-  background-color: rgba(241, 246, 253, 1);
+  background-color: rgb(241, 246, 253);
 }
-
+.common-bg-color {
+  background-color: rgb(241, 246, 253);
+}
 /* dropdown style */
 .dropdown-menu {
   @apply z-10 bg-white divide-y divide-gray-100 rounded-2xl  w-44 py-2 absolute top-14 right-0 overflow-hidden;
