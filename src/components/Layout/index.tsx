@@ -70,7 +70,7 @@ const Index = () => {
         </div>
       </div>
 
-      <div className="flex items-center gap-[25px]">
+      <div className="flex items-center gap-4">
         <div className="md:flex hidden">
           <SearchField
             className=""
@@ -82,47 +82,56 @@ const Index = () => {
 
         <div className="">
           <Menu as="div" className="relative inline-block text-left">
-            <Menu.Button className="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 ">
-              <img
-                className="w-12 h-12 object-contain rounded-full focused"
-                src={User}
-                alt="user photo"
-              />
-            </Menu.Button>
-
-            <Transition
-              as={Fragment}
-              enter="transition ease-out duration-100"
-              enterFrom="transform opacity-0 scale-95"
-              enterTo="transform opacity-100 scale-100"
-              leave="transition ease-in duration-75"
-              leaveFrom="transform opacity-100 scale-100"
-              leaveTo="transform opacity-0 scale-95"
-            >
-              <Menu.Items className="dropdown-menu">
-                <Menu.Item>
-                  <a href="#" className="dropdown-item border-none">
-                    <SettingsIcon />
-                    Settings
-                  </a>
-                </Menu.Item>
-                <Menu.Item>
-                  <a href="#" className="dropdown-item border-none">
-                    <CategoryIcon />
-                    My projects
-                  </a>
-                </Menu.Item>
-                <Menu.Item>
-                  <div className="my-2 w-full " />
-                </Menu.Item>
-                <Menu.Item>
-                  <Link to="/login" className="dropdown-item border-none">
-                    <LogoutIcon />
-                    Logout
-                  </Link>
-                </Menu.Item>
-              </Menu.Items>
-            </Transition>
+            {({ open }) => (
+              <>
+                <Menu.Button
+                  className={`w-12 h-12 flex items-center justify-center bg-white rounded-full  border-[2px] border-solid border-white ${
+                    open ? "ring-[2px] ring-blue-500" : ""
+                  }`}
+                >
+                  <img
+                    className="w-auto h-auto object-cover rounded-full focused"
+                    src={User}
+                    alt="user photo"
+                  />
+                </Menu.Button>
+                {open && (
+                  <Transition
+                    as={Fragment}
+                    enter="transition ease-out duration-100"
+                    enterFrom="transform opacity-0 scale-95"
+                    enterTo="transform opacity-100 scale-100"
+                    leave="transition ease-in duration-75"
+                    leaveFrom="transform opacity-100 scale-100"
+                    leaveTo="transform opacity-0 scale-95"
+                  >
+                    <Menu.Items className="dropdown-menu !shadow-mdShadow">
+                      <Menu.Item>
+                        <a href="#" className="dropdown-item border-none">
+                          <SettingsIcon />
+                          Settings
+                        </a>
+                      </Menu.Item>
+                      <Menu.Item>
+                        <a href="#" className="dropdown-item border-none">
+                          <CategoryIcon />
+                          My projects
+                        </a>
+                      </Menu.Item>
+                      <Menu.Item>
+                        <div className="my-2 w-full " />
+                      </Menu.Item>
+                      <Menu.Item>
+                        <Link to="/login" className="dropdown-item border-none">
+                          <LogoutIcon />
+                          Logout
+                        </Link>
+                      </Menu.Item>
+                    </Menu.Items>
+                  </Transition>
+                )}
+              </>
+            )}
           </Menu>
         </div>
       </div>

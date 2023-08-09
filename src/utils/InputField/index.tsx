@@ -29,7 +29,6 @@ const Index: React.FC<InputProps> = ({
   error,
   touch,
 }) => {
-  console.log("error", error);
   return (
     <div className={`flex flex-col gap-1 ${className}`}>
       {label ? (
