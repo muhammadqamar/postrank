@@ -1,8 +1,10 @@
 import React from "react";
 import Select from "../../../utils/Select";
+import InputField from "../../../utils/InputField";
 import { TextTag } from "../../../utils/Typography";
 import Button from "../../../utils/Button";
 import { Link } from "react-router-dom";
+import { Formik } from "formik";
 const postData = [
   {
     name: "",
@@ -49,66 +51,107 @@ const ConnectProject = () => {
             />
           </Link>
         </div>
-        <div className="mb-5">
-          <TextTag
-            as="label"
-            text={"Account"}
-            className={"p-small"}
-            color={"text-gray-700"}
-          />
-          <Select
-            data={postData}
-            companiesDrop={false}
-            addIcon={""}
-            addText={""}
-            leftIcon={""}
-            rightIcon={""}
-            leftText={""}
-            onClick={() => {}}
-            isDateM={false}
-            simpleDropDown={true}
-          />
-        </div>
-        <div className="mb-5">
-          <TextTag
-            as="label"
-            text={"Property"}
-            className={"p-small"}
-            color={"text-gray-700"}
-          />
-          <Select
-            data={postData}
-            companiesDrop={false}
-            addIcon={""}
-            addText={""}
-            leftIcon={""}
-            rightIcon={""}
-            leftText={""}
-            onClick={() => {}}
-            isDateM={false}
-            simpleDropDown={true}
-          />
-        </div>
-        <div className="mb-5">
-          <TextTag
-            as="label"
-            text={"GSC property"}
-            className={"p-small"}
-            color={"text-gray-700"}
-          />
-          <Select
-            data={postData}
-            companiesDrop={false}
-            addIcon={""}
-            addText={""}
-            leftIcon={""}
-            rightIcon={""}
-            leftText={""}
-            onClick={() => {}}
-            isDateM={false}
-            simpleDropDown={true}
-          />
-        </div>
+        <Formik
+          initialValues={{
+            projectName: "",
+          }}
+          onSubmit={(values, { setSubmitting }) => {
+            setTimeout(() => {
+              alert(JSON.stringify(values, null, 2));
+              setSubmitting(false);
+            }, 400);
+          }}
+        >
+          {({
+            values,
+            errors,
+            touched,
+            handleChange,
+            handleBlur,
+            handleSubmit,
+            // isSubmitting,
+            /* and other goodies */
+          }) => (
+            <form onSubmit={handleSubmit}>
+              <div className="mb-5">
+                <TextTag
+                  as="label"
+                  text={"Account"}
+                  className={"p-small"}
+                  color={"text-gray-700"}
+                />
+                <Select
+                  data={postData}
+                  companiesDrop={false}
+                  addIcon={""}
+                  addText={""}
+                  leftIcon={""}
+                  rightIcon={""}
+                  leftText={""}
+                  onClick={() => {}}
+                  isDateM={false}
+                  simpleDropDown={true}
+                />
+              </div>
+              <div className="hidden">
+                <InputField
+                  label="Project name"
+                  type="text"
+                  name="projectName"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.projectName}
+                  error={errors?.projectName}
+                  touch={touched.projectName}
+                  icon={""}
+                  placeholder={""}
+                  className={"mb-5"}
+                  inputStyle={""}
+                />
+              </div>
+              <div className="mb-5">
+                <TextTag
+                  as="label"
+                  text={"Property"}
+                  className={"p-small"}
+                  color={"text-gray-700"}
+                />
+                <Select
+                  data={postData}
+                  companiesDrop={false}
+                  addIcon={""}
+                  addText={""}
+                  leftIcon={""}
+                  rightIcon={""}
+                  leftText={""}
+                  onClick={() => {}}
+                  isDateM={false}
+                  simpleDropDown={true}
+                />
+              </div>
+              <div className="mb-5">
+                <TextTag
+                  as="label"
+                  text={"GSC property"}
+                  className={"p-small"}
+                  color={"text-gray-700"}
+                />
+                <Select
+                  data={postData}
+                  companiesDrop={false}
+                  addIcon={""}
+                  addText={""}
+                  leftIcon={""}
+                  rightIcon={""}
+                  leftText={""}
+                  onClick={() => {}}
+                  isDateM={false}
+                  simpleDropDown={true}
+                />
+              </div>
+            </form>
+          )}
+        </Formik>
       </div>
       <div className="pb-6">
         <Link to={"/#"}>
