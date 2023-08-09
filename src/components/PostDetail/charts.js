@@ -20,7 +20,7 @@ const stockOptions = {
     {
       type: "line",
       // name: "Series 1",
-      data: [9, 12, 13, 12, 13],
+      data: [9, 10, 11, 10.18, 12],
     },
   ],
   // colorAxis: {
