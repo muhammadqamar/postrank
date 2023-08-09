@@ -10,6 +10,7 @@ type InputProps = {
   onChange: ChangeEventHandler<HTMLInputElement> | undefined;
   onBlur: FocusEventHandler<HTMLInputElement> | undefined;
   value: string | undefined;
+  inputStyle: string | undefined;
   error: string[] | string | undefined;
   touch: boolean | undefined;
 };
@@ -24,6 +25,7 @@ const Index: React.FC<InputProps> = ({
   onChange,
   onBlur,
   value,
+  inputStyle,
   error,
   touch,
 }) => {
@@ -47,7 +49,7 @@ const Index: React.FC<InputProps> = ({
           value={value}
           className={`w-full p-medium !bg-white border border-solid border-gray-200 rounded-[7px] focus-visible:outline-1 focus-visible:outline ${
             error ? "!border-error-300" : ""
-          } py-[10px] px-3 pr-9`}
+          } py-[10px] px-3 pr-9 ${inputStyle}`}
         />
         {error && (
           <div className="absolute top-0 right-0 h-full flex items-center pr-3 pointer-events-none z-10">

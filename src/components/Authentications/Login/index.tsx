@@ -68,6 +68,7 @@ const LoginForm = () => {
                 icon={<WarningIcon />}
                 placeholder={""}
                 className={"mb-5"}
+                inputStyle={""}
               />
               <InputField
                 label="Password"
@@ -81,6 +82,7 @@ const LoginForm = () => {
                 icon={<EyeIcon />}
                 placeholder={""}
                 className={"mb-5"}
+                inputStyle={""}
               />
               <div className="flex items-center justify-between mb-[42px]">
                 <label htmlFor="rememberMe" className="flex items-center">

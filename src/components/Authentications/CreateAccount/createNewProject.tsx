@@ -4,7 +4,7 @@ import InputField from "../../../utils/InputField";
 import Button from "../../../utils/Button/index";
 import { TextTag } from "../../../utils/Typography";
 
-const LoginForm = () => {
+const CreateNewProject = () => {
   return (
     <div className="bg-white h-screen flex flex-col justify-between items-center pt-[132px] pb-16">
       <div className="w-80">
@@ -48,6 +48,7 @@ const LoginForm = () => {
                 icon={""}
                 placeholder={""}
                 className={"mb-5"}
+                inputStyle={""}
               />
               <div className="flex items-center justify-between mb-[42px]">
                 <TextTag
@@ -77,4 +78,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default CreateNewProject;

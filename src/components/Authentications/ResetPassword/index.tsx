@@ -14,11 +14,8 @@ interface FormErrors {
 }
 
 const LoginForm = () => {
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false);
 
-  const handleResetPasswordClick = () => {
-    setShowConfirmPassword(true);
-  };
   return (
     <div className="bg-white h-screen flex flex-col justify-between items-center pt-[132px] pb-16">
       <div className="w-80">
@@ -71,14 +68,20 @@ const LoginForm = () => {
                 icon={""}
                 placeholder={""}
                 className={""}
+                inputStyle={""}
               />
+
               <Button
                 text="Reset password"
-                onClick={handleResetPasswordClick}
+                onClick={() => setModalVisible(true)}
                 className="w-full bg-blue-500 text-white flex justify-center mt-[42px]"
                 type={undefined}
               />
-              {showConfirmPassword && <ConfirmPassword />}
+              {modalVisible && (
+                <div className="fixed inset-0 flex justify-center pt-[132px] bg-white">
+                  <ConfirmPassword />
+                </div>
+              )}
             </form>
           )}
         </Formik>

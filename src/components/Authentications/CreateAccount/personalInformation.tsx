@@ -6,7 +6,7 @@ import Button from "../../../utils/Button/index";
 import User from "../../../assets/images/png/user.png";
 import { TextTag } from "../../../utils/Typography";
 
-const LoginForm = () => {
+const PersonalInformation = () => {
   return (
     <div className="bg-white h-screen flex flex-col justify-between items-center pt-[132px] pb-16">
       <div className="w-80">
@@ -51,6 +51,7 @@ const LoginForm = () => {
                 icon={""}
                 placeholder={""}
                 className={"mb-5"}
+                inputStyle={""}
               />
               <InputField
                 label="Last name"
@@ -64,8 +65,9 @@ const LoginForm = () => {
                 icon={""}
                 placeholder={""}
                 className={"mb-5"}
+                inputStyle={""}
               />
-              <div className="flex justify-between items-center mb-[42px]">
+              <div className="flex items-center justify-between mb-[42px]">
                 <div className="flex items-center gap-[22px]">
                   <TextTag
                     as="p"
@@ -83,13 +85,13 @@ const LoginForm = () => {
                   <Button
                     text="Upload new"
                     onClick={() => handleSubmit()}
-                    className="bg-white border-2 border-solid border-blue-500 !py-[7px] !px-3 flex justify-center mb-4 "
+                    className="p-medium bg-white border-2 border-solid border-blue-500 !py-[7px] !px-3 flex justify-center "
                     type={undefined}
                   />
                   <Button
                     text="Delete"
                     onClick={() => handleSubmit()}
-                    className="bg-white text-gray-900 !py-[7px] !px-3 flex justify-center mb-4 "
+                    className="bg-white text-gray-900 !py-[7px] !px-3  flex justify-center "
                     type={undefined}
                   />
                 </div>
@@ -114,4 +116,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default PersonalInformation;
