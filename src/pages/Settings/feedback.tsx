@@ -1,0 +1,155 @@
+import React from "react";
+import { TextTag } from "../../utils/Typography";
+import { Formik } from "formik";
+
+import Button from "../../utils/Button";
+import { Textarea } from "flowbite-react";
+interface FormValues {
+  email: string;
+  password: string;
+  currentPassword: string;
+  newPassword: string;
+  message: string;
+}
+
+interface FormErrors {
+  email?: string;
+  password?: string;
+  currentPassword: string;
+  newPassword: string;
+  message: string;
+}
+
+const Feedback = () => {
+  return (
+    <div className="pt-9 px-8 pb-8 rounded-[20px] bg-white mt-5">
+      <TextTag as="h5" text={"Feedback"} className="h5 mb-5" color={""} />
+      <Formik
+        initialValues={{
+          email: "",
+          password: "",
+          currentPassword: "",
+          newPassword: "",
+          message: "",
+        }}
+        validate={(values: FormValues) => {
+          const errors: FormErrors = {
+            currentPassword: "",
+            newPassword: "",
+            message: "",
+          };
+          if (!values.email) {
+            errors.email = "Required";
+          } else if (
+            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+          ) {
+            errors.email = "Email doesn’t exist";
+          }
+
+          if (values.password !== "correctpassword") {
+            errors.password = "Wrong password";
+          }
+
+          return errors;
+        }}
+        onSubmit={(values, { setSubmitting }) => {
+          setTimeout(() => {
+            alert(JSON.stringify(values, null, 2));
+            setSubmitting(false);
+          }, 400);
+        }}
+      >
+        {({
+          // values,
+          // errors,
+          // touched,
+          // handleChange,
+          // handleBlur,
+          handleSubmit,
+          // isSubmitting,
+          /* and other goodies */
+        }) => (
+          <form
+            onSubmit={handleSubmit}
+            className="pt-8 max-w-[511px] flex flex-col gap-[42px]"
+          >
+            <div className="flex flex-col gap-[42px]">
+              <TextTag
+                as="h6"
+                text={"Category"}
+                className={"h6 font-normal"}
+                color={""}
+              />
+              <div className="flex flex-col gap-6">
+                <div className="flex justify-between items-center">
+                  <label htmlFor="Request" className="flex items-center gap-3">
+                    <input
+                      type="checkbox"
+                      name="Request"
+                      className="mr-2 border border-solid border-gray-200 rounded-sm cursor-pointer"
+                    />
+                    <TextTag
+                      as="span"
+                      text={"Request"}
+                      className={"p-medium"}
+                      color={""}
+                    />
+                  </label>
+                </div>
+                <div className="flex justify-between items-center">
+                  <label htmlFor="Bug" className="flex items-center gap-3">
+                    <input
+                      type="checkbox"
+                      name="Bug"
+                      className="mr-2 border border-solid border-gray-200 rounded-sm cursor-pointer"
+                    />
+                    <TextTag
+                      as="span"
+                      text={"Bug"}
+                      className={"p-medium"}
+                      color={""}
+                    />
+                  </label>
+                </div>
+                <div className="flex justify-between items-center">
+                  <label htmlFor="Feedback" className="flex items-center gap-3">
+                    <input
+                      type="checkbox"
+                      name="Feedback"
+                      className="mr-2 border border-solid border-gray-200 rounded-sm cursor-pointer"
+                    />
+                    <TextTag
+                      as="span"
+                      text={"Feedback"}
+                      className={"p-medium"}
+                      color={""}
+                    />
+                  </label>
+                </div>
+              </div>
+              <div className="">
+                <TextTag
+                  as="p"
+                  text={"Message"}
+                  className={"p-medium mb-6"}
+                  color={"text-gray-700"}
+                />
+                <Textarea></Textarea>
+              </div>
+              <div>
+                <Button
+                  text={"Send feedback"}
+                  onClick={() => {}}
+                  type={undefined}
+                  className="text-white bg-blue-500"
+                />
+              </div>
+            </div>
+          </form>
+        )}
+      </Formik>
+    </div>
+  );
+};
+
+export default Feedback;

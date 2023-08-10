@@ -5,13 +5,7 @@ import Select from "../../utils/Select";
 import SearchField from "../../utils/SearchField";
 
 // icons
-import {
-  SettingsIcon,
-  CategoryIcon,
-  LogoutIcon,
-  AddIcon,
-  GridIcon,
-} from "../../icons";
+import { SettingsIcon, CategoryIcon, LogoutIcon, AddIcon, GridIcon } from "../../icons";
 import CitizenRemote from "../../assets/images/dropdownIcon/Citizen-Remote.svg";
 import Whale from "../../assets/images/dropdownIcon/WhaleINC.svg";
 import Tesla from "../../assets/images/dropdownIcon/Tesla.svg";
@@ -48,14 +42,10 @@ const Index = () => {
   return (
     <div className="max-w-[1280px] mx-auto px-10 py-4 flex items-center justify-between">
       <div className="flex items-center gap-[25px]">
-        <TextTag
-          as="h6"
-          text="postrank.io"
-          color="text-black"
-          className="p-medium !font-semibold"
-        />
+        <TextTag as="h6" text="postrank.io" color="text-black" className="p-medium !font-semibold" />
         <div className="md:block hidden">
           <Select
+            className=""
             data={companies}
             companiesDrop={false}
             addIcon={<AddIcon color="#ffffff" />}
@@ -74,12 +64,7 @@ const Index = () => {
 
       <div className="flex items-center gap-4">
         <div className="md:flex hidden">
-          <SearchField
-            className=""
-            onChange={() => {}}
-            placeholder={"Search..."}
-            width={""}
-          />
+          <SearchField className="" onChange={() => {}} placeholder={"Search..."} width={""} />
         </div>
 
         <div className="">
@@ -87,15 +72,9 @@ const Index = () => {
             {({ open }) => (
               <>
                 <Menu.Button
-                  className={`w-12 h-12 flex items-center justify-center bg-white rounded-full  border-[2px] border-solid border-white ${
-                    open ? "ring-[2px] ring-blue-500" : ""
-                  }`}
+                  className={`w-12 h-12 flex items-center justify-center bg-white rounded-full  border-[2px] border-solid border-white ${open ? "ring-[2px] ring-blue-500" : ""}`}
                 >
-                  <img
-                    className="w-auto h-auto object-cover rounded-full focused"
-                    src={User}
-                    alt="user photo"
-                  />
+                  <img className="w-auto h-auto object-cover rounded-full focused" src={User} alt="user photo" />
                 </Menu.Button>
                 {open && (
                   <Transition

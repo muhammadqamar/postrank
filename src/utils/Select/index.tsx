@@ -29,6 +29,7 @@ type dropdownProps = {
   simpleDropDown: boolean;
   dateOnCancel: MouseEventHandler<HTMLButtonElement>;
   multiSelect: boolean;
+  className: string;
 };
 
 const Index = ({
@@ -44,6 +45,7 @@ const Index = ({
   simpleDropDown,
   dateOnCancel,
   multiSelect,
+  className,
 }: dropdownProps) => {
   const [selected, setSelected] = useState(data[0]);
   const [startDate, setStartDate] = useState<Date | null>(new Date());
@@ -73,10 +75,10 @@ const Index = ({
   };
 
   return (
-    <div>
+    <div className={` ${className}`}>
       <Listbox value={selected} onChange={setSelected}>
         {({ open }) => (
-          <div className="relative ">
+          <div className={`relative ${className}`}>
             <Listbox.Button
               className={
                 companiesDrop

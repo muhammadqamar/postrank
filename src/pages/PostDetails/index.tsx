@@ -56,6 +56,7 @@ const Index = () => {
           <div>
             <Select
               data={dateData}
+              className=""
               companiesDrop={true}
               addIcon={<CalendarIcon color="" />}
               addText={"Custom date"}
