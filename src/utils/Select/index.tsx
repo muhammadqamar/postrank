@@ -1,6 +1,8 @@
 import { MouseEventHandler, useState } from "react";
 import { Listbox } from "@headlessui/react";
-import Datepicker from "react-tailwindcss-datepicker";
+import DatePicker from "react-datepicker";
+import DateRange from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import { ExpandIcon, Check } from "../../icons";
 import { TextTag } from "../Typography";
 import Button from "../Button";
@@ -14,11 +16,6 @@ interface arrayProps {
   name?: string;
 }
 
-type DateValueType = {
-  startDate: Date | null;
-  endDate: Date | null;
-};
-
 type dropdownProps = {
   data: Array<arrayProps>;
   companiesDrop: boolean | undefined;
@@ -30,6 +27,8 @@ type dropdownProps = {
   onClick: MouseEventHandler<HTMLButtonElement>;
   isDateM: boolean;
   simpleDropDown: boolean;
+  dateOnCancel: MouseEventHandler<HTMLButtonElement>;
+  multiSelect: boolean;
 };
 
 const Index = ({
@@ -43,21 +42,34 @@ const Index = ({
   onClick,
   isDateM,
   simpleDropDown,
+  dateOnCancel,
+  multiSelect,
 }: dropdownProps) => {
   const [selected, setSelected] = useState(data[0]);
+  const [startDate, setStartDate] = useState<Date | null>(new Date());
+  const [endDate, setEndDate] = useState<Date | null>(null);
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
 
-  const [value, setValue] = useState<DateValueType>({
-    startDate: null,
-    endDate: null,
-  });
+  const handleDateChange = (date: Date | null) => {
+    setSelectedDate(date);
+  };
+  const onChange = (dates: DateRange | null) => {
+    if (dates) {
+      const [start, end] = dates as unknown as [Date, Date];
+      setStartDate(start);
+      setEndDate(end);
+    }
+  };
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const handleValueChange = (newValue: any) => {
-    const newValueAsDateValueType: DateValueType = {
-      startDate: newValue?.startDate || null,
-      endDate: newValue?.endDate || null,
-    };
-    setValue(newValueAsDateValueType);
+  const formatDate = (date?: Date | null): string => {
+    if (date) {
+      return new Intl.DateTimeFormat("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      }).format(date);
+    }
+    return "";
   };
 
   return (
@@ -156,33 +168,73 @@ const Index = ({
               >
                 {isDateM ? (
                   <div className="w-full p-5 hover:text-white hover:bg-white">
-                    <Datepicker
-                      useRange={false}
-                      asSingle={true}
-                      value={value}
-                      onChange={handleValueChange}
-                    />
+                    <div className="my-custom-container">
+                      {multiSelect ? (
+                        <DatePicker
+                          selected={startDate}
+                          onChange={
+                            onChange as unknown as (
+                              date: [Date | null, Date | null],
+                              event:
+                                | React.SyntheticEvent<unknown, Event>
+                                | undefined,
+                            ) => void
+                          }
+                          startDate={startDate}
+                          endDate={endDate}
+                          selectsRange
+                          inline
+                        />
+                      ) : (
+                        <DatePicker
+                          selected={selectedDate}
+                          onChange={handleDateChange}
+                          dateFormat="MM/dd/yyyy"
+                          inline
+                        />
+                      )}
+                    </div>
                     <div className="w-full h-[1px] my-4 bg-gray_500" />
                     <div className="w-full flex items-center justify-between">
                       <TextTag
                         as="p"
-                        text="Selected:"
+                        text={multiSelect ? "Start date:" : "Selected:"}
                         color="text-[#909090]"
                         className=" block truncate p-medium"
                       />
                       <TextTag
                         as="p"
-                        text={value?.startDate?.toString()}
+                        text={
+                          multiSelect
+                            ? formatDate(startDate)
+                            : formatDate(selectedDate)
+                        }
                         color="text-black"
                         className="block truncate p-medium !font-medium"
                       />
                     </div>
+                    {multiSelect && (
+                      <div className="w-full flex items-center justify-between mt-4">
+                        <TextTag
+                          as="p"
+                          text="End date:"
+                          color="text-[#909090]"
+                          className=" block truncate p-medium"
+                        />
+                        <TextTag
+                          as="p"
+                          text={formatDate(endDate)}
+                          color="text-black"
+                          className="block truncate p-medium !font-medium"
+                        />
+                      </div>
+                    )}
                     <div className="w-full h-[1px] my-4 bg-gray_500" />
                     <div className="w-full flex items-center justify-between">
                       <Button
                         text="Cancel"
                         type="button"
-                        onClick={() => {}}
+                        onClick={dateOnCancel}
                         className="!w-fit !py-[10px] !px-4 bg-gray_100 text-gray-700 flex items-center justify-center"
                       />
                       <Button

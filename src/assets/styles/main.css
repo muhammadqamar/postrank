@@ -70,3 +70,57 @@ body {
 .search-input {
   @apply w-full py-[10px] pl-3 pr-9 bg-white rounded-full border-none outline-none h-auto p-medium text-gray_600;
 }
+
+/* date picker design  */
+
+.my-custom-container .react-datepicker,
+.my-custom-container .react-datepicker .react-datepicker__month-container {
+  @apply w-full border-none rounded-none !important;
+}
+
+.my-custom-container
+  .react-datepicker
+  .react-datepicker__month-container
+  .react-datepicker__header {
+  @apply w-full bg-white;
+}
+
+.my-custom-container
+  .react-datepicker
+  .react-datepicker__month-container
+  .react-datepicker__month
+  .react-datepicker__day {
+  @apply w-8 h-8 rounded-lg py-[7px] font-medium text-sm !leading-[18px];
+}
+.my-custom-container
+  .react-datepicker
+  .react-datepicker__month-container
+  .react-datepicker__month
+  .react-datepicker__day--selected {
+  @apply bg-[#2F67DD];
+}
+
+/* chart */
+
+.charts .highcharts-axis-title,
+.highcharts-no-tooltip,
+.highcharts-credits {
+  @apply !hidden;
+}
+.charts .highcharts-xaxis .highcharts-tick {
+  stroke-width: 2px;
+  stroke: #e0e9fa;
+}
+.charts .highcharts-xaxis .highcharts-axis-line {
+  stroke-width: 2px;
+  stroke: #e0e9fa;
+}
+.charts .highcharts-axis-labels text {
+  fill: #909090 !important;
+
+  @apply font-normal !text-[14px] leading-[18px];
+}
+.charts .highcharts-tracker-line {
+  stroke-width: 2px;
+  stroke: #2f67dd;
+}

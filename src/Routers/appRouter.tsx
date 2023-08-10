@@ -6,7 +6,7 @@ import Layout from "../components/Layout";
 import Login from "../components/Authentications/Login";
 import ResetPassword from "../components/Authentications/ResetPassword/index";
 import CreateAccount from "../components/Authentications/CreateAccount/index";
-import PostDetails from "../components/Authentications/PostDetails";
+import PostDetails from "../pages/PostDetails";
 
 const AppRouter = () => {
   return (

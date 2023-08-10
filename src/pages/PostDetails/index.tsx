@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Select from "../../../utils/Select";
-import Card from "../../../utils/Cards";
-import ComparePost from "../../../utils/Error";
-import Trading from "../../../utils/Trading";
-import Chart from "../../PostDetail/charts";
+import Select from "../../utils/Select";
+import Card from "../../utils/Cards";
+import ComparePost from "../../utils/Error";
+import Trading from "../../utils/Trading";
+import Chart from "../../components/GraphChart/charts";
 import {
   AddPostIcon,
   BackIcon,
@@ -14,25 +14,25 @@ import {
   EyeIcon,
   IncreaseIcon,
   OpenNewIcon,
-} from "../../../icons";
-import { TextTag } from "../../../utils/Typography";
+} from "../../icons";
+import { TextTag } from "../../utils/Typography";
 
-import BackgroundImage1 from "../../../assets/images/png/image1.png";
+import BackgroundImage1 from "../../assets/images/png/image1.png";
 const dateData = [
   {
-    name: "Today",
+    name: "7 days",
   },
   {
-    name: "Yesterday",
+    name: "14 days",
   },
   {
-    name: "Last week",
+    name: "30 days",
   },
   {
-    name: "Last month",
+    name: "60 days",
   },
   {
-    name: "Last year",
+    name: "90 days",
   },
 ];
 
@@ -65,6 +65,8 @@ const Index = () => {
               onClick={() => setIsDateM(true)}
               isDateM={isDateM}
               simpleDropDown={false}
+              dateOnCancel={() => setIsDateM(false)}
+              multiSelect={true}
             />
           </div>
         </div>

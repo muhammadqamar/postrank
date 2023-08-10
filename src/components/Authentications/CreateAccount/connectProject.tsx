@@ -91,6 +91,8 @@ const ConnectProject = () => {
                   onClick={() => {}}
                   isDateM={false}
                   simpleDropDown={true}
+                  dateOnCancel={() => {}}
+                  multiSelect={false}
                 />
               </div>
               <div className="hidden">
@@ -126,6 +128,8 @@ const ConnectProject = () => {
                   onClick={() => {}}
                   isDateM={false}
                   simpleDropDown={true}
+                  dateOnCancel={() => {}}
+                  multiSelect={false}
                 />
               </div>
               <div className="mb-5">
@@ -146,6 +150,8 @@ const ConnectProject = () => {
                   onClick={() => {}}
                   isDateM={false}
                   simpleDropDown={true}
+                  dateOnCancel={() => {}}
+                  multiSelect={false}
                 />
               </div>
             </form>

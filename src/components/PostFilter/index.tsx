@@ -77,6 +77,8 @@ const index = () => {
             onClick={() => {}}
             isDateM={false}
             simpleDropDown={false}
+            dateOnCancel={() => {}}
+            multiSelect={false}
           />
         </div>
         <div className="flex items-center flex-wrap">
@@ -92,6 +94,8 @@ const index = () => {
               onClick={() => setIsDateM(true)}
               isDateM={isDateM}
               simpleDropDown={false}
+              dateOnCancel={() => setIsDateM(false)}
+              multiSelect={false}
             />
           </div>
           <div className="">
@@ -106,6 +110,8 @@ const index = () => {
               onClick={() => {}}
               isDateM={false}
               simpleDropDown={false}
+              dateOnCancel={() => {}}
+              multiSelect={false}
             />
           </div>
 

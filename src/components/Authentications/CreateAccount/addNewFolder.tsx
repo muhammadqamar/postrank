@@ -114,6 +114,8 @@ const AddNewFolder = () => {
                     onClick={() => {}}
                     isDateM={false}
                     simpleDropDown={true}
+                    dateOnCancel={() => {}}
+                    multiSelect={false}
                   />
                 </div>
                 <div className="mb-5">
