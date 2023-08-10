@@ -5,6 +5,7 @@ import Button from "../../../../utils/Button";
 import InputField from "../../../../utils/InputField";
 import { TextTag } from "../../../../utils/Typography";
 import { CheckRounded, Upload } from "../../../../icons";
+import { RightArrowIcon } from "../../../../icons";
 
 const postData = [
   {
@@ -27,10 +28,16 @@ const postData = [
   },
 ];
 
-const CitizenRemote = () => {
+const CreatedProject = ({ setAddProject }) => {
   return (
     <div className="px-8 pt-8 pb-16 bg-white rounded-[20px] max-w-[774px] w-full">
       <div className="flex flex-col gap-[42px] max-w-[512px] w-full">
+        <div className="flex items-center gap-4">
+          <div className="p-[10px] bg-[#E0E9FA] w-10 h-10 rounded-full cursor-pointer" onClick={() => setAddProject("projects")}>
+            <RightArrowIcon />
+          </div>
+          <TextTag as="label" text={"Add new project"} className={"text-[25px] leading-[32px] font-medium tracking-[-0.4px]"} color={"text-[#000000]"} />
+        </div>
         <div className="flex flex-col gap-6">
           <h6 className="tracking-[ -0.2px] font-medium">Project information</h6>
 
@@ -38,7 +45,6 @@ const CitizenRemote = () => {
             <TextTag as="label" text={"Project name"} className={"text-sm font-normal max-w-[180px] w-full"} color={"text-[#464646]"} />
             <InputField className="max-w-[300px] w-full" />
           </div>
-
           <div className="flex items-center gap-8">
             <TextTag as="label" text={"Logo"} className={"text-sm font-normal max-w-[180px] w-full"} color={"text-[#464646]"} />
             <Upload />
@@ -131,4 +137,4 @@ const CitizenRemote = () => {
   );
 };
 
-export default CitizenRemote;
+export default CreatedProject;

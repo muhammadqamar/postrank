@@ -1,14 +1,17 @@
 import React from "react";
-import AccountDetails from "./accountDetails";
-// import AddNewProject from "./AddProject";
-import CitizenRemote from "./AddProject/citizenRemote";
+
+// import AccountDetails from "./accountDetails";
+// import Feedback from "./feedback";
+// import Supports from "./support";
+import AddProjects from "./AddProject";
 
 const Index = () => {
   return (
-    <div>
-      <AccountDetails />
-      {/* <AddNewProject /> */}
-      <CitizenRemote />
+    <div className="max-w-[1280px] mx-auto p-8">
+      <AddProjects />
+      {/* <AccountDetails />
+      <Feedback />
+      <Supports /> */}
     </div>
   );
 };
