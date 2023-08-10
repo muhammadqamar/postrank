@@ -14,28 +14,10 @@ type InputProps = {
   touch: boolean | undefined;
 };
 
-const Index: React.FC<InputProps> = ({
-  label,
-  type,
-  name,
-  placeholder,
-  className,
-  icon,
-  onChange,
-  onBlur,
-  value,
-  error,
-  touch,
-}) => {
+const Index: React.FC<InputProps> = ({ label, type, name, placeholder, className, icon, onChange, onBlur, value, error, touch }) => {
   return (
     <div className={`flex flex-col gap-1 ${className}`}>
-      {label ? (
-        <label className="block text-xs font-normal text-gray-700">
-          {label}
-        </label>
-      ) : (
-        ""
-      )}
+      {label ? <label className="block text-xs font-normal text-gray-700">{label}</label> : ""}
       <div className="relative flex items-center">
         <input
           type={type}
@@ -44,7 +26,7 @@ const Index: React.FC<InputProps> = ({
           onChange={onChange}
           onBlur={onBlur}
           value={value}
-          className={`w-full p-medium !bg-white border border-solid rounded-[7px] focus-visible:outline-1 focus-visible:outline ${
+          className={`w-full p-medium !bg-white border border-solid rounded-[7px] focus-visible:outline-1 focus-visible:outline ${className} ${
             error ? "border-error-300" : "border-gray-200"
           } py-[10px] px-3 pr-9`}
         />

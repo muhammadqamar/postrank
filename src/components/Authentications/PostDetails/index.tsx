@@ -4,17 +4,7 @@ import Card from "../../../utils/Cards";
 import ComparePost from "../../../utils/Error";
 import Trading from "../../../utils/Trading";
 import Chart from "../../PostDetail/charts";
-import {
-  AddPostIcon,
-  BackIcon,
-  CalendarIcon,
-  CloseIcon,
-  ContactIcon,
-  DotIcon,
-  EyeIcon,
-  IncreaseIcon,
-  OpenNewIcon,
-} from "../../../icons";
+import { AddPostIcon, BackIcon, CalendarIcon, CloseIcon, ContactIcon, DotIcon, EyeIcon, IncreaseIcon, OpenNewIcon } from "../../../icons";
 import { TextTag } from "../../../utils/Typography";
 
 import BackgroundImage1 from "../../../assets/images/png/image1.png";
@@ -46,16 +36,12 @@ const Index = () => {
             <div className="rounded-full p-[10px] bg-blue-100">
               <BackIcon />
             </div>
-            <TextTag
-              as="h5"
-              text={"Post details"}
-              className={"h5 font-normal"}
-              color={""}
-            />
+            <TextTag as="h5" text={"Post details"} className={"h5 font-normal"} color={""} />
           </div>
           <div>
             <Select
               data={dateData}
+              className=""
               companiesDrop={true}
               addIcon={<CalendarIcon color="" />}
               addText={"Custom date"}
@@ -93,112 +79,59 @@ const Index = () => {
             />
             {/* tags */}
             <div className="p-5 bg-white rounded-[20px] mt-6">
-              <TextTag
-                as="p"
-                text={"Tags"}
-                className={"p-small mb-2"}
-                color={"text-gray-700"}
-              />
+              <TextTag as="p" text={"Tags"} className={"p-small mb-2"} color={"text-gray-700"} />
               {/* tag names */}
               <div className="flex flex-wrap gap-2">
                 <div className="flex gap-[6px] py-[7px] px-[10px] common-bg-color rounded-md w-fit">
-                  <TextTag
-                    as="p"
-                    text={"Digital Nomad"}
-                    className={"p-medium"}
-                    color={"text-blue-700"}
-                  />
+                  <TextTag as="p" text={"Digital Nomad"} className={"p-medium"} color={"text-blue-700"} />
                   <button className="cursor-pointer" onClick={() => {}}>
                     <CloseIcon color={"#274C9B"} />
                   </button>
                 </div>
                 <div className="flex gap-[6px] py-[7px] px-[10px] common-bg-color rounded-md w-fit">
-                  <TextTag
-                    as="p"
-                    text={"Visa"}
-                    className={"p-medium"}
-                    color={"text-blue-700"}
-                  />
+                  <TextTag as="p" text={"Visa"} className={"p-medium"} color={"text-blue-700"} />
                   <button className="cursor-pointer" onClick={() => {}}>
                     <CloseIcon color={"#274C9B"} />
                   </button>
                 </div>
                 <div className="flex gap-[6px] py-[7px] px-[10px] common-bg-color rounded-md w-fit">
-                  <TextTag
-                    as="p"
-                    text={"Country"}
-                    className={"p-medium"}
-                    color={"text-blue-700"}
-                  />
+                  <TextTag as="p" text={"Country"} className={"p-medium"} color={"text-blue-700"} />
                   <button className="cursor-pointer" onClick={() => {}}>
                     <CloseIcon color={"#274C9B"} />
                   </button>
                 </div>
                 <div className="flex gap-[6px] py-[7px] px-[10px] common-bg-color rounded-md w-fit">
-                  <TextTag
-                    as="p"
-                    text={"List"}
-                    className={"p-medium"}
-                    color={"text-blue-700"}
-                  />
+                  <TextTag as="p" text={"List"} className={"p-medium"} color={"text-blue-700"} />
                   <button className="cursor-pointer" onClick={() => {}}>
                     <CloseIcon color={"#274C9B"} />
                   </button>
                 </div>
                 <div className="flex gap-[6px] py-[7px] px-[10px] common-bg-color rounded-md w-fit">
-                  <TextTag
-                    as="p"
-                    text={"Popular"}
-                    className={"p-medium"}
-                    color={"text-blue-700"}
-                  />
+                  <TextTag as="p" text={"Popular"} className={"p-medium"} color={"text-blue-700"} />
                   <button className="cursor-pointer" onClick={() => {}}>
                     <CloseIcon color={"#274C9B"} />
                   </button>
                 </div>
                 <div className="flex gap-[6px] py-[7px] px-[10px] common-bg-color rounded-md w-fit">
-                  <TextTag
-                    as="p"
-                    text={"Essentials"}
-                    className={"p-medium"}
-                    color={"text-blue-700"}
-                  />
+                  <TextTag as="p" text={"Essentials"} className={"p-medium"} color={"text-blue-700"} />
                   <button className="cursor-pointer" onClick={() => {}}>
                     <CloseIcon color={"#274C9B"} />
                   </button>
                 </div>
                 <div className="flex gap-[6px] py-[7px] px-[10px] common-bg-color rounded-md w-fit">
-                  <TextTag
-                    as="p"
-                    text={"Travel"}
-                    className={"p-medium"}
-                    color={"text-blue-700"}
-                  />
+                  <TextTag as="p" text={"Travel"} className={"p-medium"} color={"text-blue-700"} />
                   <button className="cursor-pointer" onClick={() => {}}>
                     <CloseIcon color={"#274C9B"} />
                   </button>
                 </div>
                 <div className="flex gap-[6px] py-[7px] px-[10px] common-bg-color rounded-md w-fit">
-                  <TextTag
-                    as="p"
-                    text={"Explore"}
-                    className={"p-medium"}
-                    color={"text-blue-700"}
-                  />
+                  <TextTag as="p" text={"Explore"} className={"p-medium"} color={"text-blue-700"} />
                   <button className="cursor-pointer" onClick={() => {}}>
                     <CloseIcon color={"#274C9B"} />
                   </button>
                 </div>
-                <button
-                  className="flex gap-[6px] py-[7px] px-[10px] rounded-md w-fit cursor-pointer"
-                  onClick={() => {}}
-                >
-                  <TextTag
-                    as="p"
-                    text={"Add Tags"}
-                    className={"p-medium"}
-                    color={"text-blue-500"}
-                  />
+                <button className="flex gap-[6px] py-[7px] px-[10px] rounded-md w-fit cursor-pointer" onClick={() => {}}>
+                  <TextTag as="p" text={"Add Tags"} className={"p-medium"} color={"text-blue-500"} />
                 </button>
               </div>
             </div>
@@ -211,26 +144,14 @@ const Index = () => {
             onClick={() => {}}
             className={"bg-blue-100 rounded-[20px]"}
             textStyling={"!mt-1"}
-            buttonStyling={
-              "!text-blue-500 !bg-blue-100 border-2 border-solid border-blue-500 font-medium"
-            }
+            buttonStyling={"!text-blue-500 !bg-blue-100 border-2 border-solid border-blue-500 font-medium"}
           />
         </div>
         {/* User trends */}
         <div className="p-8 mb-6 bg-white rounded-[20px] ">
           <div className="flex justify-between items-center mb-6">
-            <TextTag
-              as="h5"
-              text={"User trends"}
-              className={"h5 font-normal"}
-              color={""}
-            />
-            <TextTag
-              as="p"
-              text={"30 days"}
-              className={"p-medium"}
-              color={"text-gray-600"}
-            />
+            <TextTag as="h5" text={"User trends"} className={"h5 font-normal"} color={""} />
+            <TextTag as="p" text={"30 days"} className={"p-medium"} color={"text-gray-600"} />
           </div>
 
           <div className="flex flex-wrap md:flex-nowrap justify-between gap-4">
@@ -268,18 +189,8 @@ const Index = () => {
         {/* Page view trends */}
         <div className="p-8 mb-6 bg-white rounded-[20px]">
           <div className="flex justify-between items-center mb-6">
-            <TextTag
-              as="h5"
-              text={"Page view trends"}
-              className={"h5 font-normal"}
-              color={""}
-            />
-            <TextTag
-              as="p"
-              text={"30 days"}
-              className={"p-medium"}
-              color={"text-gray-600"}
-            />
+            <TextTag as="h5" text={"Page view trends"} className={"h5 font-normal"} color={""} />
+            <TextTag as="p" text={"30 days"} className={"p-medium"} color={"text-gray-600"} />
           </div>
           <div className="flex flex-wrap md:flex-nowrap justify-between gap-4">
             <Trading
@@ -316,18 +227,8 @@ const Index = () => {
         {/* Queries */}
         <div className="p-8 mb-6 bg-white rounded-[20px]">
           <div className="flex justify-between items-center mb-6">
-            <TextTag
-              as="h5"
-              text={"Queries"}
-              className={"h5 font-normal"}
-              color={""}
-            />
-            <TextTag
-              as="p"
-              text={"30 days"}
-              className={"p-medium"}
-              color={"text-gray-600"}
-            />
+            <TextTag as="h5" text={"Queries"} className={"h5 font-normal"} color={""} />
+            <TextTag as="p" text={"30 days"} className={"p-medium"} color={"text-gray-600"} />
           </div>
           <div className="flex flex-wrap md:flex-nowrap justify-between gap-4 mb-8">
             <Trading
@@ -354,287 +255,161 @@ const Index = () => {
             <table className="w-full">
               {/* 1st row */}
               <tr className=" text-end ">
-                <th
-                  scope="row"
-                  className="w-[50%] p-small text-gray-700 bg-blue-200 focus:bg-blue-100 p-3 !text-start border-r border-b common-bg-color"
-                >
+                <th scope="row" className="w-[50%] p-small text-gray-700 bg-blue-200 focus:bg-blue-100 p-3 !text-start border-r border-b common-bg-color">
                   Keyword
                 </th>
-                <th
-                  scope="row"
-                  className=" p-small text-gray-700 bg-blue-200 focus:bg-blue-100 p-3 border-r border-b common-bg-color"
-                >
+                <th scope="row" className=" p-small text-gray-700 bg-blue-200 focus:bg-blue-100 p-3 border-r border-b common-bg-color">
                   Pos. 25 June
                 </th>
-                <th
-                  scope="row"
-                  className=" p-small text-gray-700 bg-blue-200 focus:bg-blue-100 p-3 border-r border-b common-bg-color"
-                >
+                <th scope="row" className=" p-small text-gray-700 bg-blue-200 focus:bg-blue-100 p-3 border-r border-b common-bg-color">
                   Pos. 25 July
                 </th>
-                <th
-                  scope="row"
-                  className=" p-small text-gray-700 bg-blue-200 focus:bg-blue-100 p-3 border-r border-b common-bg-color"
-                >
+                <th scope="row" className=" p-small text-gray-700 bg-blue-200 focus:bg-blue-100 p-3 border-r border-b common-bg-color">
                   Diff
                 </th>
-                <th
-                  scope="row"
-                  className=" p-small text-gray-700 bg-blue-200 focus:bg-blue-100 p-3 border-r border-b common-bg-color"
-                >
+                <th scope="row" className=" p-small text-gray-700 bg-blue-200 focus:bg-blue-100 p-3 border-r border-b common-bg-color">
                   {" "}
                   Est. traffic
                 </th>
-                <th
-                  scope="row"
-                  className=" p-small text-gray-700 bg-blue-200 focus:bg-blue-100 p-3 border-b common-bg-color"
-                >
+                <th scope="row" className=" p-small text-gray-700 bg-blue-200 focus:bg-blue-100 p-3 border-b common-bg-color">
                   Vol.
                 </th>
               </tr>
               {/* 2nd row */}
               <tr className="text-end">
-                <td
-                  scope="row"
-                  className="w-[52.5%] p-medium  focus:bg-blue-100  !text-start p-3 border-r border-b border-blue-200"
-                >
+                <td scope="row" className="w-[52.5%] p-medium  focus:bg-blue-100  !text-start p-3 border-r border-b border-blue-200">
                   Keyword
                 </td>
-                <th
-                  scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3  border-r border-b border-blue-200"
-                >
+                <th scope="row" className=" p-medium  focus:bg-blue-100 p-3  border-r border-b border-blue-200">
                   3
                 </th>
-                <th
-                  scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200"
-                >
+                <th scope="row" className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200">
                   1
                 </th>
-                <th
-                  scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200"
-                >
+                <th scope="row" className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200">
                   <span className="flex gap-1 items-center justify-end">
                     2<IncreaseIcon />
                   </span>
                 </th>
-                <th
-                  scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200"
-                >
+                <th scope="row" className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200">
                   15.77
                 </th>
-                <th
-                  scope="row"
-                  className=" p-medium focus:bg-blue-100 p-3 border-b border-blue-200"
-                >
+                <th scope="row" className=" p-medium focus:bg-blue-100 p-3 border-b border-blue-200">
                   1,300
                 </th>
               </tr>
               {/* 3rd row */}
               <tr className="text-end">
-                <td
-                  scope="row"
-                  className="w-[50%] p-medium  focus:bg-blue-100  !text-start p-3 border-r border-b border-blue-200"
-                >
+                <td scope="row" className="w-[50%] p-medium  focus:bg-blue-100  !text-start p-3 border-r border-b border-blue-200">
                   Keyword
                 </td>
-                <th
-                  scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 "
-                >
+                <th scope="row" className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 ">
                   3
                 </th>
-                <th
-                  scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 "
-                >
+                <th scope="row" className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 ">
                   1
                 </th>
-                <th
-                  scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 "
-                >
+                <th scope="row" className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 ">
                   <span className="flex gap-1 items-center justify-end">
                     2<IncreaseIcon />
                   </span>
                 </th>
-                <th
-                  scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 "
-                >
+                <th scope="row" className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 ">
                   15.77
                 </th>
-                <th
-                  scope="row"
-                  className=" p-medium focus:bg-blue-100 p-3 border-b border-blue-200 "
-                >
+                <th scope="row" className=" p-medium focus:bg-blue-100 p-3 border-b border-blue-200 ">
                   1,300
                 </th>
               </tr>
               {/* 4th row */}
               <tr className="text-end">
-                <td
-                  scope="row"
-                  className="w-[50%] p-medium  focus:bg-blue-100  !text-start p-3 border-r border-b border-blue-200"
-                >
+                <td scope="row" className="w-[50%] p-medium  focus:bg-blue-100  !text-start p-3 border-r border-b border-blue-200">
                   Keyword
                 </td>
-                <th
-                  scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 "
-                >
+                <th scope="row" className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 ">
                   3
                 </th>
-                <th
-                  scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 "
-                >
+                <th scope="row" className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 ">
                   1
                 </th>
-                <th
-                  scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 "
-                >
+                <th scope="row" className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 ">
                   <span className="flex gap-1 items-center justify-end">
                     2<IncreaseIcon />
                   </span>
                 </th>
-                <th
-                  scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 "
-                >
+                <th scope="row" className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 ">
                   15.77
                 </th>
-                <th
-                  scope="row"
-                  className=" p-medium focus:bg-blue-100 p-3 border-b border-blue-200 "
-                >
+                <th scope="row" className=" p-medium focus:bg-blue-100 p-3 border-b border-blue-200 ">
                   1,300
                 </th>
               </tr>
               {/* 5th row */}
               <tr className="text-end">
-                <td
-                  scope="row"
-                  className="w-[50%] p-medium  focus:bg-blue-100  !text-start p-3 border-r border-b border-blue-200"
-                >
+                <td scope="row" className="w-[50%] p-medium  focus:bg-blue-100  !text-start p-3 border-r border-b border-blue-200">
                   Keyword
                 </td>
-                <th
-                  scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 "
-                >
+                <th scope="row" className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 ">
                   3
                 </th>
-                <th
-                  scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 "
-                >
+                <th scope="row" className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 ">
                   1
                 </th>
-                <th
-                  scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 "
-                >
+                <th scope="row" className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 ">
                   <span className="flex gap-1 items-center justify-end">
                     2<IncreaseIcon />
                   </span>
                 </th>
-                <th
-                  scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 "
-                >
+                <th scope="row" className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 ">
                   15.77
                 </th>
-                <th
-                  scope="row"
-                  className=" p-medium focus:bg-blue-100 p-3 border-b border-blue-200 "
-                >
+                <th scope="row" className=" p-medium focus:bg-blue-100 p-3 border-b border-blue-200 ">
                   1,300
                 </th>
               </tr>
               {/* 6th row */}
               <tr className="text-end">
-                <td
-                  scope="row"
-                  className="w-[50%] p-medium  focus:bg-blue-100  !text-start p-3 border-r border-b border-blue-200"
-                >
+                <td scope="row" className="w-[50%] p-medium  focus:bg-blue-100  !text-start p-3 border-r border-b border-blue-200">
                   Keyword
                 </td>
-                <th
-                  scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 "
-                >
+                <th scope="row" className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 ">
                   3
                 </th>
-                <th
-                  scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 "
-                >
+                <th scope="row" className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 ">
                   1
                 </th>
-                <th
-                  scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 "
-                >
+                <th scope="row" className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 ">
                   <span className="flex gap-1 items-center justify-end">
                     2<IncreaseIcon />
                   </span>
                 </th>
-                <th
-                  scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 "
-                >
+                <th scope="row" className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 ">
                   15.77
                 </th>
-                <th
-                  scope="row"
-                  className=" p-medium focus:bg-blue-100 p-3 border-b border-blue-200 "
-                >
+                <th scope="row" className=" p-medium focus:bg-blue-100 p-3 border-b border-blue-200 ">
                   1,300
                 </th>
               </tr>
               {/* 7th row */}
               <tr className="text-end">
-                <td
-                  scope="row"
-                  className="w-[50%] p-medium  focus:bg-blue-100  !text-start p-3 border-r border-blue-200 "
-                >
+                <td scope="row" className="w-[50%] p-medium  focus:bg-blue-100  !text-start p-3 border-r border-blue-200 ">
                   Keyword
                 </td>
-                <th
-                  scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-blue-200 "
-                >
+                <th scope="row" className=" p-medium  focus:bg-blue-100 p-3 border-r border-blue-200 ">
                   3
                 </th>
-                <th
-                  scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-blue-200 "
-                >
+                <th scope="row" className=" p-medium  focus:bg-blue-100 p-3 border-r border-blue-200 ">
                   1
                 </th>
-                <th
-                  scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-blue-200 "
-                >
+                <th scope="row" className=" p-medium  focus:bg-blue-100 p-3 border-r border-blue-200 ">
                   <span className="flex gap-1 items-center justify-end">
                     2<IncreaseIcon />
                   </span>
                 </th>
-                <th
-                  scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-blue-200 "
-                >
+                <th scope="row" className=" p-medium  focus:bg-blue-100 p-3 border-r border-blue-200 ">
                   15.77
                 </th>
-                <th
-                  scope="row"
-                  className=" p-medium focus:bg-blue-100 p-3 border-blue-200 "
-                >
+                <th scope="row" className=" p-medium focus:bg-blue-100 p-3 border-blue-200 ">
                   1,300
                 </th>
               </tr>

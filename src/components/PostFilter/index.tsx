@@ -67,6 +67,7 @@ const index = () => {
       <div className="w-full my-[42px] flex items-center justify-between flex-wrap gap-5">
         <div className="">
           <Select
+            className=""
             data={postData}
             companiesDrop={true}
             addIcon={<AddIcon color={""} />}
@@ -82,6 +83,7 @@ const index = () => {
         <div className="flex items-center flex-wrap">
           <div className="">
             <Select
+              className=""
               data={dateData}
               companiesDrop={true}
               addIcon={<CalendarIcon color="" />}
@@ -96,6 +98,7 @@ const index = () => {
           </div>
           <div className="">
             <Select
+              className=""
               data={sortData}
               companiesDrop={true}
               addIcon={""}
@@ -110,11 +113,7 @@ const index = () => {
           </div>
 
           <div className="">
-            <TagDrapdown
-              onclick={() => setIsOpen(true)}
-              onClear={() => {}}
-              onChange={() => {}}
-            />
+            <TagDrapdown onclick={() => setIsOpen(true)} onClear={() => {}} onChange={() => {}} />
           </div>
         </div>
       </div>

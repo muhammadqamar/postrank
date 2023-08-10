@@ -35,6 +35,8 @@ import { WarningIcon } from "./warning";
 import { Check } from "./check";
 import { WhaleIcon } from "./whale";
 import { CloseIcon } from "./close";
+import { Upload } from "./upload";
+import { CheckRounded } from "./checkRounded";
 export {
   CloseIcon,
   Check,
@@ -73,4 +75,6 @@ export {
   TrophyIcon,
   WarningIcon,
   WhaleIcon,
+  Upload,
+  CheckRounded,
 };
