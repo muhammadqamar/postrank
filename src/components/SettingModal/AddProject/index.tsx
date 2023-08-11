@@ -24,47 +24,83 @@ const AddProjects = () => {
             </h6>
             <div className="flex items-center flex-wrap gap-2 pt-8">
               <AddedProject
-                classNames="max-w-[300px] w-auto bg-[#F1F6FD]"
+                classNames="max-w-full md:max-w-[221px] w-full !bg-[#F1F6FD]"
+                className="text-black text-sm font-medium"
                 icon={<Upload />}
                 newProjectTitle="Citizen Remote"
                 newProjectText="4 folders"
                 ArrowIcon={<RightArrowIcon />}
+                newProjectTitleColor={""}
+                newProjectTextColor={""}
+                bg={""}
+                onClick={() => {}}
+                PlusIcon={undefined}
               />
               <AddedProject
-                classNames="max-w-[300px] w-full bg-[#F1F6FD]"
+                classNames="max-w-full md:max-w-[221px] w-full !bg-[#F1F6FD]"
+                className="text-black text-sm font-medium"
                 icon={<Upload />}
                 newProjectTitle="Remote"
                 newProjectText="4 folders"
                 ArrowIcon={<RightArrowIcon />}
+                newProjectTitleColor={""}
+                newProjectTextColor={""}
+                bg={""}
+                onClick={() => {}}
+                PlusIcon={undefined}
               />
               <AddedProject
-                classNames="max-w-[300px] w-full bg-[#F1F6FD]"
+                classNames="max-w-full md:max-w-[221px] w-full !bg-[#F1F6FD]"
+                className="text-black text-sm font-medium"
                 icon={<Upload />}
                 newProjectTitle="Remote Access"
                 newProjectText="4 folders"
                 ArrowIcon={<RightArrowIcon />}
+                newProjectTitleColor={""}
+                newProjectTextColor={""}
+                bg={""}
+                onClick={() => {}}
+                PlusIcon={undefined}
               />
               <AddedProject
-                classNames="max-w-[300px] w-full bg-[#F1F6FD]"
+                classNames="max-w-full md:max-w-[221px] w-full !bg-[#F1F6FD]"
+                className="text-black text-sm font-medium"
                 icon={<Upload />}
                 newProjectTitle="Citizen Remote"
                 newProjectText="4 folders"
                 ArrowIcon={<RightArrowIcon />}
+                newProjectTitleColor={""}
+                newProjectTextColor={""}
+                bg={""}
+                onClick={() => {}}
+                PlusIcon={undefined}
               />
               <AddedProject
-                classNames="max-w-[300px] w-full bg-[#F1F6FD]"
+                classNames="max-w-full md:max-w-[221px] w-full !bg-[#F1F6FD]"
+                className="text-black text-sm font-medium"
                 icon={<Upload />}
                 newProjectTitle="Remote"
                 newProjectText="4 folders"
                 ArrowIcon={<RightArrowIcon />}
+                newProjectTitleColor={""}
+                newProjectTextColor={""}
+                bg={""}
+                onClick={() => {}}
+                PlusIcon={undefined}
               />
 
               <AddedProject
-                classNames="max-w-[300px] w-full bg-[#F1F6FD]"
+                classNames="max-w-full md:max-w-[221px] w-full !bg-[#F1F6FD]"
+                className="text-[#2F67DD] text-sm font-medium"
                 icon={<Upload />}
                 newProjectTitle="Add New Project"
                 ArrowIcon={<RightArrowIcon />}
+                PlusIcon
                 onClick={() => setAddProject("addProject")}
+                newProjectTitleColor={""}
+                newProjectTextColor={""}
+                bg={""}
+                newProjectText={""}
               />
             </div>
           </div>

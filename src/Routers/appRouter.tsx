@@ -7,7 +7,6 @@ import Login from "../components/Authentications/Login";
 import ResetPassword from "../components/Authentications/ResetPassword/index";
 import CreateAccount from "../components/Authentications/CreateAccount/index";
 import PostDetails from "../pages/PostDetails";
-import Settings from "../pages/Settings";
 
 const AppRouter = () => {
   return (
@@ -19,7 +18,6 @@ const AppRouter = () => {
         <Route path="reset-password" element={<ResetPassword />} />
         <Route path="create-account" element={<CreateAccount />} />
         <Route path="post-details" element={<PostDetails />} />
-        <Route path="settings" element={<Settings />} />
       </Routes>
     </div>
   );

@@ -28,13 +28,16 @@ const postData = [
   },
 ];
 
-const CreatedProject = ({ setAddProject }) => {
+type props = {
+  setAddProject: (value: string) => void;
+};
+const CreatedProject = ({ setAddProject }: props) => {
   return (
     <div className="px-8 pt-8 pb-16 bg-white rounded-[20px] max-w-[774px] w-full">
       <div className="flex flex-col gap-[42px] max-w-[512px] w-full">
         <div className="flex items-center gap-4">
           <div
-            className="p-[10px] bg-[#E0E9FA] w-10 h-10 rounded-full cursor-pointer"
+            className="p-[10px] bg-[#E0E9FA] w-10 h-10 rounded-full cursor-pointer rotate-180"
             onClick={() => setAddProject("projects")}
           >
             <RightArrowIcon />
@@ -60,7 +63,19 @@ const CreatedProject = ({ setAddProject }) => {
               className={"text-sm font-normal max-w-[180px] w-full"}
               color={"text-[#464646]"}
             />
-            <InputField className="max-w-[300px] w-full" />
+            <InputField
+              className="max-w-[300px] w-full"
+              label={undefined}
+              type={undefined}
+              name={undefined}
+              placeholder={undefined}
+              icon={undefined}
+              onChange={undefined}
+              onBlur={undefined}
+              value={undefined}
+              error={undefined}
+              touch={undefined}
+            />
           </div>
           <div className="flex items-center gap-8">
             <TextTag
@@ -74,10 +89,14 @@ const CreatedProject = ({ setAddProject }) => {
               <Button
                 text="Upload new"
                 className="!py-[7px] !px-[12px] !text-sm font-medium bg-transparent border-[2px]  border-[#2F67DD]"
+                onClick={() => {}}
+                type={undefined}
               />
               <Button
                 text="Delete"
                 className="!py-[7px] !px-[12px] !text-sm font-medium bg-transparent !text-black"
+                onClick={() => {}}
+                type={undefined}
               />
             </div>
           </div>
@@ -186,7 +205,19 @@ const CreatedProject = ({ setAddProject }) => {
               className={"text-sm font-normal max-w-[180px] w-full"}
               color={"text-[#464646]"}
             />
-            <InputField className="max-w-[300px] w-full" />
+            <InputField
+              className="max-w-[300px] w-full"
+              label={undefined}
+              type={undefined}
+              name={undefined}
+              placeholder={undefined}
+              icon={undefined}
+              onChange={undefined}
+              onBlur={undefined}
+              value={undefined}
+              error={undefined}
+              touch={undefined}
+            />
           </div>
 
           <div className="flex w-full items-center gap-8">
@@ -208,6 +239,8 @@ const CreatedProject = ({ setAddProject }) => {
               onClick={() => {}}
               isDateM={false}
               simpleDropDown
+              dateOnCancel={() => {}}
+              multiSelect={false}
             />
           </div>
 
@@ -218,7 +251,19 @@ const CreatedProject = ({ setAddProject }) => {
               className={"text-sm font-normal max-w-[180px] w-full"}
               color={"text-[#464646]"}
             />
-            <InputField className="max-w-[300px] w-full" />
+            <InputField
+              className="max-w-[300px] w-full"
+              label={undefined}
+              type={undefined}
+              name={undefined}
+              placeholder={undefined}
+              icon={undefined}
+              onChange={undefined}
+              onBlur={undefined}
+              value={undefined}
+              error={undefined}
+              touch={undefined}
+            />
           </div>
 
           <div className="flex w-full items-center gap-8">
@@ -231,17 +276,23 @@ const CreatedProject = ({ setAddProject }) => {
             <Button
               text="Add folder"
               className="!py-[10px] !px-[16px] font-medium tracking-[-0.16px] bg-[#E0E9FA]"
+              onClick={() => {}}
+              type={undefined}
             />
           </div>
         </div>
         <div className="flex items-center justify-between">
           <Button
             text="Save"
-            className="!py-[14px] !px-[20px] font-medium tracking-[-0.16px] text-white bg-[#2F67DD]"
+            className="!py-[14px] !px-[20px] font-medium tracking-[-0.16px] text-white !bg-[#2F67DD]"
+            onClick={() => {}}
+            type={undefined}
           />
           <Button
             text="Delete project"
             className="!py-[10px] !px-0 font-medium tracking-[-0.16px] text-[#464646] bg-transparent"
+            onClick={() => {}}
+            type={undefined}
           />
         </div>
       </div>
