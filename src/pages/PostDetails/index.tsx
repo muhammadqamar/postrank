@@ -3,6 +3,7 @@ import Select from "../../utils/Select";
 import Card from "../../utils/Cards";
 import ComparePost from "../../utils/Error";
 import Trading from "../../utils/Trading";
+// import DeleteModal from "../../utils/DeleteModal";
 import Chart from "../../components/GraphChart/charts";
 import {
   AddPostIcon,
@@ -18,6 +19,7 @@ import {
 import { TextTag } from "../../utils/Typography";
 
 import BackgroundImage1 from "../../assets/images/png/image1.png";
+import PostCompare from "./postCompare";
 const dateData = [
   {
     name: "7 days",
@@ -38,6 +40,9 @@ const dateData = [
 
 const Index = () => {
   const [isDateM, setIsDateM] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className="max-w-7xl m-auto">
       <div className="common-bg-color px-10 pb-16 ">
@@ -211,7 +216,9 @@ const Index = () => {
             heading={"Compare with another post!"}
             text={"Add another post and compare performance."}
             buttonText={"Add post to compare"}
-            onClick={() => {}}
+            onClick={() => {
+              setIsOpen(true);
+            }}
             className={"bg-blue-100 rounded-[20px]"}
             textStyling={"!mt-1"}
             buttonStyling={
@@ -645,6 +652,7 @@ const Index = () => {
           </div>
         </div>
       </div>
+      <PostCompare isOpen={isOpen} setIsOpen={setIsOpen} />
     </div>
   );
 };

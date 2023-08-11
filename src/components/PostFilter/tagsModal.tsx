@@ -53,7 +53,6 @@ const TagsModal = ({ isOpen, setIsOpen }: modalProps) => {
                         className="!p-[10px] bg-blue-100"
                         icon={<CloseIcon color="#274C9B" />}
                       />
-
                       <TextTag
                         as="h5"
                         text="Manage tags"

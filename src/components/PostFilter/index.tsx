@@ -119,7 +119,11 @@ const index = () => {
           </div>
 
           <div className="">
-            <TagDrapdown onclick={() => setIsOpen(true)} onClear={() => {}} onChange={() => {}} />
+            <TagDrapdown
+              onclick={() => setIsOpen(true)}
+              onClear={() => {}}
+              onChange={() => {}}
+            />
           </div>
         </div>
       </div>
