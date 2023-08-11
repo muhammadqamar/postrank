@@ -29,6 +29,11 @@ const AddProjects = () => {
                 newProjectTitle="Citizen Remote"
                 newProjectText="4 folders"
                 ArrowIcon={<RightArrowIcon />}
+                className={""}
+                newProjectTitleColor={""}
+                newProjectTextColor={""}
+                bg={""}
+                onClick={() => {}}
               />
               <AddedProject
                 classNames="max-w-[300px] w-full bg-[#F1F6FD]"
@@ -36,6 +41,11 @@ const AddProjects = () => {
                 newProjectTitle="Remote"
                 newProjectText="4 folders"
                 ArrowIcon={<RightArrowIcon />}
+                className={""}
+                newProjectTitleColor={""}
+                newProjectTextColor={""}
+                bg={""}
+                onClick={() => {}}
               />
               <AddedProject
                 classNames="max-w-[300px] w-full bg-[#F1F6FD]"
@@ -43,6 +53,11 @@ const AddProjects = () => {
                 newProjectTitle="Remote Access"
                 newProjectText="4 folders"
                 ArrowIcon={<RightArrowIcon />}
+                className={""}
+                newProjectTitleColor={""}
+                newProjectTextColor={""}
+                bg={""}
+                onClick={() => {}}
               />
               <AddedProject
                 classNames="max-w-[300px] w-full bg-[#F1F6FD]"
@@ -50,6 +65,11 @@ const AddProjects = () => {
                 newProjectTitle="Citizen Remote"
                 newProjectText="4 folders"
                 ArrowIcon={<RightArrowIcon />}
+                className={""}
+                newProjectTitleColor={""}
+                newProjectTextColor={""}
+                bg={""}
+                onClick={() => {}}
               />
               <AddedProject
                 classNames="max-w-[300px] w-full bg-[#F1F6FD]"
@@ -57,6 +77,11 @@ const AddProjects = () => {
                 newProjectTitle="Remote"
                 newProjectText="4 folders"
                 ArrowIcon={<RightArrowIcon />}
+                className={""}
+                newProjectTitleColor={""}
+                newProjectTextColor={""}
+                bg={""}
+                onClick={() => {}}
               />
 
               <AddedProject
@@ -65,6 +90,11 @@ const AddProjects = () => {
                 newProjectTitle="Add New Project"
                 ArrowIcon={<RightArrowIcon />}
                 onClick={() => setAddProject("addProject")}
+                className={""}
+                newProjectTitleColor={""}
+                newProjectTextColor={""}
+                bg={""}
+                newProjectText={""}
               />
             </div>
           </div>

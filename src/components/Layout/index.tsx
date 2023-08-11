@@ -1,11 +1,18 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import { Menu, Transition } from "@headlessui/react";
-
+import { Link } from "react-router-dom";
 import Select from "../../utils/Select";
 import SearchField from "../../utils/SearchField";
+import SettingModal from "../SettingModal";
 
 // icons
-import { SettingsIcon, CategoryIcon, LogoutIcon, AddIcon, GridIcon } from "../../icons";
+import {
+  SettingsIcon,
+  CategoryIcon,
+  LogoutIcon,
+  AddIcon,
+  GridIcon,
+} from "../../icons";
 import CitizenRemote from "../../assets/images/dropdownIcon/Citizen-Remote.svg";
 import Whale from "../../assets/images/dropdownIcon/WhaleINC.svg";
 import Tesla from "../../assets/images/dropdownIcon/Tesla.svg";
@@ -13,7 +20,6 @@ import Apple from "../../assets/images/dropdownIcon/Apple.svg";
 import MasterCard from "../../assets/images/dropdownIcon/Mastercard.svg";
 import User from "../../assets/images/png/user.png";
 import { TextTag } from "../../utils/Typography";
-import { Link } from "react-router-dom";
 
 const companies = [
   {
@@ -39,10 +45,17 @@ const companies = [
 ];
 
 const Index = () => {
+  const [isOpenModal, setIsOpenModal] = useState(false);
+
   return (
     <div className="max-w-[1280px] mx-auto px-10 py-4 flex items-center justify-between">
       <div className="flex items-center gap-[25px]">
-        <TextTag as="h6" text="postrank.io" color="text-black" className="p-medium !font-semibold" />
+        <TextTag
+          as="h6"
+          text="postrank.io"
+          color="text-black"
+          className="p-medium !font-semibold"
+        />
         <div className="md:block hidden">
           <Select
             className=""
@@ -64,7 +77,12 @@ const Index = () => {
 
       <div className="flex items-center gap-4">
         <div className="md:flex hidden">
-          <SearchField className="" onChange={() => {}} placeholder={"Search..."} width={""} />
+          <SearchField
+            className=""
+            onChange={() => {}}
+            placeholder={"Search..."}
+            width={""}
+          />
         </div>
 
         <div className="">
@@ -72,9 +90,15 @@ const Index = () => {
             {({ open }) => (
               <>
                 <Menu.Button
-                  className={`w-12 h-12 flex items-center justify-center bg-white rounded-full  border-[2px] border-solid border-white ${open ? "ring-[2px] ring-blue-500" : ""}`}
+                  className={`w-12 h-12 flex items-center justify-center bg-white rounded-full  border-[2px] border-solid border-white ${
+                    open ? "ring-[2px] ring-blue-500" : ""
+                  }`}
                 >
-                  <img className="w-auto h-auto object-cover rounded-full focused" src={User} alt="user photo" />
+                  <img
+                    className="w-auto h-auto object-cover rounded-full focused"
+                    src={User}
+                    alt="user photo"
+                  />
                 </Menu.Button>
                 {open && (
                   <Transition
@@ -88,14 +112,17 @@ const Index = () => {
                   >
                     <Menu.Items className="dropdown-menu !shadow-mdShadow">
                       <Menu.Item>
-                        <a href="#" className="dropdown-item border-none">
+                        <div
+                          onClick={() => setIsOpenModal(true)}
+                          className="dropdown-item border-none"
+                        >
                           <SettingsIcon />
                           Settings
-                        </a>
+                        </div>
                       </Menu.Item>
                       <Menu.Item>
                         <a href="#" className="dropdown-item border-none">
-                          <CategoryIcon />
+                          <CategoryIcon color={""} />
                           My projects
                         </a>
                       </Menu.Item>
@@ -118,6 +145,10 @@ const Index = () => {
       </div>
 
       {/* test */}
+      <SettingModal
+        isOpen={isOpenModal}
+        closeModal={() => setIsOpenModal(false)}
+      />
     </div>
   );
 };

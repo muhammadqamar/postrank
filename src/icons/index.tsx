@@ -37,7 +37,13 @@ import { WhaleIcon } from "./whale";
 import { CloseIcon } from "./close";
 import { Upload } from "./upload";
 import { CheckRounded } from "./checkRounded";
+import { UserIcon } from "./userIcon";
+import { FeedBack } from "./feedBack";
+import { Support } from "./support";
 export {
+  Support,
+  FeedBack,
+  UserIcon,
   CloseIcon,
   Check,
   EyeIcon,
