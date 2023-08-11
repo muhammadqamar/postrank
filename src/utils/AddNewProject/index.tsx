@@ -25,7 +25,17 @@ const Index: React.FC<IndexProps> = ({ icon, newProjectTitle, className, onClick
           <TextTag as="p" text={newProjectText} className={"p-small"} color={newProjectTextColor} />
         </div>
       </div>
-      {ArrowIcon ? <span onClick={onClick}>{ArrowIcon}</span> : PlusIcon && <span onClick={onClick}>{ArrowIcon}</span>}
+      {ArrowIcon ? (
+        <span className="cursor-pointer" onClick={onClick}>
+          {ArrowIcon}
+        </span>
+      ) : (
+        PlusIcon && (
+          <span className="cursor-pointer" onClick={onClick}>
+            {PlusIcon}
+          </span>
+        )
+      )}
     </div>
   );
 };
