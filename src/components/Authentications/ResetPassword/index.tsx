@@ -22,7 +22,7 @@ const LoginForm = () => {
         <TextTag
           as="h6"
           text={"Reset password"}
-          className={"h6 font-normal mb-[42px]"}
+          className={"h6 mb-[42px]"}
           color={""}
         />
         <Formik
@@ -73,7 +73,7 @@ const LoginForm = () => {
               <Button
                 text="Reset password"
                 onClick={() => setModalVisible(true)}
-                className="w-full bg-blue-500 text-white flex justify-center mt-[42px]"
+                className="w-full !bg-customBlue !text-white flex justify-center mt-[42px]"
                 type={undefined}
               />
               {modalVisible && (
@@ -90,9 +90,9 @@ const LoginForm = () => {
           as="p"
           text={"Already a member?"}
           className={"p-small font-medium "}
-          color={"text-blue-500"}
+          color={""}
         />
-        <a className="p-small font-medium " href="#">
+        <a className="p-small font-medium !text-customBlue" href="#">
           Login now!
         </a>
       </div>

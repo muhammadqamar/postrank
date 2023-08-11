@@ -50,12 +50,14 @@ const Index = () => {
   return (
     <div className="max-w-[1280px] mx-auto px-10 py-4 flex items-center justify-between">
       <div className="flex items-center gap-[25px]">
-        <TextTag
-          as="h6"
-          text="postrank.io"
-          color="text-black"
-          className="p-medium !font-semibold"
-        />
+        <Link to={""}>
+          <TextTag
+            as="h6"
+            text="postrank.io"
+            color="text-black"
+            className="p-medium !font-semibold"
+          />
+        </Link>
         <div className="md:block hidden">
           <Select
             className=""
@@ -91,7 +93,7 @@ const Index = () => {
               <>
                 <Menu.Button
                   className={`w-12 h-12 flex items-center justify-center bg-white rounded-full  border-[2px] border-solid border-white ${
-                    open ? "ring-[2px] ring-blue-500" : ""
+                    open ? "ring-[2px] ring-customBlue" : ""
                   }`}
                 >
                   <img

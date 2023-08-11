@@ -104,7 +104,7 @@ const Index = ({
                 <>
                   {leftIcon && (
                     <div
-                      className={`w-10 h-10 flex items-center  justify-center hover:bg-blue-300 ${
+                      className={`w-10 h-10 flex items-center bg-blue-100 justify-center hover:bg-blue-300 ${
                         open ? "bg-blue-300" : "bg-blue-100"
                       } rounded-full `}
                     >
@@ -257,7 +257,7 @@ const Index = ({
                             active ? "text-black" : "text-black",
                             `relative  cursor-pointer select-none   ${
                               companiesDrop || simpleDropDown
-                                ? "w-full py-[11px] px-[10px] hover:text-white hover:bg-blue-500"
+                                ? "w-full py-[11px] px-[10px] hover:text-white hover:bg-customBlue"
                                 : "w-fit bg-white rounded-full  py-2 pl-2 pr-[10px] shadow-lgShadow"
                             }`,
                           )
@@ -318,7 +318,7 @@ const Index = ({
                             <div
                               className={
                                 !companiesDrop
-                                  ? "w-6 h-6 rounded-full flex items-center justify-center bg-blue-500"
+                                  ? "w-6 h-6 rounded-full flex items-center justify-center bg-customBlue"
                                   : ""
                               }
                             >
@@ -328,7 +328,7 @@ const Index = ({
                               as="p"
                               text={addText}
                               color={
-                                companiesDrop ? "text-black" : "text-blue-500"
+                                companiesDrop ? "text-black" : "text-customBlue"
                               }
                               className={` block truncate p-medium `}
                             />

@@ -33,7 +33,7 @@ const LoginForm = () => {
         <TextTag
           as="h6"
           text={"Create an account"}
-          className={"h6 font-normal mb-[42px]"}
+          className={"h6 mb-[42px]"}
           color={""}
         />
         <Formik
@@ -111,7 +111,7 @@ const LoginForm = () => {
               <Button
                 text="Continue with email"
                 onClick={() => handleSubmit()}
-                className="w-full bg-blue-500 text-white flex justify-center mb-4"
+                className="w-full bg-customBlue text-white flex justify-center mb-4"
                 type={undefined}
               />
             </form>
@@ -125,7 +125,7 @@ const LoginForm = () => {
           className={"p-small"}
           color={""}
         />
-        <a className="p-small font-medium text-blue-500" href="#">
+        <a className="p-small font-medium text-customBlue" href="#">
           Login now
         </a>
       </div>

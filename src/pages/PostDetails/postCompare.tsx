@@ -222,7 +222,7 @@ const cardData = [
 
 const PostCompare = ({ isOpen, setIsOpen }: modalProps) => {
   return (
-    <div>
+    <div className="">
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={() => {}}>
           <Transition.Child
@@ -251,7 +251,7 @@ const PostCompare = ({ isOpen, setIsOpen }: modalProps) => {
                 <Dialog.Panel className="w-full max-w-[1280px] transform overflow-hidden rounded-[20px] common-bg-color p-8 text-left align-middle shadow-xl transition-all">
                   <Dialog.Title
                     as="h4"
-                    className="w-full flex items-center justify-between gap-2"
+                    className="!max-w-7xl !mx-auto flex items-center justify-between gap-2"
                   >
                     <div className="flex justify-between items-center  ">
                       <div className="flex gap-4 items-center w-[380px]">
@@ -284,12 +284,12 @@ const PostCompare = ({ isOpen, setIsOpen }: modalProps) => {
                           text={"Add post"}
                           onClick={() => {}}
                           type={undefined}
-                          className="text-white bg-blue-500 p-large !py-[10px] !px-3 "
+                          className="!text-white !bg-customBlue p-large !py-[10px] !px-3 "
                         />
                       </div>
                     </div>
                   </Dialog.Title>
-                  <div className="w-full flex items-center flex-wrap  gap-6 py-8">
+                  <div className="w-full flex items-center flex-wrap  gap-6 pt-8">
                     {cardData.map((card, index) => (
                       <Card key={index} {...card} />
                     ))}

@@ -74,12 +74,7 @@ const Feedback = () => {
             className="pt-8 max-w-[511px] flex flex-col gap-[42px]"
           >
             <div className="flex flex-col gap-[42px]">
-              <TextTag
-                as="h6"
-                text={"Category"}
-                className={"h6 font-normal"}
-                color={""}
-              />
+              <TextTag as="h6" text={"Category"} className={"h6"} color={""} />
               <div className="flex flex-col gap-6">
                 <div className="flex justify-between items-center">
                   <label htmlFor="Request" className="flex items-center gap-3">
@@ -141,7 +136,7 @@ const Feedback = () => {
                   text={"Send feedback"}
                   onClick={() => {}}
                   type={undefined}
-                  className="text-white bg-blue-500"
+                  className="text-white bg-customBlue"
                 />
               </div>
             </div>

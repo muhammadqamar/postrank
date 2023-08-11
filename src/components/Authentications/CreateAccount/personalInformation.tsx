@@ -13,7 +13,7 @@ const PersonalInformation = () => {
         <TextTag
           as="h6"
           text={"Login to your account"}
-          className={"h6 font-normal mb-[42px]"}
+          className={"h6 mb-[42px]"}
           color={""}
         />
         <Formik
@@ -83,7 +83,7 @@ const PersonalInformation = () => {
                   <Button
                     text="Upload new"
                     onClick={() => handleSubmit()}
-                    className="p-medium bg-white border-2 border-solid border-blue-500 !py-[7px] !px-3 flex justify-center "
+                    className="p-medium bg-white border-2 border-solid border-customBlue !py-[7px] !px-3 flex justify-center "
                     type={undefined}
                   />
                   <Button
@@ -103,7 +103,7 @@ const PersonalInformation = () => {
               <Button
                 text="Skip for now"
                 onClick={() => handleSubmit()}
-                className="w-full p-large font-medium bg-white text-blue-500 flex justify-center rounded-full"
+                className="w-full p-large font-medium bg-white text-customBlue flex justify-center rounded-full"
                 type={undefined}
               />
             </form>

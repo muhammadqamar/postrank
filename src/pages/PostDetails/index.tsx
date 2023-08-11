@@ -54,7 +54,7 @@ const Index = () => {
             <TextTag
               as="h5"
               text={"Post details"}
-              className={"h5 font-normal"}
+              className={"h5"}
               color={""}
             />
           </div>
@@ -114,7 +114,7 @@ const Index = () => {
                     as="p"
                     text={"Digital Nomad"}
                     className={"p-medium"}
-                    color={"text-blue-700"}
+                    color={"text-tagBlue"}
                   />
                   <button className="cursor-pointer" onClick={() => {}}>
                     <CloseIcon color={"#274C9B"} />
@@ -125,7 +125,7 @@ const Index = () => {
                     as="p"
                     text={"Visa"}
                     className={"p-medium"}
-                    color={"text-blue-700"}
+                    color={"text-tagBlue"}
                   />
                   <button className="cursor-pointer" onClick={() => {}}>
                     <CloseIcon color={"#274C9B"} />
@@ -136,7 +136,7 @@ const Index = () => {
                     as="p"
                     text={"Country"}
                     className={"p-medium"}
-                    color={"text-blue-700"}
+                    color={"text-tagBlue"}
                   />
                   <button className="cursor-pointer" onClick={() => {}}>
                     <CloseIcon color={"#274C9B"} />
@@ -147,7 +147,7 @@ const Index = () => {
                     as="p"
                     text={"List"}
                     className={"p-medium"}
-                    color={"text-blue-700"}
+                    color={"text-tagBlue"}
                   />
                   <button className="cursor-pointer" onClick={() => {}}>
                     <CloseIcon color={"#274C9B"} />
@@ -158,7 +158,7 @@ const Index = () => {
                     as="p"
                     text={"Popular"}
                     className={"p-medium"}
-                    color={"text-blue-700"}
+                    color={"text-tagBlue"}
                   />
                   <button className="cursor-pointer" onClick={() => {}}>
                     <CloseIcon color={"#274C9B"} />
@@ -169,7 +169,7 @@ const Index = () => {
                     as="p"
                     text={"Essentials"}
                     className={"p-medium"}
-                    color={"text-blue-700"}
+                    color={"text-tagBlue"}
                   />
                   <button className="cursor-pointer" onClick={() => {}}>
                     <CloseIcon color={"#274C9B"} />
@@ -180,7 +180,7 @@ const Index = () => {
                     as="p"
                     text={"Travel"}
                     className={"p-medium"}
-                    color={"text-blue-700"}
+                    color={"text-tagBlue"}
                   />
                   <button className="cursor-pointer" onClick={() => {}}>
                     <CloseIcon color={"#274C9B"} />
@@ -191,7 +191,7 @@ const Index = () => {
                     as="p"
                     text={"Explore"}
                     className={"p-medium"}
-                    color={"text-blue-700"}
+                    color={"text-tagBlue"}
                   />
                   <button className="cursor-pointer" onClick={() => {}}>
                     <CloseIcon color={"#274C9B"} />
@@ -205,7 +205,7 @@ const Index = () => {
                     as="p"
                     text={"Add Tags"}
                     className={"p-medium"}
-                    color={"text-blue-500"}
+                    color={"text-customBlue"}
                   />
                 </button>
               </div>
@@ -220,21 +220,16 @@ const Index = () => {
               setIsOpen(true);
             }}
             className={"bg-blue-100 rounded-[20px]"}
-            textStyling={"!mt-1"}
+            textStyling={"!mt-1 !bg-blue-100"}
             buttonStyling={
-              "!text-blue-500 !bg-blue-100 border-2 border-solid border-blue-500 font-medium"
+              "!text-customBlue !bg-blue-100 border-2 border-solid !border-customBlue font-medium"
             }
           />
         </div>
         {/* User trends */}
         <div className="p-8 mb-6 bg-white rounded-[20px] ">
           <div className="flex justify-between items-center mb-6">
-            <TextTag
-              as="h5"
-              text={"User trends"}
-              className={"h5 font-normal"}
-              color={""}
-            />
+            <TextTag as="h5" text={"User trends"} className={"h5"} color={""} />
             <TextTag
               as="p"
               text={"30 days"}
@@ -281,7 +276,7 @@ const Index = () => {
             <TextTag
               as="h5"
               text={"Page view trends"}
-              className={"h5 font-normal"}
+              className={"h5"}
               color={""}
             />
             <TextTag
@@ -326,12 +321,7 @@ const Index = () => {
         {/* Queries */}
         <div className="p-8 mb-6 bg-white rounded-[20px]">
           <div className="flex justify-between items-center mb-6">
-            <TextTag
-              as="h5"
-              text={"Queries"}
-              className={"h5 font-normal"}
-              color={""}
-            />
+            <TextTag as="h5" text={"Queries"} className={"h5"} color={""} />
             <TextTag
               as="p"
               text={"30 days"}

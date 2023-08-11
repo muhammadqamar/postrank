@@ -40,7 +40,7 @@ const TagsModal = ({ isOpen, setIsOpen }: modalProps) => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-[444px] transform overflow-hidden rounded-[20px] bg-blue-200 p-8 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-full max-w-[444px] transform overflow-hidden rounded-[20px] common-bg-color p-8 text-left align-middle shadow-xl transition-all">
                   <Dialog.Title
                     as="h4"
                     className="w-full flex items-center justify-between gap-2"
@@ -65,7 +65,7 @@ const TagsModal = ({ isOpen, setIsOpen }: modalProps) => {
                       text="Save"
                       type={"button"}
                       onClick={() => {}}
-                      className="!w-fit !py-[10px] !px-4 bg-blue-500 text-white flex justify-center"
+                      className="!w-fit !py-[10px] !px-4 bg-customBlue text-white flex justify-center"
                     />
                   </Dialog.Title>
                   <div className="my-8">

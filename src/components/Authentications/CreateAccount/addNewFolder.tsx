@@ -28,7 +28,12 @@ const postData = [
 const AddNewFolder = () => {
   return (
     <div className="pt-9 max-w-[320px]">
-      <TextTag as="h6" text={"Add new folder"} className={"h6 font-normal mb-[42px]"} color={""} />
+      <TextTag
+        as="h6"
+        text={"Add new folder"}
+        className={"h6 mb-[42px]"}
+        color={""}
+      />
       <div className="mb-[42px]">
         <div className="mb-5">
           <Formik
@@ -55,7 +60,12 @@ const AddNewFolder = () => {
               <form onSubmit={handleSubmit}>
                 <div>
                   <div>
-                    <TextTag as="label" text={"Folder name"} className={"p-small"} color={"text-gray-700"} />
+                    <TextTag
+                      as="label"
+                      text={"Folder name"}
+                      className={"p-small"}
+                      color={"text-gray-700"}
+                    />
                     <InputField
                       label={undefined}
                       type={undefined}
@@ -87,7 +97,12 @@ const AddNewFolder = () => {
                   </div>
                 </div>
                 <div className="mb-2">
-                  <TextTag as="label" text={"Folder location"} className={"p-small"} color={"text-gray-700"} />
+                  <TextTag
+                    as="label"
+                    text={"Folder location"}
+                    className={"p-small"}
+                    color={"text-gray-700"}
+                  />
                   <Select
                     className=""
                     data={postData}
@@ -120,7 +135,9 @@ const AddNewFolder = () => {
                   />
                   <TextTag
                     as="label"
-                    text={"e.g /blog if you want all your content inside this URL. Or something more specific like /blog/topic/"}
+                    text={
+                      "e.g /blog if you want all your content inside this URL. Or something more specific like /blog/topic/"
+                    }
                     className={"p-small "}
                     color={"text-gray-700"}
                   />
@@ -128,7 +145,12 @@ const AddNewFolder = () => {
 
                 <div className="pb-6">
                   <Link to={"/#"}>
-                    <Button text={"Add folder"} onClick={() => {}} type={undefined} className="w-full flex justify-center text-gray-500 bg-gray-100" />
+                    <Button
+                      text={"Add folder"}
+                      onClick={() => {}}
+                      type={undefined}
+                      className="w-full flex justify-center text-gray-500 bg-gray-100"
+                    />
                   </Link>
                 </div>
               </form>

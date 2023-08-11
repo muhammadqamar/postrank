@@ -9,17 +9,12 @@ const Support = () => {
       <TextTag as="h5" text={"Support"} className="h5 mb-5" color={""} />
       <div className="pt-8 pb-16 max-w-[457px] flex flex-col gap-[42px]">
         <div className="flex flex-col gap-[24px] max-w-[127px]">
-          <TextTag
-            as="h6"
-            text={"Contact us"}
-            className={"h6 font-normal"}
-            color={""}
-          />
+          <TextTag as="h6" text={"Contact us"} className={"h6"} color={""} />
           <Button
             text={"Send email"}
             onClick={() => {}}
             type={undefined}
-            className="text-white bg-blue-500 font-medium"
+            className="text-white bg-customBlue font-medium"
           />
         </div>
         <div className="flex flex-col gap-4 max-w-[457px]">

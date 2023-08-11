@@ -81,7 +81,7 @@ const AccountDetails = () => {
               <TextTag
                 as="h6"
                 text={"Personal information"}
-                className={"h6 font-normal"}
+                className={"h6"}
                 color={""}
               />
 
@@ -143,7 +143,7 @@ const AccountDetails = () => {
                   <Button
                     text="Upload new"
                     onClick={() => handleSubmit()}
-                    className="p-medium bg-white border-2 border-solid border-blue-500 !py-[7px] !px-3 flex justify-center "
+                    className="p-medium bg-white border-2 border-solid border-customBlue !py-[7px] !px-3 flex justify-center "
                     type={undefined}
                   />
                   <Button
@@ -156,12 +156,7 @@ const AccountDetails = () => {
               </div>
             </div>
             <div className="flex flex-col gap-6">
-              <TextTag
-                as="h6"
-                text={"Email"}
-                className={"h6 font-normal"}
-                color={""}
-              />
+              <TextTag as="h6" text={"Email"} className={"h6"} color={""} />
               <div className="flex justify-between">
                 <TextTag
                   as="p"
@@ -185,12 +180,7 @@ const AccountDetails = () => {
               </div>
             </div>
             <div className="flex flex-col gap-6">
-              <TextTag
-                as="h6"
-                text={"Password"}
-                className={"h6 font-normal"}
-                color={""}
-              />
+              <TextTag as="h6" text={"Password"} className={"h6"} color={""} />
               <div className="flex justify-between items-center">
                 <TextTag
                   as="p"
@@ -259,7 +249,7 @@ const AccountDetails = () => {
               <Button
                 text="Save"
                 onClick={() => {}}
-                className="p-large !leading-5 text-white bg-blue-500 !py-[14px] !px-5 flex justify-center "
+                className="p-large !leading-5 text-white bg-customBlue !py-[14px] !px-5 flex justify-center "
                 type={undefined}
               />
               <Button

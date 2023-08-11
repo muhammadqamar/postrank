@@ -11,7 +11,7 @@ const CreateNewProject = () => {
         <TextTag
           as="h6"
           text={"Create a new project"}
-          className={"h6 font-normal mb-[42px]"}
+          className={"h6s mb-[42px]"}
           color={""}
         />
         <Formik
@@ -59,7 +59,7 @@ const CreateNewProject = () => {
                 <Button
                   text="Upload"
                   onClick={() => handleSubmit()}
-                  className="bg-white border-2 border-solid border-blue-500 !py-[7px] !px-3 flex justify-center mb-4 "
+                  className="bg-white border-2 border-solid border-customBlue !py-[7px] !px-3 flex justify-center mb-4 "
                   type={undefined}
                 />
               </div>

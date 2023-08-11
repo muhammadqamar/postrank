@@ -1,6 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 
 const colors = {
+  customBlue: "rgba(47, 103, 221, 1)",
+  tagBlue: "rgba(39, 76, 155, 1)",
   primary: {
     100: "#EEE6FF",
     200: "#DCCAFF",
@@ -47,6 +49,7 @@ const colors = {
     200: "#f1f6fd",
     300: "#BDCFF4",
     500: "#2F67DD",
+    600: "#3F83F8",
     700: "#274C9B",
     800: "#0f56B3",
   },

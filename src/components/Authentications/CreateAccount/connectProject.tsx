@@ -28,12 +28,27 @@ const postData = [
 const ConnectProject = () => {
   return (
     <div className="pt-9 min-w-[320px]">
-      <TextTag as="h6" text={"Connect your project"} className={"h6 font-normal mb-[42px]"} color={""} />
+      <TextTag
+        as="h6"
+        text={"Connect your project"}
+        className={"h6 mb-[42px]"}
+        color={""}
+      />
       <div className="mb-[42px]">
         <div className="flex justify-between items-center mb-5">
-          <TextTag as="p" text={"Google Analytics"} className={"p-small"} color={"text-gray-700"} />
+          <TextTag
+            as="p"
+            text={"Google Analytics"}
+            className={"p-small"}
+            color={"text-gray-700"}
+          />
           <Link to={"/#"}>
-            <Button text={"Connect"} onClick={() => {}} type={undefined} className="text-blue-500 bg-white border-2 border-solid border-blue-500 !py-[7px] !px-3" />
+            <Button
+              text={"Connect"}
+              onClick={() => {}}
+              type={undefined}
+              className="text-customBlue bg-white border-2 border-solid border-customBlue !py-[7px] !px-3"
+            />
           </Link>
         </div>
         <Formik
@@ -59,7 +74,12 @@ const ConnectProject = () => {
           }) => (
             <form onSubmit={handleSubmit}>
               <div className="mb-5">
-                <TextTag as="label" text={"Account"} className={"p-small"} color={"text-gray-700"} />
+                <TextTag
+                  as="label"
+                  text={"Account"}
+                  className={"p-small"}
+                  color={"text-gray-700"}
+                />
                 <Select
                   className=""
                   data={postData}
@@ -92,7 +112,12 @@ const ConnectProject = () => {
                 />
               </div>
               <div className="mb-5">
-                <TextTag as="label" text={"Property"} className={"p-small"} color={"text-gray-700"} />
+                <TextTag
+                  as="label"
+                  text={"Property"}
+                  className={"p-small"}
+                  color={"text-gray-700"}
+                />
                 <Select
                   className=""
                   data={postData}
@@ -110,7 +135,12 @@ const ConnectProject = () => {
                 />
               </div>
               <div className="mb-5">
-                <TextTag as="label" text={"GSC property"} className={"p-small"} color={"text-gray-700"} />
+                <TextTag
+                  as="label"
+                  text={"GSC property"}
+                  className={"p-small"}
+                  color={"text-gray-700"}
+                />
                 <Select
                   className=""
                   data={postData}
@@ -133,7 +163,12 @@ const ConnectProject = () => {
       </div>
       <div className="pb-6">
         <Link to={"/#"}>
-          <Button text={"Continue "} onClick={() => {}} type={undefined} className="w-full flex justify-center text-gray-500 bg-gray-100" />
+          <Button
+            text={"Continue "}
+            onClick={() => {}}
+            type={undefined}
+            className="w-full flex justify-center text-gray-500 bg-gray-100"
+          />
         </Link>
       </div>
     </div>

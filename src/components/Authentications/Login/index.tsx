@@ -24,7 +24,7 @@ const LoginForm = () => {
         <TextTag
           as="h6"
           text={"Login to your account"}
-          className={"h6 font-normal mb-[42px]"}
+          className={"h6 mb-[42px]"}
           color={""}
         />
         <Formik
@@ -103,20 +103,20 @@ const LoginForm = () => {
                     color={""}
                   />
                 </label>
-                <Link to="/reset-password" className="text-blue-500 p-small">
+                <Link to="/reset-password" className="!text-customBlue p-small">
                   Reset Password
                 </Link>
               </div>
               <Button
                 text="Login"
                 onClick={() => handleSubmit()}
-                className="w-full bg-blue-500 text-white flex justify-center mb-4"
+                className="w-full !bg-customBlue !text-white flex justify-center mb-4"
                 type={undefined}
               />
               <Button
                 text="Continue with Google"
                 onClick={() => handleSubmit()}
-                className="w-full p-large font-medium bg-white text-gray-900 flex gap-x-[40.4px] border-[2px] border-solid rounded-full"
+                className="w-full p-large font-medium !bg-white !text-gray-900 flex gap-x-[40.4px] border-[2px] border-solid rounded-full"
                 icon={<GoogleIcon />}
                 type={undefined}
               />
@@ -131,7 +131,7 @@ const LoginForm = () => {
           className={"p-small"}
           color={""}
         />
-        <a className="p-small font-medium text-blue-500" href="#">
+        <a className="p-small font-medium !text-customBlue" href="#">
           Create now
         </a>
       </div>
