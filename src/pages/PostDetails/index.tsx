@@ -250,7 +250,7 @@ const Index = () => {
             />
             <Trading
               trendLabel={"New users"}
-              className={"bg-commonBlue"}
+              className={"!bg-commonBlue"}
               trendNumbers={"618"}
               trendMarkup={"12.5%"}
               trendLabelColor={"text-gray-700"}
@@ -259,7 +259,7 @@ const Index = () => {
             />
             <Trading
               trendLabel={"Average engagement time"}
-              className={"bg-commonBlue"}
+              className={"!bg-commonBlue"}
               trendNumbers={"3m 25s"}
               trendMarkup={"12.5%"}
               trendLabelColor={"text-gray-700"}
@@ -298,7 +298,7 @@ const Index = () => {
             />
             <Trading
               trendLabel={"Unique pageviews"}
-              className={"bg-commonBlue"}
+              className={"!bg-commonBlue"}
               trendNumbers={"1,213"}
               trendMarkup={"12.5%"}
               trendLabelColor={"text-gray-700"}
@@ -307,7 +307,7 @@ const Index = () => {
             />
             <Trading
               trendLabel={"Average time on page"}
-              className={"bg-commonBlue"}
+              className={"!bg-commonBlue"}
               trendNumbers={"2m 47s"}
               trendMarkup={"12.5%"}
               trendLabelColor={"text-gray-700"}
@@ -332,7 +332,7 @@ const Index = () => {
           <div className="flex flex-wrap md:flex-nowrap justify-between gap-4 mb-8">
             <Trading
               trendLabel={"Total keywords"}
-              className={"bg-commonBlue"}
+              className={"!bg-commonBlue"}
               trendNumbers={"16"}
               trendMarkup={"12.5%"}
               trendLabelColor={"text-gray-700"}
@@ -341,7 +341,7 @@ const Index = () => {
             />
             <Trading
               trendLabel={"Best keyword"}
-              className={"bg-commonBlue"}
+              className={"!bg-commonBlue"}
               trendNumbers={"Keyword"}
               trendMarkup={"12.5%"}
               trendLabelColor={"text-gray-700"}
