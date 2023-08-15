@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import AddNewProject from "./addNewProject";
 import CreatedProject from "./createdProject";
-import { RightArrowIcon, Upload } from "../../../icons";
+import { AddIcon, RightArrowIcon, Upload } from "../../../icons";
 import AddedProject from "../../../utils/AddNewProject";
 
 const AddProjects = () => {
@@ -31,7 +31,33 @@ const AddProjects = () => {
                 classNames="max-w-full lg:max-w-[252px] w-full !bg-[#F1F6FD]"
                 className="text-black text-sm font-medium"
                 icon={<Upload />}
-                newProjectTitle="Remote"
+                newProjectTitle="WhaleINC"
+                newProjectText="2 folders"
+                ArrowIcon={<RightArrowIcon />}
+                newProjectTitleColor={""}
+                newProjectTextColor={""}
+                bg={""}
+                onClick={() => {}}
+                PlusIcon={undefined}
+              />
+              <AddedProject
+                classNames="max-w-full lg:max-w-[252px] w-full !bg-[#F1F6FD]"
+                className="text-black text-sm font-medium"
+                icon={<Upload />}
+                newProjectTitle="Tesla"
+                newProjectText="1 folders"
+                ArrowIcon={<RightArrowIcon />}
+                newProjectTitleColor={""}
+                newProjectTextColor={""}
+                bg={""}
+                onClick={() => {}}
+                PlusIcon={undefined}
+              />
+              <AddedProject
+                classNames="max-w-full lg:max-w-[252px] w-full !bg-[#F1F6FD]"
+                className="text-black text-sm font-medium"
+                icon={<Upload />}
+                newProjectTitle="Apple"
                 newProjectText="4 folders"
                 ArrowIcon={<RightArrowIcon />}
                 newProjectTitleColor={""}
@@ -44,34 +70,8 @@ const AddProjects = () => {
                 classNames="max-w-full lg:max-w-[252px] w-full !bg-[#F1F6FD]"
                 className="text-black text-sm font-medium"
                 icon={<Upload />}
-                newProjectTitle="Remote Access"
-                newProjectText="4 folders"
-                ArrowIcon={<RightArrowIcon />}
-                newProjectTitleColor={""}
-                newProjectTextColor={""}
-                bg={""}
-                onClick={() => {}}
-                PlusIcon={undefined}
-              />
-              <AddedProject
-                classNames="max-w-full lg:max-w-[252px] w-full !bg-[#F1F6FD]"
-                className="text-black text-sm font-medium"
-                icon={<Upload />}
-                newProjectTitle="Citizen Remote"
-                newProjectText="4 folders"
-                ArrowIcon={<RightArrowIcon />}
-                newProjectTitleColor={""}
-                newProjectTextColor={""}
-                bg={""}
-                onClick={() => {}}
-                PlusIcon={undefined}
-              />
-              <AddedProject
-                classNames="max-w-full lg:max-w-[252px] w-full !bg-[#F1F6FD]"
-                className="text-black text-sm font-medium"
-                icon={<Upload />}
-                newProjectTitle="Remote"
-                newProjectText="4 folders"
+                newProjectTitle="Mastercard"
+                newProjectText="6 folders"
                 ArrowIcon={<RightArrowIcon />}
                 newProjectTitleColor={""}
                 newProjectTextColor={""}
@@ -85,7 +85,7 @@ const AddProjects = () => {
                 className="text-[#2F67DD] text-sm font-medium"
                 icon={<Upload />}
                 newProjectTitle="Add New Project"
-                ArrowIcon={<RightArrowIcon />}
+                ArrowIcon={<AddIcon color="" />}
                 PlusIcon
                 newProjectTitleColor={""}
                 newProjectTextColor={""}

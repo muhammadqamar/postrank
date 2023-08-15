@@ -1,11 +1,11 @@
+import { Fragment, MouseEventHandler, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment, MouseEventHandler } from "react";
 
-// import AccountDetails from "./accountDetails";
-// import Feedback from "./feedback";
-// import Supports from "./support";
+import AccountDetails from "./accountDetails";
+import Feedback from "./feedback";
+import Supports from "./support";
 import AddProjects from "./AddProject";
-import LeftSide from "./LeftSide";
+import LeftSide from "./LeftSide/index";
 
 type modalProps = {
   isOpen: boolean;
@@ -13,6 +13,8 @@ type modalProps = {
 };
 
 const Index = ({ isOpen, closeModal }: modalProps) => {
+  const [activeTab, setActiveTab] = useState<string | null>("Account details");
+
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog as="div" className="relative z-10 " onClose={() => {}}>
@@ -41,12 +43,12 @@ const Index = ({ isOpen, closeModal }: modalProps) => {
             >
               <Dialog.Panel className="w-full max-w-[1200px] transform overflow-hidden rounded-[20px] common-bg-color p-8 text-left align-middle shadow-xl transition-all">
                 <div className="flex items-start  gap-[42px] ">
-                  <LeftSide closeModal={closeModal} />
+                  <LeftSide setActiveTab={setActiveTab} closeModal={closeModal} />
                   <div className="w-full bg-white rounded-[20px] ">
-                    <AddProjects />
-                    {/* <AccountDetails />
-      <Feedback />
-      <Supports /> */}
+                    {activeTab === "Account details" && <AccountDetails />}
+                    {activeTab === "Projects" && <AddProjects />}
+                    {activeTab === "Feedback" && <Feedback />}
+                    {activeTab === "Support" && <Supports />}
                   </div>
                 </div>
               </Dialog.Panel>
