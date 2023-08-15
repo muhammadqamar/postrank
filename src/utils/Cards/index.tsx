@@ -120,7 +120,7 @@ const Index: React.FC<IndexProps> = ({
               buttonText && "md:mt-14 xsm:mt-12"
             }`}
           >
-            {/* <div className="py-[14px] px-5 bg-blue-100 rounded-[20px]">
+            {/* <div className="py-[14px] px-5 bg-lightBlue rounded-[20px]">
               <button className="text-blue-700">View details</button>
             </div> */}
             {buttonText && (
@@ -129,7 +129,7 @@ const Index: React.FC<IndexProps> = ({
                   text={buttonText}
                   onClick={() => {}}
                   type={undefined}
-                  className="text-blue-700"
+                  className="text-tagBlue"
                 />
               </Link>
             )}

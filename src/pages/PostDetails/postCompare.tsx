@@ -255,12 +255,12 @@ const PostCompare = ({ isOpen, setIsOpen }: modalProps) => {
                   >
                     <div className="flex justify-between items-center  ">
                       <div className="flex gap-4 items-center w-[380px]">
-                        <div className="p-[5px] rounded-full bg-blue-100 cursor-pointer">
+                        <div className="p-[5px] rounded-full bg-lightBlue cursor-pointer">
                           <Button
                             text=""
                             type={"button"}
                             onClick={() => setIsOpen(false)}
-                            className="!p-[10px] bg-blue-100"
+                            className="!p-[10px] bg-lightBlue"
                             icon={<CloseIcon color="#274C9B" />}
                           />
                         </div>

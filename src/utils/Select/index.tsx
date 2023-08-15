@@ -84,11 +84,11 @@ const Index = ({
                 companiesDrop
                   ? `flex items-center gap-2 py-[10px]  ${
                       leftIcon
-                        ? "hover:bg-transparent pr-4"
-                        : "hover:bg-blue-100 px-4"
+                        ? "hover:bg-transparent pr-4 "
+                        : "hover:bg-lightBlue px-4"
                     } ${
                       open
-                        ? `${leftIcon ? "bg-transparent" : "bg-blue-100"}`
+                        ? `${leftIcon ? "bg-transparent" : "bg-lightBlue"}`
                         : "bg-transparent"
                     } rounded-full`
                   : `relative cursor-default ${
@@ -104,8 +104,8 @@ const Index = ({
                 <>
                   {leftIcon && (
                     <div
-                      className={`w-10 h-10 flex items-center bg-blue-100 justify-center hover:bg-blue-300 ${
-                        open ? "bg-blue-300" : "bg-blue-100"
+                      className={`w-10 h-10 flex items-center bg-lightBlue justify-center hover:bg-darkBlue ${
+                        open ? "bg-darkBlue" : "bg-lightBlue"
                       } rounded-full `}
                     >
                       {leftIcon}

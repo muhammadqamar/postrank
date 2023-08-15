@@ -97,15 +97,15 @@ const PersonalInformation = () => {
               <Button
                 text="Continue"
                 onClick={() => handleSubmit()}
-                className="w-full bg-gray-100 text-gray-500 flex justify-center mb-4"
+                className="w-full bg-customBlue text-white flex justify-center mb-4"
                 type={undefined}
               />
-              <Button
+              {/* <Button
                 text="Skip for now"
                 onClick={() => handleSubmit()}
                 className="w-full p-large font-medium bg-white text-customBlue flex justify-center rounded-full"
                 type={undefined}
-              />
+              /> */}
             </form>
           )}
         </Formik>

@@ -3,6 +3,9 @@
 const colors = {
   customBlue: "rgba(47, 103, 221, 1)",
   tagBlue: "rgba(39, 76, 155, 1)",
+  lightBlue: "rgba(224, 233, 250, 1)",
+  commonBlue: "rgba(241, 246, 253, 1)",
+  darkBlue: "rgba(189, 207, 244, 1)",
   primary: {
     100: "#EEE6FF",
     200: "#DCCAFF",

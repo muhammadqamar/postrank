@@ -77,7 +77,7 @@ const LoginForm = () => {
                 type={undefined}
               />
               {modalVisible && (
-                <div className="fixed inset-0 flex justify-center pt-[132px] bg-white">
+                <div className="fixed inset-0 flex justify-center bg-white">
                   <ConfirmPassword />
                 </div>
               )}
