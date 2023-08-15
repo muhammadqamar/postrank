@@ -1,6 +1,4 @@
-import React from "react";
-
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Home from "../pages/Home/home";
 import Layout from "../components/Layout";
 import Login from "../components/Authentications/Login";
@@ -9,9 +7,12 @@ import CreateAccount from "../components/Authentications/CreateAccount/index";
 import PostDetails from "../pages/PostDetails";
 
 const AppRouter = () => {
+  const location = useLocation();
+
   return (
     <div>
-      <Layout />
+      {location.pathname === "/" ||
+        (location.pathname === "/post-details" && <Layout />)}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="login" element={<Login />} />
