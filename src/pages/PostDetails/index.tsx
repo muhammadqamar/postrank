@@ -48,7 +48,7 @@ const Index = () => {
       <div className="common-bg-color px-10 pb-16 ">
         <div className="flex justify-between flex-wrap sm:flex-nowrap items-center">
           <div className="flex gap-2 justify-between items-center py-6">
-            <div className="rounded-full p-[10px] bg-blue-100">
+            <div className="rounded-full p-[10px] bg-lightBlue">
               <BackIcon />
             </div>
             <TextTag
@@ -219,10 +219,10 @@ const Index = () => {
             onClick={() => {
               setIsOpen(true);
             }}
-            className={"bg-blue-100 rounded-[20px]"}
-            textStyling={"!mt-1 !bg-blue-100"}
+            className={"bg-lightBlue rounded-[20px]"}
+            textStyling={"!mt-1 !bg-lightBlue"}
             buttonStyling={
-              "!text-customBlue !bg-blue-100 border-2 border-solid !border-customBlue font-medium"
+              "!text-customBlue !bg-lightBlue border-2 border-solid !border-customBlue font-medium"
             }
           />
         </div>
@@ -250,7 +250,7 @@ const Index = () => {
             />
             <Trading
               trendLabel={"New users"}
-              className={"common-bg-color"}
+              className={"bg-commonBlue"}
               trendNumbers={"618"}
               trendMarkup={"12.5%"}
               trendLabelColor={"text-gray-700"}
@@ -259,7 +259,7 @@ const Index = () => {
             />
             <Trading
               trendLabel={"Average engagement time"}
-              className={"common-bg-color"}
+              className={"bg-commonBlue"}
               trendNumbers={"3m 25s"}
               trendMarkup={"12.5%"}
               trendLabelColor={"text-gray-700"}
@@ -298,7 +298,7 @@ const Index = () => {
             />
             <Trading
               trendLabel={"Unique pageviews"}
-              className={"common-bg-color"}
+              className={"bg-commonBlue"}
               trendNumbers={"1,213"}
               trendMarkup={"12.5%"}
               trendLabelColor={"text-gray-700"}
@@ -307,7 +307,7 @@ const Index = () => {
             />
             <Trading
               trendLabel={"Average time on page"}
-              className={"common-bg-color"}
+              className={"bg-commonBlue"}
               trendNumbers={"2m 47s"}
               trendMarkup={"12.5%"}
               trendLabelColor={"text-gray-700"}
@@ -332,16 +332,16 @@ const Index = () => {
           <div className="flex flex-wrap md:flex-nowrap justify-between gap-4 mb-8">
             <Trading
               trendLabel={"Total keywords"}
-              className={""}
+              className={"bg-commonBlue"}
               trendNumbers={"16"}
               trendMarkup={"12.5%"}
-              trendLabelColor={"text-blue-200"}
-              trendNumbersColor={"text-white"}
-              trendMarkupColor={"text-blue-200"}
+              trendLabelColor={"text-gray-700"}
+              trendNumbersColor={""}
+              trendMarkupColor={"text-success-300"}
             />
             <Trading
               trendLabel={"Best keyword"}
-              className={"common-bg-color"}
+              className={"bg-commonBlue"}
               trendNumbers={"Keyword"}
               trendMarkup={"12.5%"}
               trendLabelColor={"text-gray-700"}
@@ -356,38 +356,38 @@ const Index = () => {
               <tr className=" text-end ">
                 <th
                   scope="row"
-                  className="w-[50%] p-small text-gray-700 bg-blue-200 focus:bg-blue-100 p-3 !text-start border-r border-b common-bg-color"
+                  className="w-[50%] p-small text-gray-700 bg-commonBlue focus:bg-lightBlue p-3 !text-start border-r border-b common-bg-color"
                 >
                   Keyword
                 </th>
                 <th
                   scope="row"
-                  className=" p-small text-gray-700 bg-blue-200 focus:bg-blue-100 p-3 border-r border-b common-bg-color"
+                  className=" p-small text-gray-700 bg-commonBlue focus:bg-lightBlue p-3 border-r border-b common-bg-color"
                 >
                   Pos. 25 June
                 </th>
                 <th
                   scope="row"
-                  className=" p-small text-gray-700 bg-blue-200 focus:bg-blue-100 p-3 border-r border-b common-bg-color"
+                  className=" p-small text-gray-700 bg-commonBlue focus:bg-lightBlue p-3 border-r border-b common-bg-color"
                 >
                   Pos. 25 July
                 </th>
                 <th
                   scope="row"
-                  className=" p-small text-gray-700 bg-blue-200 focus:bg-blue-100 p-3 border-r border-b common-bg-color"
+                  className=" p-small text-gray-700 bg-commonBlue focus:bg-lightBlue p-3 border-r border-b common-bg-color"
                 >
                   Diff
                 </th>
                 <th
                   scope="row"
-                  className=" p-small text-gray-700 bg-blue-200 focus:bg-blue-100 p-3 border-r border-b common-bg-color"
+                  className=" p-small text-gray-700 bg-commonBlue focus:bg-lightBlue p-3 border-r border-b common-bg-color"
                 >
                   {" "}
                   Est. traffic
                 </th>
                 <th
                   scope="row"
-                  className=" p-small text-gray-700 bg-blue-200 focus:bg-blue-100 p-3 border-b common-bg-color"
+                  className=" p-small text-gray-700 bg-commonBlue focus:bg-lightBlue p-3 border-b common-bg-color"
                 >
                   Vol.
                 </th>
@@ -396,25 +396,25 @@ const Index = () => {
               <tr className="text-end">
                 <td
                   scope="row"
-                  className="w-[52.5%] p-medium  focus:bg-blue-100  !text-start p-3 border-r border-b border-blue-200"
+                  className="w-[52.5%] p-medium  focus:bg-lightBlue  !text-start p-3 border-r border-b border-lightBlue"
                 >
                   Keyword
                 </td>
                 <th
                   scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3  border-r border-b border-blue-200"
+                  className=" p-medium  focus:bg-lightBlue p-3  border-r border-b border-lightBlue"
                 >
                   3
                 </th>
                 <th
                   scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200"
+                  className=" p-medium  focus:bg-lightBlue p-3 border-r border-b border-lightBlue"
                 >
                   1
                 </th>
                 <th
                   scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200"
+                  className=" p-medium  focus:bg-lightBlue p-3 border-r border-b border-lightBlue"
                 >
                   <span className="flex gap-1 items-center justify-end">
                     2<IncreaseIcon />
@@ -422,13 +422,13 @@ const Index = () => {
                 </th>
                 <th
                   scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200"
+                  className=" p-medium  focus:bg-lightBlue p-3 border-r border-b border-lightBlue"
                 >
                   15.77
                 </th>
                 <th
                   scope="row"
-                  className=" p-medium focus:bg-blue-100 p-3 border-b border-blue-200"
+                  className=" p-medium focus:bg-lightBlue p-3 border-b border-lightBlue"
                 >
                   1,300
                 </th>
@@ -437,25 +437,25 @@ const Index = () => {
               <tr className="text-end">
                 <td
                   scope="row"
-                  className="w-[50%] p-medium  focus:bg-blue-100  !text-start p-3 border-r border-b border-blue-200"
+                  className="w-[50%] p-medium  focus:bg-lightBlue  !text-start p-3 border-r border-b border-lightBlue"
                 >
                   Keyword
                 </td>
                 <th
                   scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 "
+                  className=" p-medium  focus:bg-lightBlue p-3 border-r border-b border-lightBlue "
                 >
                   3
                 </th>
                 <th
                   scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 "
+                  className=" p-medium  focus:bg-lightBlue p-3 border-r border-b border-lightBlue "
                 >
                   1
                 </th>
                 <th
                   scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 "
+                  className=" p-medium  focus:bg-lightBlue p-3 border-r border-b border-lightBlue "
                 >
                   <span className="flex gap-1 items-center justify-end">
                     2<IncreaseIcon />
@@ -463,13 +463,13 @@ const Index = () => {
                 </th>
                 <th
                   scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 "
+                  className=" p-medium  focus:bg-lightBlue p-3 border-r border-b border-lightBlue "
                 >
                   15.77
                 </th>
                 <th
                   scope="row"
-                  className=" p-medium focus:bg-blue-100 p-3 border-b border-blue-200 "
+                  className=" p-medium focus:bg-lightBlue p-3 border-b border-lightBlue "
                 >
                   1,300
                 </th>
@@ -478,25 +478,25 @@ const Index = () => {
               <tr className="text-end">
                 <td
                   scope="row"
-                  className="w-[50%] p-medium  focus:bg-blue-100  !text-start p-3 border-r border-b border-blue-200"
+                  className="w-[50%] p-medium  focus:bg-lightBlue  !text-start p-3 border-r border-b border-lightBlue"
                 >
                   Keyword
                 </td>
                 <th
                   scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 "
+                  className=" p-medium  focus:bg-lightBlue p-3 border-r border-b border-lightBlue "
                 >
                   3
                 </th>
                 <th
                   scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 "
+                  className=" p-medium  focus:bg-lightBlue p-3 border-r border-b border-lightBlue "
                 >
                   1
                 </th>
                 <th
                   scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 "
+                  className=" p-medium  focus:bg-lightBlue p-3 border-r border-b border-lightBlue "
                 >
                   <span className="flex gap-1 items-center justify-end">
                     2<IncreaseIcon />
@@ -504,13 +504,13 @@ const Index = () => {
                 </th>
                 <th
                   scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 "
+                  className=" p-medium  focus:bg-lightBlue p-3 border-r border-b border-lightBlue "
                 >
                   15.77
                 </th>
                 <th
                   scope="row"
-                  className=" p-medium focus:bg-blue-100 p-3 border-b border-blue-200 "
+                  className=" p-medium focus:bg-lightBlue p-3 border-b border-lightBlue "
                 >
                   1,300
                 </th>
@@ -519,25 +519,25 @@ const Index = () => {
               <tr className="text-end">
                 <td
                   scope="row"
-                  className="w-[50%] p-medium  focus:bg-blue-100  !text-start p-3 border-r border-b border-blue-200"
+                  className="w-[50%] p-medium  focus:bg-lightBlue  !text-start p-3 border-r border-b border-lightBlue"
                 >
                   Keyword
                 </td>
                 <th
                   scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 "
+                  className=" p-medium  focus:bg-lightBlue p-3 border-r border-b border-lightBlue "
                 >
                   3
                 </th>
                 <th
                   scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 "
+                  className=" p-medium  focus:bg-lightBlue p-3 border-r border-b border-lightBlue "
                 >
                   1
                 </th>
                 <th
                   scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 "
+                  className=" p-medium  focus:bg-lightBlue p-3 border-r border-b border-lightBlue "
                 >
                   <span className="flex gap-1 items-center justify-end">
                     2<IncreaseIcon />
@@ -545,13 +545,13 @@ const Index = () => {
                 </th>
                 <th
                   scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 "
+                  className=" p-medium  focus:bg-lightBlue p-3 border-r border-b border-lightBlue "
                 >
                   15.77
                 </th>
                 <th
                   scope="row"
-                  className=" p-medium focus:bg-blue-100 p-3 border-b border-blue-200 "
+                  className=" p-medium focus:bg-lightBlue p-3 border-b border-lightBlue "
                 >
                   1,300
                 </th>
@@ -560,25 +560,25 @@ const Index = () => {
               <tr className="text-end">
                 <td
                   scope="row"
-                  className="w-[50%] p-medium  focus:bg-blue-100  !text-start p-3 border-r border-b border-blue-200"
+                  className="w-[50%] p-medium  focus:bg-lightBlue  !text-start p-3 border-r border-b border-lightBlue"
                 >
                   Keyword
                 </td>
                 <th
                   scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 "
+                  className=" p-medium  focus:bg-lightBlue p-3 border-r border-b border-lightBlue "
                 >
                   3
                 </th>
                 <th
                   scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 "
+                  className=" p-medium  focus:bg-lightBlue p-3 border-r border-b border-lightBlue "
                 >
                   1
                 </th>
                 <th
                   scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 "
+                  className=" p-medium  focus:bg-lightBlue p-3 border-r border-b border-lightBlue "
                 >
                   <span className="flex gap-1 items-center justify-end">
                     2<IncreaseIcon />
@@ -586,13 +586,13 @@ const Index = () => {
                 </th>
                 <th
                   scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-b border-blue-200 "
+                  className=" p-medium  focus:bg-lightBlue p-3 border-r border-b border-lightBlue "
                 >
                   15.77
                 </th>
                 <th
                   scope="row"
-                  className=" p-medium focus:bg-blue-100 p-3 border-b border-blue-200 "
+                  className=" p-medium focus:bg-lightBlue p-3 border-b border-lightBlue "
                 >
                   1,300
                 </th>
@@ -601,25 +601,25 @@ const Index = () => {
               <tr className="text-end">
                 <td
                   scope="row"
-                  className="w-[50%] p-medium  focus:bg-blue-100  !text-start p-3 border-r border-blue-200 "
+                  className="w-[50%] p-medium  focus:bg-lightBlue  !text-start p-3 border-r border-lightBlue "
                 >
                   Keyword
                 </td>
                 <th
                   scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-blue-200 "
+                  className=" p-medium  focus:bg-lightBlue p-3 border-r border-lightBlue "
                 >
                   3
                 </th>
                 <th
                   scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-blue-200 "
+                  className=" p-medium  focus:bg-lightBlue p-3 border-r border-lightBlue "
                 >
                   1
                 </th>
                 <th
                   scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-blue-200 "
+                  className=" p-medium  focus:bg-lightBlue p-3 border-r border-lightBlue "
                 >
                   <span className="flex gap-1 items-center justify-end">
                     2<IncreaseIcon />
@@ -627,13 +627,13 @@ const Index = () => {
                 </th>
                 <th
                   scope="row"
-                  className=" p-medium  focus:bg-blue-100 p-3 border-r border-blue-200 "
+                  className=" p-medium  focus:bg-lightBlue p-3 border-r border-lightBlue "
                 >
                   15.77
                 </th>
                 <th
                   scope="row"
-                  className=" p-medium focus:bg-blue-100 p-3 border-blue-200 "
+                  className=" p-medium focus:bg-lightBlue p-3 border-lightBlue "
                 >
                   1,300
                 </th>

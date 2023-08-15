@@ -50,7 +50,7 @@ const TagsModal = ({ isOpen, setIsOpen }: modalProps) => {
                         text=""
                         type={"button"}
                         onClick={() => setIsOpen(false)}
-                        className="!p-[10px] bg-blue-100"
+                        className="!p-[10px] bg-lightBlue"
                         icon={<CloseIcon color="#274C9B" />}
                       />
                       <TextTag
@@ -65,7 +65,7 @@ const TagsModal = ({ isOpen, setIsOpen }: modalProps) => {
                       text="Save"
                       type={"button"}
                       onClick={() => {}}
-                      className="!w-fit !py-[10px] !px-4 bg-customBlue text-white flex justify-center"
+                      className="!w-fit !py-[10px] !px-4 !bg-customBlue text-white flex justify-center"
                     />
                   </Dialog.Title>
                   <div className="my-8">

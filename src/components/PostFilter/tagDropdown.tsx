@@ -19,8 +19,8 @@ const TagDrapdown = ({ onclick, onClear, onChange }: DropdownProps) => {
           <>
             <div>
               <Menu.Button
-                className={`w-fit py-[10px] px-4 flex items-center gap-2 hover:bg-blue-100 rounded-full ${
-                  open ? "bg-blue-100" : ""
+                className={`w-fit py-[10px] px-4 flex items-center gap-2 hover:bg-lightBlue rounded-full ${
+                  open ? "bg-lightBlue" : ""
                 }`}
               >
                 <TextTag
