@@ -204,7 +204,7 @@ const cardData = [
 ];
 const Home: React.FC = () => {
   return (
-    <div className="max-w-[1280px] mx-auto px-10 pb-16">
+    <div className="max-w-7xl mx-auto sm:px-10 sm:pb-16 px-5 pb-8 pt-0">
       <PostFilter />
       <div className="w-full flex items-center flex-wrap  gap-6">
         {cardData.map((card, index) => (

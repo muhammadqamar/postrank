@@ -19,8 +19,8 @@ interface FormErrors {
 
 const LoginForm = () => {
   return (
-    <div className="bg-white h-screen flex flex-col justify-between items-center pt-[132px] pb-16">
-      <div className="w-80">
+    <div className="bg-white h-screen flex flex-col !justify-between items-center sm:pt-[132px] pt-20 sm:pb-16 pb-8">
+      <div className="sm:w-80 w-72">
         <TextTag
           as="h6"
           text={"Login to your account"}

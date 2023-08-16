@@ -23,7 +23,7 @@ interface FormErrors {
 
 const AccountDetails = () => {
   return (
-    <div className="pt-9 px-8 pb-16 rounded-[20px] bg-white">
+    <div className="sm:pt-9 pt-4 sm:px-8 px-4 sm:pb-16 pb-8 rounded-[20px] bg-white">
       <TextTag
         as="h5"
         text={"Account details"}
@@ -85,7 +85,7 @@ const AccountDetails = () => {
                 color={""}
               />
 
-              <div className="flex justify-between items-center">
+              <div className="flex justify-between items-center sm:flex-nowrap flex-wrap gap-[2px]">
                 <TextTag
                   as="p"
                   text={"First name"}
@@ -103,13 +103,13 @@ const AccountDetails = () => {
                   touch={touched.email}
                   icon=""
                   placeholder={""}
-                  className={"min-w-[300px]"}
+                  className={"!sm:min-w-[300px] !w-56"}
                 />
               </div>
-              <div className="flex justify-between items-center">
+              <div className="flex justify-between items-center sm:flex-nowrap flex-wrap gap-[2px]">
                 <TextTag
                   as="p"
-                  text={"First name"}
+                  text={"Last name"}
                   className={"p-medium"}
                   color={"text-gray-700"}
                 />
@@ -124,12 +124,12 @@ const AccountDetails = () => {
                   touch={touched.email}
                   icon=""
                   placeholder={""}
-                  className={"min-w-[300px]"}
+                  className={"!sm:min-w-[300px] !w-56"}
                 />
               </div>
             </div>
-            <div className="flex items-center justify-between mb-[42px]">
-              <div className="flex items-center !justify-between">
+            <div className="flex items-center justify-between mb-[42px] sm:flex-nowrap flex-wrap sm:gap-0 gap-2">
+              <div className="flex items-center !justify-between ">
                 <TextTag
                   as="p"
                   text={"Avatar"}
@@ -137,13 +137,13 @@ const AccountDetails = () => {
                   color={"text-gray-700"}
                 />
               </div>
-              <div className="flex items-center !justify-between min-w-[300px]">
+              <div className="flex items-center !justify-between !sm:min-w-[300px] !w-56 sm:gap-0 gap-2">
                 <img src={User} alt="User's Avatar!" className="rounded-full" />
                 <div className="flex gap-2">
                   <Button
                     text="Upload new"
                     onClick={() => handleSubmit()}
-                    className="p-medium bg-white border-2 border-solid border-customBlue !py-[7px] !px-3 flex justify-center "
+                    className="p-medium bg-white border-2 border-solid border-customBlue !py-[7px] sm:px-3 !px-[7px] flex justify-center "
                     type={undefined}
                   />
                   <Button
@@ -157,7 +157,7 @@ const AccountDetails = () => {
             </div>
             <div className="flex flex-col gap-6">
               <TextTag as="h6" text={"Email"} className={"h6"} color={""} />
-              <div className="flex justify-between items-center">
+              <div className="flex justify-between items-center sm:flex-nowrap flex-wrap gap-[2px]">
                 <TextTag
                   as="p"
                   text={"Email"}
@@ -175,13 +175,13 @@ const AccountDetails = () => {
                   touch={touched.email}
                   icon=""
                   placeholder={""}
-                  className={"min-w-[300px]"}
+                  className={"!sm:min-w-[300px] !w-56"}
                 />
               </div>
             </div>
             <div className="flex flex-col gap-6">
               <TextTag as="h6" text={"Password"} className={"h6"} color={""} />
-              <div className="flex justify-between items-center">
+              <div className="flex justify-between items-center sm:flex-nowrap flex-wrap gap-[2px]">
                 <TextTag
                   as="p"
                   text={"Current password"}
@@ -199,10 +199,10 @@ const AccountDetails = () => {
                   touch={touched.currentPassword}
                   icon=""
                   placeholder={""}
-                  className={"min-w-[300px]"}
+                  className={"!sm:min-w-[300px] !w-56"}
                 />
               </div>
-              <div className="flex justify-between items-center">
+              <div className="flex justify-between items-center sm:flex-nowrap flex-wrap gap-[2px]">
                 <TextTag
                   as="p"
                   text={"New password"}
@@ -220,10 +220,10 @@ const AccountDetails = () => {
                   touch={touched.newPassword}
                   icon=""
                   placeholder={""}
-                  className={"min-w-[300px]"}
+                  className={"!sm:min-w-[300px] !w-56"}
                 />
               </div>
-              <div className="flex justify-between items-center">
+              <div className="flex justify-between items-center sm:flex-nowrap flex-wrap gap-[2px]">
                 <TextTag
                   as="p"
                   text={"Repeat new password"}
@@ -241,7 +241,7 @@ const AccountDetails = () => {
                   touch={touched.newPassword}
                   icon=""
                   placeholder={""}
-                  className={"min-w-[300px]"}
+                  className={"!sm:min-w-[300px] !w-56"}
                 />
               </div>
             </div>

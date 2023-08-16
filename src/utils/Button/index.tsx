@@ -19,7 +19,7 @@ const Index: React.FC<IndexProps> = ({
 }) => {
   return (
     <button
-      className={`flex  items-center gap-2 md:py-[14px] xsm:py-[10px] md:px-5 xsm:px-4 bg-lightBlue rounded-full text-customBlue ${className}`}
+      className={`flex  items-center gap-2 md:py-[14px] py-[10px] md:px-5 px-3 bg-lightBlue rounded-full text-customBlue ${className}`}
       onClick={onClick}
       type={type}
       disabled={disabled}

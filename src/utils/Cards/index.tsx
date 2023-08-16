@@ -68,16 +68,16 @@ const Index: React.FC<IndexProps> = ({
           </div>
         </div>
         {/* text */}
-        <div className="md:p-5 xsm:p-4 bg-white">
+        <div className="md:p-5 p-4 bg-white">
           <div className="flex justify-between">
-            <div className="max-w-[330px]">
+            <div className="w-full">
               <TextTag
                 as="h6"
                 text={cardTitle}
                 className={"text-xl mb-4 font-medium truncate"}
                 color={""}
               />
-              <div className="flex items-center gap-2 ">
+              <div className="flex items-center gap-2 flex-wrap">
                 {calendarIcon1 && <span>{calendarIcon1}</span>}
                 <TextTag
                   as="p"
@@ -116,8 +116,8 @@ const Index: React.FC<IndexProps> = ({
             )}
           </div>
           <div
-            className={`flex justify-between ${
-              buttonText && "md:mt-14 xsm:mt-12"
+            className={`flex justify-between sm:flex-row flex-col-reverse gap-4 ${
+              buttonText && "md:mt-14 mt-10"
             }`}
           >
             {/* <div className="py-[14px] px-5 bg-lightBlue rounded-[20px]">
@@ -133,7 +133,7 @@ const Index: React.FC<IndexProps> = ({
                 />
               </Link>
             )}
-            <div className="flex gap-2 items-center">
+            <div className="flex gap-2 items-center justify-end">
               {/* eye */}
               <div className="flex gap-1 items-center">
                 {eyeIcon2 && <span>{eyeIcon2}</span>}
