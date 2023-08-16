@@ -94,7 +94,7 @@ const LoginForm = () => {
                   <input
                     type="checkbox"
                     name="rememberMe"
-                    className="mr-2 border border-solid border-gray-200 rounded-sm cursor-pointer"
+                    className="mr-2 border-2 border-solid border-commonGray rounded cursor-pointer"
                   />
                   <TextTag
                     as="span"

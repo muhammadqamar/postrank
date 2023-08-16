@@ -6,6 +6,8 @@ const colors = {
   lightBlue: "rgba(224, 233, 250, 1)",
   commonBlue: "rgba(241, 246, 253, 1)",
   darkBlue: "rgba(189, 207, 244, 1)",
+  commonGray: "rgba(213, 213, 213, 1)",
+  lightGray: "rgba(248, 248, 248, 1)",
   primary: {
     100: "#EEE6FF",
     200: "#DCCAFF",

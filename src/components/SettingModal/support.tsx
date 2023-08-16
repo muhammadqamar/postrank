@@ -14,7 +14,7 @@ const Support = () => {
             text={"Send email"}
             onClick={() => {}}
             type={undefined}
-            className="text-white bg-customBlue font-medium"
+            className="text-white !bg-customBlue font-medium"
           />
         </div>
         <div className="flex flex-col gap-4 max-w-[457px]">

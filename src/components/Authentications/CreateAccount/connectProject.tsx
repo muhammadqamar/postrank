@@ -5,6 +5,7 @@ import { TextTag } from "../../../utils/Typography";
 import Button from "../../../utils/Button";
 import { Link } from "react-router-dom";
 import { Formik } from "formik";
+import DropDown from "./projectSelect";
 const postData = [
   {
     name: "",
@@ -80,18 +81,18 @@ const ConnectProject = () => {
                   className={"p-small"}
                   color={"text-gray-700"}
                 />
-                <Select
-                  className=""
+                <DropDown
                   data={postData}
-                  companiesDrop={false}
-                  addIcon={""}
+                  className=""
+                  companiesDrop={undefined}
+                  addIcon={undefined}
                   addText={""}
-                  leftIcon={""}
-                  rightIcon={""}
+                  leftIcon={undefined}
+                  rightIcon={undefined}
                   leftText={""}
                   onClick={() => {}}
                   isDateM={false}
-                  simpleDropDown={true}
+                  simpleDropDown={false}
                   dateOnCancel={() => {}}
                   multiSelect={false}
                 />
@@ -167,7 +168,7 @@ const ConnectProject = () => {
             text={"Continue "}
             onClick={() => {}}
             type={undefined}
-            className="w-full flex justify-center text-gray-500 bg-gray-100"
+            className="w-full flex justify-center text-gray-500 !bg-lightGray"
           />
         </Link>
       </div>

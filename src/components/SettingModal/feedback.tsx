@@ -81,7 +81,7 @@ const Feedback = () => {
                     <input
                       type="checkbox"
                       name="Request"
-                      className="mr-2 border border-solid border-gray-200 rounded-sm cursor-pointer"
+                      className="mr-2 border-2 border-solid border-commonGray rounded cursor-pointer"
                     />
                     <TextTag
                       as="span"
@@ -96,7 +96,7 @@ const Feedback = () => {
                     <input
                       type="checkbox"
                       name="Bug"
-                      className="mr-2 border border-solid border-gray-200 rounded-sm cursor-pointer"
+                      className="mr-2 border-2 border-solid border-commonGray rounded cursor-pointer"
                     />
                     <TextTag
                       as="span"
@@ -111,7 +111,7 @@ const Feedback = () => {
                     <input
                       type="checkbox"
                       name="Feedback"
-                      className="mr-2 border border-solid border-gray-200 rounded-sm cursor-pointer"
+                      className="mr-2 border-2 border-solid border-commonGray rounded cursor-pointer"
                     />
                     <TextTag
                       as="span"
@@ -136,7 +136,7 @@ const Feedback = () => {
                   text={"Send feedback"}
                   onClick={() => {}}
                   type={undefined}
-                  className="text-white bg-customBlue"
+                  className="text-white !bg-customBlue"
                 />
               </div>
             </div>

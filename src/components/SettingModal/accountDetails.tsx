@@ -75,7 +75,7 @@ const AccountDetails = () => {
         }) => (
           <form
             onSubmit={handleSubmit}
-            className="pt-8 max-w-[838px] flex flex-col gap-[42px]"
+            className="pt-8 max-w-[512px] flex flex-col gap-[42px]"
           >
             <div className="flex flex-col gap-6 ">
               <TextTag
@@ -157,7 +157,7 @@ const AccountDetails = () => {
             </div>
             <div className="flex flex-col gap-6">
               <TextTag as="h6" text={"Email"} className={"h6"} color={""} />
-              <div className="flex justify-between">
+              <div className="flex justify-between items-center">
                 <TextTag
                   as="p"
                   text={"Email"}
@@ -249,11 +249,11 @@ const AccountDetails = () => {
               <Button
                 text="Save"
                 onClick={() => {}}
-                className="p-large !leading-5 text-white bg-customBlue !py-[14px] !px-5 flex justify-center "
+                className="p-large !leading-5 text-white !bg-customBlue !py-[14px] !px-5 flex justify-center "
                 type={undefined}
               />
               <Button
-                text="Delete"
+                text="Delete account"
                 onClick={() => handleSubmit()}
                 className="p-large !leading-5 bg-white text-gray-900 !py-[10px] !px-[0px] flex justify-center"
                 type={undefined}

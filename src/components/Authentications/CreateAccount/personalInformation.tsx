@@ -97,7 +97,7 @@ const PersonalInformation = () => {
               <Button
                 text="Continue"
                 onClick={() => handleSubmit()}
-                className="w-full bg-customBlue text-white flex justify-center mb-4"
+                className="w-full !bg-customBlue text-white flex justify-center mb-4"
                 type={undefined}
               />
               {/* <Button

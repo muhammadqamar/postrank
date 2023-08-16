@@ -11,8 +11,11 @@ const AppRouter = () => {
 
   return (
     <div>
-      {location.pathname === "/" ||
-        (location.pathname === "/post-details" && <Layout />)}
+      {location.pathname === "/" || location.pathname === "/post-details" ? (
+        <Layout />
+      ) : (
+        ""
+      )}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="login" element={<Login />} />

@@ -149,7 +149,7 @@ const AddNewFolder = () => {
                       text={"Add folder"}
                       onClick={() => {}}
                       type={undefined}
-                      className="w-full flex justify-center text-gray-500 bg-gray-100"
+                      className="w-full flex justify-center text-gray-500 !bg-lightGray"
                     />
                   </Link>
                 </div>

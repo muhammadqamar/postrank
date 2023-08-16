@@ -66,7 +66,7 @@ const CreateNewProject = () => {
               <Button
                 text="Continue"
                 onClick={() => handleSubmit()}
-                className="w-full bg-gray-100 text-gray-500 flex justify-center mb-4"
+                className="w-full !bg-lightGray text-gray-500 flex justify-center mb-4"
                 type={undefined}
               />
             </form>

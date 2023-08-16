@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
 
 import Button from "../../../utils/Button";
-import { CloseIcon, Support, FeedBack, UserIcon, CategoryIcon } from "../../../icons";
+import {
+  CloseIcon,
+  Support,
+  FeedBack,
+  UserIcon,
+  CategoryIcon,
+} from "../../../icons";
 import { TextTag } from "../../../utils/Typography";
 
 const navigation = [
@@ -48,7 +54,13 @@ const Index = ({ closeModal, setActiveTab }) => {
   return (
     <div className="w-[256px] flex-shrink-0">
       <div className="flex items-center  gap-4 mb-[42px]">
-        <Button text="" type={"button"} onClick={closeModal} className="!p-[10px] bg-blue-100" icon={<CloseIcon color="#274C9B" />} />
+        <Button
+          text=""
+          type={"button"}
+          onClick={closeModal}
+          className="!p-[10px] bg-lightBlue"
+          icon={<CloseIcon color="#274C9B" />}
+        />
 
         <TextTag as="h5" text="Settings" color="text-black" className="h5" />
       </div>
@@ -78,7 +90,9 @@ const Index = ({ closeModal, setActiveTab }) => {
               type="button"
               // onClick={() => {}}
               className={`!w-full !px-5 !py-[14px]  !gap-[10px] !font-medium bg-transparent ${
-                item.checked ? "!text-blue-700 !bg-blue-100" : "!text-black bg-transparent"
+                item.checked
+                  ? "!text-blue-700 !bg-blue-100"
+                  : "!text-black bg-transparent"
               } hover:bg-blue-100 hover:!text-blue-700 `}
               icon={
                 item.text === "Account details" ? (

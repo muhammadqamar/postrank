@@ -3,7 +3,7 @@ import Select from "../../utils/Select";
 import Card from "../../utils/Cards";
 import ComparePost from "../../utils/Error";
 import Trading from "../../utils/Trading";
-// import DeleteModal from "../../utils/DeleteModal";
+import DeleteModal from "../../utils/DeleteModal";
 import Chart from "../../components/GraphChart/charts";
 import {
   AddPostIcon,
@@ -41,6 +41,7 @@ const dateData = [
 const Index = () => {
   const [isDateM, setIsDateM] = useState<boolean>(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isOpenDelete, setIsOpenDelete] = useState(false);
   // const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -116,7 +117,12 @@ const Index = () => {
                     className={"p-medium"}
                     color={"text-tagBlue"}
                   />
-                  <button className="cursor-pointer" onClick={() => {}}>
+                  <button
+                    className="cursor-pointer"
+                    onClick={() => {
+                      setIsOpenDelete(true);
+                    }}
+                  >
                     <CloseIcon color={"#274C9B"} />
                   </button>
                 </div>
@@ -127,7 +133,12 @@ const Index = () => {
                     className={"p-medium"}
                     color={"text-tagBlue"}
                   />
-                  <button className="cursor-pointer" onClick={() => {}}>
+                  <button
+                    className="cursor-pointer"
+                    onClick={() => {
+                      setIsOpenDelete(true);
+                    }}
+                  >
                     <CloseIcon color={"#274C9B"} />
                   </button>
                 </div>
@@ -138,7 +149,12 @@ const Index = () => {
                     className={"p-medium"}
                     color={"text-tagBlue"}
                   />
-                  <button className="cursor-pointer" onClick={() => {}}>
+                  <button
+                    className="cursor-pointer"
+                    onClick={() => {
+                      setIsOpenDelete(true);
+                    }}
+                  >
                     <CloseIcon color={"#274C9B"} />
                   </button>
                 </div>
@@ -149,7 +165,12 @@ const Index = () => {
                     className={"p-medium"}
                     color={"text-tagBlue"}
                   />
-                  <button className="cursor-pointer" onClick={() => {}}>
+                  <button
+                    className="cursor-pointer"
+                    onClick={() => {
+                      setIsOpenDelete(true);
+                    }}
+                  >
                     <CloseIcon color={"#274C9B"} />
                   </button>
                 </div>
@@ -160,7 +181,12 @@ const Index = () => {
                     className={"p-medium"}
                     color={"text-tagBlue"}
                   />
-                  <button className="cursor-pointer" onClick={() => {}}>
+                  <button
+                    className="cursor-pointer"
+                    onClick={() => {
+                      setIsOpenDelete(true);
+                    }}
+                  >
                     <CloseIcon color={"#274C9B"} />
                   </button>
                 </div>
@@ -171,7 +197,12 @@ const Index = () => {
                     className={"p-medium"}
                     color={"text-tagBlue"}
                   />
-                  <button className="cursor-pointer" onClick={() => {}}>
+                  <button
+                    className="cursor-pointer"
+                    onClick={() => {
+                      setIsOpenDelete(true);
+                    }}
+                  >
                     <CloseIcon color={"#274C9B"} />
                   </button>
                 </div>
@@ -182,7 +213,12 @@ const Index = () => {
                     className={"p-medium"}
                     color={"text-tagBlue"}
                   />
-                  <button className="cursor-pointer" onClick={() => {}}>
+                  <button
+                    className="cursor-pointer"
+                    onClick={() => {
+                      setIsOpenDelete(true);
+                    }}
+                  >
                     <CloseIcon color={"#274C9B"} />
                   </button>
                 </div>
@@ -193,7 +229,12 @@ const Index = () => {
                     className={"p-medium"}
                     color={"text-tagBlue"}
                   />
-                  <button className="cursor-pointer" onClick={() => {}}>
+                  <button
+                    className="cursor-pointer"
+                    onClick={() => {
+                      setIsOpenDelete(true);
+                    }}
+                  >
                     <CloseIcon color={"#274C9B"} />
                   </button>
                 </div>
@@ -643,6 +684,12 @@ const Index = () => {
         </div>
       </div>
       <PostCompare isOpen={isOpen} setIsOpen={setIsOpen} />
+      <DeleteModal
+        isOpenDelete={isOpenDelete}
+        setIsOpenDelete={setIsOpenDelete}
+        onDelete={() => {}}
+        tagName={"tag named"}
+      />
     </div>
   );
 };

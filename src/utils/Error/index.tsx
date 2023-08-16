@@ -33,7 +33,7 @@ const Index: React.FC<IndexProps> = ({
         <Button
           text={buttonText}
           onClick={onClick}
-          className={` bg-customBlue text-white flex justify-center mb-4 ${buttonStyling}`}
+          className={` !bg-customBlue text-white flex justify-center mb-4 ${buttonStyling}`}
           type={undefined}
         />
       </div>
