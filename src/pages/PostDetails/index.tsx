@@ -45,8 +45,8 @@ const Index = () => {
   // const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="max-w-7xl m-auto">
-      <div className="common-bg-color px-10 pb-16 ">
+    <div className="max-w-7xl mx-auto sm:px-10 sm:pb-16 px-5 pb-8 pt-0">
+      <div className="common-bg-color">
         <div className="flex justify-between flex-wrap sm:flex-nowrap items-center">
           <div className="flex gap-2 justify-between items-center py-6">
             <div className="rounded-full p-[10px] bg-lightBlue">
@@ -268,8 +268,8 @@ const Index = () => {
           />
         </div>
         {/* User trends */}
-        <div className="p-8 mb-6 bg-white rounded-[20px] ">
-          <div className="flex justify-between items-center mb-6">
+        <div className="md:p-8 p-5 mb-6 bg-white rounded-[20px] ">
+          <div className="flex justify-between md:items-center items-baseline mb-6">
             <TextTag as="h5" text={"User trends"} className={"h5"} color={""} />
             <TextTag
               as="p"
@@ -312,8 +312,8 @@ const Index = () => {
           <Chart />
         </div>
         {/* Page view trends */}
-        <div className="p-8 mb-6 bg-white rounded-[20px]">
-          <div className="flex justify-between items-center mb-6">
+        <div className="md:p-8 p-5 mb-6 bg-white rounded-[20px]">
+          <div className="flex justify-between md:items-center items-baseline mb-6">
             <TextTag
               as="h5"
               text={"Page view trends"}
@@ -360,8 +360,8 @@ const Index = () => {
           <Chart />
         </div>
         {/* Queries */}
-        <div className="p-8 mb-6 bg-white rounded-[20px]">
-          <div className="flex justify-between items-center mb-6">
+        <div className="md:p-8 p-5 mb-6 bg-white rounded-[20px]">
+          <div className="flex justify-between md:items-center items-baseline mb-6">
             <TextTag as="h5" text={"Queries"} className={"h5"} color={""} />
             <TextTag
               as="p"
@@ -391,7 +391,7 @@ const Index = () => {
             />
           </div>
           {/* Table */}
-          <div className="!rounded-2xl overflow-hidden">
+          <div className="!rounded-2xl md:overflow-hidden overflow-scroll">
             <table className="w-full">
               {/* 1st row */}
               <tr className=" text-end ">

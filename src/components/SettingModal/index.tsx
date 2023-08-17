@@ -41,9 +41,12 @@ const Index = ({ isOpen, closeModal }: modalProps) => {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full max-w-[1200px] transform overflow-hidden rounded-[20px] common-bg-color p-8 text-left align-middle shadow-xl transition-all">
-                <div className="flex items-start  gap-[42px] ">
-                  <LeftSide setActiveTab={setActiveTab} closeModal={closeModal} />
+              <Dialog.Panel className="w-full max-w-[1200px] transform overflow-hidden rounded-[20px] common-bg-color sm:p-8 p-4 text-left align-middle shadow-xl transition-all">
+                <div className="flex items-start  gap-[42px] md:flex-nowrap flex-wrap">
+                  <LeftSide
+                    setActiveTab={setActiveTab}
+                    closeModal={closeModal}
+                  />
                   <div className="w-full bg-white rounded-[20px] ">
                     {activeTab === "Account details" && <AccountDetails />}
                     {activeTab === "Projects" && <AddProjects />}

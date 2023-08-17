@@ -238,7 +238,7 @@ const PostCompare = ({ isOpen, setIsOpen }: modalProps) => {
           </Transition.Child>
 
           <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-10 text-center">
+            <div className="flex min-h-full items-center justify-center sm:p-10 p-5 text-center">
               <Transition.Child
                 as={Fragment}
                 enter="ease-out duration-300"
@@ -248,13 +248,13 @@ const PostCompare = ({ isOpen, setIsOpen }: modalProps) => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-[1280px] transform overflow-hidden rounded-[20px] common-bg-color p-8 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-full max-w-[1280px] transform overflow-hidden rounded-[20px] common-bg-color sm:p-8 p-4 text-left align-middle shadow-xl transition-all">
                   <Dialog.Title
                     as="h4"
                     className="!max-w-7xl !mx-auto flex items-center justify-between gap-2"
                   >
-                    <div className="flex justify-between items-center  ">
-                      <div className="flex gap-4 items-center w-[380px]">
+                    <div className="flex justify-between items-center md:flex-nowrap flex-wrap max-sm:gap-2">
+                      <div className="flex gap-4 items-center sm:w-[380px] w-60">
                         <div className="p-[5px] rounded-full bg-lightBlue cursor-pointer">
                           <Button
                             text=""
@@ -271,7 +271,7 @@ const PostCompare = ({ isOpen, setIsOpen }: modalProps) => {
                           color={""}
                         />
                       </div>
-                      <div>
+                      <div className="sm:block hidden">
                         <Search
                           onChange={() => {}}
                           placeholder={"Search..."}
@@ -279,7 +279,7 @@ const PostCompare = ({ isOpen, setIsOpen }: modalProps) => {
                           width={"w-[435px]"}
                         />
                       </div>
-                      <div className="w-[383px] flex justify-end">
+                      <div className="w-60 md:w-[383px] flex justify-end">
                         <Button
                           text={"Add post"}
                           onClick={() => {}}

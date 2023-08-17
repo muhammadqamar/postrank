@@ -33,7 +33,7 @@ type props = {
 
 const AddNewProject = ({ setAddProject }: props) => {
   return (
-    <div className="px-8 pt-8 pb-16 bg-white rounded-[20px] w-full">
+    <div className="sm:px-8 px-0 sm:pt-8 pt-2 sm:pb-16 pb-0 bg-white rounded-[20px] w-full">
       <div className="flex flex-col gap-[42px] w-full">
         <div className="flex items-center gap-4">
           <div
@@ -46,13 +46,13 @@ const AddNewProject = ({ setAddProject }: props) => {
             as="label"
             text={"Add new project"}
             className={
-              "text-[25px] leading-[32px] font-medium tracking-[-0.4px]"
+              "text-[25px] leading-[32px] font-medium max-sm:text-xl tracking-[-0.4px]"
             }
             color={"text-[#000000]"}
           />
         </div>
 
-        <div className="flex flex-col gap-6 pt-8">
+        <div className="flex flex-col gap-6 sm:pt-8 pt-0">
           <h6 className="tracking-[ -0.2px] font-medium">Connections</h6>
           <div className="flex items-start lg:items-center gap-5 lg:gap-8 flex-col lg:flex-row">
             <TextTag
@@ -68,7 +68,7 @@ const AddNewProject = ({ setAddProject }: props) => {
               type={undefined}
             />
           </div>
-          <div className="flex w-full items-start lg:items-center gap-5 lg:gap-8 flex-col lg:flex-row">
+          <div className="flex w-full items-start lg:items-center sm:gap-5 gap-1 lg:gap-8 flex-col lg:flex-row">
             <TextTag
               as="label"
               text={"Account"}
@@ -91,7 +91,7 @@ const AddNewProject = ({ setAddProject }: props) => {
               multiSelect={false}
             />
           </div>
-          <div className="flex w-full items-start lg:items-center gap-5 lg:gap-8 flex-col lg:flex-row">
+          <div className="flex w-full items-start lg:items-center sm:gap-5 gap-1 lg:gap-8 flex-col lg:flex-row">
             <TextTag
               as="label"
               text={"Property"}
@@ -114,7 +114,7 @@ const AddNewProject = ({ setAddProject }: props) => {
               multiSelect={false}
             />
           </div>
-          <div className="flex w-full items-start lg:items-center gap-5 lg:gap-8 flex-col lg:flex-row">
+          <div className="flex w-full items-start lg:items-center sm:gap-5 gap-1 lg:gap-8 flex-col lg:flex-row">
             <TextTag
               as="label"
               text={"GSC property"}
@@ -140,7 +140,7 @@ const AddNewProject = ({ setAddProject }: props) => {
         </div>
         <div className="flex flex-col gap-6">
           <h6 className="tracking-[ -0.2px] font-medium">Add new folder</h6>
-          <div className="flex w-full items-start lg:items-center gap-5 lg:gap-8 flex-col lg:flex-row">
+          <div className="flex w-full items-start lg:items-center sm:gap-5 gap-1 lg:gap-8 flex-col lg:flex-row">
             <TextTag
               as="label"
               text={"Folder name"}
@@ -161,7 +161,7 @@ const AddNewProject = ({ setAddProject }: props) => {
               touch={undefined}
             />
           </div>
-          <div className="flex w-full items-start lg:items-center gap-5 lg:gap-8 flex-col lg:flex-row">
+          <div className="flex w-full items-start lg:items-center sm:gap-5 gap-1 lg:gap-8 flex-col lg:flex-row">
             <TextTag
               as="label"
               text={"Folder location"}
@@ -184,7 +184,7 @@ const AddNewProject = ({ setAddProject }: props) => {
               multiSelect={false}
             />
           </div>
-          <div className="flex w-full items-start lg:items-center gap-5 lg:gap-8 flex-col lg:flex-row">
+          <div className="flex w-full items-start lg:items-center sm:gap-5 gap-1 lg:gap-8 flex-col lg:flex-row">
             <TextTag
               as="label"
               text={""}
@@ -207,7 +207,7 @@ const AddNewProject = ({ setAddProject }: props) => {
               touch={undefined}
             />
           </div>
-          <div className="flex w-full items-start lg:items-center gap-5 lg:gap-8 flex-col lg:flex-row">
+          <div className="flex w-full items-start lg:items-center sm:gap-5 gap-1 lg:gap-8 flex-col lg:flex-row">
             <TextTag
               as="label"
               text={""}

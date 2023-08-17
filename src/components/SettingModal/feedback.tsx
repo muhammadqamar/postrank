@@ -22,7 +22,7 @@ interface FormErrors {
 
 const Feedback = () => {
   return (
-    <div className="pt-9 px-8 pb-8 rounded-[20px] bg-white mt-5">
+    <div className="sm:pt-9 pt-4 sm:px-8 px-4 pb-8 rounded-[20px] bg-white mt-5">
       <TextTag as="h5" text={"Feedback"} className="h5 mb-5" color={""} />
       <Formik
         initialValues={{

@@ -5,16 +5,16 @@ import Button from "../../utils/Button";
 
 const Support = () => {
   return (
-    <div className="pt-9 px-8 pb-8 rounded-[20px] bg-white mt-5">
+    <div className="sm:pt-9 pt-4 sm:px-8 px-4 sm:pb-8 pb-4 rounded-[20px] bg-white mt-5">
       <TextTag as="h5" text={"Support"} className="h5 mb-5" color={""} />
-      <div className="pt-8 pb-16 max-w-[457px] flex flex-col gap-[42px]">
+      <div className="pt-8 sm:pb-16 pb-8 max-w-[457px] flex flex-col gap-[42px]">
         <div className="flex flex-col gap-[24px] max-w-[127px]">
           <TextTag as="h6" text={"Contact us"} className={"h6"} color={""} />
           <Button
             text={"Send email"}
             onClick={() => {}}
             type={undefined}
-            className="text-white !bg-customBlue font-medium"
+            className="text-white !bg-customBlue font-medium justify-center"
           />
         </div>
         <div className="flex flex-col gap-4 max-w-[457px]">
