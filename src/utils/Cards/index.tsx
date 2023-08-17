@@ -61,7 +61,7 @@ const Index: React.FC<IndexProps> = ({
             </div>
             <div className="flex items-center gap-1 px-2 py-[7px] bg-white rounded-2xl h-8 cursor-pointer">
               <span className="flex">
-                <p className="text-gray-600">#</p>1
+                <p className="text-primaryGray">#</p>1
               </span>
               <IncreaseIcon />
             </div>
@@ -83,7 +83,7 @@ const Index: React.FC<IndexProps> = ({
                   as="p"
                   text={date1}
                   className={"text-sm"}
-                  color={"text-gray-700"}
+                  color={"text-textGray"}
                 />
                 {dotImage1 && <span>{dotImage1}</span>}
                 {/* eye */}
@@ -110,7 +110,7 @@ const Index: React.FC<IndexProps> = ({
               </div>
             </div>
             {openNewIcon && (
-              <div className="p-[10px] bg-gray-100 rounded-full h-10">
+              <div className="p-[10px] bg-lightGray rounded-full h-10">
                 <span>{openNewIcon}</span>
               </div>
             )}

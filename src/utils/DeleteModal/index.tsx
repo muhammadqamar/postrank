@@ -50,7 +50,7 @@ const Index = ({
                     <TextTag
                       as="p"
                       text={`You’re about to delete tag “${tagName}” Are you sure? This action is permanent.`}
-                      color="text-gray-700"
+                      color="text-textGray"
                       className="!font-normal mb-8"
                     />
 
@@ -59,7 +59,7 @@ const Index = ({
                         text="Cancel"
                         type={"button"}
                         onClick={() => setIsOpenDelete(false)}
-                        className="!w-fit !py-[14px] !px-5 bg-gray_100 text-gray-700 flex items-center justify-center"
+                        className="!w-fit !py-[14px] !px-5 bg-lightGray text-textGray flex items-center justify-center"
                       />
                       <Button
                         text="Delete"

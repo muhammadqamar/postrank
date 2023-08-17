@@ -64,7 +64,7 @@ const AddNewFolder = () => {
                       as="label"
                       text={"Folder name"}
                       className={"p-small"}
-                      color={"text-gray-700"}
+                      color={"text-textGray"}
                     />
                     <InputField
                       label={undefined}
@@ -101,7 +101,7 @@ const AddNewFolder = () => {
                     as="label"
                     text={"Folder location"}
                     className={"p-small"}
-                    color={"text-gray-700"}
+                    color={"text-textGray"}
                   />
                   <Select
                     className=""
@@ -117,6 +117,7 @@ const AddNewFolder = () => {
                     simpleDropDown={true}
                     dateOnCancel={() => {}}
                     multiSelect={false}
+                    dateOnApply={() => {}}
                   />
                 </div>
                 <div className="mb-5">
@@ -139,7 +140,7 @@ const AddNewFolder = () => {
                       "e.g /blog if you want all your content inside this URL. Or something more specific like /blog/topic/"
                     }
                     className={"p-small "}
-                    color={"text-gray-700"}
+                    color={"text-textGray"}
                   />
                 </div>
 
@@ -149,7 +150,7 @@ const AddNewFolder = () => {
                       text={"Add folder"}
                       onClick={() => {}}
                       type={undefined}
-                      className="w-full flex justify-center text-gray-500 !bg-lightGray"
+                      className="w-full flex justify-center text-secondaryGray !bg-lightGray"
                     />
                   </Link>
                 </div>

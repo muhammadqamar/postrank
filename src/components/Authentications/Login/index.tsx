@@ -74,7 +74,7 @@ const LoginForm = () => {
                 touch={touched.email}
                 icon={<WarningIcon />}
                 placeholder={""}
-                className={"mb-5"}
+                className={""}
               />
               <InputField
                 label="Password"
@@ -87,14 +87,14 @@ const LoginForm = () => {
                 touch={touched.password}
                 icon={<EyeIcon />}
                 placeholder=""
-                className="mb-5"
+                className=""
               />
               <div className="flex items-center justify-between mb-[42px]">
                 <label htmlFor="rememberMe" className="flex items-center">
                   <input
                     type="checkbox"
                     name="rememberMe"
-                    className="mr-2 border-2 border-solid border-commonGray rounded cursor-pointer"
+                    className="mr-2 border-2 border-solid border-commonGray rounded cursor-pointer appearance-none focus:border-none checked:bg-customBlue !checked:border-transparent"
                   />
                   <TextTag
                     as="span"

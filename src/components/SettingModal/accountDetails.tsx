@@ -90,7 +90,7 @@ const AccountDetails = () => {
                   as="p"
                   text={"First name"}
                   className={"p-medium"}
-                  color={"text-gray-700"}
+                  color={"text-textGray"}
                 />
                 <InputField
                   label=""
@@ -111,7 +111,7 @@ const AccountDetails = () => {
                   as="p"
                   text={"Last name"}
                   className={"p-medium"}
-                  color={"text-gray-700"}
+                  color={"text-textGray"}
                 />
                 <InputField
                   label=""
@@ -134,7 +134,7 @@ const AccountDetails = () => {
                   as="p"
                   text={"Avatar"}
                   className={"p-medium"}
-                  color={"text-gray-700"}
+                  color={"text-textGray"}
                 />
               </div>
               <div className="flex items-center !justify-between !sm:min-w-[300px] !w-56 sm:gap-0 gap-2">
@@ -162,7 +162,7 @@ const AccountDetails = () => {
                   as="p"
                   text={"Email"}
                   className={"p-medium"}
-                  color={"text-gray-700"}
+                  color={"text-textGray"}
                 />
                 <InputField
                   label=""
@@ -186,7 +186,7 @@ const AccountDetails = () => {
                   as="p"
                   text={"Current password"}
                   className={"p-medium"}
-                  color={"text-gray-700"}
+                  color={"text-textGray"}
                 />
                 <InputField
                   label=""
@@ -207,7 +207,7 @@ const AccountDetails = () => {
                   as="p"
                   text={"New password"}
                   className={"p-medium"}
-                  color={"text-gray-700"}
+                  color={"text-textGray"}
                 />
                 <InputField
                   label=""
@@ -228,7 +228,7 @@ const AccountDetails = () => {
                   as="p"
                   text={"Repeat new password"}
                   className={"p-medium"}
-                  color={"text-gray-700"}
+                  color={"text-textGray"}
                 />
                 <InputField
                   label=""

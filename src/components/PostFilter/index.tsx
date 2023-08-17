@@ -80,6 +80,7 @@ const index = () => {
             simpleDropDown={false}
             dateOnCancel={() => {}}
             multiSelect={false}
+            dateOnApply={() => {}}
           />
         </div>
         <div className="flex items-center flex-wrap">
@@ -98,6 +99,7 @@ const index = () => {
               simpleDropDown={false}
               dateOnCancel={() => setIsDateM(false)}
               multiSelect={false}
+              dateOnApply={() => {}}
             />
           </div>
           <div className="">
@@ -115,6 +117,7 @@ const index = () => {
               simpleDropDown={false}
               dateOnCancel={() => {}}
               multiSelect={false}
+              dateOnApply={() => {}}
             />
           </div>
 
@@ -123,6 +126,8 @@ const index = () => {
               onclick={() => setIsOpen(true)}
               onClear={() => {}}
               onChange={() => {}}
+              addTagDropdown={false}
+              createTag={""}
             />
           </div>
         </div>

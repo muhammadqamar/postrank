@@ -6,6 +6,9 @@ const colors = {
   lightBlue: "rgba(224, 233, 250, 1)",
   commonBlue: "rgba(241, 246, 253, 1)",
   darkBlue: "rgba(189, 207, 244, 1)",
+  primaryGray: "rgba(108, 108, 108, 1)",
+  secondaryGray: "rgba(144, 144, 144, 1)",
+  textGray: "rgba(70, 70, 70, 1)",
   commonGray: "rgba(213, 213, 213, 1)",
   lightGray: "rgba(248, 248, 248, 1)",
   primary: {
@@ -35,17 +38,6 @@ const colors = {
   },
   spBlack: "#232323",
 
-  gray: {
-    100: "#F9F8F9",
-    200: "#D5D5D5",
-    300: "#AFAEB2",
-    400: "#7F7D83",
-    500: "#4E4D51",
-    600: "#909090",
-    700: "#464646",
-    800: "#1F1E20",
-    900: "#000000",
-  },
   orange: {
     300: "E68C31",
   },
@@ -80,10 +72,10 @@ const colors = {
   white_200: "#F1F1F1",
   white_300: "#E8E8E8",
   purple_300: "#8B54FF",
-  gray_100: "#F8F8F8",
+  // lightGray: "#F8F8F8",
   gray_300: "#ABABAB",
   gray_400: "#464646",
-  gray_500: "#E6E6E6",
+  // secondaryGray: "#E6E6E6",
   gray_600: "#6C6C6C",
 };
 
@@ -100,7 +92,7 @@ module.exports = {
 
     boxShadow: {
       lgShadow:
-        "0px 3.154672384262085px 10.321866989135742px 0px rgba(0, 0, 0, 0.06), 0px 7.581116199493408px 24.804880142211914px 0px rgba(0, 0, 0, 0.09), 0px 14.274569511413574px 46.705387115478516px 0px rgba(0, 0, 0, 0.12), 0px 25.46339225769043px 83.3144302368164px 0px rgba(0, 0, 0, 0.14), 0px 47.6264762878418px 155.8304901123047px 0px rgba(0, 0, 0, 0.17), 0px 114px 373px 0px rgba(0, 0, 0, 0.23)",
+        "0px 3.5060346126556396px 4.507758617401123px 0px rgba(0, 0, 0, 0.04), 0px 28px 36px 0px rgba(0, 0, 0, 0.07)",
 
       mdShadow:
         "0px 3.5060346126556396px 4.507758617401123px 0px rgba(0, 0, 0, 0.04), 0px 28px 36px 0px rgba(0, 0, 0, 0.07)",

@@ -28,6 +28,7 @@ type dropdownProps = {
   isDateM: boolean;
   simpleDropDown: boolean;
   dateOnCancel: MouseEventHandler<HTMLButtonElement>;
+  dateOnApply: MouseEventHandler<HTMLButtonElement>;
   multiSelect: boolean;
   className: string;
 };
@@ -44,6 +45,7 @@ const Index = ({
   isDateM,
   simpleDropDown,
   dateOnCancel,
+  dateOnApply,
   multiSelect,
   className,
 }: dropdownProps) => {
@@ -93,9 +95,9 @@ const Index = ({
                     } rounded-full`
                   : `relative cursor-default ${
                       simpleDropDown
-                        ? "w-full py-[10px] px-3 rounded-[7px] border border-solid border-gray-200"
+                        ? "w-full py-[10px] px-3 rounded-[7px] border border-solid border-commonGray"
                         : "w-[183px] shadow-sm py-2  pl-2 pr-4 rounded-full"
-                    } h-10 bg-white   text-left text-gray-900  ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
+                    } h-10 bg-white   text-left text-gray-900  ring-1 ring-inset ring-commonGray focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
                       open && "ring-indigo-500"
                     } sm:text-sm sm:leading-6 `
               }
@@ -196,7 +198,7 @@ const Index = ({
                         />
                       )}
                     </div>
-                    <div className="w-full h-[1px] my-4 bg-gray_500" />
+                    <div className="w-full h-[1px] my-4 bg-secondaryGray" />
                     <div className="w-full flex items-center justify-between">
                       <TextTag
                         as="p"
@@ -231,18 +233,18 @@ const Index = ({
                         />
                       </div>
                     )}
-                    <div className="w-full h-[1px] my-4 bg-gray_500" />
+                    <div className="w-full h-[1px] my-4 bg-secondaryGray" />
                     <div className="w-full flex items-center justify-between">
                       <Button
                         text="Cancel"
                         type="button"
                         onClick={dateOnCancel}
-                        className="!w-fit !py-[10px] !px-4 bg-gray_100 text-gray-700 flex items-center justify-center"
+                        className="!w-fit !py-[10px] !px-4 bg-lightGray text-textGray flex items-center justify-center"
                       />
                       <Button
                         text="Apply date"
                         type="button"
-                        onClick={() => {}}
+                        onClick={dateOnApply}
                         className="!w-fit !py-[10px] !px-4 !bg-[#2F67DD] text-white flex items-center justify-center"
                       />
                     </div>
@@ -300,7 +302,7 @@ const Index = ({
                     {addText && (
                       <>
                         {addText && companiesDrop ? (
-                          <div className="w-full h-[1px] my-2 bg-gray_500" />
+                          <div className="w-full h-[1px] my-2 bg-secondaryGray" />
                         ) : null}
                         <button
                           className={`text-black relative cursor-pointer select-none border-none outline-none ${

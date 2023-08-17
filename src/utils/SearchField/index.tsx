@@ -20,7 +20,7 @@ const Index = ({
         onChange={onChange}
         type="text"
         placeholder={placeholder}
-        className={`w-full py-[10px] pl-3 pr-9 bg-white rounded-full border-none outline-none h-auto p-medium text-gray_600 focused ${className}`}
+        className={`w-full py-[10px] pl-3 pr-9 bg-white rounded-full border-none outline-none h-auto p-medium text-primaryGray focused ${className}`}
       />
       <div className="absolute top-[10px] right-3 cursor-pointer">
         <SearchIcon />

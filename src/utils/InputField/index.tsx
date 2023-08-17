@@ -14,10 +14,28 @@ type InputProps = {
   touch: boolean | undefined;
 };
 
-const Index: React.FC<InputProps> = ({ label, type, name, placeholder, className, icon, onChange, onBlur, value, error, touch }) => {
+const Index: React.FC<InputProps> = ({
+  label,
+  type,
+  name,
+  placeholder,
+  className,
+  icon,
+  onChange,
+  onBlur,
+  value,
+  error,
+  touch,
+}) => {
   return (
-    <div className={`flex flex-col gap-1 ${className}`}>
-      {label ? <label className="block text-xs font-normal text-gray-700">{label}</label> : ""}
+    <div className={`flex flex-col gap-1 mb-5 ${className}`}>
+      {label ? (
+        <label className="block text-xs font-normal text-textGray">
+          {label}
+        </label>
+      ) : (
+        ""
+      )}
       <div className="relative flex items-center">
         <input
           type={type}
@@ -27,11 +45,11 @@ const Index: React.FC<InputProps> = ({ label, type, name, placeholder, className
           onBlur={onBlur}
           value={value}
           className={`w-full p-medium !bg-white border border-solid rounded-[7px] focus-visible:outline-1 focus-visible:outline ${className} ${
-            error ? "border-error-300" : "border-gray-200"
+            error ? "border-error-300" : "border-commonGray"
           } py-[10px] px-3 pr-9`}
         />
         {error && (
-          <div className="absolute top-0 right-0 h-full flex items-center pr-3 pointer-events-none z-10">
+          <div className="absolute top-3 right-0 flex items-center pr-3 pointer-events-none z-10">
             <span>{icon}</span>
           </div>
         )}

@@ -127,7 +127,7 @@ const Feedback = () => {
                   as="p"
                   text={"Message"}
                   className={"p-medium mb-6"}
-                  color={"text-gray-700"}
+                  color={"text-textGray"}
                 />
                 <Textarea></Textarea>
               </div>

@@ -1,6 +1,6 @@
 import { Menu, Transition } from "@headlessui/react";
 import { ChangeEventHandler, Fragment, MouseEventHandler } from "react";
-import { TagIcon, AddContactIcon } from "../../icons";
+import { TagIcon, AddContactIcon, AddIcon } from "../../icons";
 import Button from "../../utils/Button";
 import { TextTag } from "../../utils/Typography";
 import SearchField from "../../utils/SearchField";
@@ -9,9 +9,17 @@ type DropdownProps = {
   onclick: MouseEventHandler<HTMLButtonElement>;
   onClear: MouseEventHandler<HTMLButtonElement>;
   onChange: ChangeEventHandler<HTMLInputElement>;
+  addTagDropdown: boolean;
+  createTag: string;
 };
 
-const TagDrapdown = ({ onclick, onClear, onChange }: DropdownProps) => {
+const TagDrapdown = ({
+  onclick,
+  onClear,
+  onChange,
+  addTagDropdown,
+  createTag,
+}: DropdownProps) => {
   return (
     <div className="">
       <Menu as="div" className="relative inline-block text-left">
@@ -25,14 +33,15 @@ const TagDrapdown = ({ onclick, onClear, onChange }: DropdownProps) => {
               >
                 <TextTag
                   as="p"
-                  text="Tags"
+                  text={addTagDropdown ? "Add Tags" : "Tags"}
                   color="text-blue-700"
                   className="p-large"
                 />
-                <TagIcon />
+
+                {!addTagDropdown && <TagIcon />}
               </Menu.Button>
             </div>
-            {open && (
+            {!addTagDropdown ? (
               <Transition
                 as={Fragment}
                 enter="transition ease-out duration-100"
@@ -60,7 +69,7 @@ const TagDrapdown = ({ onclick, onClear, onChange }: DropdownProps) => {
                     </div>
                     <div className="mb-4">
                       <SearchField
-                        className="!border !border-solid !border-gray-300"
+                        className="!border !border-solid !border-commonGray"
                         onChange={onChange}
                         placeholder={"Search..."}
                         width={""}
@@ -87,6 +96,53 @@ const TagDrapdown = ({ onclick, onClear, onChange }: DropdownProps) => {
                       className="!py-[10px] !px-[10px] bg-white !border-none dropdown-item !rounded-none !w-full"
                       icon={<AddContactIcon />}
                     />
+                  </div>
+                </Menu.Items>
+              </Transition>
+            ) : (
+              <Transition
+                as={Fragment}
+                enter="transition ease-out duration-100"
+                enterFrom="transform opacity-0 scale-95"
+                enterTo="transform opacity-100 scale-100"
+                leave="transition ease-in duration-75"
+                leaveFrom="transform opacity-100 scale-100"
+                leaveTo="transform opacity-0 scale-95"
+              >
+                <Menu.Items className="dropdown-menu !left-0 !w-[263px] shadow-lgShadow">
+                  <div className="border-none px-4 w-full">
+                    <div className="mb-4">
+                      <SearchField
+                        className="focus-visible:outline-none"
+                        onChange={onChange}
+                        placeholder={"Search tags"}
+                        width={""}
+                      />
+                      <div className="h-[1px] bg-commonGray"></div>
+                      <div className="flex gap-[10px] mt-2">
+                        <Button
+                          text={""}
+                          onClick={() => {}}
+                          type={undefined}
+                          icon={<AddIcon color={""} />}
+                          className="!p-0 !bg-white"
+                        />
+                        <span className="flex">
+                          <TextTag
+                            as="p"
+                            text={"Create new:"}
+                            className={"p-medium"}
+                            color={"text-primaryGray"}
+                          />
+                          <TextTag
+                            as="p"
+                            text={createTag}
+                            className={"p-medium"}
+                            color={""}
+                          />
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </Menu.Items>
               </Transition>

@@ -41,7 +41,7 @@ const ConnectProject = () => {
             as="p"
             text={"Google Analytics"}
             className={"p-small"}
-            color={"text-gray-700"}
+            color={"text-textGray"}
           />
           <Link to={"/#"}>
             <Button
@@ -79,7 +79,7 @@ const ConnectProject = () => {
                   as="label"
                   text={"Account"}
                   className={"p-small"}
-                  color={"text-gray-700"}
+                  color={"text-textGray"}
                 />
                 <DropDown
                   data={postData}
@@ -117,7 +117,7 @@ const ConnectProject = () => {
                   as="label"
                   text={"Property"}
                   className={"p-small"}
-                  color={"text-gray-700"}
+                  color={"text-textGray"}
                 />
                 <Select
                   className=""
@@ -133,6 +133,7 @@ const ConnectProject = () => {
                   simpleDropDown={true}
                   dateOnCancel={() => {}}
                   multiSelect={false}
+                  dateOnApply={() => {}}
                 />
               </div>
               <div className="mb-5">
@@ -140,7 +141,7 @@ const ConnectProject = () => {
                   as="label"
                   text={"GSC property"}
                   className={"p-small"}
-                  color={"text-gray-700"}
+                  color={"text-textGray"}
                 />
                 <Select
                   className=""
@@ -156,6 +157,7 @@ const ConnectProject = () => {
                   simpleDropDown={true}
                   dateOnCancel={() => {}}
                   multiSelect={false}
+                  dateOnApply={() => {}}
                 />
               </div>
             </form>
@@ -168,7 +170,7 @@ const ConnectProject = () => {
             text={"Continue "}
             onClick={() => {}}
             type={undefined}
-            className="w-full flex justify-center text-gray-500 !bg-lightGray"
+            className="w-full flex justify-center text-secondaryGray !bg-lightGray"
           />
         </Link>
       </div>

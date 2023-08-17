@@ -74,6 +74,7 @@ const Index = () => {
             simpleDropDown={false}
             dateOnCancel={() => {}}
             multiSelect={false}
+            dateOnApply={() => {}}
           />
         </div>
       </div>

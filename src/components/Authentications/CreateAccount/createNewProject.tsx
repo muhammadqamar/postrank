@@ -54,7 +54,7 @@ const CreateNewProject = () => {
                   as="p"
                   text={"Logo"}
                   className={"p-small "}
-                  color={"text-gray-700"}
+                  color={"text-textGray"}
                 />
                 <Button
                   text="Upload"
@@ -66,7 +66,7 @@ const CreateNewProject = () => {
               <Button
                 text="Continue"
                 onClick={() => handleSubmit()}
-                className="w-full !bg-lightGray text-gray-500 flex justify-center mb-4"
+                className="w-full !bg-lightGray text-secondaryGray flex justify-center mb-4"
                 type={undefined}
               />
             </form>

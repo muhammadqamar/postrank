@@ -241,6 +241,7 @@ const CreatedProject = ({ setAddProject }: props) => {
               simpleDropDown
               dateOnCancel={() => {}}
               multiSelect={false}
+              dateOnApply={() => {}}
             />
           </div>
 

@@ -28,7 +28,7 @@ const Index: React.FC<IndexProps> = ({
         />
         <TextTag text={postText} className={"h6"} color={""} />
       </div>
-      <button className="p-[7px] rounded-full bg-gray-100" onClick={onClick}>
+      <button className="p-[7px] rounded-full bg-lightGray" onClick={onClick}>
         <CloseIcon color={""} />
       </button>
     </div>

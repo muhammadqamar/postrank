@@ -89,6 +89,7 @@ const AddNewProject = ({ setAddProject }: props) => {
               simpleDropDown
               dateOnCancel={() => {}}
               multiSelect={false}
+              dateOnApply={() => {}}
             />
           </div>
           <div className="flex w-full items-start lg:items-center sm:gap-5 gap-1 lg:gap-8 flex-col lg:flex-row">
@@ -112,6 +113,7 @@ const AddNewProject = ({ setAddProject }: props) => {
               simpleDropDown
               dateOnCancel={() => {}}
               multiSelect={false}
+              dateOnApply={() => {}}
             />
           </div>
           <div className="flex w-full items-start lg:items-center sm:gap-5 gap-1 lg:gap-8 flex-col lg:flex-row">
@@ -135,6 +137,7 @@ const AddNewProject = ({ setAddProject }: props) => {
               simpleDropDown
               dateOnCancel={() => {}}
               multiSelect={false}
+              dateOnApply={() => {}}
             />
           </div>
         </div>
@@ -182,6 +185,7 @@ const AddNewProject = ({ setAddProject }: props) => {
               simpleDropDown
               dateOnCancel={() => {}}
               multiSelect={false}
+              dateOnApply={() => {}}
             />
           </div>
           <div className="flex w-full items-start lg:items-center sm:gap-5 gap-1 lg:gap-8 flex-col lg:flex-row">

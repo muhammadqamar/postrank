@@ -71,7 +71,7 @@ const PersonalInformation = () => {
                     as="p"
                     text={"Avatar"}
                     className={"p-small"}
-                    color={"text-gray-700"}
+                    color={"text-textGray"}
                   />
                   <img
                     src={User}

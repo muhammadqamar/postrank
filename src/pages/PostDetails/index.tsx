@@ -20,6 +20,7 @@ import { TextTag } from "../../utils/Typography";
 
 import BackgroundImage1 from "../../assets/images/png/image1.png";
 import PostCompare from "./postCompare";
+import TagDrapdown from "../../components/PostFilter/tagDropdown";
 const dateData = [
   {
     name: "7 days",
@@ -40,9 +41,8 @@ const dateData = [
 
 const Index = () => {
   const [isDateM, setIsDateM] = useState<boolean>(false);
-  const [isOpen, setIsOpen] = useState(false);
   const [isOpenDelete, setIsOpenDelete] = useState(false);
-  // const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="max-w-7xl mx-auto sm:px-10 sm:pb-16 px-5 pb-8 pt-0">
@@ -74,6 +74,9 @@ const Index = () => {
               simpleDropDown={false}
               dateOnCancel={() => setIsDateM(false)}
               multiSelect={true}
+              dateOnApply={() => {
+                setIsOpen(true);
+              }}
             />
           </div>
         </div>
@@ -106,11 +109,11 @@ const Index = () => {
                 as="p"
                 text={"Tags"}
                 className={"p-small mb-2"}
-                color={"text-gray-700"}
+                color={"text-textGray"}
               />
               {/* tag names */}
               <div className="flex flex-wrap gap-2">
-                <div className="flex gap-[6px] py-[7px] px-[10px] common-bg-color rounded-md w-fit">
+                <div className="flex items-center gap-[6px] py-[7px] px-[10px] common-bg-color rounded-md w-fit">
                   <TextTag
                     as="p"
                     text={"Digital Nomad"}
@@ -126,7 +129,7 @@ const Index = () => {
                     <CloseIcon color={"#274C9B"} />
                   </button>
                 </div>
-                <div className="flex gap-[6px] py-[7px] px-[10px] common-bg-color rounded-md w-fit">
+                <div className="flex items-center gap-[6px] py-[7px] px-[10px] common-bg-color rounded-md w-fit">
                   <TextTag
                     as="p"
                     text={"Visa"}
@@ -142,7 +145,7 @@ const Index = () => {
                     <CloseIcon color={"#274C9B"} />
                   </button>
                 </div>
-                <div className="flex gap-[6px] py-[7px] px-[10px] common-bg-color rounded-md w-fit">
+                <div className="flex items-center gap-[6px] py-[7px] px-[10px] common-bg-color rounded-md w-fit">
                   <TextTag
                     as="p"
                     text={"Country"}
@@ -158,7 +161,7 @@ const Index = () => {
                     <CloseIcon color={"#274C9B"} />
                   </button>
                 </div>
-                <div className="flex gap-[6px] py-[7px] px-[10px] common-bg-color rounded-md w-fit">
+                <div className="flex items-center gap-[6px] py-[7px] px-[10px] common-bg-color rounded-md w-fit">
                   <TextTag
                     as="p"
                     text={"List"}
@@ -174,7 +177,7 @@ const Index = () => {
                     <CloseIcon color={"#274C9B"} />
                   </button>
                 </div>
-                <div className="flex gap-[6px] py-[7px] px-[10px] common-bg-color rounded-md w-fit">
+                <div className="flex items-center gap-[6px] py-[7px] px-[10px] common-bg-color rounded-md w-fit">
                   <TextTag
                     as="p"
                     text={"Popular"}
@@ -190,7 +193,7 @@ const Index = () => {
                     <CloseIcon color={"#274C9B"} />
                   </button>
                 </div>
-                <div className="flex gap-[6px] py-[7px] px-[10px] common-bg-color rounded-md w-fit">
+                <div className="flex items-center gap-[6px] py-[7px] px-[10px] common-bg-color rounded-md w-fit">
                   <TextTag
                     as="p"
                     text={"Essentials"}
@@ -206,7 +209,7 @@ const Index = () => {
                     <CloseIcon color={"#274C9B"} />
                   </button>
                 </div>
-                <div className="flex gap-[6px] py-[7px] px-[10px] common-bg-color rounded-md w-fit">
+                <div className="flex items-center gap-[6px] py-[7px] px-[10px] common-bg-color rounded-md w-fit">
                   <TextTag
                     as="p"
                     text={"Travel"}
@@ -222,7 +225,7 @@ const Index = () => {
                     <CloseIcon color={"#274C9B"} />
                   </button>
                 </div>
-                <div className="flex gap-[6px] py-[7px] px-[10px] common-bg-color rounded-md w-fit">
+                <div className="flex items-center gap-[6px] py-[7px] px-[10px] common-bg-color rounded-md w-fit">
                   <TextTag
                     as="p"
                     text={"Explore"}
@@ -238,17 +241,13 @@ const Index = () => {
                     <CloseIcon color={"#274C9B"} />
                   </button>
                 </div>
-                <button
-                  className="flex gap-[6px] py-[7px] px-[10px] rounded-md w-fit cursor-pointer"
-                  onClick={() => {}}
-                >
-                  <TextTag
-                    as="p"
-                    text={"Add Tags"}
-                    className={"p-medium"}
-                    color={"text-customBlue"}
-                  />
-                </button>
+                <TagDrapdown
+                  onclick={() => setIsOpen(true)}
+                  onClear={() => {}}
+                  onChange={() => {}}
+                  addTagDropdown={true}
+                  createTag={""}
+                />
               </div>
             </div>
           </div>
@@ -275,7 +274,7 @@ const Index = () => {
               as="p"
               text={"30 days"}
               className={"p-medium"}
-              color={"text-gray-600"}
+              color={"text-primaryGray"}
             />
           </div>
 
@@ -294,7 +293,7 @@ const Index = () => {
               className={"!bg-commonBlue"}
               trendNumbers={"618"}
               trendMarkup={"12.5%"}
-              trendLabelColor={"text-gray-700"}
+              trendLabelColor={"text-textGray"}
               trendNumbersColor={""}
               trendMarkupColor={"text-success-300"}
             />
@@ -303,7 +302,7 @@ const Index = () => {
               className={"!bg-commonBlue"}
               trendNumbers={"3m 25s"}
               trendMarkup={"12.5%"}
-              trendLabelColor={"text-gray-700"}
+              trendLabelColor={"text-textGray"}
               trendNumbersColor={""}
               trendMarkupColor={"text-success-300"}
             />
@@ -324,7 +323,7 @@ const Index = () => {
               as="p"
               text={"30 days"}
               className={"p-medium"}
-              color={"text-gray-600"}
+              color={"text-primaryGray"}
             />
           </div>
           <div className="flex flex-wrap md:flex-nowrap justify-between gap-4">
@@ -342,7 +341,7 @@ const Index = () => {
               className={"!bg-commonBlue"}
               trendNumbers={"1,213"}
               trendMarkup={"12.5%"}
-              trendLabelColor={"text-gray-700"}
+              trendLabelColor={"text-textGray"}
               trendNumbersColor={""}
               trendMarkupColor={"text-success-300"}
             />
@@ -351,7 +350,7 @@ const Index = () => {
               className={"!bg-commonBlue"}
               trendNumbers={"2m 47s"}
               trendMarkup={"12.5%"}
-              trendLabelColor={"text-gray-700"}
+              trendLabelColor={"text-textGray"}
               trendNumbersColor={""}
               trendMarkupColor={"text-success-300"}
             />
@@ -367,7 +366,7 @@ const Index = () => {
               as="p"
               text={"30 days"}
               className={"p-medium"}
-              color={"text-gray-600"}
+              color={"text-primaryGray"}
             />
           </div>
           <div className="flex flex-wrap md:flex-nowrap justify-between gap-4 mb-8">
@@ -376,7 +375,7 @@ const Index = () => {
               className={"!bg-commonBlue"}
               trendNumbers={"16"}
               trendMarkup={"12.5%"}
-              trendLabelColor={"text-gray-700"}
+              trendLabelColor={"text-textGray"}
               trendNumbersColor={""}
               trendMarkupColor={"text-success-300"}
             />
@@ -385,7 +384,7 @@ const Index = () => {
               className={"!bg-commonBlue"}
               trendNumbers={"Keyword"}
               trendMarkup={"12.5%"}
-              trendLabelColor={"text-gray-700"}
+              trendLabelColor={"text-textGray"}
               trendNumbersColor={""}
               trendMarkupColor={"text-success-300"}
             />
@@ -397,38 +396,38 @@ const Index = () => {
               <tr className=" text-end ">
                 <th
                   scope="row"
-                  className="w-[50%] p-small text-gray-700 bg-commonBlue focus:bg-lightBlue p-3 !text-start border-r border-b common-bg-color"
+                  className="w-[50%] p-small text-textGray bg-commonBlue focus:bg-lightBlue p-3 !text-start border-r border-b common-bg-color"
                 >
                   Keyword
                 </th>
                 <th
                   scope="row"
-                  className=" p-small text-gray-700 bg-commonBlue focus:bg-lightBlue p-3 border-r border-b common-bg-color"
+                  className=" p-small text-textGray bg-commonBlue focus:bg-lightBlue p-3 border-r border-b common-bg-color"
                 >
                   Pos. 25 June
                 </th>
                 <th
                   scope="row"
-                  className=" p-small text-gray-700 bg-commonBlue focus:bg-lightBlue p-3 border-r border-b common-bg-color"
+                  className=" p-small text-textGray bg-commonBlue focus:bg-lightBlue p-3 border-r border-b common-bg-color"
                 >
                   Pos. 25 July
                 </th>
                 <th
                   scope="row"
-                  className=" p-small text-gray-700 bg-commonBlue focus:bg-lightBlue p-3 border-r border-b common-bg-color"
+                  className=" p-small text-textGray bg-commonBlue focus:bg-lightBlue p-3 border-r border-b common-bg-color"
                 >
                   Diff
                 </th>
                 <th
                   scope="row"
-                  className=" p-small text-gray-700 bg-commonBlue focus:bg-lightBlue p-3 border-r border-b common-bg-color"
+                  className=" p-small text-textGray bg-commonBlue focus:bg-lightBlue p-3 border-r border-b common-bg-color"
                 >
                   {" "}
                   Est. traffic
                 </th>
                 <th
                   scope="row"
-                  className=" p-small text-gray-700 bg-commonBlue focus:bg-lightBlue p-3 border-b common-bg-color"
+                  className=" p-small text-textGray bg-commonBlue focus:bg-lightBlue p-3 border-b common-bg-color"
                 >
                   Vol.
                 </th>
