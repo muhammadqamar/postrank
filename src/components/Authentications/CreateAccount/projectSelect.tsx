@@ -1,4 +1,4 @@
-import { MouseEventHandler, useState } from "react";
+import { useEffect, useState } from "react";
 import { Listbox } from "@headlessui/react";
 
 import { ExpandIcon, Check } from "../../../icons";
@@ -10,49 +10,44 @@ function classNames(...classes: string[]) {
 
 interface arrayProps {
   avatar?: string | undefined;
-  name?: string;
+  option?: string;
+}
+
+interface SelectedType {
+  option: string;
 }
 
 type dropdownProps = {
   data: Array<arrayProps>;
-  companiesDrop: boolean | undefined;
-  addIcon: React.ReactNode;
-  addText: string;
-  leftIcon: React.ReactNode;
-  rightIcon: React.ReactNode;
-  leftText: string;
-  onClick: MouseEventHandler<HTMLButtonElement>;
-  isDateM: boolean;
-  simpleDropDown: boolean;
-  dateOnCancel: MouseEventHandler<HTMLButtonElement>;
-  multiSelect: boolean;
   className: string;
+  name?: string;
+  value: string | unknown;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-const Index = ({
-  data,
+const Index = ({ data, className, name, value, onChange }: dropdownProps) => {
+  const [selected, setSelected] = useState<SelectedType | unknown>(value);
 
-  className,
-}: dropdownProps) => {
-  const [selected, setSelected] = useState(data[0]);
+  useEffect(() => {
+    if (value !== undefined) {
+      setSelected(value);
+    }
+  }, [value]);
 
   return (
     <div className={` ${className}`}>
-      <Listbox value={selected} onChange={setSelected}>
+      <Listbox name={name} value={value} onChange={onChange}>
         {({ open }) => (
           <div className={`relative ${className}`}>
             <Listbox.Button
-              className={`relative cursor-default 
-                      w-full py-[10px] px-3 rounded-[7px] border border-solid border-gray-200
-                      
-                     h-10 bg-white   text-left text-gray-900  ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
-                       open && "ring-indigo-500"
-                     } sm:text-sm sm:leading-6 `}
+              className={`relative cursor-default w-full py-[10px] px-3 rounded-[7px] border border-solid border-gray-200 h-10 bg-white   text-left text-gray-900  ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
+                open && "ring-indigo-500"
+              } sm:text-sm sm:leading-6 `}
             >
               <div className="flex items-center">
                 <TextTag
                   as="p"
-                  text={selected?.name}
+                  text={(selected as { option: string }).option}
                   color="text-black"
                   className="ml-3 block truncate p-medium"
                 />
@@ -63,11 +58,7 @@ const Index = ({
             </Listbox.Button>
             {open && (
               <Listbox.Options
-                className={`absolute z-10  min-h-56  rounded-2xl 
-                  
-                     bg-white mt-2  py-2 overflow-hidden shadow-mdShadow
-                    
-                `}
+                className={`absolute z-10  min-h-56  rounded-2xl w-full bg-white mt-2  py-2 overflow-hidden shadow-mdShadow`}
               >
                 {data.map((item, index: number) => (
                   <Listbox.Option
@@ -75,7 +66,7 @@ const Index = ({
                     className={({ active }) =>
                       classNames(
                         active ? "text-black" : "text-black",
-                        `relative  cursor-pointer select-none   ${"w-full py-[11px] px-[10px] hover:text-white hover:bg-customBlue"}`,
+                        `relative cursor-pointer select-none w-full py-[11px] px-[10px] hover:text-white hover:bg-customBlue`,
                       )
                     }
                     value={item}
@@ -83,16 +74,16 @@ const Index = ({
                     {({ selected }) => (
                       <>
                         <div className="flex items-center">
-                          selected ? (
-                          <div>
-                            <Check />
-                          </div>
+                          {selected ? (
+                            <div>
+                              <Check />
+                            </div>
                           ) : (
-                          <div className="w-[18px] h-[18px]" />
-                          )
+                            <div className="w-[18px] h-[18px]" />
+                          )}
                           <TextTag
                             as="p"
-                            text={item.name}
+                            text={item.option}
                             color=""
                             className={classNames(
                               selected ? "font-semibold" : "font-normal",
