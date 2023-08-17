@@ -1,36 +1,53 @@
 import React from "react";
+// import { Link } from "react-router-dom";
+import { Formik } from "formik";
+
 import InputField from "../../../utils/InputField";
-import Select from "../../../utils/Select";
 import { TextTag } from "../../../utils/Typography";
 import Button from "../../../utils/Button";
-import { Link } from "react-router-dom";
-import { Formik } from "formik";
+import DropDown from "./projectSelect";
+
 const postData = [
   {
-    name: "",
+    option: "",
   },
   {
-    name: "All visas",
+    option: "All visas",
   },
   {
-    name: "Europe visas",
+    option: "Europe visas",
   },
   {
-    name: "Travel programs",
+    option: "Travel programs",
   },
   {
-    name: "Domestic programs",
+    option: "Domestic programs",
   },
   {
-    name: "Insurance",
+    option: "Insurance",
   },
 ];
+
+interface FormValues {
+  folderName: string;
+  color: string;
+}
+
+interface Option {
+  option: string;
+}
+
+interface FormErrors {
+  folderName?: string;
+  color?: Option | string;
+}
+
 const AddNewFolder = () => {
   return (
     <div className="pt-9 max-w-[320px]">
       <TextTag
         as="h6"
-        text={"Add new folder"}
+        text={"Let's Create a Content Folder"}
         className={"h6 mb-[42px]"}
         color={""}
       />
@@ -38,7 +55,23 @@ const AddNewFolder = () => {
         <div className="mb-5">
           <Formik
             initialValues={{
-              projectName: "",
+              folderName: "",
+              color: "",
+            }}
+            validate={(values: FormValues) => {
+              const errors: FormErrors = {};
+              if (!values.folderName) {
+                errors.folderName = "Required";
+              }
+              if (
+                !values.color ||
+                (typeof values.color === "object" &&
+                  values?.color["option"] === "")
+              ) {
+                errors.color = "Required";
+              }
+
+              return errors;
             }}
             onSubmit={(values, { setSubmitting }) => {
               setTimeout(() => {
@@ -54,72 +87,50 @@ const AddNewFolder = () => {
               handleChange,
               handleBlur,
               handleSubmit,
+              setFieldValue,
               // isSubmitting,
               /* and other goodies */
             }) => (
               <form onSubmit={handleSubmit}>
                 <div>
-                  <div>
-                    <TextTag
-                      as="label"
-                      text={"Folder name"}
-                      className={"p-small"}
-                      color={"text-textGray"}
-                    />
+                  <div className="mb-5">
                     <InputField
-                      label={undefined}
-                      type={undefined}
-                      name={undefined}
-                      placeholder={undefined}
-                      className={undefined}
-                      icon={undefined}
-                      onChange={undefined}
-                      onBlur={undefined}
-                      value={undefined}
-                      error={undefined}
-                      touch={undefined}
+                      label="Folder name"
+                      type="text"
+                      name="folderName"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.folderName}
+                      error={errors?.folderName}
+                      touch={touched.folderName}
+                      icon={""}
+                      placeholder={""}
+                      className={"0"}
                     />
-                    <div className="hidden">
-                      <InputField
-                        label="Project name"
-                        type="text"
-                        name="projectName"
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        value={values.projectName}
-                        error={errors?.projectName}
-                        touch={touched.projectName}
-                        icon={""}
-                        placeholder={""}
-                        className={"mb-5"}
-                      />
-                    </div>
                   </div>
                 </div>
                 <div className="mb-2">
                   <TextTag
                     as="label"
-                    text={"Folder location"}
+                    text={"URL"}
                     className={"p-small"}
                     color={"text-textGray"}
                   />
-                  <Select
+                  <DropDown
                     className=""
                     data={postData}
-                    companiesDrop={false}
-                    addIcon={""}
-                    addText={""}
-                    leftIcon={""}
-                    rightIcon={""}
-                    leftText={""}
-                    onClick={() => {}}
-                    isDateM={false}
-                    simpleDropDown={true}
-                    dateOnCancel={() => {}}
-                    multiSelect={false}
-                    dateOnApply={() => {}}
+                    name="color"
+                    value={values.color}
+                    onChange={(postData) => setFieldValue("color", postData)}
+                  />
+                  <TextTag
+                    as="label"
+                    text={errors.color && touched.color && errors.color}
+                    className={"p-small"}
+                    color={"text-error-300"}
                   />
                 </div>
+
                 <div className="mb-5">
                   <InputField
                     label={undefined}
@@ -145,14 +156,14 @@ const AddNewFolder = () => {
                 </div>
 
                 <div className="pb-6">
-                  <Link to={"/#"}>
-                    <Button
-                      text={"Add folder"}
-                      onClick={() => {}}
-                      type={undefined}
-                      className="w-full flex justify-center text-secondaryGray !bg-lightGray"
-                    />
-                  </Link>
+                  {/* <Link to={"/#"}> */}
+                  <Button
+                    text={"Add folder"}
+                    onClick={() => {}}
+                    type="submit"
+                    className="w-full flex justify-center text-gray-500 !bg-lightGray"
+                  />
+                  {/* </Link> */}
                 </div>
               </form>
             )}

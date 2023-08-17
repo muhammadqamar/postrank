@@ -1,6 +1,4 @@
 import React from "react";
-import Select from "../../../utils/Select";
-import InputField from "../../../utils/InputField";
 import { TextTag } from "../../../utils/Typography";
 import Button from "../../../utils/Button";
 import { Link } from "react-router-dom";
@@ -8,24 +6,41 @@ import { Formik } from "formik";
 import DropDown from "./projectSelect";
 const postData = [
   {
-    name: "",
+    option: "",
   },
   {
-    name: "All visas",
+    option: "All visas",
   },
   {
-    name: "Europe visas",
+    option: "Europe visas",
   },
   {
-    name: "Travel programs",
+    option: "Travel programs",
   },
   {
-    name: "Domestic programs",
+    option: "Domestic programs",
   },
   {
-    name: "Insurance",
+    option: "Insurance",
   },
 ];
+
+interface FormValues {
+  color1: string;
+  color2: string;
+  color3: string;
+}
+
+interface Option {
+  option: string;
+}
+
+interface FormErrors {
+  color1?: Option | string;
+  color2?: Option | string;
+  color3?: Option | string;
+}
+
 const ConnectProject = () => {
   return (
     <div className="pt-9 min-w-[320px]">
@@ -54,7 +69,34 @@ const ConnectProject = () => {
         </div>
         <Formik
           initialValues={{
-            projectName: "",
+            color1: "",
+            color2: "",
+            color3: "",
+          }}
+          validate={(values: FormValues) => {
+            const errors: FormErrors = {};
+            if (
+              !values.color1 ||
+              (typeof values.color1 === "object" &&
+                values?.color1["option"] === "")
+            ) {
+              errors.color1 = "Required";
+            }
+            if (
+              !values.color2 ||
+              (typeof values.color2 === "object" &&
+                values?.color2["option"] === "")
+            ) {
+              errors.color2 = "Required";
+            }
+            if (
+              !values.color3 ||
+              (typeof values.color3 === "object" &&
+                values?.color3["option"] === "")
+            ) {
+              errors.color3 = "Required";
+            }
+            return errors;
           }}
           onSubmit={(values, { setSubmitting }) => {
             setTimeout(() => {
@@ -67,9 +109,10 @@ const ConnectProject = () => {
             values,
             errors,
             touched,
-            handleChange,
-            handleBlur,
+            // handleChange,
+            // handleBlur,
             handleSubmit,
+            setFieldValue,
             // isSubmitting,
             /* and other goodies */
           }) => (
@@ -84,34 +127,19 @@ const ConnectProject = () => {
                 <DropDown
                   data={postData}
                   className=""
-                  companiesDrop={undefined}
-                  addIcon={undefined}
-                  addText={""}
-                  leftIcon={undefined}
-                  rightIcon={undefined}
-                  leftText={""}
-                  onClick={() => {}}
-                  isDateM={false}
-                  simpleDropDown={false}
-                  dateOnCancel={() => {}}
-                  multiSelect={false}
+                  name="color1"
+                  value={values.color1}
+                  onChange={(postData) => setFieldValue("color1", postData)}
+                />
+
+                <TextTag
+                  as="label"
+                  text={errors.color1 && touched.color1 && errors.color1}
+                  className={"p-small"}
+                  color={"text-error-300"}
                 />
               </div>
-              <div className="hidden">
-                <InputField
-                  label="Project name"
-                  type="text"
-                  name="projectName"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.projectName}
-                  error={errors?.projectName}
-                  touch={touched.projectName}
-                  icon={""}
-                  placeholder={""}
-                  className={"mb-5"}
-                />
-              </div>
+
               <div className="mb-5">
                 <TextTag
                   as="label"
@@ -119,21 +147,18 @@ const ConnectProject = () => {
                   className={"p-small"}
                   color={"text-textGray"}
                 />
-                <Select
-                  className=""
+                <DropDown
                   data={postData}
-                  companiesDrop={false}
-                  addIcon={""}
-                  addText={""}
-                  leftIcon={""}
-                  rightIcon={""}
-                  leftText={""}
-                  onClick={() => {}}
-                  isDateM={false}
-                  simpleDropDown={true}
-                  dateOnCancel={() => {}}
-                  multiSelect={false}
-                  dateOnApply={() => {}}
+                  className=""
+                  name="color2"
+                  value={values.color2}
+                  onChange={(postData) => setFieldValue("color2", postData)}
+                />
+                <TextTag
+                  as="label"
+                  text={errors.color2 && touched.color2 && errors.color2}
+                  className={"p-small"}
+                  color={"text-error-300"}
                 />
               </div>
               <div className="mb-5">
@@ -143,36 +168,31 @@ const ConnectProject = () => {
                   className={"p-small"}
                   color={"text-textGray"}
                 />
-                <Select
-                  className=""
+                <DropDown
                   data={postData}
-                  companiesDrop={false}
-                  addIcon={""}
-                  addText={""}
-                  leftIcon={""}
-                  rightIcon={""}
-                  leftText={""}
+                  className=""
+                  name="color3"
+                  value={values.color3}
+                  onChange={(postData) => setFieldValue("color3", postData)}
+                />
+                <TextTag
+                  as="label"
+                  text={errors.color3 && touched.color3 && errors.color3}
+                  className={"p-small"}
+                  color={"text-error-300"}
+                />
+              </div>
+              <div className="pb-6">
+                <Button
+                  text={"Continue "}
                   onClick={() => {}}
-                  isDateM={false}
-                  simpleDropDown={true}
-                  dateOnCancel={() => {}}
-                  multiSelect={false}
-                  dateOnApply={() => {}}
+                  type="submit"
+                  className="w-full flex justify-center text-gray-500 !bg-lightGray"
                 />
               </div>
             </form>
           )}
         </Formik>
-      </div>
-      <div className="pb-6">
-        <Link to={"/#"}>
-          <Button
-            text={"Continue "}
-            onClick={() => {}}
-            type={undefined}
-            className="w-full flex justify-center text-secondaryGray !bg-lightGray"
-          />
-        </Link>
       </div>
     </div>
   );
