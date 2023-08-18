@@ -1,6 +1,6 @@
 import { Menu, Transition } from "@headlessui/react";
 import { ChangeEventHandler, Fragment, MouseEventHandler } from "react";
-import { TagIcon, AddContactIcon } from "../../icons";
+import { TagIcon, AddContactIcon, AddIcon } from "../../icons";
 import Button from "../../utils/Button";
 import { TextTag } from "../../utils/Typography";
 import SearchField from "../../utils/SearchField";
@@ -50,7 +50,13 @@ const TagDrapdown = ({
               leaveFrom="transform opacity-100 scale-100"
               leaveTo="transform opacity-0 scale-95"
             >
-              <Menu.Items className="dropdown-menu !w-[263px]">
+              <Menu.Items
+                className={`${
+                  !addTagDropdown
+                    ? "dropdown-menu !w-[263px]"
+                    : "dropdown-menu !w-[263px] shadow-lgShadow"
+                }`}
+              >
                 <div className="border-none px-4 w-full">
                   {!addTagDropdown && (
                     <div className="w-full flex items-center justify-between py-[6px] mb-3">
@@ -70,7 +76,7 @@ const TagDrapdown = ({
                   )}
                   <div className="mb-4">
                     <SearchField
-                      className={`   ${
+                      className={`${
                         addTagDropdown
                           ? "!border-b !border-solid !border-t-[0] !border-x-[0] !border-commonGray !rounded-none"
                           : "!border !border-solid !border-commonGray "
@@ -85,19 +91,38 @@ const TagDrapdown = ({
                 <Menu.Item>
                   <TextTag
                     as="p"
-                    text="My projects"
+                    text={addTagDropdown ? "" : "My projects"}
                     color="text-black"
-                    className="dropdown-item border-none !pl-7"
+                    className={
+                      addTagDropdown
+                        ? "border-none"
+                        : "dropdown-item !border-none !pl-7"
+                    }
                   />
                 </Menu.Item>
-
-                <div>
+                <div
+                  className={
+                    addTagDropdown ? "!border-none " : "!border-mediumGray"
+                  }
+                >
                   <Button
-                    text="Manage tags"
+                    text={`${
+                      addTagDropdown ? "Create new: sdad" : "Manage tags"
+                    }`}
                     type={"button"}
                     onClick={onclick}
-                    className="!py-[10px] !px-[10px] bg-white !border-none dropdown-item !rounded-none !w-full"
-                    icon={<AddContactIcon />}
+                    className={
+                      addTagDropdown
+                        ? "!py-[10px] !px-[10px] bg-white !border-none dropdown-item !rounded-none !w-full"
+                        : "!py-[11px] !px-[10px] gap-[10px] bg-white !border-none dropdown-item !rounded-none !w-full"
+                    }
+                    icon={
+                      !addTagDropdown ? (
+                        <AddContactIcon />
+                      ) : (
+                        <AddIcon color={""} />
+                      )
+                    }
                   />
                 </div>
               </Menu.Items>

@@ -29,7 +29,6 @@ const postData = [
 ];
 
 interface FormValues {
-  folderName: string;
   color: string;
 }
 
@@ -38,7 +37,6 @@ interface Option {
 }
 
 interface FormErrors {
-  folderName?: string;
   color?: Option | string;
 }
 
@@ -60,9 +58,6 @@ const AddNewFolder = () => {
             }}
             validate={(values: FormValues) => {
               const errors: FormErrors = {};
-              if (!values.folderName) {
-                errors.folderName = "Required";
-              }
               if (
                 !values.color ||
                 (typeof values.color === "object" &&
@@ -84,8 +79,8 @@ const AddNewFolder = () => {
               values,
               errors,
               touched,
-              handleChange,
-              handleBlur,
+              // handleChange,
+              // handleBlur,
               handleSubmit,
               setFieldValue,
               // isSubmitting,
@@ -95,17 +90,23 @@ const AddNewFolder = () => {
                 <div>
                   <div className="mb-5">
                     <InputField
-                      label="Folder name"
-                      type="text"
-                      name="folderName"
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      value={values.folderName}
-                      error={errors?.folderName}
-                      touch={touched.folderName}
-                      icon={""}
-                      placeholder={""}
-                      className={"0"}
+                      label={undefined}
+                      type={undefined}
+                      name={undefined}
+                      placeholder={undefined}
+                      className="mb-0"
+                      icon={undefined}
+                      onChange={undefined}
+                      onBlur={undefined}
+                      value={undefined}
+                      error={undefined}
+                      touch={undefined}
+                    />
+                    <TextTag
+                      as="p"
+                      text={"e.g My blog posts"}
+                      className={"p-small"}
+                      color={"text-textGray"}
                     />
                   </div>
                 </div>

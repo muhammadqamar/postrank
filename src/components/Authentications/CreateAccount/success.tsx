@@ -91,7 +91,7 @@ const Success = () => {
         buttonText="To dashboard"
         onClick={handleSubmit}
         className={""}
-        textStyling={"mt-6"}
+        textStyling={""}
         buttonStyling={""}
       />
       <div className="flex m-auto gap-6">

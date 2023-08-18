@@ -9,16 +9,16 @@ import User from "../../assets/images/png/user.png";
 
 interface FormValues {
   email: string;
-  password: string;
   currentPassword: string;
   newPassword: string;
+  repeatNewPassword: string;
 }
 
 interface FormErrors {
   email?: string;
-  password?: string;
   currentPassword: string;
   newPassword: string;
+  repeatNewPassword: string;
 }
 
 const AccountDetails = () => {
@@ -33,14 +33,15 @@ const AccountDetails = () => {
       <Formik
         initialValues={{
           email: "",
-          password: "",
           currentPassword: "",
           newPassword: "",
+          repeatNewPassword: "",
         }}
         validate={(values: FormValues) => {
           const errors: FormErrors = {
             currentPassword: "",
             newPassword: "",
+            repeatNewPassword: "",
           };
           if (!values.email) {
             errors.email = "Required";
@@ -50,8 +51,16 @@ const AccountDetails = () => {
             errors.email = "Email doesn’t exist";
           }
 
-          if (values.password !== "correctpassword") {
-            errors.password = "Wrong password";
+          if (!values.currentPassword) {
+            errors.currentPassword = "Required";
+          }
+
+          if (!values.newPassword) {
+            errors.newPassword = "Required";
+          }
+
+          if (!values.repeatNewPassword) {
+            errors.repeatNewPassword = "Required";
           }
 
           return errors;
@@ -93,17 +102,17 @@ const AccountDetails = () => {
                   color={"text-textGray"}
                 />
                 <InputField
-                  label=""
-                  type=""
-                  name=""
+                  label={undefined}
+                  type={undefined}
+                  name={undefined}
+                  placeholder={undefined}
+                  className={"!sm:min-w-[300px] !w-56 !mb-0"}
+                  icon={undefined}
                   onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.email}
-                  error={errors?.email}
-                  touch={touched.email}
-                  icon=""
-                  placeholder={""}
-                  className={"!sm:min-w-[300px] !w-56"}
+                  onBlur={undefined}
+                  value={undefined}
+                  error={undefined}
+                  touch={undefined}
                 />
               </div>
               <div className="flex justify-between items-center sm:flex-nowrap flex-wrap gap-[2px]">
@@ -114,17 +123,17 @@ const AccountDetails = () => {
                   color={"text-textGray"}
                 />
                 <InputField
-                  label=""
-                  type=""
-                  name=""
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.email}
-                  error={errors?.email}
-                  touch={touched.email}
-                  icon=""
-                  placeholder={""}
-                  className={"!sm:min-w-[300px] !w-56"}
+                  label={undefined}
+                  type={undefined}
+                  name={undefined}
+                  placeholder={undefined}
+                  className={"!sm:min-w-[300px] !w-56 !mb-0"}
+                  icon={undefined}
+                  onChange={undefined}
+                  onBlur={undefined}
+                  value={undefined}
+                  error={undefined}
+                  touch={undefined}
                 />
               </div>
             </div>
@@ -175,7 +184,7 @@ const AccountDetails = () => {
                   touch={touched.email}
                   icon=""
                   placeholder={""}
-                  className={"!sm:min-w-[300px] !w-56"}
+                  className={"!sm:min-w-[300px] !w-56 !mb-0"}
                 />
               </div>
             </div>
@@ -190,7 +199,7 @@ const AccountDetails = () => {
                 />
                 <InputField
                   label=""
-                  type="currentPassword"
+                  type="Password"
                   name="currentPassword"
                   onChange={handleChange}
                   onBlur={handleBlur}
@@ -199,7 +208,7 @@ const AccountDetails = () => {
                   touch={touched.currentPassword}
                   icon=""
                   placeholder={""}
-                  className={"!sm:min-w-[300px] !w-56"}
+                  className={"!sm:min-w-[300px] !w-56 !mb-0"}
                 />
               </div>
               <div className="flex justify-between items-center sm:flex-nowrap flex-wrap gap-[2px]">
@@ -211,7 +220,7 @@ const AccountDetails = () => {
                 />
                 <InputField
                   label=""
-                  type="newPassword"
+                  type="Password"
                   name="newPassword"
                   onChange={handleChange}
                   onBlur={handleBlur}
@@ -220,7 +229,7 @@ const AccountDetails = () => {
                   touch={touched.newPassword}
                   icon=""
                   placeholder={""}
-                  className={"!sm:min-w-[300px] !w-56"}
+                  className={"!sm:min-w-[300px] !w-56 !mb-0"}
                 />
               </div>
               <div className="flex justify-between items-center sm:flex-nowrap flex-wrap gap-[2px]">
@@ -232,16 +241,16 @@ const AccountDetails = () => {
                 />
                 <InputField
                   label=""
-                  type="newPassword"
-                  name="newPassword"
+                  type="password"
+                  name="repeatNewPassword"
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  value={values.newPassword}
-                  error={errors?.newPassword}
-                  touch={touched.newPassword}
+                  value={values.repeatNewPassword}
+                  error={errors?.repeatNewPassword}
+                  touch={touched.repeatNewPassword}
                   icon=""
                   placeholder={""}
-                  className={"!sm:min-w-[300px] !w-56"}
+                  className={"!sm:min-w-[300px] !w-56 !mb-0"}
                 />
               </div>
             </div>

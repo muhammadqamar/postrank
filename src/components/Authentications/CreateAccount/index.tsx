@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Formik } from "formik";
 import InputField from "../../../utils/InputField/index";
 import Button from "../../../utils/Button/index";
@@ -7,26 +7,20 @@ import { TextTag } from "../../../utils/Typography";
 import ConnectProject from "./connectProject";
 import AddNewFolder from "./addNewFolder";
 import Success from "./success";
-import PersonalInformation from "./personalInformation";
 import CreateNewProject from "./createNewProject";
+import { Link } from "react-router-dom";
+
 interface FormValues {
   email: string;
+  password: string;
 }
 
 interface FormErrors {
   email?: string;
+  password?: string;
 }
 
 const LoginForm = () => {
-  const [password, setPassword] = useState("");
-
-  const handlePasswordChange = (e: {
-    target: { value: React.SetStateAction<string> };
-  }) => {
-    setPassword(e.target.value);
-  };
-
-  const maskPassword = password.replace(/./g, "*");
   return (
     <div className="bg-white min-h-screen flex flex-col justify-between items-center pt-[132px]">
       <div className="w-80">
@@ -45,7 +39,10 @@ const LoginForm = () => {
             } else if (
               !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
             ) {
-              errors.email = "Invalid email address";
+              errors.email = "Email doesn’t exist";
+            }
+            if (!values.password) {
+              errors.password = "Required";
             }
             return errors;
           }}
@@ -78,33 +75,33 @@ const LoginForm = () => {
                 touch={touched.email}
                 icon={""}
                 placeholder={""}
-                className={"mb-5"}
+                className={""}
               />
               <InputField
                 label="Password"
                 type="password"
                 name="password"
-                onChange={handlePasswordChange}
+                onChange={handleChange}
                 onBlur={handleBlur}
-                value={maskPassword}
+                value={values.password}
                 error={errors?.password}
                 touch={touched.password}
                 icon={<EyeIcon />}
                 placeholder={""}
-                className={""}
+                className={"!mb-0"}
               />
               <TextTag
                 as="p"
                 text={
                   "Password must be at least 8 characters and must contain at least 1 capital letter and 1 digit."
                 }
-                className={"p-small mb-5"}
+                className={"p-small mb-[42px]"}
                 color={""}
               />
               <Button
                 text="Continue with Google"
                 onClick={() => handleSubmit()}
-                className="w-full mb-4 p-large font-medium bg-white text-gray-900 flex gap-x-[40.4px] border-[2px] border-solid rounded-full"
+                className="w-full mb-4 p-large !font-medium bg-white text-gray-900 flex gap-x-[40.4px] border-[2px] border-solid rounded-full"
                 icon={<GoogleIcon />}
                 type={undefined}
               />
@@ -125,13 +122,17 @@ const LoginForm = () => {
           className={"p-small"}
           color={""}
         />
-        <a className="p-small font-medium text-customBlue" href="#">
-          Login now
-        </a>
+        <Link to={"/login"}>
+          <TextTag
+            as="p"
+            text={"Login now"}
+            className={"p-small font-medium"}
+            color={"text-customBlue"}
+          />
+        </Link>
       </div>
-      <PersonalInformation />
-      <CreateNewProject />
       <ConnectProject />
+      <CreateNewProject />
       <AddNewFolder />
       <Success />
     </div>

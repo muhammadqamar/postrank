@@ -39,10 +39,9 @@ const LoginForm = () => {
               errors.email = "Email doesn’t exist";
             }
 
-            if (values.password !== "correctpassword") {
-              errors.password = "Wrong password";
+            if (!values.password) {
+              errors.password = "Required";
             }
-
             return errors;
           }}
           onSubmit={(values, { setSubmitting }) => {
@@ -94,7 +93,7 @@ const LoginForm = () => {
                   <input
                     type="checkbox"
                     name="rememberMe"
-                    className="mr-2 border-2 border-solid border-commonGray rounded cursor-pointer appearance-none focus:border-none checked:bg-customBlue !checked:border-transparent"
+                    className="mr-2 border-2 border-solid border-commonGray rounded cursor-pointer checked:bg-customBlue !outline-none focus:!ring-[-1]"
                   />
                   <TextTag
                     as="span"
@@ -109,13 +108,13 @@ const LoginForm = () => {
               </div>
               <Button
                 text="Login"
-                onClick={() => handleSubmit()}
+                onClick={() => {}}
                 className="w-full !bg-customBlue !text-white flex justify-center mb-4"
                 type={undefined}
               />
               <Button
                 text="Continue with Google"
-                onClick={() => handleSubmit()}
+                onClick={() => {}}
                 className="w-full p-large font-medium !bg-white !text-gray-900 flex gap-x-[40.4px] border-[2px] border-solid rounded-full"
                 icon={<GoogleIcon />}
                 type={undefined}

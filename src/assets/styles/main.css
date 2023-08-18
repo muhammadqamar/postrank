@@ -99,10 +99,30 @@ body {
   .react-datepicker
   .react-datepicker__month-container
   .react-datepicker__month
-  .react-datepicker__day--selected {
-  @apply bg-[#2F67DD];
+  .react-datepicker__day--selected,
+.my-custom-container
+  .react-datepicker
+  .react-datepicker__month-container
+  .react-datepicker__month
+  .react-datepicker__day--range-start.react-datepicker__day--in-range,
+.my-custom-container
+  .react-datepicker
+  .react-datepicker__month-container
+  .react-datepicker__month
+  .react-datepicker__day--range-end.react-datepicker__day--in-range {
+  /* @apply !bg-[#2F67DD]; */
+  background-color: #2f67dd !important;
+  color: #ffffff;
 }
 
+.my-custom-container
+  .react-datepicker
+  .react-datepicker__month-container
+  .react-datepicker__month
+  .react-datepicker__day--in-range {
+  background-color: rgb(241, 246, 253) !important;
+  color: #000000;
+}
 /* chart */
 
 .charts .highcharts-axis-title,

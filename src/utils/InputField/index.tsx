@@ -44,8 +44,10 @@ const Index: React.FC<InputProps> = ({
           onChange={onChange}
           onBlur={onBlur}
           value={value}
-          className={`w-full p-medium !bg-white border border-solid rounded-[7px] focus-visible:outline-1 focus-visible:outline ${className} ${
-            error ? "border-error-300" : "border-commonGray"
+          className={`w-full p-medium !bg-white border border-solid border-commonGray rounded-[7px] focus:!ring-[0] ${className} ${
+            error
+              ? " focus:!border-primaryRed focus-visible:!border-primaryRed"
+              : " focus:!border-customBlue focus-visible:!border-customBlue"
           } py-[10px] px-3 pr-9`}
         />
         {error && (
@@ -55,7 +57,7 @@ const Index: React.FC<InputProps> = ({
         )}
       </div>
 
-      <p className="p-small text-error-300">{error && touch && error}</p>
+      <p className="p-small text-secondaryRed">{error && touch && error}</p>
     </div>
   );
 };

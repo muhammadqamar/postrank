@@ -8,9 +8,12 @@ const colors = {
   darkBlue: "rgba(189, 207, 244, 1)",
   primaryGray: "rgba(108, 108, 108, 1)",
   secondaryGray: "rgba(144, 144, 144, 1)",
+  mediumGray: "rgba(230, 230, 230, 1)",
   textGray: "rgba(70, 70, 70, 1)",
   commonGray: "rgba(213, 213, 213, 1)",
   lightGray: "rgba(248, 248, 248, 1)",
+  primaryRed: "rgba(216, 72, 51, 1)",
+  secondaryRed: "rgba(171, 59, 42, 1)",
   primary: {
     100: "#EEE6FF",
     200: "#DCCAFF",

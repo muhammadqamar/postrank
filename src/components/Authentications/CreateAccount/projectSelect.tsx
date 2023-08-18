@@ -40,7 +40,7 @@ const Index = ({ data, className, name, value, onChange }: dropdownProps) => {
         {({ open }) => (
           <div className={`relative ${className}`}>
             <Listbox.Button
-              className={`relative cursor-default w-full py-[10px] px-3 rounded-[7px] border border-solid border-gray-200 h-10 bg-white   text-left text-gray-900  ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
+              className={`relative cursor-default w-full py-[10px] px-3 rounded-[7px] border border-solid h-10 bg-white   text-left text-gray-900  ring-1 ring-inset ring-commonGray focus:outline-none focus:ring-0 focus:ring-indigo-500 ${
                 open && "ring-indigo-500"
               } sm:text-sm sm:leading-6 `}
             >

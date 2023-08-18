@@ -6,7 +6,7 @@ const confirmPassword = () => {
     <ConfirmPassword
       icon={undefined}
       heading={"Link has been sent."}
-      textStyling={""}
+      textStyling={"text-textGray"}
       text={"We just sent a link with a temporary password to your email."}
       buttonText={"Back to login"}
       onClick={() => {}}
