@@ -1,5 +1,4 @@
 import React from "react";
-// import { Link } from "react-router-dom";
 import { Formik } from "formik";
 
 import InputField from "../../../utils/InputField";
@@ -28,21 +27,21 @@ const postData = [
   },
 ];
 
-interface FormValues {
-  color: string;
+interface AddNewFolder {
+  setActiveTab: React.Dispatch<React.SetStateAction<string | null>>;
 }
 
-interface Option {
-  option: string;
+interface FormValues {
+  text: string;
 }
 
 interface FormErrors {
-  color?: Option | string;
+  text?: string;
 }
 
-const AddNewFolder = () => {
+const AddNewFolder: React.FC<AddNewFolder> = ({ setActiveTab }) => {
   return (
-    <div className="pt-9 max-w-[320px]">
+    <div className="pt-[87px] max-w-[320px] min-h-screen mx-auto">
       <TextTag
         as="h6"
         text={"Let's Create a Content Folder"}
@@ -53,19 +52,13 @@ const AddNewFolder = () => {
         <div className="mb-5">
           <Formik
             initialValues={{
-              folderName: "",
-              color: "",
+              text: "",
             }}
             validate={(values: FormValues) => {
               const errors: FormErrors = {};
-              if (
-                !values.color ||
-                (typeof values.color === "object" &&
-                  values?.color["option"] === "")
-              ) {
-                errors.color = "Required";
+              if (!values.text) {
+                errors.text = "Required";
               }
-
               return errors;
             }}
             onSubmit={(values, { setSubmitting }) => {
@@ -79,8 +72,8 @@ const AddNewFolder = () => {
               values,
               errors,
               touched,
-              // handleChange,
-              // handleBlur,
+              handleChange,
+              handleBlur,
               handleSubmit,
               setFieldValue,
               // isSubmitting,
@@ -90,17 +83,23 @@ const AddNewFolder = () => {
                 <div>
                   <div className="mb-5">
                     <InputField
-                      label={undefined}
-                      type={undefined}
-                      name={undefined}
-                      placeholder={undefined}
-                      className="mb-0"
-                      icon={undefined}
-                      onChange={undefined}
-                      onBlur={undefined}
+                      label="Folder name"
+                      type="text"
+                      name="Folder name"
+                      placeholder=""
+                      className="!mb-0"
+                      icon=""
+                      onChange={handleChange}
+                      onBlur={handleBlur}
                       value={undefined}
                       error={undefined}
                       touch={undefined}
+                    />
+                    <TextTag
+                      as="label"
+                      text={errors.text && touched.text && errors.text}
+                      className={"p-small"}
+                      color={"text-error-300"}
                     />
                     <TextTag
                       as="p"
@@ -121,27 +120,20 @@ const AddNewFolder = () => {
                     className=""
                     data={postData}
                     name="color"
-                    value={values.color}
+                    value={values}
                     onChange={(postData) => setFieldValue("color", postData)}
                   />
-                  <TextTag
-                    as="label"
-                    text={errors.color && touched.color && errors.color}
-                    className={"p-small"}
-                    color={"text-error-300"}
-                  />
                 </div>
-
-                <div className="mb-5">
+                <div className="mb-[42px]">
                   <InputField
-                    label={undefined}
-                    type={undefined}
-                    name={undefined}
-                    placeholder={undefined}
-                    className={undefined}
-                    icon={undefined}
-                    onChange={undefined}
-                    onBlur={undefined}
+                    label=""
+                    type="text"
+                    name="Blog"
+                    placeholder=""
+                    className="!mb-0"
+                    icon=""
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                     value={undefined}
                     error={undefined}
                     touch={undefined}
@@ -160,7 +152,7 @@ const AddNewFolder = () => {
                   {/* <Link to={"/#"}> */}
                   <Button
                     text={"Add folder"}
-                    onClick={() => {}}
+                    onClick={() => setActiveTab("success")}
                     type="submit"
                     className="w-full flex justify-center text-gray-500 !bg-lightGray"
                   />

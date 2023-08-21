@@ -8,6 +8,8 @@ import Button from "../../utils/Button";
 import User from "../../assets/images/png/user.png";
 
 interface FormValues {
+  firstName: string;
+  lastName: string;
   email: string;
   currentPassword: string;
   newPassword: string;
@@ -15,10 +17,12 @@ interface FormValues {
 }
 
 interface FormErrors {
+  firstName?: string;
+  lastName?: string;
   email?: string;
-  currentPassword: string;
-  newPassword: string;
-  repeatNewPassword: string;
+  currentPassword?: string;
+  newPassword?: string;
+  repeatNewPassword?: string;
 }
 
 const AccountDetails = () => {
@@ -32,17 +36,15 @@ const AccountDetails = () => {
       />
       <Formik
         initialValues={{
+          firstName: "",
+          lastName: "",
           email: "",
           currentPassword: "",
           newPassword: "",
           repeatNewPassword: "",
         }}
         validate={(values: FormValues) => {
-          const errors: FormErrors = {
-            currentPassword: "",
-            newPassword: "",
-            repeatNewPassword: "",
-          };
+          const errors: FormErrors = {};
           if (!values.email) {
             errors.email = "Required";
           } else if (
@@ -54,15 +56,12 @@ const AccountDetails = () => {
           if (!values.currentPassword) {
             errors.currentPassword = "Required";
           }
-
           if (!values.newPassword) {
             errors.newPassword = "Required";
           }
-
           if (!values.repeatNewPassword) {
             errors.repeatNewPassword = "Required";
           }
-
           return errors;
         }}
         onSubmit={(values, { setSubmitting }) => {
@@ -93,7 +92,6 @@ const AccountDetails = () => {
                 className={"h6"}
                 color={""}
               />
-
               <div className="flex justify-between items-center sm:flex-nowrap flex-wrap gap-[2px]">
                 <TextTag
                   as="p"
@@ -102,16 +100,16 @@ const AccountDetails = () => {
                   color={"text-textGray"}
                 />
                 <InputField
-                  label={undefined}
-                  type={undefined}
-                  name={undefined}
-                  placeholder={undefined}
+                  label=""
+                  type="text"
+                  name="First Name"
+                  placeholder=""
                   className={"!sm:min-w-[300px] !w-56 !mb-0"}
-                  icon={undefined}
+                  icon=""
                   onChange={handleChange}
-                  onBlur={undefined}
-                  value={undefined}
-                  error={undefined}
+                  onBlur={handleBlur}
+                  value={values.firstName}
+                  error={values.firstName}
                   touch={undefined}
                 />
               </div>
@@ -123,16 +121,16 @@ const AccountDetails = () => {
                   color={"text-textGray"}
                 />
                 <InputField
-                  label={undefined}
-                  type={undefined}
-                  name={undefined}
-                  placeholder={undefined}
+                  label=""
+                  type="text"
+                  name="Last Name"
+                  placeholder=""
                   className={"!sm:min-w-[300px] !w-56 !mb-0"}
-                  icon={undefined}
-                  onChange={undefined}
-                  onBlur={undefined}
-                  value={undefined}
-                  error={undefined}
+                  icon=""
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.lastName}
+                  error={values.lastName}
                   touch={undefined}
                 />
               </div>
@@ -199,7 +197,7 @@ const AccountDetails = () => {
                 />
                 <InputField
                   label=""
-                  type="Password"
+                  type="password"
                   name="currentPassword"
                   onChange={handleChange}
                   onBlur={handleBlur}
@@ -220,11 +218,11 @@ const AccountDetails = () => {
                 />
                 <InputField
                   label=""
-                  type="Password"
+                  type="password"
                   name="newPassword"
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  value={values.newPassword}
+                  value={values?.newPassword}
                   error={errors?.newPassword}
                   touch={touched.newPassword}
                   icon=""

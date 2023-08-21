@@ -25,6 +25,10 @@ const postData = [
   },
 ];
 
+interface ConnectProject {
+  setActiveTab: React.Dispatch<React.SetStateAction<string | null>>;
+}
+
 interface FormValues {
   color1: string;
   color2: string;
@@ -41,9 +45,9 @@ interface FormErrors {
   color3?: Option | string;
 }
 
-const ConnectProject = () => {
+const ConnectProject: React.FC<ConnectProject> = ({ setActiveTab }) => {
   return (
-    <div className="pt-9 min-w-[320px]">
+    <div className="pt-[87px] max-w-[320px] min-h-screen mx-auto">
       <TextTag
         as="h6"
         text={"Connect your project"}
@@ -182,10 +186,10 @@ const ConnectProject = () => {
                   color={"text-error-300"}
                 />
               </div>
-              <div className="pb-6">
+              <div className="pt-[22px]">
                 <Button
                   text={"Continue "}
-                  onClick={() => {}}
+                  onClick={() => setActiveTab("createNewProject")}
                   type="submit"
                   className="w-full flex justify-center text-gray-500 !bg-lightGray"
                 />

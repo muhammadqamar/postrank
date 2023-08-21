@@ -93,6 +93,7 @@ const Success = () => {
         className={""}
         textStyling={""}
         buttonStyling={""}
+        path={"/login"}
       />
       <div className="flex m-auto gap-6">
         {cardData.map((card, index) => (

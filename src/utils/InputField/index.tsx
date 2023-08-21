@@ -46,7 +46,7 @@ const Index: React.FC<InputProps> = ({
           value={value}
           className={`w-full p-medium !bg-white border border-solid border-commonGray rounded-[7px] focus:!ring-[0] ${className} ${
             error
-              ? " focus:!border-primaryRed focus-visible:!border-primaryRed"
+              ? " border-primaryRed focus-visible:!border-primaryRed"
               : " focus:!border-customBlue focus-visible:!border-customBlue"
           } py-[10px] px-3 pr-9`}
         />

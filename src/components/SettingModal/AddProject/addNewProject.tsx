@@ -152,11 +152,11 @@ const AddNewProject = ({ setAddProject }: props) => {
             />
             <InputField
               className="max-w-[300px] w-full"
-              label={undefined}
-              type={undefined}
-              name={undefined}
-              placeholder={undefined}
-              icon={undefined}
+              label=""
+              type="text"
+              name="folder name"
+              placeholder=""
+              icon=""
               onChange={undefined}
               onBlur={undefined}
               value={undefined}
@@ -199,11 +199,11 @@ const AddNewProject = ({ setAddProject }: props) => {
             />
             <InputField
               className="max-w-[300px] w-full"
-              label={undefined}
-              type={undefined}
-              name={undefined}
-              placeholder={undefined}
-              icon={undefined}
+              label=""
+              type="text"
+              name="folder name"
+              placeholder=""
+              icon=""
               onChange={undefined}
               onBlur={undefined}
               value={undefined}

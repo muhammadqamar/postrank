@@ -5,14 +5,18 @@ import Button from "../../../utils/Button/index";
 import { TextTag } from "../../../utils/Typography";
 import User from "../../../assets/images/png/user.png";
 
-const CreateNewProject = () => {
+interface CreateNewProject {
+  setActiveTab: React.Dispatch<React.SetStateAction<string | null>>;
+}
+
+const CreateNewProject: React.FC<CreateNewProject> = ({ setActiveTab }) => {
   return (
     <div className="bg-white h-screen flex flex-col justify-between items-center pt-[132px] pb-16">
       <div className="w-80">
         <TextTag
           as="h6"
           text={"Project name"}
-          className={"h6s mb-[42px]"}
+          className={"h6 mb-[42px]"}
           color={""}
         />
         <Formik
@@ -83,7 +87,7 @@ const CreateNewProject = () => {
               </div>
               <Button
                 text="Continue"
-                onClick={() => handleSubmit()}
+                onClick={() => setActiveTab("addNewFolder")}
                 className="w-full  !bg-customBlue text-white flex justify-center mb-4"
                 type={undefined}
               />

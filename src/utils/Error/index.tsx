@@ -1,11 +1,13 @@
 import React, { MouseEventHandler } from "react";
 import Button from "../Button";
+import { Link } from "react-router-dom";
 
 interface IndexProps {
   icon: React.ReactNode;
   heading: string;
   textStyling: string;
   text: string;
+  path: string;
   buttonText: string;
   onClick: MouseEventHandler<HTMLButtonElement>;
   className: string;
@@ -18,6 +20,7 @@ const Index: React.FC<IndexProps> = ({
   heading,
   textStyling,
   text,
+  path,
   buttonText,
   onClick,
   buttonStyling,
@@ -32,12 +35,14 @@ const Index: React.FC<IndexProps> = ({
           <h6 className="h6 text-gray-900">{heading}</h6>
           <p className={`p-medium !leading-5 ${textStyling}`}>{text}</p>
         </div>
-        <Button
-          text={buttonText}
-          onClick={onClick}
-          className={` !bg-customBlue text-white flex justify-center mb-4 ${buttonStyling}`}
-          type={undefined}
-        />
+        <Link to={path}>
+          <Button
+            text={buttonText}
+            onClick={onClick}
+            className={` !bg-customBlue text-white flex justify-center mb-4 ${buttonStyling}`}
+            type={undefined}
+          />
+        </Link>
       </div>
     </div>
   );

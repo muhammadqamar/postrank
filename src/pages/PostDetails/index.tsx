@@ -21,6 +21,7 @@ import { TextTag } from "../../utils/Typography";
 import BackgroundImage1 from "../../assets/images/png/image1.png";
 import PostCompare from "./postCompare";
 import TagDrapdown from "../../components/PostFilter/tagDropdown";
+import { Link } from "react-router-dom";
 const dateData = [
   {
     name: "7 days",
@@ -49,9 +50,9 @@ const Index = () => {
       <div className="common-bg-color">
         <div className="flex justify-between flex-wrap sm:flex-nowrap items-center">
           <div className="flex gap-2 justify-between items-center py-6">
-            <div className="rounded-full p-[10px] bg-lightBlue">
+            <Link to={"/#"} className="rounded-full !p-[10px] bg-lightBlue">
               <BackIcon />
-            </div>
+            </Link>
             <TextTag
               as="h5"
               text={"Post details"}
@@ -264,6 +265,7 @@ const Index = () => {
             buttonStyling={
               "!text-customBlue !bg-lightBlue border-2 border-solid !border-customBlue font-medium"
             }
+            path={""}
           />
         </div>
         {/* User trends */}
@@ -359,7 +361,7 @@ const Index = () => {
           <Chart />
         </div>
         {/* Queries */}
-        <div className="md:p-8 p-5 mb-6 bg-white rounded-[20px]">
+        <div className="md:p-8 p-5  bg-white rounded-[20px]">
           <div className="flex justify-between md:items-center items-baseline mb-6">
             <TextTag as="h5" text={"Queries"} className={"h5"} color={""} />
             <TextTag
