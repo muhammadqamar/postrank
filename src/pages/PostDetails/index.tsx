@@ -266,6 +266,7 @@ const Index = () => {
               "!text-customBlue !bg-lightBlue border-2 border-solid !border-customBlue font-medium"
             }
             path={""}
+            pathStyling={""}
           />
         </div>
         {/* User trends */}

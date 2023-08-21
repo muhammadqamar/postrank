@@ -255,7 +255,7 @@ const PostCompare = ({ isOpen, setIsOpen }: modalProps) => {
                   >
                     <div className="flex justify-between items-center md:flex-nowrap flex-wrap max-sm:gap-2">
                       <div className="flex gap-4 items-center sm:w-[380px] w-60">
-                        <div className="p-[5px] rounded-full bg-lightBlue cursor-pointer">
+                        <div className="rounded-full bg-lightBlue cursor-pointer">
                           <Button
                             text=""
                             type={"button"}

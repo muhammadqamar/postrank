@@ -6,6 +6,7 @@ interface IndexProps {
   icon: React.ReactNode;
   heading: string;
   textStyling: string;
+  pathStyling: string;
   text: string;
   path: string;
   buttonText: string;
@@ -19,6 +20,7 @@ const Index: React.FC<IndexProps> = ({
   icon,
   heading,
   textStyling,
+  pathStyling,
   text,
   path,
   buttonText,
@@ -35,7 +37,7 @@ const Index: React.FC<IndexProps> = ({
           <h6 className="h6 text-gray-900">{heading}</h6>
           <p className={`p-medium !leading-5 ${textStyling}`}>{text}</p>
         </div>
-        <Link to={path}>
+        <Link to={path} className={pathStyling}>
           <Button
             text={buttonText}
             onClick={onClick}
