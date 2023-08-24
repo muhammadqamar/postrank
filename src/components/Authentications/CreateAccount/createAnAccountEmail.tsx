@@ -3,6 +3,8 @@ import { Formik } from "formik";
 import InputField from "../../../utils/InputField/index";
 import Button from "../../../utils/Button/index";
 import { GoogleIcon, EyeIcon } from "../../../icons";
+import { useGoogleLogin } from "@react-oauth/google";
+import { getAccountdetailsAction } from "../../../store/actions/account";
 import { TextTag } from "../../../utils/Typography";
 
 import { Link } from "react-router-dom";
@@ -23,6 +25,16 @@ interface FormErrors {
 const CreateAnAccountEmail: React.FC<CreateAnAccountEmail> = ({
   setActiveTab,
 }) => {
+  const login = useGoogleLogin({
+    onSuccess: (codeResponse) => {
+      console.log(codeResponse);
+      const res = getAccountdetailsAction(
+        codeResponse?.access_token,
+        setActiveTab,
+      );
+    },
+    onError: (error) => console.log("Login Failed:", error),
+  });
   return (
     <div className="bg-white min-h-screen flex flex-col justify-between items-center pt-[87px] pb-16 px-5">
       <div className="sm:w-80 w-full">
@@ -102,7 +114,9 @@ const CreateAnAccountEmail: React.FC<CreateAnAccountEmail> = ({
               />
               <Button
                 text="Continue with Google"
-                onClick={() => {}}
+                onClick={() => {
+                  login();
+                }}
                 className="w-full mb-4 p-large !font-medium !leading-5 bg-white text-gray-900 flex gap-x-[40.4px] border-[2px] border-solid rounded-full"
                 icon={<GoogleIcon />}
                 type={undefined}
@@ -111,6 +125,12 @@ const CreateAnAccountEmail: React.FC<CreateAnAccountEmail> = ({
                 text="Continue with email"
                 onClick={() => setActiveTab("connectProject")}
                 className="w-full !bg-customBlue text-white flex justify-center mb-4 sm:font-medium !leading-5"
+                type={undefined}
+              />
+              <Button
+                onClick={() => {}}
+                text="Continue with email"
+                className="w-full !bg-customBlue text-white flex justify-center mb-4"
                 type={undefined}
               />
             </form>

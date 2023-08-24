@@ -1,51 +1,60 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { TextTag } from "../../../utils/Typography";
 import Button from "../../../utils/Button";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../store";
 import { Link } from "react-router-dom";
 import { Formik } from "formik";
 import DropDown from "./projectSelect";
-const postData = [
-  {
-    option: "",
-  },
-  {
-    option: "All visas",
-  },
-  {
-    option: "Europe visas",
-  },
-  {
-    option: "Travel programs",
-  },
-  {
-    option: "Domestic programs",
-  },
-  {
-    option: "Insurance",
-  },
-];
+
+// const postData = [
+//   {
+//     option: '',
+//   },
+//   {
+//     option: 'All visas',
+//   },
+//   {
+//     option: 'Europe visas',
+//   },
+//   {
+//     option: 'Travel programs',
+//   },
+//   {
+//     option: 'Domestic programs',
+//   },
+//   {
+//     option: 'Insurance',
+//   },
+// ];
 
 interface ConnectProject {
   setActiveTab: React.Dispatch<React.SetStateAction<string | null>>;
 }
 
 interface FormValues {
-  color1: string;
-  color2: string;
-  color3: string;
-}
-
-interface Option {
-  option: string;
+  color1: object;
+  color2: object;
+  color3: object;
 }
 
 interface FormErrors {
-  color1?: Option | string;
-  color2?: Option | string;
-  color3?: Option | string;
+  color1?: string;
+  color2?: string;
+  color3?: string;
 }
 
 const ConnectProject: React.FC<ConnectProject> = ({ setActiveTab }) => {
+  const [accountdata, setaccountdata] = useState([]);
+  const accountDetails: any = useSelector(
+    (state: RootState) => state.accountDetails,
+  );
+  console.log("accountDetails", accountDetails);
+  useEffect(() => {
+    if (accountDetails?.userAccountDetails) {
+      setaccountdata(accountDetails?.userAccountDetails?.items);
+    }
+  }, [accountDetails?.userAccountDetails]);
   return (
     <div className="pt-[87px] sm:w-[320px] w-full sm:px-0 px-5 min-h-screen mx-auto">
       <TextTag
@@ -73,31 +82,19 @@ const ConnectProject: React.FC<ConnectProject> = ({ setActiveTab }) => {
         </div>
         <Formik
           initialValues={{
-            color1: "",
-            color2: "",
-            color3: "",
+            color1: {},
+            color2: {},
+            color3: {},
           }}
           validate={(values: FormValues) => {
             const errors: FormErrors = {};
-            if (
-              !values.color1 ||
-              (typeof values.color1 === "object" &&
-                values?.color1["option"] === "")
-            ) {
+            if (!values.color1) {
               errors.color1 = "Required";
             }
-            if (
-              !values.color2 ||
-              (typeof values.color2 === "object" &&
-                values?.color2["option"] === "")
-            ) {
+            if (!values.color2) {
               errors.color2 = "Required";
             }
-            if (
-              !values.color3 ||
-              (typeof values.color3 === "object" &&
-                values?.color3["option"] === "")
-            ) {
+            if (!values.color3) {
               errors.color3 = "Required";
             }
             return errors;
@@ -111,8 +108,7 @@ const ConnectProject: React.FC<ConnectProject> = ({ setActiveTab }) => {
         >
           {({
             values,
-            errors,
-            touched,
+
             // handleChange,
             // handleBlur,
             handleSubmit,
@@ -129,19 +125,17 @@ const ConnectProject: React.FC<ConnectProject> = ({ setActiveTab }) => {
                   color={"text-textGray"}
                 />
                 <DropDown
-                  data={postData}
+                  data={accountdata}
                   className=""
                   name="color1"
                   value={values.color1}
-                  onChange={(postData) => setFieldValue("color1", postData)}
+                  onChange={(postData) => {
+                    console.log("postData", postData);
+                    setFieldValue("color1", postData);
+                  }}
                 />
 
-                <TextTag
-                  as="label"
-                  text={errors.color1 && touched.color1 && errors.color1}
-                  className={"p-small"}
-                  color={"text-error-300"}
-                />
+                {/* {errors.color1 && touched.color1 && <p>{errors.color1}</p>} */}
               </div>
 
               <div className="mb-5">
@@ -152,18 +146,13 @@ const ConnectProject: React.FC<ConnectProject> = ({ setActiveTab }) => {
                   color={"text-textGray"}
                 />
                 <DropDown
-                  data={postData}
+                  data={accountdata || []}
                   className=""
                   name="color2"
                   value={values.color2}
                   onChange={(postData) => setFieldValue("color2", postData)}
                 />
-                <TextTag
-                  as="label"
-                  text={errors.color2 && touched.color2 && errors.color2}
-                  className={"p-small"}
-                  color={"text-error-300"}
-                />
+                {/* <TextTag as="label" text={errors.color2 && touched.color2 && errors.color2} className={'p-small'} color={'text-error-300'} /> */}
               </div>
               <div className="mb-5">
                 <TextTag
@@ -173,18 +162,13 @@ const ConnectProject: React.FC<ConnectProject> = ({ setActiveTab }) => {
                   color={"text-textGray"}
                 />
                 <DropDown
-                  data={postData}
+                  data={accountdata}
                   className=""
                   name="color3"
                   value={values.color3}
                   onChange={(postData) => setFieldValue("color3", postData)}
                 />
-                <TextTag
-                  as="label"
-                  text={errors.color3 && touched.color3 && errors.color3}
-                  className={"p-small"}
-                  color={"text-error-300"}
-                />
+                {/* <TextTag as="label" text={errors.color3 && touched.color3 && errors.color3} className={'p-small'} color={'text-error-300'} /> */}
               </div>
               <div className="pt-[22px]">
                 <Button

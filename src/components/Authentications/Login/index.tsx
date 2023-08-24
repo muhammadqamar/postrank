@@ -1,12 +1,13 @@
+/* eslint-disable */
 import React from "react";
 import { Formik } from "formik";
 import InputField from "../../../utils/InputField";
 import Button from "../../../utils/Button/index";
-
+// import { useGoogleLogin } from '@react-oauth/google';
 import { EyeIcon, GoogleIcon, WarningIcon } from "../../../icons";
 import { TextTag } from "../../../utils/Typography";
 import { Link } from "react-router-dom";
-
+import { getAccountdetailsAction } from "../../../store/actions/account";
 interface FormValues {
   email: string;
   password: string;
@@ -18,6 +19,13 @@ interface FormErrors {
 }
 
 const LoginForm = () => {
+  // const login = useGoogleLogin({
+  //   onSuccess: (codeResponse) => {
+  //     console.log(codeResponse);
+  //     const res = getAccountdetailsAction(codeResponse?.access_token);
+  //   },
+  //   onError: (error) => console.log('Login Failed:', error),
+  // });
   return (
     <div className="bg-white h-screen flex flex-col !justify-between items-center sm:pt-[132px] pt-20 sm:pb-16 pb-8 px-5">
       <div className="sm:w-80 w-full">
@@ -44,12 +52,7 @@ const LoginForm = () => {
             }
             return errors;
           }}
-          onSubmit={(values, { setSubmitting }) => {
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              setSubmitting(false);
-            }, 400);
-          }}
+          onSubmit={(values, { setSubmitting }) => {}}
         >
           {({
             values,
@@ -120,7 +123,7 @@ const LoginForm = () => {
                 onClick={() => {}}
                 className="w-full p-large !font-medium !leading-5 !bg-white !text-gray-900 flex gap-x-[40.4px] border-[2px] border-solid rounded-full"
                 icon={<GoogleIcon />}
-                type={undefined}
+                type="button"
               />
             </form>
           )}
