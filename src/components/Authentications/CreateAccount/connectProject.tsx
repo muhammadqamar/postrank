@@ -47,7 +47,7 @@ interface FormErrors {
 
 const ConnectProject: React.FC<ConnectProject> = ({ setActiveTab }) => {
   return (
-    <div className="pt-[87px] max-w-[320px] min-h-screen mx-auto">
+    <div className="pt-[87px] sm:w-[320px] w-full sm:px-0 px-5 min-h-screen mx-auto">
       <TextTag
         as="h6"
         text={"Connect your project"}
@@ -67,7 +67,7 @@ const ConnectProject: React.FC<ConnectProject> = ({ setActiveTab }) => {
               text={"Connect"}
               onClick={() => {}}
               type={undefined}
-              className="text-customBlue bg-white border-2 border-solid border-customBlue !py-[7px] !px-3"
+              className="p-medium !font-medium text-customBlue bg-white border-2 border-solid border-customBlue !py-[7px] !px-3"
             />
           </Link>
         </div>
@@ -191,7 +191,7 @@ const ConnectProject: React.FC<ConnectProject> = ({ setActiveTab }) => {
                   text={"Continue "}
                   onClick={() => setActiveTab("createNewProject")}
                   type="submit"
-                  className="w-full flex justify-center text-gray-500 !bg-lightGray"
+                  className="w-full !font-medium !leading-5 flex justify-center text-gray-500 !bg-lightGray"
                 />
               </div>
             </form>

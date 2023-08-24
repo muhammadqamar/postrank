@@ -83,20 +83,20 @@ const Success = () => {
     console.log("Success");
   };
   return (
-    <div className="w-full py-16 px-10 flex flex-col gap-16 common-bg-color">
+    <div className="w-full sm:py-16 py-10 sm:px-10 px-5 flex flex-col gap-16 common-bg-color">
       <NoResult
         icon={<PostLoadedIcon />}
         heading="Your posts has been loaded!"
         text="Now you can go to your dashboard and start exploring!"
         buttonText="To dashboard"
         onClick={handleSubmit}
-        className={""}
+        className={"!m-0"}
         textStyling={""}
-        buttonStyling={""}
+        buttonStyling={"!font-medium !leading-5"}
         path={"/login"}
         pathStyling={""}
       />
-      <div className="flex m-auto gap-6">
+      <div className="flex flex-wrap justify-center gap-6">
         {cardData.map((card, index) => (
           <Card key={index} {...card} />
         ))}

@@ -82,7 +82,7 @@ const Index: React.FC<IndexProps> = ({
                 <TextTag
                   as="p"
                   text={date1}
-                  className={"text-sm"}
+                  className={"p-medium"}
                   color={"text-textGray"}
                 />
                 {dotImage1 && <span>{dotImage1}</span>}
@@ -92,7 +92,7 @@ const Index: React.FC<IndexProps> = ({
                   <TextTag
                     as="p"
                     text={quantity1}
-                    className={"text-sm"}
+                    className={"p-medium"}
                     color={""}
                   />
                 </div>
@@ -103,7 +103,7 @@ const Index: React.FC<IndexProps> = ({
                   <TextTag
                     as="p"
                     text={quantity2}
-                    className={"text-sm"}
+                    className={"p-medium"}
                     color={""}
                   />
                 </div>
@@ -129,7 +129,7 @@ const Index: React.FC<IndexProps> = ({
                   text={buttonText}
                   onClick={() => {}}
                   type={undefined}
-                  className="text-tagBlue"
+                  className="text-tagBlue p-large !font-medium"
                 />
               </Link>
             )}
@@ -141,7 +141,7 @@ const Index: React.FC<IndexProps> = ({
                   <TextTag
                     as="p"
                     text={quantity3}
-                    className={"text-sm"}
+                    className={"p-medium"}
                     color={""}
                   />
                 )}
@@ -154,7 +154,7 @@ const Index: React.FC<IndexProps> = ({
                   <TextTag
                     as="p"
                     text={quantity4}
-                    className={"text-sm"}
+                    className={"p-medium"}
                     color={""}
                   />
                 )}

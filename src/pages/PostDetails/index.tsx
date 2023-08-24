@@ -56,7 +56,7 @@ const Index = () => {
             <TextTag
               as="h5"
               text={"Post details"}
-              className={"h5"}
+              className={"h4"}
               color={""}
             />
           </div>
@@ -82,7 +82,7 @@ const Index = () => {
           </div>
         </div>
         {/* add post to compare */}
-        <div className="flex md:flex-nowrap flex-wrap gap-6 mb-6 pt-6">
+        <div className="flex lg:flex-nowrap flex-wrap gap-6 mb-6 pt-6">
           <div className="flex flex-col w-full">
             <Card
               cardTitle={"66 Digital Nomad Visa Countries in 2023"}
@@ -118,7 +118,7 @@ const Index = () => {
                   <TextTag
                     as="p"
                     text={"Digital Nomad"}
-                    className={"p-medium"}
+                    className={"p-medium !font-medium"}
                     color={"text-tagBlue"}
                   />
                   <button
@@ -134,7 +134,7 @@ const Index = () => {
                   <TextTag
                     as="p"
                     text={"Visa"}
-                    className={"p-medium"}
+                    className={"p-medium !font-medium"}
                     color={"text-tagBlue"}
                   />
                   <button
@@ -150,7 +150,7 @@ const Index = () => {
                   <TextTag
                     as="p"
                     text={"Country"}
-                    className={"p-medium"}
+                    className={"p-medium !font-medium"}
                     color={"text-tagBlue"}
                   />
                   <button
@@ -166,7 +166,7 @@ const Index = () => {
                   <TextTag
                     as="p"
                     text={"List"}
-                    className={"p-medium"}
+                    className={"p-medium !font-medium"}
                     color={"text-tagBlue"}
                   />
                   <button
@@ -182,7 +182,7 @@ const Index = () => {
                   <TextTag
                     as="p"
                     text={"Popular"}
-                    className={"p-medium"}
+                    className={"p-medium !font-medium"}
                     color={"text-tagBlue"}
                   />
                   <button
@@ -198,7 +198,7 @@ const Index = () => {
                   <TextTag
                     as="p"
                     text={"Essentials"}
-                    className={"p-medium"}
+                    className={"p-medium !font-medium"}
                     color={"text-tagBlue"}
                   />
                   <button
@@ -214,7 +214,7 @@ const Index = () => {
                   <TextTag
                     as="p"
                     text={"Travel"}
-                    className={"p-medium"}
+                    className={"p-medium !font-medium"}
                     color={"text-tagBlue"}
                   />
                   <button
@@ -230,7 +230,7 @@ const Index = () => {
                   <TextTag
                     as="p"
                     text={"Explore"}
-                    className={"p-medium"}
+                    className={"p-medium !font-medium"}
                     color={"text-tagBlue"}
                   />
                   <button
@@ -260,10 +260,10 @@ const Index = () => {
             onClick={() => {
               setIsOpen(true);
             }}
-            className={"bg-lightBlue rounded-[20px]"}
+            className={"bg-lightBlue rounded-[20px] lg:py-0 !py-[75px]"}
             textStyling={"!mt-1 !bg-lightBlue"}
             buttonStyling={
-              "!text-customBlue !bg-lightBlue border-2 border-solid !border-customBlue font-medium"
+              "!text-customBlue !bg-lightBlue border-2 border-solid !border-customBlue !font-medium !leading-5"
             }
             path={""}
             pathStyling={""}
@@ -276,7 +276,7 @@ const Index = () => {
             <TextTag
               as="p"
               text={"30 days"}
-              className={"p-medium"}
+              className={"p-medium !font-medium"}
               color={"text-primaryGray"}
             />
           </div>
@@ -325,7 +325,7 @@ const Index = () => {
             <TextTag
               as="p"
               text={"30 days"}
-              className={"p-medium"}
+              className={"p-medium !font-medium"}
               color={"text-primaryGray"}
             />
           </div>
@@ -368,7 +368,7 @@ const Index = () => {
             <TextTag
               as="p"
               text={"30 days"}
-              className={"p-medium"}
+              className={"p-medium !font-medium"}
               color={"text-primaryGray"}
             />
           </div>

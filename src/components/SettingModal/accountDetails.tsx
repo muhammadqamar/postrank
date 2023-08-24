@@ -27,13 +27,8 @@ interface FormErrors {
 
 const AccountDetails = () => {
   return (
-    <div className="sm:pt-9 pt-4 sm:px-8 px-4 sm:pb-16 pb-8 rounded-[20px] bg-white">
-      <TextTag
-        as="h5"
-        text={"Account details"}
-        className="font-medium mb-5"
-        color={""}
-      />
+    <div className="sm:pt-9 pt-6 sm:px-8 px-4 sm:pb-16 pb-8 rounded-[20px] bg-white">
+      <TextTag as="h5" text={"Account details"} className="h5" color={""} />
       <Formik
         initialValues={{
           firstName: "",
@@ -104,7 +99,7 @@ const AccountDetails = () => {
                   type="text"
                   name="First Name"
                   placeholder=""
-                  className={"!sm:min-w-[300px] !w-56 !mb-0"}
+                  className={"lg:w-[300px] max-w-[300px] !mb-0"}
                   icon=""
                   onChange={handleChange}
                   onBlur={handleBlur}
@@ -125,7 +120,7 @@ const AccountDetails = () => {
                   type="text"
                   name="Last Name"
                   placeholder=""
-                  className={"!sm:min-w-[300px] !w-56 !mb-0"}
+                  className={"lg:w-[300px] max-w-[300px] !mb-0"}
                   icon=""
                   onChange={handleChange}
                   onBlur={handleBlur}
@@ -144,19 +139,19 @@ const AccountDetails = () => {
                   color={"text-textGray"}
                 />
               </div>
-              <div className="flex items-center !justify-between !sm:min-w-[300px] !w-56 sm:gap-0 gap-2">
+              <div className="flex flex-wrap items-center lg:w-[300px] max-w-[300px] gap-8">
                 <img src={User} alt="User's Avatar!" className="rounded-full" />
                 <div className="flex gap-2">
                   <Button
                     text="Upload new"
                     onClick={() => handleSubmit()}
-                    className="p-medium bg-white border-2 border-solid border-customBlue !py-[7px] sm:px-3 !px-[7px] flex justify-center "
+                    className="p-medium !font-medium bg-white border-2 border-solid border-customBlue !py-[7px] sm:px-3 !px-[12px] flex justify-center "
                     type={undefined}
                   />
                   <Button
                     text="Delete"
                     onClick={() => handleSubmit()}
-                    className="bg-white text-gray-900 !py-[7px] !px-3 flex justify-center p-medium"
+                    className="bg-white text-gray-900 !py-[7px] !px-3 flex justify-center p-medium !font-medium"
                     type={undefined}
                   />
                 </div>
@@ -182,7 +177,7 @@ const AccountDetails = () => {
                   touch={touched.email}
                   icon=""
                   placeholder={""}
-                  className={"!sm:min-w-[300px] !w-56 !mb-0"}
+                  className={"lg:w-[300px] max-w-[300px] !mb-0"}
                 />
               </div>
             </div>
@@ -206,7 +201,7 @@ const AccountDetails = () => {
                   touch={touched.currentPassword}
                   icon=""
                   placeholder={""}
-                  className={"!sm:min-w-[300px] !w-56 !mb-0"}
+                  className={"lg:w-[300px] max-w-[300px] !mb-0"}
                 />
               </div>
               <div className="flex justify-between items-center sm:flex-nowrap flex-wrap gap-[2px]">
@@ -227,7 +222,7 @@ const AccountDetails = () => {
                   touch={touched.newPassword}
                   icon=""
                   placeholder={""}
-                  className={"!sm:min-w-[300px] !w-56 !mb-0"}
+                  className={"lg:w-[300px] max-w-[300px] !mb-0"}
                 />
               </div>
               <div className="flex justify-between items-center sm:flex-nowrap flex-wrap gap-[2px]">
@@ -248,21 +243,21 @@ const AccountDetails = () => {
                   touch={touched.repeatNewPassword}
                   icon=""
                   placeholder={""}
-                  className={"!sm:min-w-[300px] !w-56 !mb-0"}
+                  className={"lg:w-[300px] max-w-[300px] !mb-0"}
                 />
               </div>
             </div>
-            <div className="flex justify-between">
+            <div className="flex justify-between flex-wrap">
               <Button
                 text="Save"
                 onClick={() => {}}
-                className="p-large !leading-5 text-white !bg-customBlue !py-[14px] !px-5 flex justify-center "
+                className="p-large !font-medium !leading-5 text-white !bg-customBlue !py-[14px] !px-5 flex justify-center "
                 type={undefined}
               />
               <Button
                 text="Delete account"
                 onClick={() => handleSubmit()}
-                className="p-large !leading-5 bg-white text-gray-900 !py-[10px] !px-[0px] flex justify-center"
+                className="p-large !font-medium !leading-5 bg-white text-gray-900 !py-[10px] !px-[0px] flex justify-center"
                 type={undefined}
               />
             </div>

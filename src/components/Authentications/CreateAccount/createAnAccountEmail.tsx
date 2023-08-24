@@ -24,8 +24,8 @@ const CreateAnAccountEmail: React.FC<CreateAnAccountEmail> = ({
   setActiveTab,
 }) => {
   return (
-    <div className="bg-white min-h-screen flex flex-col justify-between items-center pt-[87px] pb-16">
-      <div className="w-80">
+    <div className="bg-white min-h-screen flex flex-col justify-between items-center pt-[87px] pb-16 px-5">
+      <div className="sm:w-80 w-full">
         <TextTag
           as="h6"
           text={"Create an account"}
@@ -103,32 +103,32 @@ const CreateAnAccountEmail: React.FC<CreateAnAccountEmail> = ({
               <Button
                 text="Continue with Google"
                 onClick={() => {}}
-                className="w-full mb-4 p-large !font-medium bg-white text-gray-900 flex gap-x-[40.4px] border-[2px] border-solid rounded-full"
+                className="w-full mb-4 p-large !font-medium !leading-5 bg-white text-gray-900 flex gap-x-[40.4px] border-[2px] border-solid rounded-full"
                 icon={<GoogleIcon />}
                 type={undefined}
               />
               <Button
                 text="Continue with email"
                 onClick={() => setActiveTab("connectProject")}
-                className="w-full !bg-customBlue text-white flex justify-center mb-4"
+                className="w-full !bg-customBlue text-white flex justify-center mb-4 sm:font-medium !leading-5"
                 type={undefined}
               />
             </form>
           )}
         </Formik>
       </div>
-      <div className="flex gap-2">
+      <div className="flex sm:flex-nowrap flex-wrap justify-evenly gap-2">
         <TextTag
           as="p"
           text={"Already a member?"}
-          className={"p-small"}
+          className={"p-small !leading-[18px]"}
           color={""}
         />
         <Link to={"/login"}>
           <TextTag
             as="p"
             text={"Login now"}
-            className={"p-small font-medium"}
+            className={"p-small !font-medium"}
             color={"text-customBlue"}
           />
         </Link>

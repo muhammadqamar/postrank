@@ -44,7 +44,7 @@ const Index: React.FC<IndexProps> = ({
           <TextTag
             as="p"
             text={trendMarkup}
-            className={"p-small"}
+            className={"p-medium !font-medium"}
             color={trendMarkupColor}
           />
         </div>

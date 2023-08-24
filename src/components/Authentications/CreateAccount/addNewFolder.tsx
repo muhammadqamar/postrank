@@ -41,7 +41,7 @@ interface FormErrors {
 
 const AddNewFolder: React.FC<AddNewFolder> = ({ setActiveTab }) => {
   return (
-    <div className="pt-[87px] max-w-[320px] min-h-screen mx-auto">
+    <div className="pt-[87px] sm:w-[320px] w-full min-h-screen mx-auto sm:px-0 px-5">
       <TextTag
         as="h6"
         text={"Let's Create a Content Folder"}
@@ -154,7 +154,7 @@ const AddNewFolder: React.FC<AddNewFolder> = ({ setActiveTab }) => {
                     text={"Add folder"}
                     onClick={() => setActiveTab("success")}
                     type="submit"
-                    className="w-full flex justify-center text-gray-500 !bg-lightGray"
+                    className="w-full !font-medium !leading-5 flex justify-center text-gray-500 !bg-lightGray"
                   />
                   {/* </Link> */}
                 </div>

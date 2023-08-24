@@ -86,7 +86,7 @@ const Feedback = () => {
                     <TextTag
                       as="span"
                       text={"Request"}
-                      className={"p-medium"}
+                      className={"p-large !leading-5"}
                       color={""}
                     />
                   </label>
@@ -101,7 +101,7 @@ const Feedback = () => {
                     <TextTag
                       as="span"
                       text={"Bug"}
-                      className={"p-medium"}
+                      className={"p-large !leading-5"}
                       color={""}
                     />
                   </label>
@@ -116,7 +116,7 @@ const Feedback = () => {
                     <TextTag
                       as="span"
                       text={"Feedback"}
-                      className={"p-medium"}
+                      className={"p-large !leading-5"}
                       color={""}
                     />
                   </label>
@@ -126,7 +126,7 @@ const Feedback = () => {
                 <TextTag
                   as="p"
                   text={"Message"}
-                  className={"p-medium mb-6"}
+                  className={"h6 mb-6"}
                   color={"text-textGray"}
                 />
                 <Textarea></Textarea>
@@ -136,7 +136,7 @@ const Feedback = () => {
                   text={"Send feedback"}
                   onClick={() => {}}
                   type={undefined}
-                  className="text-white !bg-customBlue"
+                  className="text-white !bg-customBlue !font-medium !leading-5"
                 />
               </div>
             </div>

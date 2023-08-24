@@ -15,7 +15,7 @@ const Index = () => {
       {activeTab === "email" ||
       activeTab === "connectProject" ||
       activeTab === "addNewFolder" ? (
-        <div className="pt-[27px] pl-10">
+        <div className="sm:pt-[27px] sm:pl-10 pl-5 pt-5">
           <Link to={"/#"}>
             <TextTag
               as="h6"

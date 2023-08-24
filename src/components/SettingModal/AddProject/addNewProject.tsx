@@ -53,17 +53,17 @@ const AddNewProject = ({ setAddProject }: props) => {
         </div>
 
         <div className="flex flex-col gap-6 sm:pt-8 pt-0">
-          <h6 className="tracking-[ -0.2px] font-medium">Connections</h6>
+          <h6 className="tracking-[-0.2px] h6">Connections</h6>
           <div className="flex items-start lg:items-center gap-5 lg:gap-8 flex-col lg:flex-row">
             <TextTag
               as="label"
               text={"Google Analytics"}
-              className={"text-sm font-normal max-w-[180px] w-full"}
+              className={"p-medium max-w-[180px] w-full"}
               color={"text-[#464646]"}
             />
             <Button
               text="Connect"
-              className="!py-[7px] !px-[12px] !text-sm font-medium bg-transparent border-[2px]  border-customBlue"
+              className="!py-[7px] !px-[12px] p-medium !font-medium bg-transparent border-[2px]  border-customBlue"
               onClick={() => {}}
               type={undefined}
             />
@@ -72,7 +72,7 @@ const AddNewProject = ({ setAddProject }: props) => {
             <TextTag
               as="label"
               text={"Account"}
-              className={"text-sm font-normal max-w-[180px] w-full"}
+              className={"p-medium max-w-[180px] w-full"}
               color={"text-[#464646]"}
             />
             <Select
@@ -96,7 +96,7 @@ const AddNewProject = ({ setAddProject }: props) => {
             <TextTag
               as="label"
               text={"Property"}
-              className={"text-sm font-normal max-w-[180px] w-full"}
+              className={"p-medium max-w-[180px] w-full"}
               color={"text-[#464646]"}
             />
             <Select
@@ -120,7 +120,7 @@ const AddNewProject = ({ setAddProject }: props) => {
             <TextTag
               as="label"
               text={"GSC property"}
-              className={"text-sm font-normal max-w-[180px] w-full"}
+              className={"p-medium max-w-[180px] w-full"}
               color={"text-[#464646]"}
             />
             <Select
@@ -147,7 +147,7 @@ const AddNewProject = ({ setAddProject }: props) => {
             <TextTag
               as="label"
               text={"Folder name"}
-              className={"text-sm font-normal max-w-[180px] w-full"}
+              className={"p-medium max-w-[180px] w-full"}
               color={"text-[#464646]"}
             />
             <InputField
@@ -168,7 +168,7 @@ const AddNewProject = ({ setAddProject }: props) => {
             <TextTag
               as="label"
               text={"Folder location"}
-              className={"text-sm font-normal max-w-[180px] w-full"}
+              className={"p-medium max-w-[180px] w-full"}
               color={"text-[#464646]"}
             />
             <Select
@@ -220,7 +220,7 @@ const AddNewProject = ({ setAddProject }: props) => {
             />
             <Button
               text="Add folder"
-              className="!py-[10px] !px-[16px] font-medium tracking-[-0.16px] bg-lightBlue text-tagBlue"
+              className="!py-[10px] !px-[16px] !leading-5 !font-medium tracking-[-0.16px] bg-lightBlue text-tagBlue"
               onClick={() => {}}
               type={undefined}
             />
@@ -229,7 +229,7 @@ const AddNewProject = ({ setAddProject }: props) => {
         <div className="">
           <Button
             text="Add project"
-            className="!py-[14px] !px-[20px] font-medium tracking-[-0.16px] text-white !bg-customBlue"
+            className="!py-[14px] !px-[20px] !leading-5 font-medium tracking-[-0.16px] text-white !bg-customBlue"
             onClick={() => setAddProject("createProject")}
             type={undefined}
           />

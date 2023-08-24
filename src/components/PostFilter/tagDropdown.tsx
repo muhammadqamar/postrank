@@ -26,15 +26,23 @@ const TagDrapdown = ({
           <>
             <div>
               <Menu.Button
-                className={`w-fit py-[10px] px-4 flex items-center gap-2 hover:bg-lightBlue rounded-full ${
-                  open ? "bg-lightBlue" : ""
-                }`}
+                className={
+                  addTagDropdown
+                    ? `w-fit py-[7px] px-[10px] flex items-center gap-2 hover:bg-lightBlue rounded-full ${
+                        open ? "bg-lightBlue" : ""
+                      }`
+                    : `w-fit py-[10px] px-4 flex items-center gap-2 hover:bg-lightBlue rounded-full ${
+                        open ? "bg-lightBlue" : ""
+                      }`
+                }
               >
                 <TextTag
                   as="p"
                   text={addTagDropdown ? "Add Tags" : "Tags"}
                   color="text-blue-700"
-                  className="p-large"
+                  className={
+                    addTagDropdown ? "p-medium !font-medium" : "p-large"
+                  }
                 />
 
                 {!addTagDropdown && <TagIcon />}

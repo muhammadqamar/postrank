@@ -12,7 +12,7 @@ const ConfirmYourPassword = () => {
         buttonText={"Back to login"}
         onClick={() => {}}
         className={"max-w-xs"}
-        buttonStyling={"!w-full"}
+        buttonStyling={"!w-full !font-medium !leading-5"}
         path={"/login"}
         pathStyling={"w-full"}
       />

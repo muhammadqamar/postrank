@@ -52,13 +52,13 @@ const Index = ({ closeModal, setActiveTab }) => {
   }, []);
 
   return (
-    <div className="w-[256px] flex-shrink-0">
+    <div className="w-[256px] flex-shrink-0 md:pt-0 pt-4 sm:pr-0 pr-4">
       <div className="flex items-center  gap-4 mb-[42px]">
         <Button
           text=""
           type={"button"}
           onClick={closeModal}
-          className="!p-[10px] bg-lightBlue"
+          className="!p-[10px] bg-lightBlue p-large !font-medium !leading-5"
           icon={<CloseIcon color="#274C9B" />}
         />
 
@@ -91,9 +91,9 @@ const Index = ({ closeModal, setActiveTab }) => {
               // onClick={() => {}}
               className={`!w-full !px-5 !py-[14px]  !gap-[10px] !font-medium bg-transparent ${
                 item.checked
-                  ? "!text-blue-700 !bg-blue-100"
+                  ? "!text-tagBlue !bg-blue-100"
                   : "!text-black bg-transparent"
-              } hover:bg-blue-100 hover:!text-blue-700 `}
+              } hover:bg-blue-100 hover:!text-tagBlue `}
               icon={
                 item.text === "Account details" ? (
                   <UserIcon color={item.checked ? "#274C9B" : "#000000"} />
