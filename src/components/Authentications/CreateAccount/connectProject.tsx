@@ -117,16 +117,16 @@ const ConnectProject: React.FC<ConnectProject> = ({ setActiveTab }) => {
                 {/* {errors.color1 && touched.color1 && <p>{errors.color1}</p>} */}
               </div>
 
-              {/* <div className="mb-5">
+              <div className="mb-5">
                 <TextTag as="label" text={'Property'} className={'p-small'} color={'text-textGray'} />
                 <DropDown data={accountdata || []} className="" name="color2" value={values.color2} onChange={(postData) => setFieldValue('color2', postData)} />
-                <TextTag as="label" text={errors.color2 && touched.color2 && errors.color2} className={'p-small'} color={'text-error-300'} />
+                {/* <TextTag as="label" text={errors.color2 && touched.color2 && errors.color2} className={'p-small'} color={'text-error-300'} /> */}
               </div>
               <div className="mb-5">
                 <TextTag as="label" text={'GSC property'} className={'p-small'} color={'text-textGray'} />
                 <DropDown data={accountdata} className="" name="color3" value={values.color3} onChange={(postData) => setFieldValue('color3', postData)} />
-                <TextTag as="label" text={errors.color3 && touched.color3 && errors.color3} className={'p-small'} color={'text-error-300'} />
-              </div> */}
+                {/* <TextTag as="label" text={errors.color3 && touched.color3 && errors.color3} className={'p-small'} color={'text-error-300'} /> */}
+              </div>
               <div className="pt-[22px]">
                 <Button text={'Continue '} onClick={() => setActiveTab('createNewProject')} type="submit" className="w-full flex justify-center text-gray-500 !bg-lightGray" />
               </div>
