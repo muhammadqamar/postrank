@@ -28,10 +28,7 @@ const CreateAnAccountEmail: React.FC<CreateAnAccountEmail> = ({
   const login = useGoogleLogin({
     onSuccess: (codeResponse) => {
       console.log(codeResponse);
-      const res = getAccountdetailsAction(
-        codeResponse?.access_token,
-        setActiveTab,
-      );
+      getAccountdetailsAction(codeResponse?.access_token, setActiveTab);
     },
     onError: (error) => console.log("Login Failed:", error),
   });
@@ -125,12 +122,6 @@ const CreateAnAccountEmail: React.FC<CreateAnAccountEmail> = ({
                 text="Continue with email"
                 onClick={() => setActiveTab("connectProject")}
                 className="w-full !bg-customBlue text-white flex justify-center mb-4 sm:font-medium !leading-5"
-                type={undefined}
-              />
-              <Button
-                onClick={() => {}}
-                text="Continue with email"
-                className="w-full !bg-customBlue text-white flex justify-center mb-4"
                 type={undefined}
               />
             </form>

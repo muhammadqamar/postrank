@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useState } from "react";
 import { TextTag } from "../../../utils/Typography";
 import Button from "../../../utils/Button";
@@ -112,10 +113,9 @@ const ConnectProject: React.FC<ConnectProject> = ({ setActiveTab }) => {
             // handleChange,
             // handleBlur,
             handleSubmit,
-            setFieldValue,
-            // isSubmitting,
+            setFieldValue, // isSubmitting,
             /* and other goodies */
-          }) => (
+          }: any) => (
             <form onSubmit={handleSubmit}>
               <div className="mb-5">
                 <TextTag
@@ -130,7 +130,6 @@ const ConnectProject: React.FC<ConnectProject> = ({ setActiveTab }) => {
                   name="color1"
                   value={values.color1}
                   onChange={(postData) => {
-                    console.log("postData", postData);
                     setFieldValue("color1", postData);
                   }}
                 />
@@ -146,7 +145,7 @@ const ConnectProject: React.FC<ConnectProject> = ({ setActiveTab }) => {
                   color={"text-textGray"}
                 />
                 <DropDown
-                  data={accountdata || []}
+                  data={values.color1.webProperties || []}
                   className=""
                   name="color2"
                   value={values.color2}
@@ -162,7 +161,7 @@ const ConnectProject: React.FC<ConnectProject> = ({ setActiveTab }) => {
                   color={"text-textGray"}
                 />
                 <DropDown
-                  data={accountdata}
+                  data={values.color2.profiles}
                   className=""
                   name="color3"
                   value={values.color3}
