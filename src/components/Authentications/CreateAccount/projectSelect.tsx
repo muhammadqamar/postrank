@@ -1,20 +1,21 @@
-import { useEffect, useState } from "react";
-import { Listbox } from "@headlessui/react";
+import { useEffect, useState } from 'react';
+import { Listbox } from '@headlessui/react';
 
-import { ExpandIcon, Check } from "../../../icons";
-import { TextTag } from "../../../utils/Typography";
+import { ExpandIcon, Check } from '../../../icons';
+import { TextTag } from '../../../utils/Typography';
 
 function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
+  return classes.filter(Boolean).join(' ');
 }
 
 interface arrayProps {
-  avatar?: string | undefined;
-  option?: string;
+  // avatar?: string | undefined;
+  name?: string;
+  id: number;
 }
 
 interface SelectedType {
-  option: string;
+  name: string;
 }
 
 type dropdownProps = {
@@ -41,33 +42,23 @@ const Index = ({ data, className, name, value, onChange }: dropdownProps) => {
           <div className={`relative ${className}`}>
             <Listbox.Button
               className={`relative cursor-default w-full py-[10px] px-3 rounded-[7px] border border-solid h-10 bg-white   text-left text-gray-900  ring-1 ring-inset ring-commonGray focus:outline-none focus:ring-0 focus:ring-indigo-500 ${
-                open && "ring-indigo-500"
+                open && 'ring-indigo-500'
               } sm:text-sm sm:leading-6 `}
             >
               <div className="flex items-center">
-                <TextTag
-                  as="p"
-                  text={(selected as { option: string }).option}
-                  color="text-black"
-                  className="ml-3 block truncate p-medium"
-                />
+                <TextTag as="p" text={(selected as { name: string }).name} color="text-black" className="ml-3 block truncate p-medium" />
               </div>
               <div className="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
                 <ExpandIcon />
               </div>
             </Listbox.Button>
             {open && (
-              <Listbox.Options
-                className={`absolute z-10  min-h-56  rounded-2xl w-full bg-white mt-2  py-2 overflow-hidden shadow-mdShadow`}
-              >
+              <Listbox.Options className={`absolute z-10  min-h-56  rounded-2xl w-full bg-white mt-2  py-2 overflow-hidden shadow-mdShadow`}>
                 {data.map((item, index: number) => (
                   <Listbox.Option
                     key={index}
                     className={({ active }) =>
-                      classNames(
-                        active ? "text-black" : "text-black",
-                        `relative cursor-pointer select-none w-full py-[11px] px-[10px] hover:text-white hover:bg-customBlue`,
-                      )
+                      classNames(active ? 'text-black' : 'text-black', `relative cursor-pointer select-none w-full py-[11px] px-[10px] hover:text-white hover:bg-customBlue`)
                     }
                     value={item}
                   >
@@ -81,15 +72,7 @@ const Index = ({ data, className, name, value, onChange }: dropdownProps) => {
                           ) : (
                             <div className="w-[18px] h-[18px]" />
                           )}
-                          <TextTag
-                            as="p"
-                            text={item.option}
-                            color=""
-                            className={classNames(
-                              selected ? "font-semibold" : "font-normal",
-                              "ml-3 block truncate p-medium ",
-                            )}
-                          />
+                          <TextTag as="p" text={item.name} color="" className={classNames(selected ? 'font-semibold' : 'font-normal', 'ml-3 block truncate p-medium ')} />
                         </div>
                       </>
                     )}

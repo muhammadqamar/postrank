@@ -3,11 +3,11 @@ import React from 'react';
 import { Formik } from 'formik';
 import InputField from '../../../utils/InputField';
 import Button from '../../../utils/Button/index';
-import { useGoogleLogin } from '@react-oauth/google';
+// import { useGoogleLogin } from '@react-oauth/google';
 import { EyeIcon, GoogleIcon, WarningIcon } from '../../../icons';
 import { TextTag } from '../../../utils/Typography';
 import { Link } from 'react-router-dom';
-
+import { getAccountdetailsAction } from '../../../store/actions/account';
 interface FormValues {
   email: string;
   password: string;
@@ -19,28 +19,24 @@ interface FormErrors {
 }
 
 const LoginForm = () => {
-  const login = useGoogleLogin({
-    onSuccess: (codeResponse) => console.log(codeResponse),
-    onError: (error) => console.log('Login Failed:', error),
-  });
+  // const login = useGoogleLogin({
+  //   onSuccess: (codeResponse) => {
+  //     console.log(codeResponse);
+  //     const res = getAccountdetailsAction(codeResponse?.access_token);
+  //   },
+  //   onError: (error) => console.log('Login Failed:', error),
+  // });
   return (
     <div className="bg-white h-screen flex flex-col !justify-between items-center sm:pt-[132px] pt-20 sm:pb-16 pb-8">
       <div className="sm:w-80 w-72">
-        <TextTag
-          as="h6"
-          text={'Login to your account'}
-          className={'h6 mb-[42px]'}
-          color={''}
-        />
+        <TextTag as="h6" text={'Login to your account'} className={'h6 mb-[42px]'} color={''} />
         <Formik
           initialValues={{ email: '', password: '' }}
           validate={(values: FormValues) => {
             const errors: FormErrors = {};
             if (!values.email) {
               errors.email = 'Required';
-            } else if (
-              !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-            ) {
+            } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
               errors.email = 'Email doesn’t exist';
             }
 
@@ -95,27 +91,17 @@ const LoginForm = () => {
                     name="rememberMe"
                     className="mr-2 border-2 border-solid border-commonGray rounded cursor-pointer checked:bg-customBlue !outline-none focus:!ring-[-1]"
                   />
-                  <TextTag
-                    as="span"
-                    text={'Remember me'}
-                    className={'p-medium'}
-                    color={''}
-                  />
+                  <TextTag as="span" text={'Remember me'} className={'p-medium'} color={''} />
                 </label>
                 <Link to="/reset-password" className="!text-customBlue p-small">
                   Reset Password
                 </Link>
               </div>
-              <Button
-                text="Login"
-                onClick={() => {}}
-                className="w-full !bg-customBlue !text-white flex justify-center mb-4"
-                type={undefined}
-              />
+              <Button text="Login" onClick={() => {}} className="w-full !bg-customBlue !text-white flex justify-center mb-4" type={undefined} />
               <Button
                 text="Continue with Google"
                 onClick={() => {
-                  login();
+                  // login();
                 }}
                 className="w-full p-large font-medium !bg-white !text-gray-900 flex gap-x-[40.4px] border-[2px] border-solid rounded-full"
                 icon={<GoogleIcon />}
@@ -126,19 +112,9 @@ const LoginForm = () => {
         </Formik>
       </div>
       <div className="flex gap-2">
-        <TextTag
-          as="p"
-          text={'Don’t have an account?'}
-          className={'p-small'}
-          color={''}
-        />
+        <TextTag as="p" text={'Don’t have an account?'} className={'p-small'} color={''} />
         <Link to={'/create-account'}>
-          <TextTag
-            as="p"
-            text={'Create now'}
-            className={'p-small font-medium'}
-            color={'!text-customBlue'}
-          />
+          <TextTag as="p" text={'Create now'} className={'p-small font-medium'} color={'!text-customBlue'} />
         </Link>
       </div>
     </div>
