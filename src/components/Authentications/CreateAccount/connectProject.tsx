@@ -96,10 +96,9 @@ const ConnectProject: React.FC<ConnectProject> = ({ setActiveTab }) => {
             // handleChange,
             // handleBlur,
             handleSubmit,
-            setFieldValue,
-            // isSubmitting,
+            setFieldValue, // isSubmitting,
             /* and other goodies */
-          }) => (
+          }: any) => (
             <form onSubmit={handleSubmit}>
               <div className="mb-5">
                 <TextTag as="label" text={'Account'} className={'p-small'} color={'text-textGray'} />
@@ -109,7 +108,6 @@ const ConnectProject: React.FC<ConnectProject> = ({ setActiveTab }) => {
                   name="color1"
                   value={values.color1}
                   onChange={(postData) => {
-                    console.log('postData', postData);
                     setFieldValue('color1', postData);
                   }}
                 />
@@ -119,12 +117,12 @@ const ConnectProject: React.FC<ConnectProject> = ({ setActiveTab }) => {
 
               <div className="mb-5">
                 <TextTag as="label" text={'Property'} className={'p-small'} color={'text-textGray'} />
-                <DropDown data={accountdata || []} className="" name="color2" value={values.color2} onChange={(postData) => setFieldValue('color2', postData)} />
+                <DropDown data={values.color1.webProperties || []} className="" name="color2" value={values.color2} onChange={(postData) => setFieldValue('color2', postData)} />
                 {/* <TextTag as="label" text={errors.color2 && touched.color2 && errors.color2} className={'p-small'} color={'text-error-300'} /> */}
               </div>
               <div className="mb-5">
                 <TextTag as="label" text={'GSC property'} className={'p-small'} color={'text-textGray'} />
-                <DropDown data={accountdata} className="" name="color3" value={values.color3} onChange={(postData) => setFieldValue('color3', postData)} />
+                <DropDown data={values.color2.profiles} className="" name="color3" value={values.color3} onChange={(postData) => setFieldValue('color3', postData)} />
                 {/* <TextTag as="label" text={errors.color3 && touched.color3 && errors.color3} className={'p-small'} color={'text-error-300'} /> */}
               </div>
               <div className="pt-[22px]">
