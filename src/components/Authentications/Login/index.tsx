@@ -1,11 +1,12 @@
-import React from "react";
-import { Formik } from "formik";
-import InputField from "../../../utils/InputField";
-import Button from "../../../utils/Button/index";
-
-import { EyeIcon, GoogleIcon, WarningIcon } from "../../../icons";
-import { TextTag } from "../../../utils/Typography";
-import { Link } from "react-router-dom";
+/* eslint-disable */
+import React from 'react';
+import { Formik } from 'formik';
+import InputField from '../../../utils/InputField';
+import Button from '../../../utils/Button/index';
+import { useGoogleLogin } from '@react-oauth/google';
+import { EyeIcon, GoogleIcon, WarningIcon } from '../../../icons';
+import { TextTag } from '../../../utils/Typography';
+import { Link } from 'react-router-dom';
 
 interface FormValues {
   email: string;
@@ -18,38 +19,37 @@ interface FormErrors {
 }
 
 const LoginForm = () => {
+  const login = useGoogleLogin({
+    onSuccess: (codeResponse) => console.log(codeResponse),
+    onError: (error) => console.log('Login Failed:', error),
+  });
   return (
     <div className="bg-white h-screen flex flex-col !justify-between items-center sm:pt-[132px] pt-20 sm:pb-16 pb-8">
       <div className="sm:w-80 w-72">
         <TextTag
           as="h6"
-          text={"Login to your account"}
-          className={"h6 mb-[42px]"}
-          color={""}
+          text={'Login to your account'}
+          className={'h6 mb-[42px]'}
+          color={''}
         />
         <Formik
-          initialValues={{ email: "", password: "" }}
+          initialValues={{ email: '', password: '' }}
           validate={(values: FormValues) => {
             const errors: FormErrors = {};
             if (!values.email) {
-              errors.email = "Required";
+              errors.email = 'Required';
             } else if (
               !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
             ) {
-              errors.email = "Email doesn’t exist";
+              errors.email = 'Email doesn’t exist';
             }
 
             if (!values.password) {
-              errors.password = "Required";
+              errors.password = 'Required';
             }
             return errors;
           }}
-          onSubmit={(values, { setSubmitting }) => {
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              setSubmitting(false);
-            }, 400);
-          }}
+          onSubmit={(values, { setSubmitting }) => {}}
         >
           {({
             values,
@@ -72,8 +72,8 @@ const LoginForm = () => {
                 error={errors?.email}
                 touch={touched.email}
                 icon={<WarningIcon />}
-                placeholder={""}
-                className={""}
+                placeholder={''}
+                className={''}
               />
               <InputField
                 label="Password"
@@ -97,9 +97,9 @@ const LoginForm = () => {
                   />
                   <TextTag
                     as="span"
-                    text={"Remember me"}
-                    className={"p-medium"}
-                    color={""}
+                    text={'Remember me'}
+                    className={'p-medium'}
+                    color={''}
                   />
                 </label>
                 <Link to="/reset-password" className="!text-customBlue p-small">
@@ -114,10 +114,12 @@ const LoginForm = () => {
               />
               <Button
                 text="Continue with Google"
-                onClick={() => {}}
+                onClick={() => {
+                  login();
+                }}
                 className="w-full p-large font-medium !bg-white !text-gray-900 flex gap-x-[40.4px] border-[2px] border-solid rounded-full"
                 icon={<GoogleIcon />}
-                type={undefined}
+                type="button"
               />
             </form>
           )}
@@ -126,16 +128,16 @@ const LoginForm = () => {
       <div className="flex gap-2">
         <TextTag
           as="p"
-          text={"Don’t have an account?"}
-          className={"p-small"}
-          color={""}
+          text={'Don’t have an account?'}
+          className={'p-small'}
+          color={''}
         />
-        <Link to={"/create-account"}>
+        <Link to={'/create-account'}>
           <TextTag
             as="p"
-            text={"Create now"}
-            className={"p-small font-medium"}
-            color={"!text-customBlue"}
+            text={'Create now'}
+            className={'p-small font-medium'}
+            color={'!text-customBlue'}
           />
         </Link>
       </div>
